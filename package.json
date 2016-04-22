@@ -1,0 +1,25 @@
+{
+  "name": "git-life",
+  "version": "1.0.0",
+  "description": "An effective way to find and contribute to repos you're interested in",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Git-Life/Git-Life.git"
+  },
+  "author": "Jenna Gain, Sheryl Hohman, Alex Paczynski, Caleb Rogers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Git-Life/Git-Life/issues"
+  },
+  "homepage": "https://github.com/Git-Life/Git-Life#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "path": "^0.12.7"
+  }
+}
