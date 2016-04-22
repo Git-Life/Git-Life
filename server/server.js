@@ -1,6 +1,5 @@
 var express = require('express');
 
-
 var app = express();
 
 // If using ES6 and WebPack comment out line 10
