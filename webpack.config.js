@@ -1,8 +1,8 @@
 module.exports = {
   entry: './client/components/main.js',
   output: {
-      path: './',
-      filename: 'dist/bundle.js'
+      path: './dist/',
+      filename: 'bundle.js'
   },
   devServer: {
     inline: true,
