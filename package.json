@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server"
+    "start": "npm run clean && npm run webpack-prod && npm run server-prod"
   },
   "repository": {
     "type": "git",
