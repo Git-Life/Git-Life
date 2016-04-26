@@ -8,8 +8,9 @@ module.exports = function(app, express) {
   app.use(bodyParser.urlencoded({ extended: true }));
 
   //app.use(express.static(path.join(__dirname, 'client/')));
-  app.use(express.static(path.join(__dirname, 'dist/')));
-  app.use('/', homeRouter);
+  app.use(express.static(path.join(__dirname, '../dist')));
+  console.log(path.join(__dirname, '../dist'));
+  //app.use('/', homeRouter);
 
   require('./home/HomeRouter.js')(homeRouter);
 };
