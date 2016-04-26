@@ -4,6 +4,7 @@ import SearchBar from './components/searchbar';
 import SearchResults from'./components/searchresults';
 
 
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -25,4 +26,7 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App/>, document.getElementById('app'));
+ReactDOM.render(
+  <App/>
+
+  , document.getElementById('app'));
