@@ -10,7 +10,7 @@
     "webpack-dev": "NODE_ENV=development webpack --progress",
     "server-prod": "node ./index.js",
     "server-dev": "nodemon ./index.js",
-    "start": "npm run clean && npm run webpack-prod && npm run server-prod",
+    "start": "npm run clean && npm run webpack-dev && npm run server-prod",
     "dev": "npm run clean && npm run webpack-dev && npm run server-dev"
   },
   "repository": {
