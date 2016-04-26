@@ -1,4 +1,4 @@
-var homecontroller = require('./HomeController.js');
+var searchController = require('./SearchController.js');
 
 module.exports = function (app) {
 	//Different endpoints go here
