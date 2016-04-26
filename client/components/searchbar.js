@@ -35,15 +35,14 @@ export default class SearchBar extends Component {
 
   render() {
     return(
-      <div >
+      <div>
           <input
           value={this.state.term}
           onChange={(event) => {
-            this.setState({term: event.target.value }, () =>{this.searchGit(this.state.term)});
-
+            this.setState({ term: event.target.value }, () => { this.searchGit(this.state.term) });
           }}
           placeholder="Search GitHub" />
-          <button onClick={()=>{this.searchGit(this.state.term); }}>Search</button>
+          <button onClick={ () => { this.searchGit(this.state.term); }}>Search</button>
 
       </div>
     );

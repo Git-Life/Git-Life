@@ -5,5 +5,7 @@ module.exports = function (app) {
 	//app.post('/search', homecontroller.search);
 	//app.get('/', homecontroller.serverTest);
 
+	// new routes for
+
 
 };
