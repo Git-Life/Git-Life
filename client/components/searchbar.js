@@ -33,7 +33,7 @@ export default class SearchBar extends Component {
     })
     .then(function(response){
       //context.props.resultsPassed(response);
-      console.log('Successful response to client-side: 'response);
+      console.log('Successful response to client-side: ', response);
     })
     .catch(function(response){
         console.log("catch")
