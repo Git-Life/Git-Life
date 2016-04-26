@@ -12,23 +12,17 @@ class App extends Component {
   }
 
   getSearchResults(response) {
-    console.log('inside getSearchResults', response.data.items);
     this.setState({'results': response.data.items});
-
   }
 
   render(){
     return (
       <div>
-
         <SearchBar resultsPassed={this.getSearchResults.bind(this)}/>
         <SearchResults results={this.state.results}/>
-
-
       </div>
     );
   }
-
 }
 
 ReactDOM.render(<App/>, document.getElementById('app'));
