@@ -10,14 +10,13 @@ export default class SearchResults extends Component {
 
   populateResults(){
     return _.reduce(this.props.results, (accum, item)=>{
-    let html =(
-      <SearchItem description={item.description} />
-    );
-    accum.push(html);
-    return accum;
-  }, []);
+      let html =(
+        <SearchItem description={item.description} />
+      );
+      accum.push(html);
+      return accum;
+    }, []);
   }
-
 
   render() {
     return (
