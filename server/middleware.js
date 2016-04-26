@@ -10,5 +10,5 @@ module.exports = function(app, express) {
   app.use(express.static(path.join(__dirname, '../dist')));
   app.use('/search', searchRouter);
 
-  require('./home/HomeRouter.js')(homeRouter);
+  require('./search/SearchRouter.js')(searchRouter);
 };

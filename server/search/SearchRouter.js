@@ -6,6 +6,9 @@ module.exports = function (app) {
 	//app.get('/', homecontroller.serverTest);
 
 	// new routes for
-
+	app.get('/repos', searchController.getRepos);
+	app.get('/code', searchController.getCode);
+	app.get('/issues', searchController.getIssues);
+	app.get('/users', searchController.getUsers);
 
 };
