@@ -16,7 +16,7 @@ const webpackConfig = {
     }]
   },
   resolve: {
-    extensions: ['', '.js', 'jsx']
+    extensions: ['', '.js', '.jsx']
   },
   output: {
       path: path.resolve(ROOT_PATH, 'dist'),
