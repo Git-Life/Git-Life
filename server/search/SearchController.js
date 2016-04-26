@@ -2,8 +2,9 @@ var path = require('path');
 var request = require('request');
 //res.sendFile(path.resolve('temp/index.html'));
 
+var root = 'https://www.api.github.com/';
+
 module.exports = {
-	var root = 'https://www.api.github.com/';
 	//create methods here that supply logic for SearchRouter.js
 	getRepos: function (req, res) {
 		var query = req.body.searchTerm;
@@ -12,7 +13,7 @@ module.exports = {
 			method: 'GET'
 		}, function (err, res, body) {
 			console.log('Successful request to GitHub repo search! ', body);
-		})
+		});
 	},
 
 	getCode: function (req, res) {
@@ -25,9 +26,6 @@ module.exports = {
 
 	getUsers: function (req, res) {
 
-	},
-
-
-
+	}
 
 };
