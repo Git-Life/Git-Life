@@ -1,6 +1,5 @@
 var path = require('path');
 var request = require('request');
-//res.sendFile(path.resolve('temp/index.html'));
 
 var root = 'https://api.github.com/';
 
@@ -13,8 +12,7 @@ module.exports = {
 			method: 'GET',
       headers: {'user-agent': 'node.js'}
 		}, function (error, response, body) {
-			console.log('Successful request to GitHub repo search! ', JSON.parse(body).items);
-			//console.log('Error: ', error);
+			console.log('Error: ', error);
 			res.send(JSON.parse(body).items);
 		});
 	},
@@ -26,8 +24,7 @@ module.exports = {
 			method: 'GET',
       headers: {'user-agent': 'node.js'}
 		}, function (error, response, body) {
-			console.log('Successful request to GitHub repo search! ', JSON.parse(body).items);
-			//console.log('Error: ', error);
+			console.log('Error: ', error);
 			res.send(JSON.parse(body).items);
 		});
 	},
@@ -50,8 +47,7 @@ module.exports = {
 			method: 'GET',
 			headers: {'user-agent': 'node.js'}
 		}, function (error, response, body) {
-			console.log('Successful request to GitHub repo search! ', JSON.parse(body).items);
-			//console.log('Error: ', error);
+			console.log('Error: ', error);
 			res.send(JSON.parse(body).items);
 		});
 	}
