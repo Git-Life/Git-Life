@@ -16,23 +16,18 @@ export default class SearchBar extends Component {
 
   searchGit(value){
     var context = this;
-
-    Axios.get('https://api.github.com/search/repositories', {
+    Axios.get('/search/repos', {
       params: {
-        q: value
+        searchTerm: value
       }
     })
     .then(function(response){
       context.props.resultsPassed(response);
-
     })
     .catch(function(response){
-        console.log("catch")
-
-      console.log(response);
+      console.error(response);
     });
 
-  }
   handleSearch(value){
     this.setState({"searchTerm":value});
     this.props.onSearchTermChange(value);
