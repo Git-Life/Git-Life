@@ -8,7 +8,7 @@ export default class SearchBar extends Component {
     super(props);
 
     this.state = {
-      term: '',
+      searchTerm: '',
       searchResults: []
     };
 
@@ -39,22 +39,22 @@ export default class SearchBar extends Component {
   }
   handleSearch(value){
     this.searchGit(value);
-    this.setState({"term":value});
-    console.log("state", this.state.term);
+    this.setState({"searchTerm":value});
+    console.log("state", this.state.searchTerm);
   }
   render() {
     return(
       <div >
           <input
-          value={this.state.term}
+          value={this.state.searchTerm}
           onChange={(event) => {
-            this.setState({term: event.target.value }, () =>{this.searchGit(this.state.term)});
+            this.setState({searchTerm: event.target.value }, () =>{this.searchGit(this.state.searchTerm)});
             /*setTimeout((function() {
               console.log(this.state);
             }).bind(this), 100)*/
           }}
           placeholder="Search GitHub" />
-          <button onClick={()=>{this.searchGit(this.state.term); }}>Search</button>
+        <button onClick={()=>{this.searchGit(this.state.searchTerm); }}>Search</button>
 
       </div>
     );
