@@ -27,12 +27,15 @@ const webpackConfig = {
     'react/lib/ExecutionEnvironment': true,
     'react/lib/ReactContext': true
   },
-  plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new HtmlWebpackPlugin({
-      template: 'index.html'
-    })
-  ]
+  plugins:
+    commonConfig.plugins.concat([
+      new webpack.IgnorePlugin(/react-addons/),
+      new webpack.IgnorePlugin(/react-dom/),
+      new webpack.optimize.OccurenceOrderPlugin(),
+      new HtmlWebpackPlugin({
+        template: 'index.html'
+      })
+    )
 };
 
 if (process.env.NODE_ENV === 'development'){
