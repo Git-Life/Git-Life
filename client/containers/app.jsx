@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import SearchBar from './containers/searchbar';
-import SearchResults from'./components/searchresults';
+import SearchBar from './searchbar';
+import SearchResults from'../components/searchresults';
 
 
 
