@@ -12,9 +12,6 @@ module.exports = {
 			uri: root + 'search/repositories?q=' + query,
 			method: 'GET',
       headers: {'user-agent': 'node.js'}
-
-      
-
 		}, function (error, response, body) {
 			console.log('Successful request to GitHub repo search! ', JSON.parse(body).items);
 			//console.log('Error: ', error);
@@ -23,7 +20,16 @@ module.exports = {
 	},
 
 	getCode: function (req, res) {
-
+		var query = req.query.searchTerm;
+		request({
+			uri: root + 'search/code?q=' + query,
+			method: 'GET',
+      headers: {'user-agent': 'node.js'}
+		}, function (error, response, body) {
+			console.log('Successful request to GitHub repo search! ', JSON.parse(body).items);
+			//console.log('Error: ', error);
+			res.send(JSON.parse(body).items);
+		});
 	},
 
 	getIssues: function (req, res) {
@@ -31,7 +37,16 @@ module.exports = {
 	},
 
 	getUsers: function (req, res) {
-
+		var query = req.query.searchTerm;
+		request({
+			uri: root + 'search/users?q=' + query,
+			method: 'GET',
+			headers: {'user-agent': 'node.js'}
+		}, function (error, response, body) {
+			console.log('Successful request to GitHub repo search! ', JSON.parse(body).items);
+			//console.log('Error: ', error);
+			res.send(JSON.parse(body).items);			
+		});
 	}
 
 };
