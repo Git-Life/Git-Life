@@ -7,7 +7,7 @@ const ROOT_PATH = path.resolve(__dirname);
 const webpackConfig = {
 
   devtool: "cheap-module-source-map",
-  entry: [path.resolve(ROOT_PATH, 'client/containers/app.jsx')],
+  entry: [path.resolve(ROOT_PATH, 'client/index.jsx')],
   module: {
     loaders: [{
       test: /\.(js|jsx)?$/,
