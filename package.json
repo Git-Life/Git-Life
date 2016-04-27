@@ -4,7 +4,8 @@
   "description": "An effective way to find and contribute to repos you're interested in",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "karma start",
+    "test:ci": "watch 'npm run test' client/",
     "clean": "rm -rf dist",
     "webpack-prod": "NODE_ENV=production webpack --progress -p",
     "webpack-dev": "NODE_ENV=development webpack --progress",
