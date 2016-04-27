@@ -20,7 +20,7 @@ class App extends Component {
   render(){
     return (
       <div>
-        <SearchBar onSearchTermChange={this.props.actions.updateSearchTerm} resultsPassed={this.getSearchResults.bind(this)}/>
+        <SearchBar onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm} resultsPassed={this.getSearchResults.bind(this)}/>
         <SearchResults results={this.state.results}/>
       </div>
     );

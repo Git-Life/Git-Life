@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import React, {Component} from 'react';
-import Axios from 'axios';
 
 export default class SearchBar extends Component {
   constructor(props) {
@@ -12,7 +11,7 @@ export default class SearchBar extends Component {
     };
 
   }
-  searchGit(value){
+  /*searchGit(value){
     var context = this;
     Axios.get('/search/repos', {
       params: {
@@ -25,24 +24,22 @@ export default class SearchBar extends Component {
     .catch(function(response){
       console.error(response);
     });
-  }
+  }*/
 
   handleSearch(value){
-    this.setState({"searchTerm":value});
     this.props.onSearchTermChange(value);
-    console.log(this.state);
     // this.searchGit(value);
-
+    this.props.onRequest(value);
   }
+
+
   render() {
     return(
       <div >
-        <form>
           <input
             onChange={(event) => {this.handleSearch(event.target.value)}}
           placeholder="Search GitHub" />
-        <button onClick={()=>{this.searchGit(this.state.searchTerm);}}>Search</button>
-        </form>
+        <button onClick={()=>{this.handleSearch(this.state.searchTerm);}}>Search</button>
       </div>
     );
   }
