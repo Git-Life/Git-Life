@@ -29,7 +29,8 @@ class App extends Component {
 
 function mapStateToProps(state){
   return {
-    results: state.results
+    results: state.results,
+    term: state.searchTerm
   };
 }
 

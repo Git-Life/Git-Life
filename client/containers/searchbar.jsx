@@ -2,7 +2,6 @@ import _ from 'lodash';
 import React, {Component} from 'react';
 import Axios from 'axios';
 
-
 export default class SearchBar extends Component {
   constructor(props) {
     super(props);
@@ -13,7 +12,6 @@ export default class SearchBar extends Component {
     };
 
   }
-
   searchGit(value){
     var context = this;
     Axios.get('/search/repos', {
@@ -27,6 +25,7 @@ export default class SearchBar extends Component {
     .catch(function(response){
       console.error(response);
     });
+  }
 
   handleSearch(value){
     this.setState({"searchTerm":value});
