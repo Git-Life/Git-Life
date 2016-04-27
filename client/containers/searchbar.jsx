@@ -9,29 +9,13 @@ export default class SearchBar extends Component {
       searchTerm: '',
       searchResults: []
     };
-
   }
-  /*searchGit(value){
-    var context = this;
-    Axios.get('/search/repos', {
-      params: {
-        searchTerm: value
-      }
-    })
-    .then(function(response){
-      context.props.resultsPassed(response);
-    })
-    .catch(function(response){
-      console.error(response);
-    });
-  }*/
 
   handleSearch(value){
     this.props.onSearchTermChange(value);
     // this.searchGit(value);
     this.props.onRequest(value);
   }
-
 
   render() {
     return(

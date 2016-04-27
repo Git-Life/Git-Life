@@ -12,16 +12,16 @@ class App extends Component {
 
     this.state = { results : []};
   }
-
+/*
   getSearchResults(response) {
     this.setState({'results': response.data.items});
   }
-
+*/
   render(){
     return (
       <div>
-        <SearchBar onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm} resultsPassed={this.getSearchResults.bind(this)}/>
-        <SearchResults results={this.state.results}/>
+        <SearchBar onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
+        <SearchResults results={this.props.results}/>
       </div>
     );
   }
