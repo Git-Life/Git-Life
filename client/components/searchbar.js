@@ -26,7 +26,7 @@ export default class SearchBar extends Component {
     //     console.log("catch")
     // });
 
-    Axios.get('/search/repos', {
+    Axios.get('/search/users', {
       params: {
         searchTerm: value
       }
