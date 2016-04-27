@@ -13,7 +13,7 @@ module.exports = {
 			method: 'GET',
       headers: {'user-agent': 'node.js'}
 
-      
+
 
 		}, function (error, response, body) {
 			console.log('Successful request to GitHub repo search! ', JSON.parse(body).items);
@@ -27,7 +27,14 @@ module.exports = {
 	},
 
 	getIssues: function (req, res) {
-
+    var query = req.query.searchTerm;
+    request({
+      uri: root + 'search/issues?q=' + query,
+      method: 'GET',
+      header: {'user-agent': 'node.js'}
+    }, function(error, response, body){
+      res.send(JSON.parse(body).items);
+    });
 	},
 
 	getUsers: function (req, res) {
