@@ -14,10 +14,12 @@ export default class SearchBar extends Component {
 
   }
 
+  componentWillRecieveProps() {
+  }
+
 
   searchGit(value){
     var context = this;
-    console.log(context);
 
     Axios.get('https://api.github.com/search/repositories', {
       params: {
@@ -25,8 +27,6 @@ export default class SearchBar extends Component {
       }
     })
     .then(function(response){
-      console.log(response);
-      console.log(context);
       context.props.resultsPassed(response);
 
     })
@@ -39,18 +39,20 @@ export default class SearchBar extends Component {
   }
   handleSearch(value){
     this.setState({"searchTerm":value});
-    this.searchGit(value);
+    this.props.onSearchTermChange(value);
+    console.log(this.state);
+    // this.searchGit(value);
 
-    console.log("state", this.state.searchTerm);
   }
   render() {
     return(
       <div >
-          <input value={this.state.searchTerm} onChange={(event) => {this.handleSearch(event.target.value)}}
-
+        <form>
+          <input
+            onChange={(event) => {this.handleSearch(event.target.value)}}
           placeholder="Search GitHub" />
-        <button onClick={()=>{this.searchGit(this.state.searchTerm); }}>Search</button>
-
+        <button onClick={()=>{this.searchGit(this.state.searchTerm);}}>Search</button>
+        </form>
       </div>
     );
   }
