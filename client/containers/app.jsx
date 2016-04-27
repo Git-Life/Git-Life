@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import SearchBar from './searchbar';
 import SearchResults from'../components/searchresults';
 import {Provider} from 'react-redux';
+import {connect} from 'react-redux';
+
 import configureStore from '../store/configureStore';
 
 const store = configureStore();
@@ -27,6 +29,14 @@ class App extends Component {
     );
   }
 }
+
+function mapStateToProps(state){
+  return {
+    results: state.results
+  };
+}
+
+export default connect(mapStateToProps)(App);
 
 ReactDOM.render(
   <Provider store={store}>
