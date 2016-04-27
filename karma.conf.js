@@ -1,69 +1,99 @@
-var path = require('path');
+const argv = require('yargs').argv;
+const path = require('path');
+const webpack = require('webpack');
 
-module.exports = function(config) {
+
+module.exports = function (config) {
   config.set({
-    basePath: '',
-    frameworks: ['jasmine'],
+    // only use PhantomJS for our 'test' browser
+    browsers: ['PhantomJS'],
+
+    // just run once by default unless --watch flag is passed
+    singleRun: !argv.watch,
+
+    // which karma frameworks do we want integrated
+    frameworks: ['mocha', 'chai'],
+
+    // displays tests in a nice readable format
+    reporters: ['spec'],
+
+    // include some polyfills for babel and phantomjs
     files: [
-      'test/**/*.js'
+      'node_modules/babel-polyfill/dist/polyfill.js',
+      './node_modules/phantomjs-polyfill/bind-polyfill.js',
+      './test/**/*.js' // specify files to watch for tests
     ],
-
     preprocessors: {
-      // add webpack as preprocessor
-      'src/**/*.js': ['webpack', 'sourcemap'],
-      'test/**/*.js': ['webpack', 'sourcemap']
+      // these files we want to be precompiled with webpack
+      // also run tests throug sourcemap for easier debugging
+      ['./test/**/*.js']: ['webpack', 'sourcemap']
     },
+    // A lot of people will reuse the same webpack config that they use
+    // in development for karma but remove any production plugins like UglifyJS etc.
+    // I chose to just re-write the config so readers can see what it needs to have
+    webpack: {
+      devtool: 'inline-source-map',
+      resolve: {
+        // allow us to import components in tests like:
+        // import Example from 'components/Example';
+        root: path.resolve(__dirname, './src'),
 
-    webpack: { //kind of a copy of your webpack config
-      devtool: 'inline-source-map', //just do inline source maps instead of the default
+        // allow us to avoid including extension name
+        extensions: ['', '.js', '.jsx'],
+
+        // required for enzyme to work properly
+        alias: {
+          sinon: 'sinon/pkg/sinon'
+        }
+      },
       module: {
+        // don't run babel-loader through the sinon module
+        noParse: [
+          /node_modules\/sinon\//
+        ],
+        // run babel loader for our tests
         loaders: [
           {
-            test: /\.js$/,
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
             loader: 'babel',
-            exclude: path.resolve(__dirname, 'node_modules'),
             query: {
-              presets: ['airbnb']
+              presets: ['es2015', 'react']
             }
           },
           {
-            test: /\.json$/,
-            loader: 'json',
+            test: /\.css$/,
+            loaders: ['style', 'css', 'postcss']
           },
-        ]
+          {
+            test: /\.scss$/,
+            loaders: ['style', 'css', 'postcss', 'sass']
+          }
+        ],
       },
+      // required for enzyme to work properly
       externals: {
+        jsdom: 'window',
+        cheerio: 'window',
         'react/lib/ExecutionEnvironment': true,
-        'react/lib/ReactContext': true,
-        'jsdom': 'window',
-        'cheerio': 'window'
-      }
+        'react/lib/ReactContext': 'window'
+      },
     },
-
-    webpackServer: {
-      noInfo: true //please don't spam the console when running in karma!
+    webpackMiddleware: {
+      noInfo: true
     },
-
+    // tell karma all the plugins we're going to be using to prevent warnings
     plugins: [
+      'karma-mocha',
+      'karma-chai',
       'karma-webpack',
-      'karma-jasmine',
+      'karma-phantomjs-launcher',
+      'karma-spec-reporter',
       'karma-sourcemap-loader',
-      'karma-chrome-launcher',
-      'karma-phantomjs-launcher'
-    ],
-
-
-    babelPreprocessor: {
-      options: {
-        presets: ['airbnb']
-      }
-    },
-    reporters: ['progress'],
-    port: 9876,
-    colors: true,
-    logLevel: config.LOG_INFO,
-    autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false,
-  })
+      new webpack.ProvidePlugin({
+        'window.Tether': 'tether',
+        $: 'jquery'
+      })
+    ]
+  });
 };
