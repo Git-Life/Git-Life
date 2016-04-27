@@ -14,10 +14,6 @@ export default class SearchBar extends Component {
 
   }
 
-  componentWillRecieveProps() {
-  }
-
-
   searchGit(value){
     var context = this;
 
@@ -56,15 +52,8 @@ export default class SearchBar extends Component {
       </div>
     );
   }
-
-/*
-setTimeout((function() {
-  console.log(this.state);
-}).bind(this), 2000)
-*/
-
-
 }
+
 SearchBar.propTypes = {
   resultsPassed: React.PropTypes.func,
 };
