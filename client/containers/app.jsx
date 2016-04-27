@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './searchbar';
 import SearchResults from'../components/searchresults';
+import {Provider} from 'react-redux';
+import configureStore from '../store/configureStore';
 
-
+const store = configureStore();
 
 class App extends Component {
   constructor(props){
@@ -27,6 +29,7 @@ class App extends Component {
 }
 
 ReactDOM.render(
-  <App/>
-
+  <Provider store={store}>
+    <App/>
+  </Provider>
   , document.getElementById('app'));
