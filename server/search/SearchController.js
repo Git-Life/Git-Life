@@ -12,7 +12,9 @@ module.exports = {
 			method: 'GET',
       headers: {'user-agent': 'node.js'}
 		}, function (error, response, body) {
-			console.log('Error: ', error);
+			if(error){
+        console.log('Error: ', error);
+      }
 			res.send(JSON.parse(body).items);
 		});
 	},
@@ -24,7 +26,10 @@ module.exports = {
 			method: 'GET',
       headers: {'user-agent': 'node.js'}
 		}, function (error, response, body) {
-			console.log('Error: ', error);
+      if(error){
+        console.log('Error: ', error);
+
+      }
 			res.send(JSON.parse(body).items);
 		});
 	},
@@ -36,6 +41,9 @@ module.exports = {
       method: 'GET',
       header: {'user-agent': 'node.js'}
     }, function(error, response, body){
+      if(error){
+        console.log('Error: ', error);
+      }
       res.send(JSON.parse(body).items);
     });
 	},
@@ -47,7 +55,9 @@ module.exports = {
 			method: 'GET',
 			headers: {'user-agent': 'node.js'}
 		}, function (error, response, body) {
-			console.log('Error: ', error);
+      if(error){
+        console.log('Error: ', error);
+      }
 			res.send(JSON.parse(body).items);
 		});
 	}
