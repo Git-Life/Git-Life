@@ -4,7 +4,7 @@
   "description": "An effective way to find and contribute to repos you're interested in",
   "main": "server.js",
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS",
+    "test": "NODE_ENV=test ./node_modules/karma/bin/karma start --single-run --browsers PhantomJS",
     "clean": "rm -rf dist",
     "webpack-prod": "NODE_ENV=production webpack --progress -p",
     "webpack-dev": "NODE_ENV=development webpack --progress",
@@ -64,7 +64,8 @@
     "karma-spec-reporter": "0.0.26",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.4.5",
-    "phantomjs-prebuilt": "^2.1.4",
+    "phantomjs-polyfill": "0.0.2",
+    "phantomjs-prebuilt": "^2.1.7",
     "react-addons-test-utils": "^15.0.0-rc.2",
     "watchify": "^3.7.0",
     "webpack": "^1.12.12",
