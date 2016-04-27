@@ -16,9 +16,9 @@ module.exports = {
       
 
 		}, function (error, response, body) {
-			console.log('Successful request to GitHub repo search! ', body);
-			console.log('Error: ', error);
-			res.send(body.items);
+			console.log('Successful request to GitHub repo search! ', JSON.parse(body).items);
+			//console.log('Error: ', error);
+			res.send(JSON.parse(body).items);
 		});
 	},
 
