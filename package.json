@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "karma start",
-    "test:ci": "watch 'npm run test' client/",
+    "watch": "watch 'npm run test' client/",
     "clean": "rm -rf dist",
     "webpack-prod": "NODE_ENV=production webpack --progress -p",
     "webpack-dev": "NODE_ENV=development webpack --progress",
