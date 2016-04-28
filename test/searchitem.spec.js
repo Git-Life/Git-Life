@@ -1,4 +1,4 @@
-import SearchItem from '../client/components/searchitem.js';
+import SearchItem from '../client/components/searchitem.jsx';
 
 import TestUtils from 'react-addons-test-utils';
 import React from 'react';
