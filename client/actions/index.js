@@ -7,7 +7,6 @@ export function updateSearchTerm(searchTerm = null){
     searchTerm
   }
 }
-
 export const REQUEST_GIT = 'REQUEST_GIT';
 export function searchGitHub(searchTerm){
   var results = Axios.get('/search/repos', {
@@ -15,7 +14,6 @@ export function searchGitHub(searchTerm){
       searchTerm: searchTerm
       }
   });
-
   return {
     type: REQUEST_GIT,
     payload: results

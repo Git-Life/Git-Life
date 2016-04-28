@@ -7,16 +7,6 @@ import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 
 class App extends Component {
-  constructor(props){
-    super(props);
-
-    this.state = { results : []};
-  }
-/*
-  getSearchResults(response) {
-    this.setState({'results': response.data.items});
-  }
-*/
   render(){
     return (
       <div>

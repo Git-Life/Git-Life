@@ -2,21 +2,10 @@ import _ from 'lodash';
 import React, {Component} from 'react';
 
 export default class SearchBar extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      searchTerm: '',
-      searchResults: []
-    };
-  }
-
   handleSearch(value){
     this.props.onSearchTermChange(value);
-    // this.searchGit(value);
     this.props.onRequest(value);
   }
-
   render() {
     return(
       <div >
@@ -28,7 +17,3 @@ export default class SearchBar extends Component {
     );
   }
 }
-
-SearchBar.propTypes = {
-  resultsPassed: React.PropTypes.func,
-};
