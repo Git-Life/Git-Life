@@ -7,6 +7,8 @@ var component;
 
 describe('Given an instance of the SearchItem', () => {
   describe('when we render the component', () => {
+
+
     it('should do a thing', () => {
       var renderer = TestUtils.createRenderer();
       renderer.render(<SearchItem />);
