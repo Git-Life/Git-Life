@@ -4,6 +4,7 @@ import TestUtils from 'react-addons-test-utils';
 import React from 'react';
 
 var component;
+var coreComponent;
 
 describe('Given an instance of the SearchItem', () => {
   describe('when we render the component', () => {
@@ -13,10 +14,8 @@ describe('Given an instance of the SearchItem', () => {
       component = renderer.getRenderOutput();
     });
 
-    it('should do a thing', () => {
+    it('should be wrapped in a div', () => {
       expect(component.type).to.equal('div');
-
-  });
-
+    });
   });
 });
