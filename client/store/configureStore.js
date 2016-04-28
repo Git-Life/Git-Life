@@ -8,7 +8,7 @@ export default function configureStore(initialState){
     initialState,
     compose(
       applyMiddleware(ReduxPromise),
-      window.devToolsExtension ? window.devToolsExtension() : undefined
+      window.devToolsExtension ? window.devToolsExtension() : f => f
     )
   );
   return store;
