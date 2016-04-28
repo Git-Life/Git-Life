@@ -37,7 +37,6 @@ module.exports = {
 		}, function (error, response, body) {
       if(error){
         console.log('Error: ', error);
-
       }
 			res.send(JSON.parse(body).items);
 		});
