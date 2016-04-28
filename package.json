@@ -38,9 +38,15 @@
     "path": "^0.12.7",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.3.0",
+    "redux": "^3.5.2",
+    "redux-promise": "^0.5.3",
     "request": "^2.72.0",
     "webpack": "^1.13.0",
     "webpack-hot-middleware": "^2.10.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+  }
+
 }
