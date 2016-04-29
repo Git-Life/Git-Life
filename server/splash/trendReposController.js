@@ -8,11 +8,13 @@ var gitRequest = 'search/repositories?q=size:>1000&pushed=>2016-4-25&sort=stars&
 
 var lastTimeChecked;
 var oneDayLength = 86400000;
+var flag = false;
 
 module.exports = function(req, res){
   //check if we've done this today already
   if(lastTimeChecked === undefined || (Date.now() - lastTimeChecked) > oneDayLength){
     //get most starred repos updated today
+    flag = true;
     request({
       uri: root + gitRequest + secretURL,
       method: 'GET',
@@ -24,7 +26,7 @@ module.exports = function(req, res){
         var repoStorage = {};
         for(var i = 0; i < 10; i++){
           //find out which had most commits today
-          (function(hold){
+          (function(hold, cb){
             var currentRepo = JSON.parse(body).items[hold];
             var commitsURL = currentRepo.commits_url;
             commitsURL = commitsURL.slice(0, commitsURL.length - 6);
@@ -50,10 +52,18 @@ module.exports = function(req, res){
                   }
                   console.log('file was saved');
                   lastTimeChecked = new Date();
+                  if(hold === 9){
+                    cb('hello we are testing a callback', hold);
+                  }
                 });
               });
-            })(i);
+            })(i, doThis);
           }
         });
   }
+
+  function doThis(test){
+    console.log(test);
+  }
+
 };
