@@ -5,7 +5,7 @@ export default class SearchBar extends Component {
   constructor(props){
     super(props)
     this.state = {searchTerm: ''};
-    console.log("constructor",this.props.searchTerm)
+    console.log("constructor", this.props.searchTerm)
   }
 
   handleSearch(value){
@@ -14,6 +14,29 @@ export default class SearchBar extends Component {
     this.props.onRequest(value);
 
   }
+
+  getFeed(req, res){
+    var feed = new Feed({
+      title: 'Tech News',
+      link: 'http://www.wired.com/feed/'
+    });
+
+    Post.findPosts(function(posts, err){
+      if (err)
+        res.send('404 Not Found', 404);
+      else {
+        for(var key in posts){
+          feed.item({
+            title: posts[key].title,
+            link: posts[key].url
+          });
+        }
+        res.set('Content-Type', 'text/xml');
+        res.send(feed.render('rss-2.0'));
+      }
+    });
+  }
+
 
   render() {
     return(
