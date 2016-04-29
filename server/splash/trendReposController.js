@@ -7,7 +7,7 @@ module.exports = function(req, res){
   //first just issue a general get repos request sorted and etc.
   var req = 'search/repositories?q=size:>1000&pushed=>2016-4-25&sort=stars&order=desc'
   request({
-    uri: root + req;
+    uri: root + req,
     method: 'GET',
     headers: {'user-agent': 'node.js'}
   }, function (error, response, body) {
