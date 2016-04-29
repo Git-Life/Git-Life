@@ -14,8 +14,7 @@ module.exports = function(req, res){
     if(error){
       console.log('Error: ', error);
     }
-    console.log('this is response:', response);
-    console.log('this is body', body);
+    console.log('this is body', JSON.parse(body));
   });
 
 };
