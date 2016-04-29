@@ -12,7 +12,7 @@ var oneDayLength = 86400000;
 module.exports = function(req, res){
   //logic goes here
   //check if we've done this today already
-  if(date === undefined || (Date.now() - lastTimeChecked) > oneDayLength){
+  if(lastTimeChecked === undefined || (Date.now() - lastTimeChecked) > oneDayLength){
     //first just issue a general get repos request sorted and etc.
     request({
       uri: root + gitRequest + secretURL,
@@ -22,15 +22,36 @@ module.exports = function(req, res){
       if(error){
         console.log('Error: ', error);
       }
-      fs.writeFile(__dirname + '/../storage/repos.txt', body, (err) => {
-        if(err){
-          console.log(err);
-        }
-        console.log('file was saved');
-        lastTimeChecked = new Date();
-      });
-    });
+      // fs.writeFile(__dirname + '/../storage/repos.txt', body, (err) => {
+      //   if(err){
+      //     console.log(err);
+      //   }
+      //   console.log('file was saved');
+      //   lastTimeChecked = new Date();
+      // });
+      var repoStorage = {};
+      for(var i = 0; i < 2; i++){
+        //find out which had most commits today
+        var currentRepo = JSON.parse(body).items[i];
+        var commitsURL = currentRepo.commits_url;
+        commitsURL = commitsURL.slice(0, commitsURL.length - 6);
+        repoStorage[currentRepo.name] = {};
+        repoStorage[currentRepo.name].name = currentRepo.name;
+        repoStorage[currentRepo.name].url = currentRepo.url;
+        repoStorage[currentRepo.name].language = currentRepo.language;
+          //
+          // request({
+          //   uri: commitsURL,
+          //   method: 'GET',
+          //   headers: {'user-agent': 'node.js'}
+          // }, function(error2, response2, body2){
+          //     //commit compare logic
+          //   });
+          }
+          console.log(repoStorage);
+        });
   }
+};
 
     // console.log('this is body', JSON.parse(body).items);
     //for top 10 results
@@ -53,6 +74,3 @@ module.exports = function(req, res){
         //increase counter by 1 if so
         //attach this counter to some new array
         //sort the end result by this counter
-
-
-};
