@@ -4,7 +4,7 @@ export default class SearchItem extends Component{
   render(){
     return (
       <div>
-        <p>{this.props.description}</p>
+        <a href={this.props.repo_url}>{this.props.description}</a>
       </div>
     );
   }
