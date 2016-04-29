@@ -1,6 +1,7 @@
 var request = require('request');
 var root = 'https://api.github.com/';
-var secret = require('./tempsecret.js')
+var secret = require('./tempsecret.js');
+var fs = require('fs');
 
 var secretURL = '?client_id=' + secret.id + '&client_secret=' + secret.secret;
 
@@ -16,9 +17,13 @@ module.exports = function(req, res){
   }, function (error, response, body) {
     if(error){
       console.log('Error: ', error);
-
     }
-    console.log(body);
+    fs.writeFile(__dirname + '/../storage/repos.txt', body, (err) => {
+      if(err){
+        console.log(err);
+      }
+      console.log('file was saved');
+    });
     // console.log('this is body', JSON.parse(body).items);
     //for top 10 results
     // for(var i = 0; i < 2; i++){
