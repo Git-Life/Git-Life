@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import SearchItem from './searchitem';
 
+
 export default class SearchResults extends Component {
 
   populateResults(){
