@@ -16,6 +16,6 @@ module.exports = function(req, res){
     }
     console.log('this is response:', response);
     console.log('this is body', body);
-  }
+  });
 
 };
