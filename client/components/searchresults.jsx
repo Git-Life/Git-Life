@@ -7,9 +7,8 @@ export default class SearchResults extends Component {
   populateResults(){
     // console.log(this.props.results.data);
     return _.reduce(this.props.results.data, (accum, item)=>{
-      console.log(item.clone_url);
       let html =(
-        <SearchItem description={item.description} repo_url={item.clone_url}/>
+        <SearchItem description={item.description} repo_url={item.clone_url} key={item.clone_url}/>
       );
       accum.push(html);
       return accum;
@@ -25,6 +24,3 @@ export default class SearchResults extends Component {
     );
   }
 }
-
-
-// git_url: "git://github.com/reactjs/redux.git"
