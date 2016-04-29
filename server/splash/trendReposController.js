@@ -39,16 +39,32 @@ module.exports = function(req, res){
         repoStorage[currentRepo.name].name = currentRepo.name;
         repoStorage[currentRepo.name].url = currentRepo.url;
         repoStorage[currentRepo.name].language = currentRepo.language;
-          //
-          // request({
-          //   uri: commitsURL,
-          //   method: 'GET',
-          //   headers: {'user-agent': 'node.js'}
-          // }, function(error2, response2, body2){
-          //     //commit compare logic
-          //   });
+        repoStorage[currentRepo.name].commitsToday = 0;
+          //grab the list of commits
+          request({
+            uri: commitsURL,
+            method: 'GET',
+            headers: {'user-agent': 'node.js'}
+          }, function(error2, response2, body2){
+              //commit compare logic
+              var j;
+              var commitArray = JSON.parse(body2)
+              for(j = 0; j < 5; j++){
+                console.log(commitArray.length);
+                var currentCommit = commitArray[j];
+                var currentCommitDate = new Date(currentCommit.commit.author.date);
+                if((Date.now() - currentCommitDate) < oneDayLength){
+                  repoStorage[currentRepo.name].commitsToday++;
+                }
+                // else if((Date.now() - currentCommitDate) > oneDayLength){
+                //   console.log('we stopped the', currentRepo.name);
+                //   j = commitArray.length;
+                // }
+              }
+              console.log('repo storage', repoStorage);
+
+            });
           }
-          console.log(repoStorage);
         });
   }
 };
