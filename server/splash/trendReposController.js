@@ -16,17 +16,18 @@ module.exports = function(req, res){
     }
     // console.log('this is body', JSON.parse(body).items);
     //for top 10 results
-    for(var i = 0; i < 10; i++){
+    for(var i = 0; i < 2; i++){
       //find out which had most commits today
+      var commitsURL = JSON.parse(body).items[i].commits_url;
+      commitsURL = commitsURL.slice(0, commitsURL.length - 6);
+
       request({
-        uri: JSON.parse(body).items[i].commits_url,
+        uri: commitsURL,
         method: 'GET',
         headers: {'user-agent': 'node.js'}
       }, function(error2, response2, body2){
-        // console.log(JSON.parse(body2));
+        console.log(JSON.parse(body2));
       });
-      var commitsURL = JSON.parse(body).items[i].commits_url
-      console.log(commitsURL.slice(0, commitsURL.length - 6));
     }
 
     //do something to body.items[i].commits_url

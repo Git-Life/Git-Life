@@ -9,7 +9,7 @@ export function updateSearchTerm(searchTerm = null){
 }
 export const REQUEST_GIT = 'REQUEST_GIT';
 export function searchGitHub(searchTerm){
-  var results = Axios.get('/search/repos', {
+  var results = Axios.get('/splash/repos', {
       params: {
       searchTerm: searchTerm
       }
