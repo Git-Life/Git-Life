@@ -24,13 +24,7 @@ module.exports = function(req, res){
       if(error){
         console.log('Error: ', error);
       }
-      // fs.writeFile(__dirname + '/../storage/repos.txt', body, (err) => {
-      //   if(err){
-      //     console.log(err);
-      //   }
-      //   console.log('file was saved');
-      //   lastTimeChecked = new Date();
-      // });
+
       var repoStorage = {};
       for(var i = 0; i < 10; i++){
         //find out which had most commits today
@@ -51,10 +45,17 @@ module.exports = function(req, res){
               method: 'GET',
               headers: {'user-agent': 'node.js'}
             }, function(error2, response2, body2){
-                //commit compare logic
                 var commitArray = JSON.parse(body2)
                 repoStorage[currentRepo.name].commitsToday = commitArray.length;
-                console.log(repoStorage);
+
+                  fs.writeFile(__dirname + '/../storage/repos.txt', JSON.stringify(repoStorage), (err) => {
+                    if(err){
+                      console.log(err);
+                    }
+                    console.log('file was saved');
+                    lastTimeChecked = new Date();
+                  });
+
               });
           })(i);
         }
