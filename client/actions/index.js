@@ -20,3 +20,17 @@ export function searchGitHub(searchTerm){
   }
 
 }
+
+export const REQUEST_WIRED = 'REQUEST_WIRED';
+export function searchWired(){
+  var wiredResults = Axios.get('/splash/rss', {
+      params: {
+
+      }
+  });
+  return {
+    type: REQUEST_WIRED,
+    payload: wiredResults
+  }
+
+}

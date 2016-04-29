@@ -1,4 +1,5 @@
 import {reduce} from 'lodash';
+import {map} from 'lodash';
 import React, {Component} from 'react';
 
 export default class SearchBar extends Component {
@@ -15,26 +16,8 @@ export default class SearchBar extends Component {
 
   }
 
-  getFeed(req, res){
-    var feed = new Feed({
-      title: 'Tech News',
-      link: 'http://www.wired.com/feed/'
-    });
-
-    Post.findPosts(function(posts, err){
-      if (err)
-        res.send('404 Not Found', 404);
-      else {
-        for(var key in posts){
-          feed.item({
-            title: posts[key].title,
-            link: posts[key].url
-          });
-        }
-        res.set('Content-Type', 'text/xml');
-        res.send(feed.render('rss-2.0'));
-      }
-    });
+  handleWired(){
+    this.props.wired();
   }
 
 
@@ -44,7 +27,8 @@ export default class SearchBar extends Component {
           <input
             onChange={(event) => {this.handleSearch(event.target.value)}}
           placeholder="Search GitHub" />
-        <button onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>Search</button>
+        <button onClick={(event)=>{ this.handleSearch(this.state.searchTerm); this.handleWired()}}>Search</button>
+
     </div>
     );
   }

@@ -5,13 +5,15 @@ import SearchResults from'../components/searchresults';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
+import WiredResults from '../components/wiredResults';
 
 class App extends Component {
   render(){
     return (
       <div>
-        <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
+        <SearchBar  wired={this.props.actions.searchWired} searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
         <SearchResults results={this.props.results}/>
+        <WiredResults wiredResults={this.props.wiredResults}/>
       </div>
     );
   }
@@ -20,7 +22,8 @@ class App extends Component {
 function mapStateToProps(state){
   return {
     results: state.results,
-    term: state.searchTerm
+    term: state.searchTerm,
+    wiredResults: state.wiredResults
   };
 }
 

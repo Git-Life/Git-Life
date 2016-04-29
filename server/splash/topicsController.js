@@ -16,12 +16,20 @@ module.exports={
     });
     feedparser.on('error', function(error) {
     });
+      var results = [];
+
     feedparser.on('readable', function() {
       var stream = this
       var meta = this.meta
       while (item = stream.read()) {
         console.log(item);
+        results.push(item);
       }
     });
+
+    feedparser.on('end', ()=>{
+      res.send(results);
+    });
+
   }
 }
