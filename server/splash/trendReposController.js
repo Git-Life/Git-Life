@@ -14,17 +14,19 @@ module.exports = function(req, res){
     if(error){
       console.log('Error: ', error);
     }
-    console.log('this is body', JSON.parse(body));
+    // console.log('this is body', JSON.parse(body).items);
     //for top 10 results
     for(var i = 0; i < 10; i++){
       //find out which had most commits today
       request({
-        uri: body.items[i].commits_url,
+        uri: JSON.parse(body).items[i].commits_url,
         method: 'GET',
         headers: {'user-agent': 'node.js'}
       }, function(error2, response2, body2){
-        
+        // console.log(JSON.parse(body2));
       });
+      var commitsURL = JSON.parse(body).items[i].commits_url
+      console.log(commitsURL.slice(0, commitsURL.length - 6));
     }
 
     //do something to body.items[i].commits_url
