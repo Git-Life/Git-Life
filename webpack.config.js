@@ -22,20 +22,12 @@ const webpackConfig = {
       path: path.resolve(ROOT_PATH, 'dist'),
       filename: 'bundle.js'
   },
-  externals: {
-    'cheerio': 'window',
-    'react/lib/ExecutionEnvironment': true,
-    'react/lib/ReactContext': true
-  },
-  plugins:
-    commonConfig.plugins.concat([
-      new webpack.IgnorePlugin(/react-addons/),
-      new webpack.IgnorePlugin(/react-dom/),
-      new webpack.optimize.OccurenceOrderPlugin(),
-      new HtmlWebpackPlugin({
-        template: 'index.html'
-      })
-    )
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'index.html'
+    })
+  ]
 };
 
 if (process.env.NODE_ENV === 'development'){
