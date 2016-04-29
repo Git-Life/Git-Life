@@ -1,3 +1,5 @@
+
+
 var request = require('request');
 var root = 'https://api.github.com/';
 var secret = require('./tempsecret.js');
@@ -30,41 +32,35 @@ module.exports = function(req, res){
       //   lastTimeChecked = new Date();
       // });
       var repoStorage = {};
-      for(var i = 0; i < 2; i++){
+      for(var i = 0; i < 10; i++){
         //find out which had most commits today
-        var currentRepo = JSON.parse(body).items[i];
-        var commitsURL = currentRepo.commits_url;
-        commitsURL = commitsURL.slice(0, commitsURL.length - 6);
-        repoStorage[currentRepo.name] = {};
-        repoStorage[currentRepo.name].name = currentRepo.name;
-        repoStorage[currentRepo.name].url = currentRepo.url;
-        repoStorage[currentRepo.name].language = currentRepo.language;
-        repoStorage[currentRepo.name].commitsToday = 0;
-          //grab the list of commits
-          request({
-            uri: commitsURL,
-            method: 'GET',
-            headers: {'user-agent': 'node.js'}
-          }, function(error2, response2, body2){
-              //commit compare logic
-              var j;
-              var commitArray = JSON.parse(body2)
-              for(j = 0; j < 5; j++){
-                console.log(commitArray.length);
-                var currentCommit = commitArray[j];
-                var currentCommitDate = new Date(currentCommit.commit.author.date);
-                if((Date.now() - currentCommitDate) < oneDayLength){
-                  repoStorage[currentRepo.name].commitsToday++;
-                }
-                // else if((Date.now() - currentCommitDate) > oneDayLength){
-                //   console.log('we stopped the', currentRepo.name);
-                //   j = commitArray.length;
-                // }
-              }
-              console.log('repo storage', repoStorage);
+        (function(hold){
+          var currentRepo = JSON.parse(body).items[i];
+          var commitsURL = currentRepo.commits_url;
+          commitsURL = commitsURL.slice(0, commitsURL.length - 6);
+          repoStorage[currentRepo.name] = {};
+          repoStorage[currentRepo.name].name = currentRepo.name;
+          repoStorage[currentRepo.name].url = currentRepo.url;
+          repoStorage[currentRepo.name].language = currentRepo.language;
+          //repoStorage[currentRepo.name].commitsToday = 0;
+          var compareDate = new Date();
+          compareDate.setDate(compareDate.getDate() - 1);
+            //grab the list of commits
+            request({
+              uri: commitsURL + '?since=' + compareDate.toISOString() + secretURL,
+              method: 'GET',
+              headers: {'user-agent': 'node.js'}
+            }, function(error2, response2, body2){
+                //commit compare logic
+                console.log(commitsURL + '?since=' + compareDate.toISOString() + secretURL);
+                var commitArray = JSON.parse(body2)
+                console.log('length of ', currentRepo.name, 'is ', commitArray.length)
+                repoStorage[currentRepo.name].commitsToday = commitArray.length;
+              });
+          })(i);
 
-            });
-          }
+        }
+          console.log(repoStorage);
         });
   }
 };
