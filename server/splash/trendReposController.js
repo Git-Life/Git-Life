@@ -35,7 +35,7 @@ module.exports = function(req, res){
       for(var i = 0; i < 10; i++){
         //find out which had most commits today
         (function(hold){
-          var currentRepo = JSON.parse(body).items[i];
+          var currentRepo = JSON.parse(body).items[hold];
           var commitsURL = currentRepo.commits_url;
           commitsURL = commitsURL.slice(0, commitsURL.length - 6);
           repoStorage[currentRepo.name] = {};
@@ -52,15 +52,12 @@ module.exports = function(req, res){
               headers: {'user-agent': 'node.js'}
             }, function(error2, response2, body2){
                 //commit compare logic
-                console.log(commitsURL + '?since=' + compareDate.toISOString() + secretURL);
                 var commitArray = JSON.parse(body2)
-                console.log('length of ', currentRepo.name, 'is ', commitArray.length)
                 repoStorage[currentRepo.name].commitsToday = commitArray.length;
+                console.log(repoStorage);
               });
           })(i);
-
         }
-          console.log(repoStorage);
         });
   }
 };
