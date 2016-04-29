@@ -1,5 +1,3 @@
-
-
 var request = require('request');
 var root = 'https://api.github.com/';
 var secret = require('./tempsecret.js');
@@ -12,34 +10,32 @@ var lastTimeChecked;
 var oneDayLength = 86400000;
 
 module.exports = function(req, res){
-  //logic goes here
   //check if we've done this today already
   if(lastTimeChecked === undefined || (Date.now() - lastTimeChecked) > oneDayLength){
-    //first just issue a general get repos request sorted and etc.
+    //get most starred repos updated today
     request({
       uri: root + gitRequest + secretURL,
       method: 'GET',
       headers: {'user-agent': 'node.js'}
     }, function (error, response, body) {
-      if(error){
-        console.log('Error: ', error);
-      }
+        if(error){
+          console.log('Error: ', error);
+        }
+        var repoStorage = {};
+        for(var i = 0; i < 10; i++){
+          //find out which had most commits today
+          (function(hold){
+            var currentRepo = JSON.parse(body).items[hold];
+            var commitsURL = currentRepo.commits_url;
+            commitsURL = commitsURL.slice(0, commitsURL.length - 6);
+            repoStorage[currentRepo.name] = {};
+            repoStorage[currentRepo.name].name = currentRepo.name;
+            repoStorage[currentRepo.name].url = currentRepo.url;
+            repoStorage[currentRepo.name].language = currentRepo.language;
+            var compareDate = new Date();
+            compareDate.setDate(compareDate.getDate() - 1);
 
-      var repoStorage = {};
-      for(var i = 0; i < 10; i++){
-        //find out which had most commits today
-        (function(hold){
-          var currentRepo = JSON.parse(body).items[hold];
-          var commitsURL = currentRepo.commits_url;
-          commitsURL = commitsURL.slice(0, commitsURL.length - 6);
-          repoStorage[currentRepo.name] = {};
-          repoStorage[currentRepo.name].name = currentRepo.name;
-          repoStorage[currentRepo.name].url = currentRepo.url;
-          repoStorage[currentRepo.name].language = currentRepo.language;
-          //repoStorage[currentRepo.name].commitsToday = 0;
-          var compareDate = new Date();
-          compareDate.setDate(compareDate.getDate() - 1);
-            //grab the list of commits
+              //grab the list of commits
             request({
               uri: commitsURL + '?since=' + compareDate.toISOString() + secretURL,
               method: 'GET',
@@ -48,39 +44,16 @@ module.exports = function(req, res){
                 var commitArray = JSON.parse(body2)
                 repoStorage[currentRepo.name].commitsToday = commitArray.length;
 
-                  fs.writeFile(__dirname + '/../storage/repos.txt', JSON.stringify(repoStorage), (err) => {
-                    if(err){
-                      console.log(err);
-                    }
-                    console.log('file was saved');
-                    lastTimeChecked = new Date();
-                  });
-
+                fs.writeFile(__dirname + '/../storage/repos.txt', JSON.stringify(repoStorage), (err) => {
+                  if(err){
+                    console.log(err);
+                  }
+                  console.log('file was saved');
+                  lastTimeChecked = new Date();
+                });
               });
-          })(i);
-        }
+            })(i);
+          }
         });
   }
 };
-
-    // console.log('this is body', JSON.parse(body).items);
-    //for top 10 results
-    // for(var i = 0; i < 2; i++){
-    //   //find out which had most commits today
-    //   var commitsURL = JSON.parse(body).items[i].commits_url;
-    //   commitsURL = commitsURL.slice(0, commitsURL.length - 6);
-    //   //
-    //   // request({
-    //   //   uri: commitsURL,
-    //   //   method: 'GET',
-    //   //   headers: {'user-agent': 'node.js'}
-    //   // }, function(error2, response2, body2){
-    //   //   console.log(JSON.parse(body2));
-    //   // });
-    // }
-
-    //do something to body.items[i].commits_url
-      //and then check if each.commit.author.date is today
-        //increase counter by 1 if so
-        //attach this counter to some new array
-        //sort the end result by this counter
