@@ -15,6 +15,23 @@ module.exports = function(req, res){
       console.log('Error: ', error);
     }
     console.log('this is body', JSON.parse(body));
+    //for top 10 results
+    for(var i = 0; i < 10; i++){
+      //find out which had most commits today
+      request({
+        uri: body.items[i].commits_url,
+        method: 'GET',
+        headers: {'user-agent': 'node.js'}
+      }, function(error2, response2, body2){
+        
+      });
+    }
+
+    //do something to body.items[i].commits_url
+      //and then check if each.commit.author.date is today
+        //increase counter by 1 if so
+        //attach this counter to some new array
+        //sort the end result by this counter
   });
 
 };
