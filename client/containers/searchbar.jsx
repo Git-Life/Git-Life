@@ -15,6 +15,10 @@ export default class SearchBar extends Component {
 
   }
 
+  // to reduce requests during development,
+  // temporarily only search on button click
+  // disable onChange to input box
+/*
   render() {
     return(
       <div >
@@ -22,6 +26,15 @@ export default class SearchBar extends Component {
             onChange={(event) => {this.handleSearch(event.target.value)}}
           placeholder="Search GitHub" />
         <button onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>Search</button>
+    </div>
+    );
+*/
+  // searches on button click only
+  render() {
+    return(
+      <div >
+         <input placeholder="Search GitHub" />
+         <button onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>Search</button>
     </div>
     );
   }
