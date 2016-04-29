@@ -3,27 +3,35 @@ var root = 'https://api.github.com/';
 var secret = require('./tempsecret.js');
 var fs = require('fs');
 
-var secretURL = '?client_id=' + secret.id + '&client_secret=' + secret.secret;
+var secretURL = '&client_id=' + secret.id + '&client_secret=' + secret.secret;
+var gitRequest = 'search/repositories?q=size:>1000&pushed=>2016-4-25&sort=stars&order=desc'
 
+var lastTimeChecked;
+var oneDayLength = 86400000;
 
 module.exports = function(req, res){
   //logic goes here
-  //first just issue a general get repos request sorted and etc.
-  var gitRequest = 'search/repositories?q=size:>1000&pushed=>2016-4-25&sort=stars&order=desc'
-  request({
-    uri: root + 'rate_limit' + secretURL,
-    method: 'GET',
-    headers: {'user-agent': 'node.js'}
-  }, function (error, response, body) {
-    if(error){
-      console.log('Error: ', error);
-    }
-    fs.writeFile(__dirname + '/../storage/repos.txt', body, (err) => {
-      if(err){
-        console.log(err);
+  //check if we've done this today already
+  if(date === undefined || (Date.now() - lastTimeChecked) > oneDayLength){
+    //first just issue a general get repos request sorted and etc.
+    request({
+      uri: root + gitRequest + secretURL,
+      method: 'GET',
+      headers: {'user-agent': 'node.js'}
+    }, function (error, response, body) {
+      if(error){
+        console.log('Error: ', error);
       }
-      console.log('file was saved');
+      fs.writeFile(__dirname + '/../storage/repos.txt', body, (err) => {
+        if(err){
+          console.log(err);
+        }
+        console.log('file was saved');
+        lastTimeChecked = new Date();
+      });
     });
+  }
+
     // console.log('this is body', JSON.parse(body).items);
     //for top 10 results
     // for(var i = 0; i < 2; i++){
@@ -45,6 +53,6 @@ module.exports = function(req, res){
         //increase counter by 1 if so
         //attach this counter to some new array
         //sort the end result by this counter
-  });
+
 
 };
