@@ -5,7 +5,6 @@ var userParse = require('./userController.js');
 
 
 var root = 'https://api.github.com/';
-var data;
 
 var secretURL = '&client_id=' + secret.id + '&client_secret=' + secret.secret;
 
