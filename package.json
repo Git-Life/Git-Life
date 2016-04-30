@@ -36,7 +36,6 @@
     "express": "^4.13.4",
     "html-webpack-plugin": "^2.16.0",
     "lodash": "^4.11.1",
-    "material": "^0.1.1",
     "path": "^0.12.7",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
