@@ -13,7 +13,11 @@ const webpackConfig = {
       test: /\.(js|jsx)?$/,
       exclude: /node_modules/,
       loader: 'babel'
-    }]
+    },
+      {
+        test: /\.css$/,
+        loaders: ['style', 'css', 'postcss']
+      }]
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
