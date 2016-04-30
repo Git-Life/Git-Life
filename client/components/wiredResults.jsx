@@ -16,7 +16,7 @@ export default class WiredResults extends Component {
   populateResults(){
     return reduce(this.props.wiredResults, (accum, item, key) => {
       let html =(
-        <WiredItem key={key} title={item.title}/>
+        <WiredItem key={key} title={item.title} link={item.link}/>
       );
       accum.push(html);
       return accum;
