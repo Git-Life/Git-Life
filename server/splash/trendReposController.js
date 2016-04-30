@@ -22,17 +22,17 @@ module.exports = function(req, res){
         if(error){
           console.log('Error: ', error);
         }
-        var repoStorage = {};
+        var repoStorage = [];
         for(var i = 0; i < 10; i++){
           //find out which had most commits today
           (function(hold, cb){
             var currentRepo = JSON.parse(body).items[hold];
             var commitsURL = currentRepo.commits_url;
             commitsURL = commitsURL.slice(0, commitsURL.length - 6);
-            repoStorage[currentRepo.name] = {};
-            repoStorage[currentRepo.name].name = currentRepo.name;
-            repoStorage[currentRepo.name].url = currentRepo.url;
-            repoStorage[currentRepo.name].language = currentRepo.language;
+            repoStorage[hold] = {};
+            repoStorage[hold].name = currentRepo.name;
+            repoStorage[hold].url = currentRepo.url;
+            repoStorage[hold].language = currentRepo.language;
             var compareDate = new Date();
             compareDate.setDate(compareDate.getDate() - 1);
 
@@ -43,7 +43,7 @@ module.exports = function(req, res){
               headers: {'user-agent': 'node.js'}
             }, function(error2, response2, body2){
                 var commitArray = JSON.parse(body2)
-                repoStorage[currentRepo.name].commitsToday = commitArray.length;
+                repoStorage[hold].commitsToday = commitArray.length;
 
                 fs.writeFile(__dirname + '/../storage/repos.txt', JSON.stringify(repoStorage), (err) => {
                   if(err){
