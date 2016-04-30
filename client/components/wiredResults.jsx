@@ -36,7 +36,7 @@ export default class WiredResults extends Component {
   render() {
     return (
       <div>
-        <style></style>
+        
       News!
       {this.populateDataResults()}
       </div>

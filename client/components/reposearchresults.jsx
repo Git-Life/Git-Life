@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import SearchItem from './searchitem';
 
-export default class SearchResults extends Component {
+export default class RepoSearchResults extends Component {
 
   populateResults(){
     if(this.props.results.data){
