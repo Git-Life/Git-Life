@@ -10,7 +10,7 @@ export default class SplashRepos extends Component {
   populateResults(){
     return _.reduce(this.props.repos.data, (prev, curr)=>{
       let html = (
-        <li> {curr.name} {curr.lang} Commits today: {curr.commitsToday}</li>
+        <li className='collection-item'> {curr.name} {curr.lang} Commits today: {curr.commitsToday}</li>
       );
       prev.push(html);
       return prev;
@@ -21,7 +21,7 @@ export default class SplashRepos extends Component {
     return(
       <div >
         <button onClick={(event)=>{ this.getSplashRepos(); }}>fasdf</button>
-        <ul>
+        <ul className="collection">
           {this.populateResults()}
         </ul>
     </div>
