@@ -17,9 +17,6 @@ function gitHTTP(method, reqString, cb){
   }, cb);
 }
 
-
-
-
 module.exports = function(req, res){
   //check if we've done this today already
   if(lastTimeChecked === undefined || (Date.now() - lastTimeChecked) > oneDayLength){
@@ -60,8 +57,6 @@ module.exports = function(req, res){
                 }
               });
             });
-
-
           })(i, afterTheIf);
         }
       });
@@ -80,8 +75,4 @@ module.exports = function(req, res){
     console.log('file sent');
     res.send(sendMe);
   }
-
-
-
-
 };
