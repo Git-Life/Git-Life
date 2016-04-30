@@ -11,7 +11,7 @@ var oneDayLength = 86400000;
 
 function gitHTTP(method, reqString, cb){
   request({
-    uri: root + reqString + secretURL,
+    uri: reqString + secretURL,
     method: method,
     headers: {'user-agent': 'node.js'}
   }, cb);
@@ -24,7 +24,7 @@ module.exports = function(req, res){
   //check if we've done this today already
   if(lastTimeChecked === undefined || (Date.now() - lastTimeChecked) > oneDayLength){
     //get most starred repos updated today
-    gitHTTP('GET', gitRequest, function (error, response, body) {
+    gitHTTP('GET', root + gitRequest, function (error, response, body) {
         if(error){
           console.log('Error: ', error);
         }
