@@ -10,6 +10,7 @@ var lastTimeChecked;
 var oneDayLength = 86400000;
 
 
+
 module.exports = function(req, res){
   //check if we've done this today already
   if(lastTimeChecked === undefined || (Date.now() - lastTimeChecked) > oneDayLength){
@@ -61,17 +62,25 @@ module.exports = function(req, res){
         });
   }
 
-  else{
+
     fs.readFile(__dirname + '/../storage/repos.txt', (err, data) => {
       if(err){
         console.log(err);
       }
       afterTheIf(data);
     });
-  }
+
   function afterTheIf(sendMe){
     console.log('file sent');
     res.send(sendMe);
+  }
+
+  function gitHTTP(method, reqString, cb){
+    request({
+      uri: root + reqString + secretURL,
+      method: method,
+      headers: {'user-agent': 'node.js'}
+    }, cb(error, response, body));
   }
 
 
