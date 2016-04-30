@@ -16,7 +16,7 @@ const webpackConfig = {
     },
       {
         test: /\.css$/,
-        loaders: ['style', 'css', 'postcss']
+        loaders: ['style-loader!css-loader']
       }]
   },
   resolve: {
