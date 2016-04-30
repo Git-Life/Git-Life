@@ -11,7 +11,7 @@ export default class SplashRepos extends Component {
     return(
       <div >
         {this.props.repos}
-        <button onClick={(event)=>{ this.getSplashRepos(); console.log(this.props.repos) }}>fasdf</button>
+        <button onClick={(event)=>{ this.getSplashRepos(); console.log('inside container', this.props.repos) }}>fasdf</button>
     </div>
     );
   }
