@@ -4,6 +4,6 @@ var commitsController    = require('./commitsController.js');
 
 module.exports = function (router) {
   router.get('/repos', trendReposController);
-  router.get('/commits', commitsController);
+  router.get('/commitData', commitsController);
 
 };
