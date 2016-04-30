@@ -18,5 +18,13 @@ export function searchGitHub(searchTerm){
     type: REQUEST_GIT,
     payload: results
   }
+}
+export const GET_SPLASH_REPOS = 'GET_SPLASH_REPOS';
+export function getSplashRepos(){
+  var repos = Axios.get('/splash/repos',{});
+  return{
+    type: GET_SPLASH_REPOS,
+    payload: repos
 
+  }
 }

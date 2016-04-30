@@ -2,19 +2,15 @@ import {reduce} from 'lodash';
 import React, {Component} from 'react';
 
 export default class SplashRepos extends Component {
-  constructor(props){
-    super(props)
-    this.state = {};
-  }
 
   getSplashRepos(value){
-
+    this.props.getSplashRepos();
   }
 
   render() {
     return(
       <div >
-        <button onClick={(event)=>{ this.getSplashRepos() } }Get Repos></button>
+        <button onClick={(event)=>{ this.getSplashRepos() }} Get Repos></button>
     </div>
     );
   }
