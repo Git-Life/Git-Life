@@ -20,7 +20,7 @@ export default class SplashRepos extends Component {
   render() {
     return(
       <div >
-        <button onClick={(event)=>{ this.getSplashRepos(); console.log('inside container', this.props.repos) }}>fasdf</button>
+        <button onClick={(event)=>{ this.getSplashRepos(); }}>fasdf</button>
         <ul>
           {this.populateResults()}
         </ul>

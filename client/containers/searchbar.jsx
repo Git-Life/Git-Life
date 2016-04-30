@@ -5,7 +5,6 @@ export default class SearchBar extends Component {
   constructor(props){
     super(props)
     this.state = {searchTerm: ''};
-    console.log("constructor",this.props.searchTerm)
   }
 
   handleSearch(value){
