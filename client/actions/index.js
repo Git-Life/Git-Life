@@ -22,9 +22,9 @@ export function searchGitHub(searchTerm){
 export const GET_SPLASH_REPOS = 'GET_SPLASH_REPOS';
 export function getSplashRepos(){
   var repos = Axios.get('/splash/repos',{});
+  console.log('this is inside the actions file', repos);
   return{
     type: GET_SPLASH_REPOS,
     payload: repos
-
   }
 }

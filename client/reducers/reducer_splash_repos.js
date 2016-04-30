@@ -1,15 +1,12 @@
 import {GET_SPLASH_REPOS} from '../actions/index';
 
-const initialState = {
-  data: []
-}
+const initialState = "";
 
 export default function(state = initialState, action){
+  console.log('were in reducer splash repos', action.payload);
   switch(action.type){
-    case REQUEST_GIFS:
-    return {
-      ...state, data: action.payload.body.data
-    };
+    case GET_SPLASH_REPOS:
+      return action.payload.data;
     default:
       return state;
   }

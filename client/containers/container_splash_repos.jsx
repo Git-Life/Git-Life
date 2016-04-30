@@ -3,14 +3,15 @@ import React, {Component} from 'react';
 
 export default class SplashRepos extends Component {
 
-  getSplashRepos(value){
+  getSplashRepos(){
     this.props.getSplashRepos();
   }
 
   render() {
     return(
       <div >
-        <button onClick={(event)=>{ this.getSplashRepos() }} Get Repos></button>
+        {this.props.repos}
+        <button onClick={(event)=>{ this.getSplashRepos(); console.log(this.props.repos) }}>fasdf</button>
     </div>
     );
   }

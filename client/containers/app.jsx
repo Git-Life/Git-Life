@@ -13,7 +13,7 @@ class App extends Component {
       <div>
         <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
         <SearchResults results={this.props.results}/>
-        <SplashRepos />
+        <SplashRepos repos={this.props.repos} getSplashRepos = {this.props.actions.getSplashRepos}/>
       </div>
     );
   }
@@ -22,7 +22,8 @@ class App extends Component {
 function mapStateToProps(state){
   return {
     results: state.results,
-    term: state.searchTerm
+    term: state.searchTerm,
+    repos: state.splashRepos
   };
 }
 
