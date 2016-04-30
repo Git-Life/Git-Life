@@ -15,11 +15,7 @@ module.exports = function(req, res){
   //check if we've done this today already
   if(lastTimeChecked === undefined || (Date.now() - lastTimeChecked) > oneDayLength){
     //get most starred repos updated today
-    request({
-      uri: root + gitRequest + secretURL,
-      method: 'GET',
-      headers: {'user-agent': 'node.js'}
-    }, function (error, response, body) {
+    gitHTTP('GET', gitRequest, function (error, response, body) {
         if(error){
           console.log('Error: ', error);
         }
@@ -37,29 +33,29 @@ module.exports = function(req, res){
             var compareDate = new Date();
             compareDate.setDate(compareDate.getDate() - 1);
 
-              //grab the list of commits
-            request({
-              uri: commitsURL + '?since=' + compareDate.toISOString() + secretURL,
-              method: 'GET',
-              headers: {'user-agent': 'node.js'}
-            }, function(error2, response2, body2){
-                var commitArray = JSON.parse(body2)
-                repoStorage[hold].commitsToday = commitArray.length;
+            //grab the list of commits
+            var commitRequest = commitsURL + '?since=' + compareDate.toISOString();
+            getHTTP('GET', commitRequest,
+            function(error2, response2, body2){
+              var commitArray = JSON.parse(body2)
+              repoStorage[hold].commitsToday = commitArray.length;
 
-                fs.writeFile(__dirname + '/../storage/repos.txt', JSON.stringify(repoStorage), (err) => {
-                  if(err){
-                    console.log(err);
-                  }
-                  console.log('file was saved');
-                  lastTimeChecked = new Date();
-                  if(hold === 9){
-                    cb(repoStorage);
-                  }
-                });
+              fs.writeFile(__dirname + '/../storage/repos.txt', JSON.stringify(repoStorage), (err) => {
+                if(err){
+                  console.log(err);
+                }
+                console.log('file was saved');
+                lastTimeChecked = new Date();
+                if(hold === 9){
+                  cb(repoStorage);
+                }
               });
-            })(i, afterTheIf);
-          }
-        });
+            });
+
+
+          })(i, afterTheIf);
+        }
+      });
   }
 
 
