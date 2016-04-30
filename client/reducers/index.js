@@ -10,7 +10,8 @@ const rootReducer = combineReducers({
   results: ReducerResults,
   splashRepos: ReducerSplashRepos,
   commitData: ReducerCommits,
-  wiredResults: ReducerSplash
+  wiredResults: ReducerSplash,
+  dataResults: ReducerSplash,
 });
 
 export default rootReducer;

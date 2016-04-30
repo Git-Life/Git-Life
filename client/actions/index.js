@@ -45,7 +45,7 @@ export function getCommitData(){
 
 export const REQUEST_WIRED = 'REQUEST_WIRED';
 export function searchWired(){
-  var wiredResults = Axios.get('/splash/rss', {
+  var wiredResults = Axios.get('/splash/rsswired', {
       params: {
       }
   });
@@ -53,4 +53,17 @@ export function searchWired(){
     type: REQUEST_WIRED,
     payload: wiredResults
   }
+}
+export const REQUEST_DATAFEED = 'REQUEST_DATAFEED';
+export function searchData(){
+  var dataResults = Axios.get('/splash/rssdata', {
+      params: {
+
+      }
+  });
+  return {
+    type: REQUEST_DATAFEED,
+    payload: dataResults
+  }
+
 }

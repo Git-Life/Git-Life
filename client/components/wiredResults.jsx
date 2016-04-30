@@ -10,7 +10,7 @@ export default class WiredResults extends Component {
     this.populateResults = this.populateResults.bind(this);
   }
   componentWillMount() {
-     this.props.wired();
+     this.props.searchData();
   }
 
   populateResults(){
@@ -23,11 +23,22 @@ export default class WiredResults extends Component {
     }, []);
   }
 
+  populateDataResults(){
+    return reduce(this.props.dataResults, (accum, item, key) => {
+      let html =(
+        <WiredItem key={key} title={item.title} link={item.link}/>
+      );
+      accum.push(html);
+      return accum;
+    }, []);
+  }
+
   render() {
     return (
       <div>
+        <style></style>
       News!
-      {this.populateResults()}
+      {this.populateDataResults()}
       </div>
     );
   }
