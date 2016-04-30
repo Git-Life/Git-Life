@@ -20,7 +20,7 @@ export default class UserResults extends Component {
       }, []);
     }
     else{
-      return 'loading';
+      
     }
 
 

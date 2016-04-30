@@ -7,18 +7,15 @@ export default class RepoSearchResults extends Component {
     if(this.props.results.data){
       return _.reduce(this.props.results.data.items, (accum, item)=>{
         let html =(
-          <SearchItem description={item.description} repo_url={item.clone_url} key={item.id}/>
+            <SearchItem description={item.description} issues={"Open Issues: " + item.open_issues} issuesUrl={item.issues_url} repoUrl={item.clone_url} key={item.clone_url}/>
         );
         accum.push(html);
         return accum;
       }, []);
     }
     else{
-      return 'loading';
+    
     }
-
-
-
   }
 
   render() {
