@@ -17,7 +17,6 @@ class App extends Component {
         <div>
           <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
           <UserResults results={this.props.results} />
-          <SearchResults results={this.props.results}/>
           <RepoSearchResults results={this.props.results}/>
         </div>
           <CommitItems commitData = {this.props.commitData} getCommitData={this.props.actions.getCommitData}/>
