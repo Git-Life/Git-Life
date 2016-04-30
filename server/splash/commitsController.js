@@ -30,7 +30,8 @@ module.exports = function(req, res){
     // var query = 'search/repositories?q=react-redux';
 
     // works using Alex's query string
-    var query = 'search/repositories?q=react';
+    // var query = 'search/repositories?q=react';   // Alex/s query works !
+    var query = 'events';
     console.log('about to create request (comitsController.js)');
 
 
@@ -47,7 +48,7 @@ module.exports = function(req, res){
             console.log('Error: ', error);
           }
 
-          fs.writeFile(__dirname + '/../dummyData_SH_temp/commits.txt', body, (err) => {
+          fs.writeFile(__dirname + '/../dummyData_SH_temp/commits.txt', JSON.stringify(body), (err) => {
             if(err){
               console.log('fs.writeFile error in server/splash/commitsController.js', err);
             }
