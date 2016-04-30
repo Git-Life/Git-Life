@@ -7,13 +7,14 @@ export default class WiredResults extends Component {
 
   constructor(props) {
     super(props);
-    console.log("got in here")
     this.populateResults = this.populateResults.bind(this);
+  }
+  componentWillMount() {
+     this.props.wired();
   }
 
   populateResults(){
-    console.log("this got called tbh", this.props.wiredResults)
-    return reduce(this.props.wiredResults.data, (accum, item, key) => {
+    return reduce(this.props.wiredResults, (accum, item, key) => {
       let html =(
         <WiredItem key={key} title={item.title}/>
       );

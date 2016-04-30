@@ -1,5 +1,4 @@
 import {reduce} from 'lodash';
-import {map} from 'lodash';
 import React, {Component} from 'react';
 
 export default class SearchBar extends Component {
@@ -13,11 +12,6 @@ export default class SearchBar extends Component {
     this.props.onSearchTermChange(value);
     this.setState({searchTerm: value});
     this.props.onRequest(value);
-
-  }
-
-  handleWired(){
-    this.props.wired();
   }
 
 
@@ -27,8 +21,7 @@ export default class SearchBar extends Component {
           <input
             onChange={(event) => {this.handleSearch(event.target.value)}}
           placeholder="Search GitHub" />
-        <button onClick={(event)=>{ this.handleSearch(this.state.searchTerm); this.handleWired()}}>Search</button>
-
+        <button onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>Search</button>
     </div>
     );
   }
