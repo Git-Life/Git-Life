@@ -4,20 +4,32 @@ import UserResult from '../components/userResult';
 export default class UserResults extends Component {
 
   populateResults(){
-    console.log(this.props.results);
-    return _.reduce(this.props.results.data, (accum, item)=>{
-      let html =(
-        <UserResult description={item.description} repo_url={item.clone_url} key={item.id}/>
-      );
-      accum.push(html);
-      return accum;
-    }, []);
+    if(this.props.results.data){
+      return _.reduce(this.props.results.data.contributors, (accum, item)=>{
+        let html =(
+          <UserResult
+            name={item.name}
+            url={item.url}
+            key={item.id}
+            contributions={item.contributions}
+            count={item.count}
+            />
+        );
+        accum.push(html);
+        return accum;
+      }, []);
+    }
+    else{
+      return 'loading';
+    }
+
+
+
   }
 
   render() {
     return (
-      <div>
-        Results!
+      <div className='collection'>
         {this.populateResults()}
       </div>
     );
