@@ -1,6 +1,7 @@
 var path = require('path');
 var request = require('request');
 var secret = require('../splash/tempsecret.js');
+var userParse = require('./userController.js');
 
 
 var root = 'https://api.github.com/';
@@ -24,7 +25,8 @@ module.exports = {
 			if(error){
         console.log('Error: ', error);
       }
-			res.send(JSON.parse(body).items);
+      userParse(body, res);
+			//res.send(JSON.parse(body).items);
 		});
 	},
 
