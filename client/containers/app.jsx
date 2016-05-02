@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 import CommitItems from '../components/commititems';
+import WiredResults from '../components/wiredResults';
 
 class App extends Component {
   render(){
@@ -18,7 +19,10 @@ class App extends Component {
         <div className="commits">
           <CommitItems commitData = {this.props.commitData} getCommitData={this.props.actions.getCommitData}/>
         </div>
+      <div>
+        <WiredResults wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
       </div>
+    </div>
     );
   }
 }
@@ -28,6 +32,7 @@ function mapStateToProps(state){
     results: state.results,
     term: state.searchTerm,
     commitData: state.commitData
+    wiredResults: state.wiredResults
   };
 }
 

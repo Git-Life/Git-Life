@@ -12,7 +12,7 @@ export const REQUEST_GIT = 'REQUEST_GIT';
 export function searchGitHub(searchTerm){
   var results = Axios.get('/search/repos', {
       params: {
-      searchTerm: searchTerm
+        searchTerm: searchTerm
       }
   });
   return {
@@ -33,5 +33,16 @@ export function getCommitData(){
   return {
     type: COMMIT_DATA,
     payload: results
+  }
+
+export const REQUEST_WIRED = 'REQUEST_WIRED';
+export function searchWired(){
+  var wiredResults = Axios.get('/splash/rss', {
+      params: {
+      }
+  });
+  return {
+    type: REQUEST_WIRED,
+    payload: wiredResults
   }
 }
