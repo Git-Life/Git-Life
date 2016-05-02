@@ -7,6 +7,7 @@ export function updateSearchTerm(searchTerm = null){
     searchTerm
   }
 }
+
 export const REQUEST_GIT = 'REQUEST_GIT';
 export function searchGitHub(searchTerm){
   var results = Axios.get('/search/repos', {
@@ -19,4 +20,18 @@ export function searchGitHub(searchTerm){
     payload: results
   }
 
+}
+
+export const COMMIT_DATA = 'COMMIT_DATA';
+export function getCommitData(){
+  // add searchTerm parameter if want to base results on this,
+  // and also add searchTerm as a 'params' object
+  var results = Axios.get('/splash/commitData', {
+      params: {
+      }
+  });
+  return {
+    type: COMMIT_DATA,
+    payload: results
+  }
 }
