@@ -13,6 +13,7 @@ export default class SearchBar extends Component {
     this.props.onRequest(value);
   }
 
+
   render() {
     return(
       <div >
