@@ -19,11 +19,8 @@ function gitHTTP(method, reqString, cb){
 module.exports = {
 	getRepos: function (req, res) {
 		var query = req.query.searchTerm;
-		request({
-			uri: root + 'search/repositories?q=' + query,
-			method: 'GET',
-      headers: {'user-agent': 'node.js'}
-		}, function (error, response, body) {
+    gitHTTP('GET', root + 'search/repositories?q=' + query,
+     function (error, response, body) {
 			if(error){
         console.log('Error: ', error);
       }
