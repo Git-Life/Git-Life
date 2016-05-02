@@ -1,10 +1,10 @@
 var request = require('request');
 var fs = require('fs');
 
-const SECRET = require('../config.js');
+const SECRET = require('./tempsecret.js');
 const GITHUB_ROOT = 'https://api.github.com/';
 
-const SECRET_URL  = '&client_id=' + SECRET.clientID + '&client_secret=' + SECRET.clientSecret;
+const SECRET_URL  = '&client_id=' + SECRET.id + '&client_secret=' + SECRET.secret;
 
 
 

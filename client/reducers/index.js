@@ -8,7 +8,7 @@ import ReducerSplash from './reducer_splashTopics';
 const rootReducer = combineReducers({
   term: ReducerTerm,
   results: ReducerResults,
-  splashRepos: ReducerSplashRepos
+  splashRepos: ReducerSplashRepos,
   commitData: ReducerCommits,
   wiredResults: ReducerSplash
 });
