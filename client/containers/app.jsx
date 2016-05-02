@@ -16,14 +16,11 @@ class App extends Component {
       <div className="splashPage">
         <div>
           <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
-          <SearchResults results={this.props.results}/>
           <UserResults results={this.props.results} />
         </div>
         <div className="commits">
-          <CommitItems commitData = {this.props.commitData} getCommitData={this.props.actions.getCommitData}/>
         </div>
       <div>
-        <WiredResults wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
       </div>
     </div>
     );
