@@ -28,6 +28,20 @@ module.exports = {
       userParse(body, res);
 		});
 	},
+	getUsers: function (req, res) {
+		var query = req.query.searchTerm;
+		request({
+			uri: root + 'search/repositories?q=' + query + 'in:description&sort=stars&order=desc',
+			method: 'GET',
+      headers: {'user-agent': 'node.js'}
+		}, function (error, response, body) {
+      if(error){
+        console.log('Error: ', error);
+
+      }
+			res.send(JSON.parse(body).items);
+		});
+	},
 
 	getCode: function (req, res) {
 		var query = req.query.searchTerm;
@@ -58,17 +72,4 @@ module.exports = {
     });
 	},
 
-	getUsers: function (req, res) {
-		var query = req.query.searchTerm;
-		request({
-			uri: root + 'search/users?q=' + query,
-			method: 'GET',
-			headers: {'user-agent': 'node.js'}
-		}, function (error, response, body) {
-      if(error){
-        console.log('Error: ', error);
-      }
-			res.send(JSON.parse(body).items);
-		});
-	}
 };

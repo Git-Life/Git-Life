@@ -1,4 +1,5 @@
 import {reduce} from 'lodash';
+import {debounce} from 'lodash';
 import React, {Component} from 'react';
 
 export default class SearchBar extends Component {
@@ -8,6 +9,7 @@ export default class SearchBar extends Component {
   }
 
   handleSearch(value){
+
     this.props.onSearchTermChange(value);
     this.setState({searchTerm: value});
     this.props.onRequest(value);
