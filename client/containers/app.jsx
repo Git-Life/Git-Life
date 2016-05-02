@@ -8,6 +8,7 @@ import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 import CommitItems from '../components/commititems';
 import WiredResults from '../components/wiredResults';
+import UserResults from './userResults';
 
 class App extends Component {
   render(){
