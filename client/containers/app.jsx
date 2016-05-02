@@ -31,7 +31,7 @@ function mapStateToProps(state){
   return {
     results: state.results,
     term: state.searchTerm,
-    commitData: state.commitData
+    commitData: state.commitData,
     wiredResults: state.wiredResults
   };
 }

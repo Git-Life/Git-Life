@@ -34,6 +34,7 @@ export function getCommitData(){
     type: COMMIT_DATA,
     payload: results
   }
+}
 
 export const REQUEST_WIRED = 'REQUEST_WIRED';
 export function searchWired(){
