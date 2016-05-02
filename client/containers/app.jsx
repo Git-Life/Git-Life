@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './searchbar';
 import SearchResults from'../components/searchresults';
+import SplashRepos from './container_splash_repos';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
@@ -31,6 +32,7 @@ function mapStateToProps(state){
   return {
     results: state.results,
     term: state.searchTerm,
+    repos: state.splashRepos,
     commitData: state.commitData,
     wiredResults: state.wiredResults
   };

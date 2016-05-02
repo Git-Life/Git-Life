@@ -10,7 +10,7 @@ export function updateSearchTerm(searchTerm = null){
 
 export const REQUEST_GIT = 'REQUEST_GIT';
 export function searchGitHub(searchTerm){
-  var results = Axios.get('/search/repos', {
+  var results = Axios.get('/splash/repos', {
       params: {
         searchTerm: searchTerm
       }
@@ -19,7 +19,14 @@ export function searchGitHub(searchTerm){
     type: REQUEST_GIT,
     payload: results
   }
-
+}
+export const GET_SPLASH_REPOS = 'GET_SPLASH_REPOS';
+export function getSplashRepos(){
+  var repos = Axios.get('/splash/repos',{});
+  return{
+    type: GET_SPLASH_REPOS,
+    payload: repos
+  }
 }
 
 export const COMMIT_DATA = 'COMMIT_DATA';

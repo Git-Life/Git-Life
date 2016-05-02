@@ -33,6 +33,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-react-hmre": "^1.1.1",
     "body-parser": "^1.15.0",
+    "css-loader": "^0.23.1",
     "express": "^4.13.4",
     "feed": "^0.3.0",
     "feedparser": "^1.1.4",
@@ -46,6 +47,7 @@
     "redux": "^3.5.2",
     "redux-promise": "^0.5.3",
     "request": "^2.72.0",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.0",
     "webpack-hot-middleware": "^2.10.0"
   },
