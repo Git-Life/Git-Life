@@ -35,6 +35,8 @@
     "body-parser": "^1.15.0",
     "css-loader": "^0.23.1",
     "express": "^4.13.4",
+    "feed": "^0.3.0",
+    "feedparser": "^1.1.4",
     "html-webpack-plugin": "^2.16.0",
     "lodash": "^4.11.1",
     "path": "^0.12.7",

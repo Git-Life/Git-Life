@@ -7,11 +7,12 @@ export function updateSearchTerm(searchTerm = null){
     searchTerm
   }
 }
+
 export const REQUEST_GIT = 'REQUEST_GIT';
 export function searchGitHub(searchTerm){
   var results = Axios.get('/splash/repos', {
       params: {
-      searchTerm: searchTerm
+        searchTerm: searchTerm
       }
   });
   return {
@@ -25,5 +26,31 @@ export function getSplashRepos(){
   return{
     type: GET_SPLASH_REPOS,
     payload: repos
+  }
+}
+
+export const COMMIT_DATA = 'COMMIT_DATA';
+export function getCommitData(){
+  // add searchTerm parameter if want to base results on this,
+  // and also add searchTerm as a 'params' object
+  var results = Axios.get('/splash/commitData', {
+      params: {
+      }
+  });
+  return {
+    type: COMMIT_DATA,
+    payload: results
+  }
+}
+
+export const REQUEST_WIRED = 'REQUEST_WIRED';
+export function searchWired(){
+  var wiredResults = Axios.get('/splash/rss', {
+      params: {
+      }
+  });
+  return {
+    type: REQUEST_WIRED,
+    payload: wiredResults
   }
 }
