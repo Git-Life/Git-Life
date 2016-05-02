@@ -4,7 +4,6 @@ var request = require('request');
 var root = 'https://api.github.com/';
 
 module.exports = {
-	//create methods here that supply logic for SearchRouter.js
 	getRepos: function (req, res) {
 		var query = req.query.searchTerm;
 		request({
