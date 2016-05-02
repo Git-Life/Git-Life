@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-// this is how I want each commitItem to be displayed
-// the data avail to me is set at commit_items.jsx
+// the data avail to is set at commit_items.jsx
 export default class CommitItem extends Component{
   render(){
     return (

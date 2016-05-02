@@ -4,7 +4,6 @@ import SearchItem from './searchitem';
 export default class SearchResults extends Component {
 
   populateResults(){
-    // console.log(this.props.results.data);
     return _.reduce(this.props.results.data, (accum, item)=>{
       let html =(
         <SearchItem description={item.description} repo_url={item.clone_url} key={item.id}/>
@@ -17,8 +16,8 @@ export default class SearchResults extends Component {
   render() {
     return (
       <div>
-      Results!
-      {this.populateResults()}
+        Results!
+        {this.populateResults()}
       </div>
     );
   }

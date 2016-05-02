@@ -7,7 +7,6 @@ export default class CommitItems extends Component {
   }
 
   showCommitData(){
-    // console.log(this.props.results.data);
     // makes data available to CommitItem Component
     return _.reduce(this.props.commitData, (accum, item)=>{
       var tagsThisItem = '';
@@ -26,8 +25,8 @@ export default class CommitItems extends Component {
   render() {
     return (
       <div>
-      Commit Data:
-      {this.showCommitData()}
+        Commit Data:
+        {this.showCommitData()}
       </div>
     );
   }
