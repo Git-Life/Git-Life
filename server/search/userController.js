@@ -1,10 +1,8 @@
-//"https://api.github.com/repos/johnno1962/Refactorator/collaborators{/collaborator}"
-//commitsURL = commitsURL.slice(0, commitsURL.length - 6);
 var secret = require('../splash/tempsecret.js');
 var request = require('request');
+var async = require('async');
 
 var secretURL = '&client_id=' + secret.id + '&client_secret=' + secret.secret;
-
 
 function gitHTTP(method, reqString, cb){
   request({
@@ -18,14 +16,14 @@ var userObj = {};
 
 module.exports = function(body, res){
   var items =   JSON.parse(body).items;
-  for(var i = 0; i < 10; i++){
+  items = items.slice(0, 10);
 
-    gitHTTP('GET', items[i].contributors_url + '?', function(err, response, contributors){
+  async.forEachOf(items, function (value, key, callback) {
+    gitHTTP('GET', items[key].contributors_url + '?', function(err, response, contributors){
       if(err){
-        console.log("Error in userController GIT request", err);
+        return callback(err);
       }
-    //console.log(typeof contributors);
-    contributors = JSON.parse(contributors);
+      contributors = JSON.parse(contributors);
       contributors.forEach(function(element, index){
         if (userObj[element.login]){
           userObj[element.login].count++;
@@ -41,13 +39,19 @@ module.exports = function(body, res){
           }
         }
       });
-
-      var arr = Object.keys(userObj).map(function (key) {return userObj[key]});
-      console.log(arr);
+      callback();
 
     });
-  }
+  }, function (err) {
+      if (err) console.error(err.message);
 
-  res.send(items);
+      var userArr = Object.keys(userObj).map(function (key) {return userObj[key]});
+      var sendObj = {
+        items: items,
+        contributors: userArr
+      }
+
+      res.send(sendObj);
+  })
 
 };

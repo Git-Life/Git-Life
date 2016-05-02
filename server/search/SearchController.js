@@ -26,7 +26,6 @@ module.exports = {
         console.log('Error: ', error);
       }
       userParse(body, res);
-			//res.send(JSON.parse(body).items);
 		});
 	},
 
