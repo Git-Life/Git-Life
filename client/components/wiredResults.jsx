@@ -1,20 +1,29 @@
 import React, {Component} from 'react';
 import {reduce} from 'lodash';
 import WiredItem from './wiredItem';
+import DataItem from './dataitem';
+import HNItem from './hnitem';
 
 
 export default class WiredResults extends Component {
 
   constructor(props) {
     super(props);
-    this.populateResults = this.populateResults.bind(this);
+    // this.populateResults = this.populateResults.bind(this);
   }
   componentWillMount() {
-     this.props.searchData();
+    console.log('component mount');
+     this.props.searchData()
+      .then(() => {
+        this.props.wired()
+          .then(() => {
+            this.props.searchHN();
+          });
+      });
   }
 
   populateResults(){
-    return reduce(this.props.wiredResults, (accum, item, key) => {
+    return this.props.wiredResults.reduce((accum, item, key) => {
       let html =(
         <WiredItem key={key} title={item.title} link={item.link}/>
       );
@@ -26,7 +35,16 @@ export default class WiredResults extends Component {
   populateDataResults(){
     return reduce(this.props.dataResults, (accum, item, key) => {
       let html =(
-        <WiredItem key={key} title={item.title} link={item.link}/>
+        <DataItem key={key} title={item.title} link={item.link}/>
+      );
+      accum.push(html);
+      return accum;
+    }, []);
+  }
+  populateHNResults(){
+    return reduce(this.props.hnresults, (accum, item, key) => {
+      let html =(
+        <HNItem key={key} title={item.title} link={item.link}/>
       );
       accum.push(html);
       return accum;
@@ -34,11 +52,24 @@ export default class WiredResults extends Component {
   }
 
   render() {
+    console.log('component rendering')
     return (
-      <div>
-        
-      News!
-      {this.populateDataResults()}
+      <div >
+        <ul className="collapsible" data-collapsible="accordion">
+          <li>
+            <div className="collapsible-header"><i className="material-icons"></i>Hacker News</div>
+            <ul className="collapsible-body">{this.populateHNResults()}</ul>
+          </li>
+          <li>
+            <div className="collapsible-header"><i className="material-icons"></i>DataTau Top News</div>
+            <ul className="collapsible-body">{this.populateDataResults()}</ul>
+          </li>
+          <li>
+            <div className="collapsible-header"><i className="material-icons"></i>Wired Top Tech News</div>
+            <ul className="collapsible-body">{this.populateResults()}</ul>
+          </li>
+        </ul>
+
       </div>
     );
   }

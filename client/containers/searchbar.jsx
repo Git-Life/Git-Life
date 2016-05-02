@@ -9,7 +9,6 @@ export default class SearchBar extends Component {
   }
 
   handleSearch(value){
-
     this.props.onSearchTermChange(value);
     this.setState({searchTerm: value});
     this.props.onRequest(value);

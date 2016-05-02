@@ -20,7 +20,8 @@ class App extends Component {
           <RepoSearchResults results={this.props.results}/>
         </div>
           <CommitItems commitData = {this.props.commitData} getCommitData={this.props.actions.getCommitData}/>
-        <WiredResults searchData={this.props.actions.searchData} dataResults={this.props.dataResults} wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
+        </div>
+        <WiredResults hnresults={this.props.hnResults} searchHN={this.props.actions.searchHN} searchData={this.props.actions.searchData} dataResults={this.props.dataResults} wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
     </div>
     );
   }
@@ -33,7 +34,8 @@ function mapStateToProps(state){
     repos: state.splashRepos,
     commitData: state.commitData,
     wiredResults: state.wiredResults,
-    dataResults: state.dataResults
+    dataResults: state.dataResults,
+    hnResults: state.hnResults
   };
 }
 

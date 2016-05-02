@@ -22,11 +22,13 @@ module.exports={
       var stream = this
       var meta = this.meta
       while (item = stream.read()) {
+        console.log(item);
         results.push(item);
       }
     });
 
     feedparser.on('end', ()=>{
+
       res.send(results);
     });
 
@@ -50,6 +52,37 @@ module.exports={
       var meta = this.meta
       while (item = stream.read()) {
         results.push(item);
+      }
+    });
+
+    feedparser.on('end', ()=>{
+      res.send(results);
+    });
+
+  },
+
+
+  getHNFeed: function(req, res){
+    var req = request('https://news.ycombinator.com/rss'),
+    feedparser = new FeedParser();
+    req.on('error', function (error) {
+    });
+    req.on('response', function (res) {
+      var stream = this;
+      if (res.statusCode != 200) return this.emit('error', new Error('Bad status code'));
+      stream.pipe(feedparser);
+    });
+    feedparser.on('error', function(error) {
+    });
+      var results = [];
+
+    feedparser.on('readable', function() {
+      var stream = this
+      var meta = this.meta
+      while (item = stream.read()) {
+        console.log('item',item);
+        results.push(item);
+
       }
     });
 
