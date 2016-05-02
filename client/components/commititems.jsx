@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import CommitItem from './commit_item';
+import CommitItem from './commititem';
 
 export default class CommitItems extends Component {
   componentWillMount(){

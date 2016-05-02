@@ -5,7 +5,7 @@ import SearchResults from'../components/searchresults';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
-import CommitItems from './../components/commit_items';
+import CommitItems from '../components/commititems';
 
 class App extends Component {
   render(){
