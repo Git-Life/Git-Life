@@ -18,7 +18,6 @@ export default class SearchBar extends Component {
     return(
       <div >
         <input
-          onChange={(event) => {this.handleSearch(event.target.value)}}
           placeholder="Search GitHub" />
         <button onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>Search</button>
       </div>
