@@ -19,13 +19,11 @@ function gitHTTP(method, reqString, cb){
 module.exports = {
 	getRepos: function (req, res) {
 		var query = req.query.searchTerm;
-    console.log('this is query', query);
     gitHTTP('GET', root + 'search/repositories?q=' + query,
      function (error, response, body) {
 			if(error){
         console.log('Error: ', error);
       }
-      console.log(body);
 			res.send(JSON.parse(body).items);
 		});
 	},
