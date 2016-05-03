@@ -7,5 +7,7 @@ var topicsController     = require('./topicsController');
 module.exports = function (router) {
   router.get('/repos', trendReposController);
   router.get('/commitData', commitsController);
-  router.get('/rss', topicsController.getFeed);
+  router.get('/rsswired', topicsController.getWiredFeed);
+  router.get('/rssdata', topicsController.getDataFeed);
+  router.get('/rsshn', topicsController.getHNFeed);
 };

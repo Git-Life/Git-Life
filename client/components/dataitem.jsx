@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default class WiredItem extends Component{
+export default class DataItem extends Component{
   render(){
     return (
       <div>
