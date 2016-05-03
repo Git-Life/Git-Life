@@ -10,4 +10,5 @@ module.exports = function (router) {
   router.get('/rsswired', topicsController.getWiredFeed);
   router.get('/rssdata', topicsController.getDataFeed);
   router.get('/rsshn', topicsController.getHNFeed);
+  router.get('/orgs', trendOrgsController);
 };
