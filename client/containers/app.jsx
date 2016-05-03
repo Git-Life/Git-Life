@@ -8,6 +8,7 @@ import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 import CommitItems from '../components/commititems';
 import WiredResults from '../components/wiredResults';
+import UserResults from './userResults';
 
 class App extends Component {
   render(){
@@ -15,6 +16,7 @@ class App extends Component {
       <div className="splashPage">
         <div>
           <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
+          <UserResults results={this.props.results} />
           <SearchResults results={this.props.results}/>
         </div>
         <div className="commits">

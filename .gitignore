@@ -30,7 +30,7 @@ bower_components/
 
 # secrets
 server/splash/tempsecret.js
-server/storage/repos.txt
+server/storage/
 
 # Floobits
 .floo

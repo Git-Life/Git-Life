@@ -13,12 +13,16 @@ export default class SearchBar extends Component {
     this.props.onRequest(value);
   }
 
+  handleChange(value){
+    this.setState({searchTerm: value});
+  }
+
 
   render() {
     return(
       <div >
         <input
-          onChange={(event) => {this.handleSearch(event.target.value)}}
+          onChange={(event) => {this.handleChange(event.target.value)}}
           placeholder="Search GitHub" />
         <button onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>Search</button>
       </div>
