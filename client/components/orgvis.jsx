@@ -59,7 +59,7 @@ export default class OrgVis extends Component {
     return _.reduce(this.props.orgs.data, (accum, item) => {
 
       let html = (
-        <SearchItem description={item.org} repo_url={item.url} key={item.key}/>
+        <li className='collection-item' class="badge" href={item.url} key={item.key}> {item.org}  </li>
       );
       accum.push(html);
       return accum;
@@ -67,11 +67,14 @@ export default class OrgVis extends Component {
   }
 
   render() {
-    return (
-      <ul className='orgvis'>
+    return (<div>
+
+      <ul className='collection' class="col s4" style={{display: 'inline-block',float:'left', margin: "10px 10px 10px 10px"}}>
+        <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Organizations</p>
         {this.drawChart()}
         {this.populateResults()}
       </ul>
+      </div>
     )
   }
 };
