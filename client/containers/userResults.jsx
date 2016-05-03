@@ -27,40 +27,42 @@ export default class UserResults extends Component {
   }
 
   populateResults(sortBy){
-
-    switch (sortBy) {
-      case 'name':
-        constructHTML(this.props.results.data.contributors
-          .sort((a, b) => {
-            a.name - b.name;
-          }));
-        break;
-      case 'contributions':
-        constructHTML(this.props.results.data.contributors
-          .sort((a, b) => {
-            b.contributions - a.contributions;
-          }));
-        break;
-      case 'count':
-        constructHTML(this.props.results.data.contributors
-          .sort((a, b) => {
-            b.count - a.count;
-          }));
-        break;
-      default:
-        constructHTML(this.props.results.data.contributors
-          .sort((a, b) => {
-            b.count - a.count;
-          }));
-        break;
+    if(this.props.results.data){
+      switch (sortBy) {
+        case 'name':
+          return this.constructHTML(this.props.results.data.contributors
+            .sort((a, b) => {
+              return a.name - b.name;
+            }));
+          break;
+        case 'contributions':
+          return this.constructHTML(this.props.results.data.contributors
+            .sort((a, b) => {
+              return b.contributions - a.contributions;
+            }));
+          break;
+        case 'count':
+          return this.constructHTML(this.props.results.data.contributors
+            .sort((a, b) => {
+              return b.count - a.count;
+            }));
+          break;
+        default:
+          return this.constructHTML(this.props.results.data.contributors
+            .sort((a, b) => {
+              return b.count - a.count;
+            }));
+          break;
+      }
     }
+
 
   }
 
   render() {
     return (
       <div className='collection'>
-        {this.populateResults()}
+        {this.populateResults('contributions')}
       </div>
     );
   }
