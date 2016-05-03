@@ -2,6 +2,11 @@ import React, {Component} from 'react';
 import UserResult from '../components/userResult';
 
 export default class UserResults extends Component {
+  
+  getInitialState: function() {
+    return {results: this.props.initialResults};
+  },
+
 
   populateResults(){
     if(this.props.results.data){
@@ -20,7 +25,7 @@ export default class UserResults extends Component {
       }, []);
     }
     else{
-      
+
     }
 
 
