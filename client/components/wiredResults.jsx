@@ -12,7 +12,6 @@ export default class WiredResults extends Component {
     // this.populateResults = this.populateResults.bind(this);
   }
   componentWillMount() {
-    console.log('component mount');
      this.props.searchData()
       .then(() => {
         this.props.wired()
@@ -52,7 +51,6 @@ export default class WiredResults extends Component {
   }
 
   render() {
-    console.log('component rendering')
     return (
       <div className="container">
         <ul  className="collapsible popout" data-collapsible="accordion">
