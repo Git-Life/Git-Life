@@ -30,6 +30,7 @@ export default class UserResults extends Component {
   render() {
     return (
       <div className='collection'>
+        User Results!
         {this.populateResults()}
       </div>
     );

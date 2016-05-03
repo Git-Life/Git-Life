@@ -52,6 +52,6 @@ module.exports = function(body, res){
         contributors: userArr
       }
 
-      orgParse.getOrgs(sendObj);
+      orgParse.getOrgs(sendObj, res);
   });
 };
