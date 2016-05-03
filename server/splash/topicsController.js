@@ -22,13 +22,11 @@ module.exports={
       var stream = this
       var meta = this.meta
       while (item = stream.read()) {
-        console.log(item);
         results.push(item);
       }
     });
 
     feedparser.on('end', ()=>{
-
       res.send(results);
     });
 
