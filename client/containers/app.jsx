@@ -14,13 +14,10 @@ class App extends Component {
   render(){
     return (
       <div className="splashPage">
-        <div>
           <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
           <UserResults results={this.props.results} />
           <RepoSearchResults results={this.props.results}/>
-        </div>
           <CommitItems commitData = {this.props.commitData} getCommitData={this.props.actions.getCommitData}/>
-        </div>
         <WiredResults hnresults={this.props.hnResults} searchHN={this.props.actions.searchHN} searchData={this.props.actions.searchData} dataResults={this.props.dataResults} wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
     </div>
     );
