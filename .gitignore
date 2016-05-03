@@ -37,3 +37,6 @@ server/storage/
 .floobit
 .floo
 .flooignore
+
+# Git API Auth
+server/splash/tempsecret.js
