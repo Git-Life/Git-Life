@@ -46,6 +46,5 @@ module.exports = {
     };
 
       getRepos(req, res);
-
   }
 };
