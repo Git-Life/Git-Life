@@ -70,6 +70,7 @@
     "karma-webpack": "1.7.0",
     "mocha": "^2.3.4",
     "phantomjs": "^1.9.19",
+    "react-addons-test-utils": "^15.0.2",
     "watch": "0.16.0"
   }
 }
