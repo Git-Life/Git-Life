@@ -6,10 +6,10 @@ export default class UserResults extends Component {
 
   constructor(props){
     super(props)
+    this.state = {filter: ''};
   }
 
   constructHTML(dataObj){
-
     return _.reduce(dataObj, (accum, item)=>{
       let html =(
         <UserResult
@@ -23,7 +23,10 @@ export default class UserResults extends Component {
       accum.push(html);
       return accum;
     }, []);
+  }
 
+  handleFilter(filter){
+    this.setState({filter: filter});
   }
 
   populateResults(sortBy){
@@ -55,14 +58,21 @@ export default class UserResults extends Component {
           break;
       }
     }
-
-
   }
 
   render() {
     return (
       <div className='collection'>
-        {this.populateResults('contributions')}
+
+  <a class='dropdown-button btn' href='#' data-activates='filter'>Sort By</a>
+
+  <ul id='filter' class='dropdown-content'>
+    <li><a href="#!" onclick={this.populateResults('name')}>Name</a></li>
+    <li><a href="#!" onclick={this.populateResults('contributions')}>Contributions</a></li>
+    <li><a href="#!" onclick={this.populateResults('count')}>Count</a></li>
+  </ul>
+
+        {this.populateResults(this.state.filter)}
       </div>
     );
   }
