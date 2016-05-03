@@ -3,11 +3,7 @@ import React, {Component} from 'react';
 export default class CommitItem extends Component{
   render(){
     return (
-      <div>
-        <p>Time of Commit: {this.props.commitTime} <a href={this.props.repo_url}> {this.props.repo_url} </a></p>
-        <p>{this.props.tags}</p>
-        <br />
-      </div>
+        <li>Time of Commit: {this.props.commitTime} <a href={this.props.repo_url}> {this.props.repo_url} </a></li>
     );
   }
 }

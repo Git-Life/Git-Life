@@ -16,6 +16,7 @@ import WiredResults from '../components/wiredResults';
 import UserResults from './userResults';
 import test from '../styles/style.css';
 
+
 class App extends Component {
   render(){
     return (
@@ -29,6 +30,7 @@ class App extends Component {
 =======
 >>>>>>> Feat: removed results components from front page
           <OrgVis orgs={this.props.orgs} getTrendingOrgs={this.props.actions.getTrendingOrgs}/>
+          <SplashRepos repos={this.props.results} getSplashRepos={this.props.actions.getSplashRepos}/>
           <CommitItems commitData = {this.props.commitData} getCommitData={this.props.actions.getCommitData}/>
         <WiredResults hnresults={this.props.hnResults} searchHN={this.props.actions.searchHN} searchData={this.props.actions.searchData} dataResults={this.props.dataResults} wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
     </div>

@@ -24,10 +24,10 @@ export default class CommitItems extends Component {
 
   render() {
     return (
-      <div>
+      <ul className="container">
         Commit Data:
         {this.showCommitData()}
-      </div>
+      </ul>
     );
   }
 

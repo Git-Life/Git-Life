@@ -68,11 +68,10 @@ export default class OrgVis extends Component {
 
   render() {
     return (
-      <div className='orgvis'>
-        Org Trend Results!
+      <ul className='orgvis'>
         {this.drawChart()}
         {this.populateResults()}
-      </div>
+      </ul>
     )
   }
 };
