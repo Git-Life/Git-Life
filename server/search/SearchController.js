@@ -5,6 +5,7 @@ var userParse = require('./userController.js');
 
 
 var root = 'https://api.github.com/';
+var data;
 
 var secretURL = '&client_id=' + secret.id + '&client_secret=' + secret.secret;
 
@@ -28,6 +29,7 @@ module.exports = {
       userParse(body, res);
 		});
 	},
+
 	getUsers: function (req, res) {
 		var query = req.query.searchTerm;
 		request({
@@ -38,26 +40,25 @@ module.exports = {
       if(error){
         console.log('Error: ', error);
       }
-			res.send(JSON.parse(body).items);
-		});
-	},
+      res.send(JSON.parse(body).items);
+    });
+  },
 
-	getCode: function (req, res) {
-		var query = req.query.searchTerm;
-		request({
-			uri: root + 'search/code?q=' + query,
-			method: 'GET',
+  getCode: function (req, res) {
+    var query = req.query.searchTerm;
+    request({
+      uri: root + 'search/code?q=' + query,
+      method: 'GET',
       headers: {'user-agent': 'node.js'}
-		}, function (error, response, body) {
+    }, function (error, response, body) {
       if(error){
         console.log('Error: ', error);
-
       }
-			res.send(JSON.parse(body).items);
-		});
-	},
+      res.send(JSON.parse(body).items);
+    });
+  },
 
-	getIssues: function (req, res) {
+  getIssues: function (req, res) {
     var query = req.query.searchTerm;
     request({
       uri: root + 'search/issues?q=' + query,
@@ -69,6 +70,5 @@ module.exports = {
       }
       res.send(JSON.parse(body).items);
     });
-	},
-
+  }
 };
