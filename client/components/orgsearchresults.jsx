@@ -13,7 +13,7 @@ export default class OrgSearchResults extends Component {
         return accum;
       }, []);
     }
-    else{
+    else {
     
     }
   }
