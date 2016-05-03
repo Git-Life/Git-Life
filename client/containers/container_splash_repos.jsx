@@ -12,7 +12,7 @@ export default class SplashRepos extends Component {
   }
 
   populateResults(){
-
+    //pull props repos data into state, then modify the array as needed and update state
     if(this.props.repos.data){
       return _.reduce(this.props.repos.data, (prev, curr)=>{
         let html = (

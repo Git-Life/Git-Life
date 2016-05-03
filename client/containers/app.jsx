@@ -18,7 +18,7 @@ class App extends Component {
       <div className="splashPage">
           <SplashRepos getSplashRepos={this.props.actions.getSplashRepos} repos={this.props.repos}/>
           <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
-          <UserResults results={this.props.results} />
+          <UserResults initialResults={this.props.results} />
           <OrgVis orgs={this.props.orgs} getTrendingOrgs={this.props.actions.getTrendingOrgs}/>
           <RepoSearchResults results={this.props.results}/>
           <CommitItems commitData = {this.props.commitData} getCommitData={this.props.actions.getCommitData}/>
