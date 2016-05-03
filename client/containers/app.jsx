@@ -17,10 +17,13 @@ class App extends Component {
         <div>
           <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
           <UserResults results={this.props.results} />
+          <SearchResults results={this.props.results}/>
         </div>
         <div className="commits">
+          <CommitItems commitData = {this.props.commitData} getCommitData={this.props.actions.getCommitData}/>
         </div>
       <div>
+        <WiredResults wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
       </div>
     </div>
     );
