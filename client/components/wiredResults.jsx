@@ -54,18 +54,18 @@ export default class WiredResults extends Component {
   render() {
     console.log('component rendering')
     return (
-      <div >
-        <ul className="collapsible" data-collapsible="accordion">
+      <div className="container">
+        <ul  className="collapsible popout" data-collapsible="accordion">
           <li>
-            <div className="collapsible-header"><i className="material-icons"></i>Hacker News</div>
-            <ul className="collapsible-body">{this.populateHNResults()}</ul>
+            <div className="collapsible-header"><i className="material-icons" ></i>Hacker News</div>
+            <ul className="collapsible-body active">{this.populateHNResults()}</ul>
           </li>
           <li>
-            <div className="collapsible-header"><i className="material-icons"></i>DataTau Top News</div>
+            <div className="collapsible-header"><i className="material-icons" ></i>DataTau Top News</div>
             <ul className="collapsible-body">{this.populateDataResults()}</ul>
           </li>
           <li>
-            <div className="collapsible-header"><i className="material-icons"></i>Wired Top Tech News</div>
+            <div className="collapsible-header"><i className="material-icons" ></i>Wired Top Tech News</div>
             <ul className="collapsible-body">{this.populateResults()}</ul>
           </li>
         </ul>
