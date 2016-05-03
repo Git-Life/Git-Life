@@ -1,7 +1,6 @@
 var request = require('request');
 var secret = require('./tempsecret.js');
 var searchController = require('../search/SearchController.js');
-// var fs = require('fs');
 
 module.exports = {
 
@@ -20,6 +19,7 @@ module.exports = {
       for(var i = 0; i < repos.length; i++){
         if(repos[i].owner.type === "Organization"){
           if(orgsObj[repos[i].owner.login] === undefined){
+
             orgsObj[repos[i].owner.login] = {org: repos[i].owner.login, trendingRepo: repos[i].name, url: repos[i].owner.url, key: repos[i].owner.id, instances: 1};            
           } else {
             orgsObj[repos[i].owner.login].instances++;
