@@ -70,6 +70,6 @@ module.exports = {
       }
       res.send(JSON.parse(body).items);
     });
-	},
+	}
 
 };

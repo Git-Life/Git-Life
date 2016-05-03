@@ -50,6 +50,7 @@ module.exports = function(body, res){
         items: items,
         contributors: userArr
       }
+      console.log('userController result: ', sendObj);
 
       res.send(sendObj);
   })
