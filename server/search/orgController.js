@@ -3,7 +3,7 @@ var request = require('request');
 var async   = require('async');
 
 module.exports = {
-  getOrgs: function (resObj) {
+  getOrgs: function (resObj, res) {
 
     resObj['organizations'] = [];
 
@@ -18,7 +18,7 @@ module.exports = {
       }
     });
 
-    console.log('organizations: ', resObj.organizations);
+    console.log('organizations: ', resObj.contributors);
     res.send(resObj);
   }
 };

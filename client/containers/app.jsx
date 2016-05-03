@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './searchbar';
 import SplashRepos from './container_splash_repos';
-import RepoSearchResults from'../components/reposearchresults';
+import RepoSearchResults from '../components/reposearchresults';
+import OrgSearchResults from '../components/orgsearchresults';
 import OrgVis from '../components/orgvis';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -19,8 +20,9 @@ class App extends Component {
           <SplashRepos getSplashRepos={this.props.actions.getSplashRepos} repos={this.props.repos}/>
           <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
           <UserResults results={this.props.results} />
-          <OrgVis orgs={this.props.orgs} getTrendingOrgs={this.props.actions.getTrendingOrgs}/>
           <RepoSearchResults results={this.props.results}/>
+          <OrgSearchResults results={this.props.results} />
+          <OrgVis orgs={this.props.orgs} getTrendingOrgs={this.props.actions.getTrendingOrgs}/>
           <CommitItems commitData = {this.props.commitData} getCommitData={this.props.actions.getCommitData}/>
         <WiredResults hnresults={this.props.hnResults} searchHN={this.props.actions.searchHN} searchData={this.props.actions.searchData} dataResults={this.props.dataResults} wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
     </div>

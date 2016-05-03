@@ -20,7 +20,7 @@ export default class RepoSearchResults extends Component {
 
   render() {
     return (
-      <div>
+      <div className='collection'>
         Results!
         {this.populateResults()}
       </div>
