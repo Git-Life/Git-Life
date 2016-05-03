@@ -39,7 +39,6 @@ export default class OrgVis extends Component {
       {color: "#4D5360", highlight: "#616774"}
     ];
 
-    //console.log('OrgVis: ', this.props.orgs.data);
     _.each(this.props.orgs.data, (item) => {
       if(count < 5){
         pieData.push({
