@@ -84,3 +84,16 @@ export function searchHN(){
     payload: hnResults
   }
 }
+export const BUBBLE_CHART = 'BUBBLE_CHART';
+export function createBubbleChart(data){
+  return {
+    type: BUBBLE_CHART,
+    data: {
+       _id: '1',        // unique id (required)
+       value: 3,      // used to determine relative size of bubbles (required)
+       displayText: 'Number 1',// will use _id if undefined
+       colorValue: 3, // used to determine color
+       selected: true,  // if true will use selectedColor/selectedTextColor for circle/text
+    }
+  }
+}

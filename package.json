@@ -34,7 +34,11 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-react-hmre": "^1.1.1",
     "body-parser": "^1.15.0",
+<<<<<<< 2181c80f39ce3add3d6c46fd24eae43708156dca
     "css-loader": "^0.23.1",
+=======
+    "d3": "^3.5.16",
+>>>>>>> core: added bubble chart template and redux state for org data, not working yet
     "express": "^4.13.4",
     "feed": "^0.3.0",
     "feedparser": "^1.1.4",
@@ -43,6 +47,7 @@
     "materialize-css": "^0.97.6",
     "path": "^0.12.7",
     "react": "^15.0.1",
+    "react-bubble-chart": "^0.4.0",
     "react-dom": "^15.0.1",
     "react-redux": "^4.4.5",
     "react-router": "^2.3.0",
