@@ -14,14 +14,13 @@ export default class RepoSearchResults extends Component {
       }, []);
     }
     else{
-    
+
     }
   }
 
   render() {
     return (
-      <div className='collection'>
-        Results!
+      <div className='collection' >
         {this.populateResults()}
       </div>
     );

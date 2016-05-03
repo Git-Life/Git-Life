@@ -19,7 +19,7 @@ import test from '../styles/style.css';
 class App extends Component {
   render(){
     return (
-      <div className="splashPage">
+      <div className="row">
           <SplashRepos getSplashRepos={this.props.actions.getSplashRepos} repos={this.props.repos}/>
           <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
 <<<<<<< a711525e9b8420c848cfff56f46b046810801619
