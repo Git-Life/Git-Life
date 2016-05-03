@@ -78,3 +78,6 @@ export default class UserResults extends Component {
   }
 
 };
+
+Counter.propTypes = { initialCount: React.PropTypes.number };
+Counter.defaultProps = { initialCount: 0 };
