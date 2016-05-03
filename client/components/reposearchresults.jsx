@@ -14,7 +14,7 @@ export default class RepoSearchResults extends Component {
       }, []);
     }
     else{
-    
+
     }
   }
 
