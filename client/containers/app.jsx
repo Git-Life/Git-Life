@@ -10,7 +10,7 @@ import * as Actions from '../actions';
 import CommitItems from '../components/commititems';
 import WiredResults from '../components/wiredResults';
 import UserResults from './userResults';
-require('../styles/style.css');
+import test from '../styles/style.css';
 
 class App extends Component {
   render(){

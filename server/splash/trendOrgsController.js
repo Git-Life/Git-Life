@@ -5,7 +5,6 @@ var searchController = require('../search/SearchController.js');
 module.exports = {
 
   getRepresentedOrgs: function (req, res) {
-    console.log('Inside getRepresentedOrgs');
 
     var orgs = [];
     var orgsObj = {};
@@ -20,11 +19,11 @@ module.exports = {
         if(repos[i].owner.type === "Organization"){
           if(orgsObj[repos[i].owner.login] === undefined){
 
-            orgsObj[repos[i].owner.login] = {org: repos[i].owner.login, trendingRepo: repos[i].name, url: repos[i].owner.url, key: repos[i].owner.id, instances: 1};            
+            orgsObj[repos[i].owner.login] = {org: repos[i].owner.login, trendingRepo: repos[i].name, url: repos[i].owner.url, key: repos[i].owner.id, instances: 1};
           } else {
             orgsObj[repos[i].owner.login].instances++;
           }
-        } 
+        }
       }
     };
 
@@ -37,9 +36,7 @@ module.exports = {
         if(error){
           console.log('Error: ', error);
         }
-        console.log('repos length: ', JSON.parse(body).items.length);
         findOrgs(JSON.parse(body).items);
-        console.log('orgs: ', orgsObj);
 
         res.send(orgsObj);
       });
