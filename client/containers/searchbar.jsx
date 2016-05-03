@@ -22,7 +22,7 @@ export default class SearchBar extends Component {
   render() {
     return(
       <div >
-          <input placeholder="Search GitHub" />
+        <input placeholder="Search GitHub" />
         <button onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>Search</button>
       </div>
     );
