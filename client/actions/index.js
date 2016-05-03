@@ -7,7 +7,6 @@ export function updateSearchTerm(searchTerm = null){
     searchTerm
   }
 }
-
 export const REQUEST_GIT = 'REQUEST_GIT';
 export function searchGitHub(searchTerm){
   var results = Axios.get('/search/repos', {
@@ -20,6 +19,15 @@ export function searchGitHub(searchTerm){
     payload: results
   }
 }
+export const ORGVIS_REQUEST = 'ORGVIS_REQUEST';
+export function getTrendingOrgs(){
+  var orgs = Axios.get('/splash/orgs', {
+  });
+  return {
+    type: ORGVIS_REQUEST,
+    payload: orgs
+  }
+}
 export const GET_SPLASH_REPOS = 'GET_SPLASH_REPOS';
 export function getSplashRepos(){
   var repos = Axios.get('/splash/repos',{});
@@ -28,7 +36,6 @@ export function getSplashRepos(){
     payload: repos
   }
 }
-
 export const COMMIT_DATA = 'COMMIT_DATA';
 export function getCommitData(){
   // add searchTerm parameter if want to base results on this,
@@ -42,7 +49,6 @@ export function getCommitData(){
     payload: commits
   }
 }
-
 export const REQUEST_WIRED = 'REQUEST_WIRED';
 export function searchWired(){
   var wiredResults = Axios.get('/splash/rsswired', {
@@ -65,7 +71,6 @@ export function searchData(){
     type: REQUEST_DATAFEED,
     payload: dataResults
   }
-
 }
 export const REQUEST_HN = 'REQUEST_HN';
 export function searchHN(){
@@ -78,5 +83,4 @@ export function searchHN(){
     type: REQUEST_HN,
     payload: hnResults
   }
-
 }
