@@ -11,7 +11,7 @@ const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <RepoSecondPage/>
+    <App2/>
   </Provider>,
     document.getElementById('app')
 );
