@@ -12,9 +12,9 @@ export default class OrgSearchResults extends Component {
     this.setState({sort: sortBy});
   }
 
-  constructHTML() {
-    if(this.props.results.data){
-      return _.reduce(this.props.results.data.organizations, (accum, item)=>{
+  constructHTML(data) {
+    if(data){
+      return _.reduce(data, (accum, item)=>{
         let html =(
             <OrgItem description={item.name} url={item.url} avatar_url={item.avatar_url} key={item.id}/>
         );
@@ -28,20 +28,23 @@ export default class OrgSearchResults extends Component {
     if(this.props.results.data){
       switch (sortBy) {
         case 'name':
-          return this.constructHTML(this.props.results.data.organizations.sort((a, b) => {
+          var newArray = this.props.results.data.organizations.slice();
+          console.log('newArray: ', newArray);
+          return this.constructHTML(newArray.sort((a, b) => {
               return a.name.localeCompare(b.name);
             }));
           break;
         case 'numRepos':
-          return this.constructHTML(this.props.results.data.organizations.sort((a, b) => {
+          var newArray = this.props.results.data.organizations.slice();
+          return this.constructHTML(newArray.sort((a, b) => {
               //return b. - a.contributions;
             }));
           break;
         case 'repoOrder':
-          return this.constructHTML();
+          return this.constructHTML(this.props.results.data.organizations);
           break;
         default:
-          return this.constructHTML();
+          return this.constructHTML(this.props.results.data.organizations);
           break;
       }
     }

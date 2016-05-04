@@ -4,10 +4,12 @@ var async   = require('async');
 
 module.exports = {
   getOrgs: function (resObj, res) {
+    console.log('moreItems: ', resObj.moreItems);
 
     resObj['organizations'] = [];
 
-    resObj.items.forEach(function(element, index){
+    resObj.items.forEach(function(element, index){ //Why does this logic not see duplicate login names??
+      //console.log(element.owner.login);
       if(element.owner.type === 'Organization'){
         resObj['organizations'].push({
           name: element.owner.login,
@@ -18,7 +20,7 @@ module.exports = {
       }
     });
 
-    console.log('organizations: ', resObj.organizations);
+    //console.log('organizations: ', resObj.organizations);
     res.send(resObj);
   }
 };
