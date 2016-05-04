@@ -7,11 +7,15 @@ import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 import UserResults from './userResults';
 import OrgSearchResults from '../components/orgsearchresults';
+import SelectedRepo from '../components/repoview';
 
 class AppSearch extends Component {
   render(){
     return (
       <div >
+        <div>
+          <SelectedRepo />
+        </div>
         <div class='section'>
           <UserResults  results={this.props.results} />
           <RepoSearchResults  results={this.props.results}/>
