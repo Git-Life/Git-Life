@@ -4,7 +4,6 @@ var async   = require('async');
 
 module.exports = {
   getOrgs: function (resObj, res) {
-    console.log('moreItems: ', resObj.moreItems);
 
     resObj['organizations'] = [];
 
