@@ -24,7 +24,7 @@ export default class CommitItems extends Component {
 
   render() {
     return (
-      <ul className="container" style={{display: 'inline-block',float:'left', width: '40%', height: '25%'}}>
+      <ul className="container" style={{display: 'inline-block',float:'left', width: '30%', height: '25%'}}>
         Commit Data:
         {this.showCommitData()}
       </ul>

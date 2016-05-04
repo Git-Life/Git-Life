@@ -21,11 +21,11 @@ export default class SearchBar extends Component {
 
   render() {
     return(
-      <div style={{display: 'inline-block',float:'center', width: '50%', height: '50%'}}>
-        <input
+      <div >
+        <input style={{margin:'auto', width:'50%', height:'100%'}}
           onChange={(event) => {this.handleChange(event.target.value)}}
           placeholder="Search GitHub" />
-        <button class="btn waves-effect waves-light" style={{display: 'block',float:'left'}} onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>Search</button>
+        <button class="btn waves-effect waves-light"  onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>Search</button>
       </div>
     );
   }

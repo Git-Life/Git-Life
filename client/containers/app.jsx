@@ -35,14 +35,19 @@ class App extends Component {
           <CommitItems commitData = {this.props.commitData} getCommitData={this.props.actions.getCommitData}/>
 =======
       <div className="row" >
+<<<<<<< 77a6de888367cfb8d6c06e7af021193233dc143c
     <p  style={{display:'block', textAlign: 'center', margin:'100px 100px 100px 100px'}} style={{display: 'inline-block', float:'center', width: '20%', height: '50%', fontWeight: 'bold'}}>What's Trending</p>
 <SearchBar   searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
 <OrgVis orgs={this.props.orgs} getTrendingOrgs={this.props.actions.getTrendingOrgs}/>
 >>>>>>> Feat: Basic styling for splash page
+=======
+        <SearchBar style={{margin:'100px 100px 100px 100px'}}  searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
+        <p style={{fontWeight:'bold', display:'inline-block', textAlign: 'center', margin:'100px 100px 100px 100px'}} >What's Trending</p>
+        <OrgVis orgs={this.props.orgs} getTrendingOrgs={this.props.actions.getTrendingOrgs}/>
+>>>>>>> Feat: Minor styles on search results page
         <WiredResults hnresults={this.props.hnResults} searchHN={this.props.actions.searchHN} searchData={this.props.actions.searchData} dataResults={this.props.dataResults} wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
-          <SplashRepos  getSplashRepos={this.props.actions.getSplashRepos} repos={this.props.repos}/>
-
-    </div>
+        <SplashRepos  getSplashRepos={this.props.actions.getSplashRepos} repos={this.props.repos}/>
+      </div>
     );
   }
 }
