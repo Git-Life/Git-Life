@@ -5,8 +5,12 @@ export default class UserResults extends Component {
 
 
   constructor(props){
-    super(props)
-    this.state = {filter: ''};
+    super(props);
+    this.state = {filter: '', results: props.results};
+    this.constructHTML = this.constructHTML.bind(this);
+    this.handleFilter = this.handleFilter.bind(this);
+    this.populateResults = this.populateResults.bind(this);
+
   }
 
   constructHTML(dataObj){
@@ -25,33 +29,35 @@ export default class UserResults extends Component {
     }, []);
   }
 
-  handleFilter(filter){
-    this.setState({filter: filter});
+  handleFilter(){
+
+    this.setState({filter: 'name'});
   }
 
   populateResults(sortBy){
-    if(this.props.results.data){
+    if(this.state.results.data){
       switch (sortBy) {
         case 'name':
-          return this.constructHTML(this.props.results.data.contributors
+        console.log('this.state.results', this.state.results);
+          return this.constructHTML(this.state.results.data.contributors
             .sort((a, b) => {
               return a.name - b.name;
             }));
           break;
         case 'contributions':
-          return this.constructHTML(this.props.results.data.contributors
+          return this.constructHTML(this.state.results.data.contributors
             .sort((a, b) => {
               return b.contributions - a.contributions;
             }));
           break;
         case 'count':
-          return this.constructHTML(this.props.results.data.contributors
+          return this.constructHTML(this.state.results.data.contributors
             .sort((a, b) => {
               return b.count - a.count;
             }));
           break;
         default:
-          return this.constructHTML(this.props.results.data.contributors
+          return this.constructHTML(this.state.results.data.contributors
             .sort((a, b) => {
               return b.count - a.count;
             }));
@@ -61,23 +67,21 @@ export default class UserResults extends Component {
   }
 
   render() {
+    const results = this.populateResults(this.state.filter);
     return (
       <div className='collection'>
 
-  <a class='dropdown-button btn' href='#' data-activates='filter'>Sort By</a>
 
-  <ul id='filter' class='dropdown-content'>
-    <li><a href="#!" onclick={this.populateResults('name')}>Name</a></li>
-    <li><a href="#!" onclick={this.populateResults('contributions')}>Contributions</a></li>
-    <li><a href="#!" onclick={this.populateResults('count')}>Count</a></li>
-  </ul>
+        <button onClick={this.handleFilter}>Name</button>
+        <button onClick={this.handleFilter}>Contributions</button>
 
-        {this.populateResults(this.state.filter)}
+
+        { results }
       </div>
     );
   }
 
 };
 
-UserResults.propTypes = { initialCount: React.PropTypes.number };
-UserResults.defaultProps = { initialCount: 0 };
+//UserResults.propTypes = { results: React.PropTypes.object, filter: React.PropTypes.string };
+UserResults.defaultProps = { results: {}, filter: "name"};
