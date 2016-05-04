@@ -9,11 +9,7 @@ const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
-<<<<<<< HEAD
-    <App2/>
-=======
     <Router history={hashHistory} routes={routes}/>
->>>>>>> 7f54c390a80146ca898eb1aadc242225da712914
   </Provider>,
     document.getElementById('app')
 );
