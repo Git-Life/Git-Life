@@ -5,7 +5,8 @@ export default class UserResults extends Component {
 
 
   constructor(props){
-    super(props)
+    super(props);
+    this.state = {sort: ''};
   }
 
   constructHTML(dataObj){
@@ -24,6 +25,10 @@ export default class UserResults extends Component {
       return accum;
     }, []);
 
+  }
+
+  handleSort(sortBy){
+    this.setState({sort: sortBy});
   }
 
   populateResults(sortBy){
@@ -65,7 +70,10 @@ export default class UserResults extends Component {
     return (
       <div className='collection' style={{display: 'inline-block',float:'left', width: '25%', height: '25%', margin:'20px 20px 20px 30px'}}>
         <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Users</p>
-        {this.populateResults('contributions')}
+        <button onClick={() => {this.handleSort('count')}}>Count</button>
+        <button onClick={() => {this.handleSort('contributions')}}>Contributions</button>
+        <button onClick={() => {this.handleSort('name')}}>Name</button>
+      {this.populateResults(this.state.sort)}
       </div>
     );
   }
