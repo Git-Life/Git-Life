@@ -18,7 +18,7 @@ class AppSearch extends Component {
         </div>
         <div class='section'>
           <UserResults  results={this.props.results} />
-          <RepoSearchResults  results={this.props.results} selectRepo={this.selectRepo}/>
+          <RepoSearchResults  results={this.props.results} selectRepo={this.props.actions.selectRepo}/>
           <OrgSearchResults results={this.props.results} />
         </div>
     </div>
