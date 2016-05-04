@@ -4,7 +4,6 @@ import OrgItem from './orgitem';
 export default class OrgSearchResults extends Component {
 
   populateResults(){
-    console.log('orgsearchresults component: ', this.props.results.data);
     if(this.props.results.data){
       return _.reduce(this.props.results.data.organizations, (accum, item)=>{
         let html =(
