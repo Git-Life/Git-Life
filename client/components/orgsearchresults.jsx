@@ -4,7 +4,7 @@ import OrgItem from './orgitem';
 export default class OrgSearchResults extends Component {
 
   populateResults(){
-    // console.log('orgsearchresults component: ', this.props.results.data);
+    console.log('orgsearchresults component: ', this.props.results.data);
     if(this.props.results.data){
       return _.reduce(this.props.results.data.organizations, (accum, item)=>{
         let html =(
@@ -23,6 +23,7 @@ export default class OrgSearchResults extends Component {
     return (
       <div className='collection'>
         Org Search Results!
+        <button className='sort'>SortByAppearances</button>
         {this.populateResults()}
       </div>
     );
