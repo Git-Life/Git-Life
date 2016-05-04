@@ -86,7 +86,9 @@ export function searchHN(){
 }
 
 export const SELECT_REPO = 'SELECT_REPO';
-export function selectRepo(selectedRepo){
+export function selectRepo(selectedRepo = null){
+
+  console.log('selected repo was called', Object.keys(selectedRepo));
   return {
     type: SELECT_REPO,
     payload: selectedRepo

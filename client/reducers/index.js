@@ -16,7 +16,8 @@ const rootReducer = combineReducers({
   wiredResults: ReducerSplash,
   dataResults: ReducerData,
   hnResults: ReducerHN,
-  orgs: ReducerOrgVis
+  orgs: ReducerOrgVis,
+  hereisanewprop: 'hiiaprop'
 });
 
 export default rootReducer;
