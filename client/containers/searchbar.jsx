@@ -22,10 +22,10 @@ export default class SearchBar extends Component {
   render() {
     return(
       <div >
-        <input
+        <input style={{margin:'auto', width:'50%', height:'100%'}}
           onChange={(event) => {this.handleChange(event.target.value)}}
           placeholder="Search GitHub" />
-        <button onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>Search</button>
+        <button class="btn waves-effect waves-light"  onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>Search</button>
       </div>
     );
   }

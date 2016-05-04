@@ -20,7 +20,7 @@ export default class UserResults extends Component {
       }, []);
     }
     else{
-      
+
     }
 
 
@@ -29,8 +29,8 @@ export default class UserResults extends Component {
 
   render() {
     return (
-      <div className='collection'>
-        User Results!
+      <div className='collection' style={{display: 'inline-block',float:'left', width: '25%', height: '25%', margin:'20px 20px 20px 30px'}}>
+        <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Users</p>
         {this.populateResults()}
       </div>
     );
