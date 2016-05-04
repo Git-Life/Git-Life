@@ -1,6 +1,7 @@
 var secret = require('../splash/tempsecret.js');
 var request = require('request');
 var async = require('async');
+var orgParse = require('./orgController.js');
 
 var secretURL = '&client_id=' + secret.id + '&client_secret=' + secret.secret;
 
@@ -51,7 +52,6 @@ module.exports = function(body, res){
         contributors: userArr
       }
 
-      res.send(sendObj);
-  })
-
+      orgParse.getOrgs(sendObj, res);
+  });
 };

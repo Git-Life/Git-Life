@@ -50,7 +50,6 @@ module.exports = function(req, res){
                 if(err){
                   console.log(err);
                 }
-                console.log('file was saved');
                 lastTimeChecked = new Date();
                 if(hold === 9){
                   cb(repoStorage);
@@ -72,7 +71,6 @@ module.exports = function(req, res){
   }
 
   function afterTheIf(sendMe){
-    console.log('file sent');
     res.send(sendMe);
   }
 };
