@@ -4,15 +4,25 @@ var config = {
 }
 var gcloud = require('gcloud')(config);
 var prediction = gcloud.prediction();
-prediction.createModel('gitTest', function(err, model, apiResponse){
+//this model has been created via below, not sure if we need
+//to do it again ever.
+// prediction.createModel('gitTest', function(err, model, apiResponse){
+//   if(err){
+//     console.log("error in prediction", err);
+//   }
+// });
+var model = prediction.model('gitTest');
+model.exists(function(err, exists){
   if(err){
-    console.log("error in prediction", err);
+    console.log('exists err', err);
   }
-});
+  console.log('exists is ', exists);
+})
 
 module.exports = function(req, res){
-  res.send('ok');
+  console.log('this commit', req.body.issue);
+  console.log('is this difficult', req.body.difficulty);
 
-  };
+}
 
 //
