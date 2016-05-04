@@ -7,6 +7,7 @@ import ReducerCommits from './reducer_commits';
 import ReducerSplash from './reducer_splashTopics';
 import ReducerData from './reducer_dataTopics';
 import ReducerHN from './reducer_hnTopics';
+import ReducerSelectedRepo from './reducer_selected_repo';
 
 const rootReducer = combineReducers({
   term: ReducerTerm,
@@ -17,7 +18,7 @@ const rootReducer = combineReducers({
   dataResults: ReducerData,
   hnResults: ReducerHN,
   orgs: ReducerOrgVis,
-  hereisanewprop: 'hiiaprop'
+  selectedRepo: ReducerSelectedRepo
 });
 
 export default rootReducer;
