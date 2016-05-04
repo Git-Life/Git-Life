@@ -18,7 +18,7 @@ module.exports = {
       }
     });
 
-    //console.log('organizations: ', resObj.contributors);
+    console.log('organizations: ', resObj.organizations);
     res.send(resObj);
   }
 };
