@@ -13,7 +13,8 @@ export default class RepoSearchResults extends Component {
               issuesUrl={item.issues_url}
               repoUrl={item.clone_url}
               key={item.clone_url}
-              selectRepoIssues={this.props.selectRepoIssues}
+              thisRepoIs={item}
+              selectRepo={this.props.selectRepo}
               />
         );
         accum.push(html);

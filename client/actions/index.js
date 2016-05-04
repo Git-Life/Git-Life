@@ -84,3 +84,11 @@ export function searchHN(){
     payload: hnResults
   }
 }
+
+export const SELECT_REPO = 'SELECT_REPO';
+export function selectRepo(selectedRepo){
+  return {
+    type: UPDATE_SEARCHTERM,
+    searchTerm
+  }
+}
