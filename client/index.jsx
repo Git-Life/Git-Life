@@ -12,7 +12,7 @@ const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <App2/>
+    <App/>
   </Provider>,
     document.getElementById('app')
 );

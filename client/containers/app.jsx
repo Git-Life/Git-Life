@@ -11,16 +11,18 @@ import CommitItems from '../components/commititems';
 import WiredResults from '../components/wiredResults';
 import test from '../styles/style.css';
 
+
+  // <CommitItems commitData = {this.props.commitData} getCommitData={this.props.actions.getCommitData}/>
 class App extends Component {
   render(){
     return (
-      <div className="splashPage">
-          <SplashRepos getSplashRepos={this.props.actions.getSplashRepos} repos={this.props.repos}/>
-          <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
-          <RepoSearchResults results={this.props.results}/>
+      <div>
+        <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
+      <div className="section">
           <OrgVis orgs={this.props.orgs} getTrendingOrgs={this.props.actions.getTrendingOrgs}/>
-          <CommitItems commitData = {this.props.commitData} getCommitData={this.props.actions.getCommitData}/>
-        <WiredResults hnresults={this.props.hnResults} searchHN={this.props.actions.searchHN} searchData={this.props.actions.searchData} dataResults={this.props.dataResults} wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
+          <SplashRepos getSplashRepos={this.props.actions.getSplashRepos} repos={this.props.repos}/>
+          <WiredResults hnresults={this.props.hnResults} searchHN={this.props.actions.searchHN} searchData={this.props.actions.searchData} dataResults={this.props.dataResults} wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
+      </div>
     </div>
     );
   }
@@ -34,7 +36,8 @@ function mapStateToProps(state){
     commitData: state.commitData,
     wiredResults: state.wiredResults,
     dataResults: state.dataResults,
-    hnResults: state.hnResults
+    hnResults: state.hnResults,
+    orgs: state.orgs
   };
 }
 
