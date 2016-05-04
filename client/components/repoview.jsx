@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 
 export default class SelectedRepo extends Component{
   populateResults(){
-    if(this.props.repo){
-      return this.props.repo;
+
+    if(this.props.repo.data){
+      console.log(this.props.repo.data);
+      return this.props.repo.data.description;
     }
     else{
       return "";
