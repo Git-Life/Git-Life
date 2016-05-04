@@ -37,7 +37,7 @@ export default class UserResults extends Component {
         case 'name':
           return this.constructHTML(this.props.results.data.contributors
             .sort((a, b) => {
-              return a.name - b.name;
+              return a.name.localeCompare(b.name);
             }));
           break;
         case 'contributions':
