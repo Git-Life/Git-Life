@@ -8,7 +8,7 @@ export default class OrgSearchResults extends Component {
     console.log('in orgsearchresults: ', this.state);
   }
 
-  populateResults() {
+  constructHTML() {
     if(this.props.results.data){
       return _.reduce(this.props.results.data.organizations, (accum, item)=>{
         let html =(
@@ -20,12 +20,17 @@ export default class OrgSearchResults extends Component {
     }
   }
 
+  populateResults(sortBy) {
+
+  }
+
   render() {
     return (
       <div className='collection'  style={{display: 'inline-block',float:'left', width: '20%', height: '25%', margin: '20px 20px 20px 20px'}}>
         <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Organizations</p>
-        <button onClick={() => { this.handleClick('instances') }} >Instances</button>
-        <button onClick={() => { this.handleClick('byRepo') }} >By Repo</button>
+        <button onClick={() => { this.handleClick('instances') }} >By Instances</button>
+        <button onClick={() => { this.handleClick('name') }} >By Name</button>
+        <button onClick={() => { this.handleClick('repo') }} >By Repo</button>
         {this.populateResults()}
       </div>
     );
