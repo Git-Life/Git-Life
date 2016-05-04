@@ -8,13 +8,10 @@ import * as Actions from '../actions';
 import UserResults from './userResults';
 import OrgSearchResults from '../components/orgsearchresults';
 
-class App2 extends Component {
+class AppSearch extends Component {
   render(){
     return (
       <div >
-        <div class='section' >
-          <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
-        </div>
         <div class='section'>
           <UserResults  results={this.props.results} />
           <RepoSearchResults  results={this.props.results}/>
@@ -40,4 +37,4 @@ function mapDispatchToProps(dispatch){
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App2);
+export default connect(mapStateToProps, mapDispatchToProps)(AppSearch);
