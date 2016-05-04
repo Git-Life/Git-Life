@@ -76,6 +76,7 @@
     "phantomjs": "^1.9.19",
     "react-addons-test-utils": "^15.0.2",
     "style-loader": "^0.13.1",
-    "watch": "0.16.0"
+    "watch": "0.16.0",
+    "webpack-dev-middleware": "^1.6.1"
   }
 }
