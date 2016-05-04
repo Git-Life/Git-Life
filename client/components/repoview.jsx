@@ -5,7 +5,7 @@ export default class SelectedRepo extends Component{
     if(this.props.repo){
       return this.props.repo;
     }
-    else(){
+    else{
       return "";
     }
   }
