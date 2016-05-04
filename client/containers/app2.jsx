@@ -29,8 +29,8 @@ function mapStateToProps(state){
   return {
     results: state.results,
     term: state.searchTerm,
-    repos: state.splashRepos,
-    orgs: state.orgs
+    repos: state.splashRepos
+
   };
 }
 

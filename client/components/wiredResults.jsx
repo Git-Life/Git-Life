@@ -52,7 +52,7 @@ export default class WiredResults extends Component {
 
   render() {
     return (
-      <div className="container"  class="col s4" style={{display: 'inline-block',float:'left'}}>
+      <div className="container" style={{display: 'inline-block',float:'left', width:'40%', height:'25%'}}>
         <ul  className="collapsible popout" data-collapsible="accordion">
           <li>
             <div className="collapsible-header active"><i className="material-icons" ></i>Wired Top Tech News</div>
