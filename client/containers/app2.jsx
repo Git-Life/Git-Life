@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 import UserResults from './userResults';
+import OrgSearchResults from '../components/orgsearchresults';
 
 class App2 extends Component {
   render(){
@@ -28,7 +29,8 @@ function mapStateToProps(state){
   return {
     results: state.results,
     term: state.searchTerm,
-    repos: state.splashRepos
+    repos: state.splashRepos,
+    orgs: state.orgs
   };
 }
 

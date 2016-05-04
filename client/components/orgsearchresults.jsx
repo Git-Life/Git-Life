@@ -15,14 +15,14 @@ export default class OrgSearchResults extends Component {
       }, []);
     }
     else {
-    
+
     }
   }
 
   render() {
     return (
-      <div className='collection'>
-        Org Search Results!
+      <div className='collection'  style={{display: 'inline-block',float:'left', width: '20%', height: '25%', margin: '20px 20px 20px 20px'}}>
+        <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Organizations</p>
         {this.populateResults()}
       </div>
     );
