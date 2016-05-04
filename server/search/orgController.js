@@ -7,7 +7,7 @@ module.exports = {
 
     resObj['organizations'] = [];
 
-    resObj.items.forEach(function(element, index){ //Why does this logic not see duplicate login names??
+    resObj.items.forEach(function(element, index){
       //console.log(element.owner.login);
       if(element.owner.type === 'Organization'){
         resObj['organizations'].push({
