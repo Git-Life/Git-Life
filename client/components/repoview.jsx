@@ -15,6 +15,7 @@ export default class SelectedRepo extends Component{
 
   getIssues(){
     this.props.getIssues(this.state.repo.issues_url);
+
   }
 
   populateResults(){
