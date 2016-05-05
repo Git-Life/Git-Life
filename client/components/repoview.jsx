@@ -3,11 +3,11 @@ import React, {Component} from 'react';
 export default class SelectedRepo extends Component{
   constructor(props){
     super(props)
-    this.state = {name: ''}
+    this.state = {repo: {}}
   }
   componentWillReceiveProps(){
     if(this.props.repo.data){
-      this.setState({name: this.props.repo.data.name});
+      this.setState({repo: this.props.repo.data});
     }
 
   }
@@ -27,7 +27,7 @@ export default class SelectedRepo extends Component{
 
       <div>
         This is where selectedRepo will go.
-        {this.state.name}
+        {this.state.repo.name}
       </div>
   );
   }
