@@ -13,7 +13,7 @@ export default class SelectedRepo extends Component{
   }
 
   getIssues(){
-    
+    console.log(this.props);
   }
 
   populateResults(){

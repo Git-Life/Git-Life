@@ -89,12 +89,14 @@ export const SELECT_REPO = 'SELECT_REPO';
 export function selectRepo(selectedRepo = null){
   var issues = Axios.get('/learn/issues', {
       params: {
-        issuesURL: selectedRepo.issues_url;
+        issuesURL: selectedRepo.issues_url
       }
   });
-  selectedRepo.issues = issues;
+  //selectedRepo.issues = issues;
+  var repoOut = selectedRepo;
+  repoOut.issues = issues;
   return {
     type: SELECT_REPO,
-    payload: selectedRepo
+    payload: repoOut
   }
 }
