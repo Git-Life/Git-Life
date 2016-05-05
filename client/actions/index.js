@@ -87,7 +87,12 @@ export function searchHN(){
 
 export const SELECT_REPO = 'SELECT_REPO';
 export function selectRepo(selectedRepo = null){
-
+  var issues = Axios.get('/learn/issues', {
+      params: {
+        issuesURL: selectedRepo.issues_url;
+      }
+  });
+  selectedRepo.issues = issues;
   return {
     type: SELECT_REPO,
     payload: selectedRepo

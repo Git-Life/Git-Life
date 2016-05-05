@@ -12,6 +12,10 @@ export default class SelectedRepo extends Component{
 
   }
 
+  getIssues(){
+    
+  }
+
   populateResults(){
     console.log(this.props);
     if(this.props.repo.data){
@@ -27,6 +31,7 @@ export default class SelectedRepo extends Component{
 
       <div>
         This is where selectedRepo will go.
+        {this.getIssues()}
         {this.state.repo.name}
       </div>
   );
