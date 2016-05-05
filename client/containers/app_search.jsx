@@ -14,7 +14,7 @@ class AppSearch extends Component {
     return (
       <div >
         <div>
-          <SelectedRepo repo={this.props.selectedRepo}/>
+          <SelectedRepo repo={this.props.selectedRepo} issues={this.props.issues}/>
         </div>
         <div class='section'>
           <UserResults  results={this.props.results} />
@@ -30,7 +30,8 @@ function mapStateToProps(state){
   return {
     results: state.results,
     term: state.searchTerm,
-    selectedRepo: state.selectedRepo
+    selectedRepo: state.selectedRepo,
+    issues: state.issues
   };
 }
 
