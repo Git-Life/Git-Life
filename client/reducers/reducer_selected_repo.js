@@ -8,10 +8,6 @@ export default function(state = initialState, action) {
       return Object.assign({}, state, {
         data: action.payload
       });
-    case GET_ISSUES:
-      return Object.assign({}, state, {
-        issues: action.payload
-      })
     default:
       return state;
   }
