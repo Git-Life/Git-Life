@@ -17,10 +17,10 @@ var userObj = {};
 
 module.exports = function(body, res){
   var items =   JSON.parse(body).items;
-  items = items.slice(0, 10);
+  var itemGroup = items.slice(0, 10);
 
-  async.forEachOf(items, function (value, key, callback) {
-    gitHTTP('GET', items[key].contributors_url + '?', function(err, response, contributors){
+  async.forEachOf(itemGroup, function (value, key, callback) {
+    gitHTTP('GET', itemGroup[key].contributors_url + '?', function(err, response, contributors){
       if(err){
         return callback(err);
       }

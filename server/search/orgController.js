@@ -8,6 +8,7 @@ module.exports = {
     resObj['organizations'] = [];
 
     resObj.items.forEach(function(element, index){
+      //console.log(element.owner.login);
       if(element.owner.type === 'Organization'){
         resObj['organizations'].push({
           name: element.owner.login,
@@ -18,7 +19,7 @@ module.exports = {
       }
     });
 
-    //console.log('organizations: ', resObj.contributors);
+    //console.log('organizations: ', resObj.organizations);
     res.send(resObj);
   }
 };
