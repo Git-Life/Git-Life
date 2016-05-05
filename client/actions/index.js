@@ -87,16 +87,25 @@ export function searchHN(){
 
 export const SELECT_REPO = 'SELECT_REPO';
 export function selectRepo(selectedRepo = null){
-  var issues = Axios.get('/learn/issues', {
-      params: {
-        issuesURL: selectedRepo.issues_url
-      }
-  });
+
   //selectedRepo.issues = issues;
   var repoOut = selectedRepo;
   repoOut.issues = issues;
   return {
     type: SELECT_REPO,
     payload: repoOut
+  }
+}
+
+export const GET_ISSUES = 'GET_ISSUES';
+export function getIssues(selectedRepo){
+  var issues = Axios.get('/learn/issues', {
+      params: {
+        issuesURL: selectedRepo.issues_url
+      }
+  });
+  return{
+    type: GET_ISSUES,
+    payload: issues
   }
 }
