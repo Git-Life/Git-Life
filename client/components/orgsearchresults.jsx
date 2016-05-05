@@ -29,7 +29,6 @@ export default class OrgSearchResults extends Component {
       switch (sortBy) {
         case 'name':
           var newArray = this.props.results.data.organizations.slice();
-          console.log('newArray: ', newArray);
           return this.constructHTML(newArray.sort((a, b) => {
               return a.name.localeCompare(b.name);
             }));
@@ -62,4 +61,3 @@ export default class OrgSearchResults extends Component {
   }
 };
 //         <button onClick={() => { this.handleClick('numRepos') }}>Repos</button>
-
