@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './searchbar';
+import LanguageSelect from '../components/search_chooselanguage'
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
@@ -13,6 +14,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
+        <LanguageSelect />
         {this.props.children}
       </div>
     );
