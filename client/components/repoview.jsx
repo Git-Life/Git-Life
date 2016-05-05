@@ -8,12 +8,13 @@ export default class SelectedRepo extends Component{
   componentWillReceiveProps(){
     if(this.props.repo.data){
       this.setState({repo: this.props.repo.data});
+
     }
 
   }
 
   getIssues(){
-    console.log(this.props);
+    this.props.getIssues(this.state.repo.issues_url);
   }
 
   populateResults(){
@@ -31,7 +32,7 @@ export default class SelectedRepo extends Component{
 
       <div>
         This is where selectedRepo will go.
-        {this.getIssues()}
+        <button onClick={()=>{this.getIssues()}}>Get Issues</button>
         {this.state.repo.name}
       </div>
   );
