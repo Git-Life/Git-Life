@@ -87,13 +87,9 @@ export function searchHN(){
 
 export const SELECT_REPO = 'SELECT_REPO';
 export function selectRepo(selectedRepo = null){
-
-  //selectedRepo.issues = issues;
-  var repoOut = selectedRepo;
-  repoOut.issues = issues;
   return {
     type: SELECT_REPO,
-    payload: repoOut
+    payload: selectedRepo
   }
 }
 
