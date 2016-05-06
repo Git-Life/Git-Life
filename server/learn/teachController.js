@@ -19,10 +19,9 @@ model.exists(function(err, exists){
   console.log('exists is ', exists);
 })
 
-module.exports = function(req, res){
-  console.log('this commit', req.body.issue);
-  console.log('is this difficult', req.body.difficulty);
-
+module.exports = {
+  instruct: function(req, res){},
+  inquire: function(req, res){}
 }
 
 //
