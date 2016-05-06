@@ -16,7 +16,7 @@ model.exists(function(err, exists){
   if(err){
     console.log('exists err', err);
   }
-  console.log('exists is ', exists);
+  console.log('Does our model exist?  ', exists);
 })
 
 module.exports = {
@@ -30,7 +30,6 @@ module.exports = {
       }
       res.status(200).send();
     });
-
   },
   inquire: function(req, res){
     var arr = Object.keys(req.query).map(function (key) {return req.query[key]});
@@ -42,5 +41,3 @@ module.exports = {
     });
   }
 }
-
-//

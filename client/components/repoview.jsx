@@ -10,12 +10,10 @@ export default class SelectedRepo extends Component{
     if(this.props.repo.data){
       this.setState({repo: this.props.repo.data});
     }
-
   }
 
   getIssues(){
     this.props.getIssues(this.state.repo.issues_url);
-
   }
 
   populateResults(){
@@ -31,13 +29,10 @@ export default class SelectedRepo extends Component{
         return accum;
       }, []);
     }
-
-
   }
 
   render(){
     return (
-
       <div>
         <button onClick={()=>{this.getIssues()}}>Get Issues</button>
         {this.state.repo.name}
@@ -45,6 +40,6 @@ export default class SelectedRepo extends Component{
           {this.populateResults()}
         </ul>
       </div>
-  );
+    );
   }
 }
