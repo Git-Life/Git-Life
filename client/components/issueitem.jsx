@@ -4,7 +4,7 @@ import Axios from 'axios';
 export default class IssueItem extends Component{
   sendTeach(difficulty){
     console.log(difficulty);
-    axios.post('/learn/teach',{
+    Axios.post('/learn/teach',{
       issue: this.props.issue,
       difficulty: difficulty
     })

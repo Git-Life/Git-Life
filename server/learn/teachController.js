@@ -20,7 +20,9 @@ model.exists(function(err, exists){
 })
 
 module.exports = {
-  instruct: function(req, res){},
+  instruct: function(req, res){
+    console.log(req.body.difficulty);
+  },
   inquire: function(req, res){}
 }
 
