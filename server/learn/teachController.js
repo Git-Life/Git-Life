@@ -21,7 +21,18 @@ model.exists(function(err, exists){
 
 module.exports = {
   instruct: function(req, res){
+    var issue = req.body.issue;
     console.log(req.body.difficulty);
+    console.log(req.body.issue.title);
+    var trainArray = [];
+    trainArray.push(issue.title, issue.body, issue.comments);
+    model.train('req.body.difficulty', trainArray, function(err, apiRes){
+      if(err){
+        console.log('model train had err: ', err);
+      }
+      res.status(200).send();
+    });
+
   },
   inquire: function(req, res){}
 }
