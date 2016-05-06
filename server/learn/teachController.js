@@ -33,7 +33,9 @@ module.exports = {
     });
 
   },
-  inquire: function(req, res){}
+  inquire: function(req, res){
+    console.log('params maybe', req.query);
+  }
 }
 
 //

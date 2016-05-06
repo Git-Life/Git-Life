@@ -49,7 +49,7 @@ export default class IssueItem extends Component{
           </a>
           <button
             onClick={()=>
-              {this.checkDifficulty}
+              {this.checkDifficulty();}
             }>
             {this.state.predictedDifficulty}
           </button>
