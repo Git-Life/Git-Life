@@ -16,7 +16,7 @@ class App extends Component {
         <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
         <LanguageSelect />
         <nav>
-          <div className="nav-wrapper">
+          <div className="nav-wrapper red accent-1">
             <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
           </div>
         </nav>

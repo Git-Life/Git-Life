@@ -39,7 +39,7 @@ export default class SearchBar extends Component {
   render() {
     return(
 
-      <div className="input-field">
+      <div className="input-field ">
         <input   style={{margin:'auto', width:'50%', height:'100%'}}
           onChange={(event) => {this.handleChange(event.target.value)}}
           placeholder="Search GitHub" />

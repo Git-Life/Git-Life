@@ -16,7 +16,12 @@ export default class SplashRepos extends Component {
     if(this.props.repos.data){
       return _.reduce(this.props.repos.data, (prev, curr)=>{
         let html = (
-          <li  key={curr.url} className="card-panel teal"> <a style={{fontWeight:'bold'}}>{curr.name}</a> {curr.lang} Commits today: {curr.commitsToday}</li>
+          <div className="card-panel red accent-1 white-text" >
+            <li  key={curr.html_url} > <a style={{fontWeight:'bold'}} href={curr.html_url}>{curr.name}</a></li>
+            <p>{curr.description}</p>
+            <p>{curr.lang} Commits today: {curr.commitsToday}</p>
+
+          </div>
         );
         prev.push(html);
         return prev;
@@ -30,7 +35,7 @@ export default class SplashRepos extends Component {
     return(
       <div >
 
-        <ul className="collection" class="col s4" style={{display: 'inline-block',float:'left'}}>
+        <ul className="row"  style={{display: 'inline-block',float:'left', width: '25%'}}>
           <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Repositories</p>
           {this.populateResults()}
         </ul>

@@ -31,13 +31,14 @@ module.exports = function(req, res){
           (function(hold, cb){
 
             var currentRepo = JSON.parse(body).items[hold];
-            console.log(currentRepo);
             var commitsURL = currentRepo.commits_url;
             commitsURL = commitsURL.slice(0, commitsURL.length - 6);
             repoStorage[hold] = {};
             repoStorage[hold].name = currentRepo.name;
             repoStorage[hold].description = currentRepo.description;
             repoStorage[hold].html_url = currentRepo.html_url;
+            repoStorage[hold].stargazers = currentRepo.stargazers_count;
+            repoStorage[hold].open_issues = currentRepo.open_issues;
             repoStorage[hold].language = currentRepo.language;
             repoStorage[hold].full_name = currentRepo.full_name;
             repoStorage[hold].html_url = currentRepo.html_url;

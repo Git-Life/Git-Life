@@ -7,6 +7,7 @@ export default class RepoSearchResults extends Component {
     if(this.props.results.data){
       return _.reduce(this.props.results.data.items, (accum, item)=>{
         let html =(
+
             <SearchItem
               description={item.description}
               issues={"Open Issues: " + item.open_issues}
@@ -16,7 +17,7 @@ export default class RepoSearchResults extends Component {
               thisRepoIs={item}
               selectRepo={this.props.selectRepo}
               />
-            <SearchItem className="card-panel teal" description={item.description} issues={"Open Issues: " + item.open_issues} issuesUrl={item.issues_url} repoUrl={item.clone_url} key={item.clone_url}/>        );
+        );
         accum.push(html);
         return accum;
       }, []);
