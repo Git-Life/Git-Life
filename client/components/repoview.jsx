@@ -9,9 +9,6 @@ export default class SelectedRepo extends Component{
     if(this.props.repo.data){
       this.setState({repo: this.props.repo.data});
     }
-    if(this.props.issues.data){
-      this.setState({issues: this.props.issues.data});
-    }
 
   }
 
@@ -21,12 +18,12 @@ export default class SelectedRepo extends Component{
   }
 
   populateResults(){
-    if(this.state.issues.length){
-      return _.reduce(this.state.issues, (accum, item)=>{
+    if(this.props.issues.data){
+      return _.reduce(this.props.issues.data.data, (accum, item)=>{
         let html =(
           <li className='collection-item'
             id={item.id}>
-            {item.title} 
+            {item.title}
           </li>
 
         );
@@ -34,9 +31,7 @@ export default class SelectedRepo extends Component{
         return accum;
       }, []);
     }
-    else{
-      return "";
-    }
+
 
   }
 
