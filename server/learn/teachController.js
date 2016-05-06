@@ -23,7 +23,6 @@ module.exports = {
   instruct: function(req, res){
     var issue = req.body.issue;
     console.log(req.body.difficulty);
-    console.log(req.body.issue.title);
     var trainArray = [];
     trainArray.push(issue.title, issue.body, issue.comments);
     model.train('req.body.difficulty', trainArray, function(err, apiRes){
