@@ -5,7 +5,7 @@ var config = {
 var gcloud = require('gcloud')(config);
 var prediction = gcloud.prediction();
 //this model has been created via below, not sure if we need
-//to do it again ever.
+//to do it again ever. /
 // prediction.createModel('gitTest', function(err, model, apiResponse){
 //   if(err){
 //     console.log("error in prediction", err);
