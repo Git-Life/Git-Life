@@ -2,6 +2,11 @@ import React, {Component} from 'react';
 import Axios from 'axios';
 
 export default class IssueItem extends Component{
+  constructor(props){
+    super(props);
+    this.state = {predictedDifficulty: 'Click to see predicted difficulty'};
+  }
+
   sendTeach(difficulty){
     console.log(difficulty);
     Axios.post('/learn/teach',{
@@ -15,6 +20,9 @@ export default class IssueItem extends Component{
       console.log('caught this res', res);
     })
   }
+  checkDifficulty(){
+    
+  }
 
   render(){
     return (
@@ -27,6 +35,12 @@ export default class IssueItem extends Component{
             class="secondary-content">
             Easy
           </a>
+          <button
+            onClick={()=>
+              {this.checkDifficulty}
+            }>
+            {this.state.predictedDifficulty}
+          </button>
         </div>
       </li>
     );
