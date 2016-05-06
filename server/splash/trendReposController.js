@@ -29,12 +29,15 @@ module.exports = function(req, res){
         for(var i = 0; i < 10; i++){
           //find out which had most commits today
           (function(hold, cb){
+
             var currentRepo = JSON.parse(body).items[hold];
+            console.log(currentRepo);
             var commitsURL = currentRepo.commits_url;
             commitsURL = commitsURL.slice(0, commitsURL.length - 6);
             repoStorage[hold] = {};
             repoStorage[hold].name = currentRepo.name;
-            repoStorage[hold].url = currentRepo.url;
+            repoStorage[hold].description = currentRepo.description;
+            repoStorage[hold].html_url = currentRepo.html_url;
             repoStorage[hold].language = currentRepo.language;
             repoStorage[hold].full_name = currentRepo.full_name;
             repoStorage[hold].html_url = currentRepo.html_url;
