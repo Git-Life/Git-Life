@@ -1,4 +1,4 @@
-var request = require('request');
+  var request = require('request');
 var secret = require('./tempsecret.js');
 var searchController = require('../search/SearchController.js');
 
@@ -19,7 +19,7 @@ module.exports = {
         if(repos[i].owner.type === "Organization"){
           if(orgsObj[repos[i].owner.login] === undefined){
 
-            orgsObj[repos[i].owner.login] = {org: repos[i].owner.login, trendingRepo: repos[i].name, url: repos[i].owner.url, key: repos[i].owner.id, instances: 1};
+            orgsObj[repos[i].owner.login] = {org: repos[i].owner.login, trendingRepo: repos[i].name, url: repos[i].owner.url, avatar: repos[i].owner.avatar_url, key: repos[i].owner.id, instances: 1};
           } else {
             orgsObj[repos[i].owner.login].instances++;
           }
@@ -36,6 +36,7 @@ module.exports = {
         if(error){
           console.log('Error: ', error);
         }
+        console.log(JSON.parse(body).items);
         findOrgs(JSON.parse(body).items);
 
         res.send(orgsObj);
