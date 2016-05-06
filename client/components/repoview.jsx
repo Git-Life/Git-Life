@@ -22,11 +22,10 @@ export default class SelectedRepo extends Component{
     if(this.props.issues.data){
       return _.reduce(this.props.issues.data.data, (accum, item)=>{
         let html =(
-          <li className='collection-item'
-            id={item.id}>
-            {item.title}
-          </li>
-
+          <IssueItem
+            key={item.id}
+            issue={item}
+            />
         );
         accum.push(html);
         return accum;
