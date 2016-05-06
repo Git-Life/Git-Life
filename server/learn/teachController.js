@@ -22,10 +22,9 @@ model.exists(function(err, exists){
 module.exports = {
   instruct: function(req, res){
     var issue = req.body.issue;
-    console.log(req.body.difficulty);
     var trainArray = [];
     trainArray.push(issue.title, issue.body, issue.comments);
-    model.train('req.body.difficulty', trainArray, function(err, apiRes){
+    model.train(req.body.difficulty, trainArray, function(err, apiRes){
       if(err){
         console.log('model train had err: ', err);
       }
@@ -35,7 +34,14 @@ module.exports = {
   },
   inquire: function(req, res){
     var arr = Object.keys(req.query).map(function (key) {return req.query[key]});
-    console.log(arr);
+    model.query(arr, function(err, result){
+      if(err){
+        console.log('err in inquire', err);
+      }
+      console.log(result);
+      console.log(result.winner);
+      res.send('ok');
+    });
   }
 }
 
