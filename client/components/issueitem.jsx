@@ -22,7 +22,7 @@ export default class IssueItem extends Component{
         <div>
           {this.props.issue.title}
           <a
-            href="#"
+            href="javascript:;"
             onClick={()=>{this.sendTeach('easy')}}
             class="secondary-content">
             Easy
