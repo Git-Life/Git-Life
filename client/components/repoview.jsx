@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import IssueItem from '../components/issueitem';
 
 export default class SelectedRepo extends Component{
   constructor(props){
