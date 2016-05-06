@@ -36,6 +36,20 @@ module.exports = function(req, res){
             repoStorage[hold].name = currentRepo.name;
             repoStorage[hold].url = currentRepo.url;
             repoStorage[hold].language = currentRepo.language;
+            repoStorage[hold].full_name = currentRepo.full_name;
+            repoStorage[hold].html_url = currentRepo.html_url;
+            repoStorage[hold].description = currentRepo.description;
+            if(currentRepo.homepage){
+              repoStorage[hold].homepage = currentRepo.homepage;
+            }
+            repoStorage[hold].stargazers_count = currentRepo.stargazers_count;
+            repoStorage[hold].watchers_count = currentRepo.watchers_count;
+            repoStorage[hold].created_at = currentRepo.created_at;
+            repoStorage[hold].updated_at = currentRepo.updated_at;
+            repoStorage[hold].open_issues = currentRepo.open_issues;
+            repoStorage[hold].forks = currentRepo.forks;
+            repoStorage[hold].size = currentRepo.size;
+
             var compareDate = new Date();
             compareDate.setDate(compareDate.getDate() - 1);
 

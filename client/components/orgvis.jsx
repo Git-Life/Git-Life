@@ -22,7 +22,7 @@ export default class OrgVis extends Component {
       segmentShowStroke : true,
       segmentStrokeColor : "#fff",
       segmentStrokeWidth : 2,
-      percentageInnerCutout : 50,
+      percentageInnerCutout : 0,
       animationSteps : 100,
       animationEasing : "easeOutBounce",
       animateRotate : true,
@@ -59,7 +59,10 @@ export default class OrgVis extends Component {
     return _.reduce(this.props.orgs.data, (accum, item) => {
 
       let html = (
-        <li className='collection-item' class="badge" href={item.url} key={item.key}> {item.org}  </li>
+        <a href={item.url} target='_blank'><li className='collection-item' class="badge" key={item.key}>
+          <img className='imgTrendOrg' src={item.avatar} alt='org avatar' />
+          {item.org}  
+        </li></a>
       );
       accum.push(html);
       return accum;

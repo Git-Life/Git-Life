@@ -9,6 +9,14 @@ export default class SearchBar extends Component {
     this.state = {searchTerm: ''};
   }
 
+  componentDidMount() {
+      $(document.body).on('keydown', this.handleKeyDown);
+  }
+
+  componentWillUnmount() {
+      $(document.body).off('keydown', this.handleKeyDown);
+  }
+
   handleSearch(value){
     this.props.onSearchTermChange(value);
     this.setState({searchTerm: value});
@@ -19,11 +27,19 @@ export default class SearchBar extends Component {
     this.setState({searchTerm: value});
   }
 
+  handleKeyDown(e) {
+
+    //let searchTerm = this.state.searchTerm
+    let ENTER = 13;
+    if( e.keyCode == ENTER ) {
+    }
+  }
+
 
   render() {
     return(
-      <div >
-        <input style={{margin:'auto', width:'50%', height:'100%'}}
+      <div className='inputSearch'>
+        <input
           onChange={(event) => {this.handleChange(event.target.value)}}
           placeholder="Search GitHub" />
         <button class="btn waves-effect waves-light"  onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}><Link to="search">Search</Link></button>
