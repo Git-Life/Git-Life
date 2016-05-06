@@ -34,7 +34,8 @@ module.exports = {
 
   },
   inquire: function(req, res){
-    console.log('params maybe', req.query);
+    var arr = Object.keys(req.query).map(function (key) {return req.query[key]});
+    console.log(arr);
   }
 }
 
