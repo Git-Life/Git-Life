@@ -59,10 +59,10 @@ export default class OrgVis extends Component {
     return _.reduce(this.props.orgs.data, (accum, item) => {
 
       let html = (
-        <li className='collection-item' class="badge" href={item.url} key={item.key}>
+        <a href={item.url} target='_blank'><li className='collection-item' class="badge" key={item.key}>
           <img className='imgTrendOrg' src={item.avatar} alt='org avatar' />
           {item.org}  
-        </li>
+        </li></a>
       );
       accum.push(html);
       return accum;
