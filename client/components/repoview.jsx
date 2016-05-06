@@ -3,12 +3,14 @@ import React, {Component} from 'react';
 export default class SelectedRepo extends Component{
   constructor(props){
     super(props)
-    this.state = {repo: {}}
+    this.state = {repo: {}, issues: []}
   }
   componentWillReceiveProps(){
     if(this.props.repo.data){
       this.setState({repo: this.props.repo.data});
-
+    }
+    if(this.props.issues.data){
+      this.setState({issues: this.props.issues.data});
     }
 
   }
@@ -19,13 +21,7 @@ export default class SelectedRepo extends Component{
   }
 
   populateResults(){
-    console.log(this.props);
-    if(this.props.repo.data){
-      console.log(this.props.repo.data);
-    }
-    else{
-      return "";
-    }
+
   }
 
   render(){
