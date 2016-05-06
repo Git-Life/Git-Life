@@ -15,6 +15,11 @@ class App extends Component {
       <div>
         <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
         <LanguageSelect />
+        <nav>
+          <div className="nav-wrapper">
+            <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
+          </div>
+        </nav>
         {this.props.children}
       </div>
     );
