@@ -24,7 +24,6 @@ export default class SearchBar extends Component {
   }
 
   handleChange(value){
-    console.log('this: ', this);
     this.setState({searchTerm: value});
   }
 
@@ -33,9 +32,6 @@ export default class SearchBar extends Component {
     //let searchTerm = this.state.searchTerm
     let ENTER = 13;
     if( e.keyCode == ENTER ) {
-        //this.updateValue();
-        //this.handleSearch('react');
-        console.log('ENTER key pressed. ', this);
     }
   }
 

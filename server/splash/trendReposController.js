@@ -29,7 +29,6 @@ module.exports = function(req, res){
         for(var i = 0; i < 10; i++){
           //find out which had most commits today
           (function(hold, cb){
-            console.log(JSON.parse(body).items);
             var currentRepo = JSON.parse(body).items[hold];
             var commitsURL = currentRepo.commits_url;
             commitsURL = commitsURL.slice(0, commitsURL.length - 6);
@@ -37,7 +36,6 @@ module.exports = function(req, res){
             repoStorage[hold].name = currentRepo.name;
             repoStorage[hold].url = currentRepo.url;
             repoStorage[hold].language = currentRepo.language;
-            // New Props!
             repoStorage[hold].full_name = currentRepo.full_name;
             repoStorage[hold].html_url = currentRepo.html_url;
             repoStorage[hold].description = currentRepo.description;
@@ -87,7 +85,6 @@ module.exports = function(req, res){
   }
 
   function afterTheIf(sendMe){
-    console.log(sendMe);
     res.send(sendMe);
   }
 };
