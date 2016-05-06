@@ -21,6 +21,22 @@ export default class SelectedRepo extends Component{
   }
 
   populateResults(){
+    if(this.state.issues.length){
+      return _.reduce(this.state.issues, (accum, item)=>{
+        let html =(
+          <li className='collection-item'
+            id={item.id}>
+            {item.title} 
+          </li>
+
+        );
+        accum.push(html);
+        return accum;
+      }, []);
+    }
+    else{
+      return "";
+    }
 
   }
 
@@ -31,6 +47,9 @@ export default class SelectedRepo extends Component{
         This is where selectedRepo will go.
         <button onClick={()=>{this.getIssues()}}>Get Issues</button>
         {this.state.repo.name}
+        <ul className='collection'>
+          {this.populateResults()}
+        </ul>
       </div>
   );
   }
