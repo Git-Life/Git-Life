@@ -70,13 +70,13 @@ export default class OrgVis extends Component {
   }
 
   render() {
-    return (<div>
-
-      <ul className='collection' class="col s4" style={{display: 'inline-block',float:'left', margin: "10px 10px 10px 10px"}}>
-        <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Organizations</p>
-        {this.drawChart()}
-        {this.populateResults()}
-      </ul>
+    return (
+      <div>
+        <ul className='collection' class="col s4" style={{display: 'inline-block',float:'left', margin: "10px 10px 10px 10px"}}>
+          <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Organizations</p>
+          {this.drawChart()}
+          {this.populateResults()}
+        </ul>
       </div>
     )
   }
