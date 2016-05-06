@@ -3,7 +3,7 @@ var secret = require('../splash/tempsecret.js');
 
 var root = 'https://api.github.com/';
 
-var secretURL = '&client_id=' + secret.id + '&client_secret=' + secret.secret;
+var secretURL = '?client_id=' + secret.id + '&client_secret=' + secret.secret;
 
 function gitHTTP(method, reqString, cb){
   request({
