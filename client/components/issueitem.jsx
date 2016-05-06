@@ -40,16 +40,24 @@ export default class IssueItem extends Component{
       <li className='collection-item' >
         <div>
           {this.props.issue.title}
-          <a
-            href="javascript:;"
+          <button
             onClick={()=>{this.sendTeach('easy')}}
             class="secondary-content">
             Easy
-          </a>
+          </button>
+          <button
+            onClick={()=>{this.sendTeach('medium')}}
+            class="secondary-content">
+            Medium
+          </button>
+          <button
+            onClick={()=>{this.sendTeach('hard')}}
+            class="secondary-content">
+            Hard
+          </button>
           <button
             onClick={()=>
-              {this.checkDifficulty();}
-            }>
+              {this.checkDifficulty();}}>
             {this.state.predictedDifficulty}
           </button>
         </div>
