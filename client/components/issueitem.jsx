@@ -14,7 +14,6 @@ export default class IssueItem extends Component{
       difficulty: difficulty
     })
     .then((res) => {
-      console.log('this was res', res);
     })
     .catch((res)=> {
       console.log('caught this res', res);
@@ -29,7 +28,7 @@ export default class IssueItem extends Component{
       }
     })
     .then((res)=>{
-
+      this.setState({predictedDifficulty: res.data});
     })
     .catch((res)=>{
       console.log('err in checkDifficulty', err);

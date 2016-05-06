@@ -38,9 +38,7 @@ module.exports = {
       if(err){
         console.log('err in inquire', err);
       }
-      console.log(result);
-      console.log(result.winner);
-      res.send('ok');
+      res.send(result.winner);
     });
   }
 }
