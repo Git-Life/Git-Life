@@ -18,10 +18,22 @@ export default class IssueItem extends Component{
     })
     .catch((res)=> {
       console.log('caught this res', res);
-    })
+    });
   }
   checkDifficulty(){
-    
+    Axios.get('/learn/inquire', {
+      params: {
+        title: this.props.issue.title,
+        body: this.props.issue.body,
+        comments: this.props.issue.comments
+      }
+    })
+    .then((res)=>{
+
+    })
+    .catch((res)=>{
+      console.log('err in checkDifficulty', err);
+    });
   }
 
   render(){
