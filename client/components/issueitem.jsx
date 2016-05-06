@@ -1,11 +1,22 @@
 import React, {Component} from 'react';
-
 export default class IssueItem extends Component{
+  sendTeach(difficulty){
+    console.log(difficulty);
+  }
+
   render(){
     return (
-      <div className='collection-item' >
-        <span><a href={this.props.url}>{this.props.name}</a>: {this.props.contributions} contributions in {this.props.count} repos. </span>
-      </div>
+      <li className='collection-item' >
+        <div>
+          {this.props.issue.title}
+          <a
+            href="#"
+            onClick={()=>{this.sendTeach('easy')}}
+            class="secondary-content">
+            Easy
+          </a>
+        </div>
+      </li>
     );
   }
 }
