@@ -1,5 +1,5 @@
 var config = {
-  keyFilename: '../../gitalytics-5f17b3312e53.json',
+  keyFilename: __dirname + '/../../gitalytics-5f17b3312e53.json',
   projectId: 'gitalytics-1288'
 }
 var gcloud = require('gcloud')(config);
