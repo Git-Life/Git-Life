@@ -18,23 +18,20 @@ module.exports = {
     var lastWeekString = lastWeekArr[2] + '-' + lastWeekArr[0] + '-' + lastWeekArr[1];
     console.log('last week: ', lastWeekString);
 
-    var repos = {};
+    var newRepos = [];
     var root = 'https://api.github.com/';
     var gitRequest = 'search/repositories?q=size:>80&created>' + lastWeekString + '&sort=stars&order=desc'; // &per_page=100 // 2016-04-01
     var auth = '&client_id=' + secret.id + '&client_secret=' + secret.secret;
 
-    // var findOrgs = function (repos){
-    //   for(var i = 0; i < repos.length; i++){
-    //     if(repos[i].owner.type === "Organization"){
-    //       if(orgs[repos[i].owner.login] === undefined){
+    var findRepos = function (repos){
+      for(var i = 0; i < repos.length; i++){
+        newRepos.push({
+            name: repos[i].name,
+            full_name: repos[i].full_name,
 
-    //         orgs[repos[i].owner.login] = {org: repos[i].owner.login, trendingRepo: repos[i].name, url: repos[i].owner.html_url, avatar: repos[i].owner.avatar_url, key: repos[i].owner.id, instances: 1};
-    //       } else {
-    //         orgs[repos[i].owner.login].instances++;
-    //       }
-    //     }
-    //   }
-    // };
+        });
+      }
+    };
 
     var getRepos = function (req, res) {
       request({
@@ -45,10 +42,11 @@ module.exports = {
         if(error){
           console.log('Error: ', error);
         }
-        console.log(JSON.parse(body).items);
+        console.log('hey: ', JSON.parse(body).items);
         //findOrgs(JSON.parse(body).items);
+        findRepos(JSON.parse(body).items);
 
-        res.send(JSON.parse(body).items);
+        res.send(newRepos);
       });
     };
 
