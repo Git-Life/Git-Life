@@ -21,11 +21,18 @@ export function searchGitHub(searchTerm){
 }
 export const ORGVIS_REQUEST = 'ORGVIS_REQUEST';
 export function getTrendingOrgs(){
-  var orgs = Axios.get('/splash/orgs', {
-  });
+  var orgs = Axios.get('/splash/orgs', {});
   return {
     type: ORGVIS_REQUEST,
     payload: orgs
+  }
+}
+export const NEWREPOS_REQUEST = 'NEWREPOS_REQUEST';
+export function getNewRepos(){
+  var newRepos = Axios.get('/splash/newRepos', {});
+  return {
+    type: NEWREPOS_REQUEST,
+    payload: newRepos
   }
 }
 export const GET_SPLASH_REPOS = 'GET_SPLASH_REPOS';

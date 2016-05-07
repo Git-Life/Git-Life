@@ -2,6 +2,7 @@ import {combineReducers} from 'redux';
 import ReducerResults from './reducer_results';
 import ReducerTerm from './reducer_term';
 import ReducerOrgVis from './reducer_orgvis';
+import ReducerNewRepos from './reducer_newrepos';
 import ReducerSplashRepos from './reducer_splash_repos';
 import ReducerCommits from './reducer_commits';
 import ReducerSplash from './reducer_splashTopics';
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   wiredResults: ReducerSplash,
   dataResults: ReducerData,
   hnResults: ReducerHN,
-  orgs: ReducerOrgVis
+  orgs: ReducerOrgVis,
+  newRepos: ReducerNewRepos
 });
 
 export default rootReducer;
