@@ -35,6 +35,14 @@ export function getNewRepos(){
     payload: newRepos
   }
 }
+export const NEWORGS_REQUEST = 'NEWORGS_REQUEST';
+export function getNewOrgs(){
+  var newOrgs = Axios.get('/splash/newOrgs', {});
+  return {
+    type: NEWORGS_REQUEST,
+    payload: newOrgs
+  }
+}
 export const GET_SPLASH_REPOS = 'GET_SPLASH_REPOS';
 export function getSplashRepos(){
   var repos = Axios.get('/splash/repos',{});
@@ -91,7 +99,6 @@ export function searchHN(){
     payload: hnResults
   }
 }
-
 export const SELECT_REPO = 'SELECT_REPO';
 export function selectRepo(selectedRepo = null){
   return {
@@ -99,7 +106,6 @@ export function selectRepo(selectedRepo = null){
     payload: selectedRepo
   }
 }
-
 export const GET_ISSUES = 'GET_ISSUES';
 export function getIssues(selectedRepo){
   var issues = Axios.get('/learn/issues', {

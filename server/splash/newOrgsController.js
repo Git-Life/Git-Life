@@ -1,4 +1,4 @@
-ar request = require('request');
+var request = require('request');
 var secret = require('./tempsecret.js');
 
 module.exports = {

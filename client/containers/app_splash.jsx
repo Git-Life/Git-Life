@@ -23,6 +23,7 @@ class AppSplash extends Component {
           <SplashRepos getSplashRepos={this.props.actions.getSplashRepos} repos={this.props.repos}/>
           <WiredResults hnresults={this.props.hnResults} searchHN={this.props.actions.searchHN} searchData={this.props.actions.searchData} dataResults={this.props.dataResults} wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
           <TrendingNewRepos getNewRepos={this.props.actions.getNewRepos} newRepos={this.props.newRepos} />
+          <TrendingNewOrgs getNewOrgs={this.props.actions.getNewOrgs} newOrgs={this.props.newOrgs} />
         </div>
     </div>
     );
@@ -39,7 +40,8 @@ function mapStateToProps(state){
     dataResults: state.dataResults,
     hnResults: state.hnResults,
     orgs: state.orgs,
-    newRepos: state.newRepos
+    newRepos: state.newRepos,
+    newOrgs: state.newOrgs
   };
 }
 
