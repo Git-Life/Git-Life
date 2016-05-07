@@ -4,7 +4,11 @@ import Axios from 'axios';
 export default class IssueItem extends Component{
   constructor(props){
     super(props);
-    this.state = {predictedDifficulty: 'Click to see predicted difficulty'};
+    this.state = {predictedDifficulty: 'Difficulty'};
+  }
+
+  componentWillMount(){
+    this.checkDifficulty();
   }
 
   sendTeach(difficulty){
@@ -55,11 +59,7 @@ export default class IssueItem extends Component{
             class="secondary-content">
             Hard
           </button>
-          <button
-            onClick={()=>
-              {this.checkDifficulty();}}>
             {this.state.predictedDifficulty}
-          </button>
         </div>
       </li>
     );

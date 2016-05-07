@@ -18,7 +18,8 @@ export default class SelectedRepo extends Component{
 
   populateResults(){
     if(this.props.issues.data){
-      return _.reduce(this.props.issues.data.data, (accum, item)=>{
+      var reduceMe = this.props.issues.data.data.slice(0, 10);
+      return _.reduce(reduceMe, (accum, item)=>{
         let html =(
           <IssueItem
             key={item.id}
