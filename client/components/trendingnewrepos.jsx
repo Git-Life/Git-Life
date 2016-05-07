@@ -14,25 +14,30 @@ export default class TrendingNewRepos extends Component {
   }
 
   populateResults() {
-    console.log('populateResults: ', this.props.newRepos);
-    // return _.reduce(this.props.orgs.data, (accum, item) => {
+    console.log('populateResults: ', this.props.newRepos.data);
+    return _.reduce(this.props.newRepos.data, (accum, item) => {
 
-    //   let html = (
-    //     <a href={item.url} target='_blank'><li className='collection-item' class="badge" key={item.key}>
-    //       <img className='imgTrendOrg' src={item.avatar} alt='org avatar' />
-    //       {item.org}  
-    //     </li></a>
-    //   );
-    //   accum.push(html);
-    //   return accum;
-    // }, []);
+      let html = (
+        <a href={item.url} target='_blank'><li className='collection-item' class="badge" key={item.key}>
+          {item.name}
+          <br />
+          {item.description}
+          <br />
+          {item.stargazers}
+        </li></a>
+      );
+      accum.push(html);
+      return accum;
+    }, []);
   }
 
   render() {
     return (
       <div className='divNewRepos'>
         TRENDING NEW REPOS, yay!
+        <ul>
         {this.populateResults()}
+        </ul>
       </div>
     )
   }
