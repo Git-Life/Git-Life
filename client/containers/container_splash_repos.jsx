@@ -16,11 +16,15 @@ export default class SplashRepos extends Component {
     if(this.props.repos.data){
       return _.reduce(this.props.repos.data, (prev, curr)=>{
         let html = (
-          <div className="card-panel red accent-1 white-text" >
-            <li  key={curr.html_url} > <a style={{fontWeight:'bold'}} href={curr.html_url}>{curr.name}</a></li>
+          <div className="col s3 m4" >
+          <div className="card small" style={{ padding: '10px 10px 10px 10px'}}>
+            <li   key={curr.html_url} > <a style={{fontWeight:'bold'}} href={curr.html_url}>{curr.name}</a></li>
             <p>{curr.description}</p>
             <p>{curr.lang} Commits today: {curr.commitsToday}</p>
-
+            <p>Stargazers: {curr.stargazers}</p>
+            <p>Forks: {curr.forks}</p>
+            <p>Language: {curr.language}</p>
+          </div>
           </div>
         );
         prev.push(html);
@@ -33,10 +37,10 @@ export default class SplashRepos extends Component {
 
   render() {
     return(
-      <div >
-
-        <ul className="row"  style={{display: 'inline-block',float:'left', width: '25%'}}>
-          <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Repositories</p>
+      <div className="section">
+        <ul className="row"  style={{display: 'block',float:'right'}}>
+          <h5 style={{fontWeight:'bold', textAlign: 'center'}}>Top Repositories</h5>
+          <div className="divider"></div>
           {this.populateResults()}
         </ul>
     </div>

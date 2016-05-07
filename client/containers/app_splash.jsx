@@ -15,15 +15,15 @@ import test from '../styles/style.css';
 class AppSplash extends Component {
   render(){
     return (
-      <div>
-      
-      <div className="section">
+      <a>
+      <div >
           <OrgVis orgs={this.props.orgs} getTrendingOrgs={this.props.actions.getTrendingOrgs}/>
+      </div>
+      <div className="section">
           <SplashRepos getSplashRepos={this.props.actions.getSplashRepos} repos={this.props.repos}/>
           <WiredResults hnresults={this.props.hnResults} searchHN={this.props.actions.searchHN} searchData={this.props.actions.searchData} dataResults={this.props.dataResults} wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
-
         </div>
-    </div>
+    </a>
     );
   }
 }

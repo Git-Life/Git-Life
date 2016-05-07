@@ -29,7 +29,7 @@ export default class RepoSearchResults extends Component {
 
   render() {
     return (
-      <div className='collection' style={{display: 'inline-block',float:'left', width: '40%', height: '25%', margin: '20px 20px 20px 20px'}} >
+      <div  >
         <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Repositories</p>
         {this.populateResults()}
       </div>
