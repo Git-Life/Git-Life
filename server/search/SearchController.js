@@ -20,7 +20,7 @@ function gitHTTP(method, reqString, cb){
 module.exports = {
 	getRepos: function (req, res) {
 		var query = req.query.searchTerm;
-    gitHTTP('GET', root + 'search/repositories?q=' + query + 'in:description&order=desc',
+    gitHTTP('GET', root + 'search/repositories?q=' + query + 'in:description&sort=stars&order=desc',
      function (error, response, body) {
 			if(error){
         console.log('Error: ', error);
