@@ -59,10 +59,14 @@ export default class OrgVis extends Component {
     return _.reduce(this.props.orgs.data, (accum, item) => {
 
       let html = (
-        <a href={item.url} target='_blank'><li className='collection-item' class="badge" key={item.key}>
-          <img className='imgTrendOrg' src={item.avatar} alt='org avatar' />
-          {item.org}  
-        </li></a>
+        <div key={item.key} className="col s1 m1" style={{margin:'20px 20px 20px 20px'}}>
+        <div >
+          <a href={item.url}  target='_blank'><ul>
+            <img className='imgTrendOrg' src={item.avatar} alt='org avatar' />
+            {" " + item.org + " "}
+          </ul></a>
+        </div>
+        </div>
       );
       accum.push(html);
       return accum;
@@ -70,13 +74,14 @@ export default class OrgVis extends Component {
   }
 
   render() {
-    return (<div>
-
-      <ul className='collection' class="col s4" style={{display: 'inline-block',float:'left', margin: "10px 10px 10px 10px"}}>
-        <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Organizations</p>
-        {this.drawChart()}
-        {this.populateResults()}
-      </ul>
+    return (
+      <div className="section" >
+        <ul  className="row" style={{display: 'block', float:'left', margin: "20px 20px 20px 20px"}}>
+          <h5 style={{fontWeight:'bold', textAlign: 'center'}}>Trending Organizations</h5>
+          <div className="divider"></div>
+          <a style={{float:'left', paddingTop:'50px'}}>{this.drawChart()}</a>
+          {this.populateResults()}
+        </ul>
       </div>
     )
   }
