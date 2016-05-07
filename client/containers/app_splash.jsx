@@ -15,7 +15,7 @@ import test from '../styles/style.css';
 class AppSplash extends Component {
   render(){
     return (
-      <a>
+      <div>
       <div >
           <OrgVis orgs={this.props.orgs} getTrendingOrgs={this.props.actions.getTrendingOrgs}/>
       </div>
@@ -23,7 +23,7 @@ class AppSplash extends Component {
           <SplashRepos getSplashRepos={this.props.actions.getSplashRepos} repos={this.props.repos}/>
           <WiredResults hnresults={this.props.hnResults} searchHN={this.props.actions.searchHN} searchData={this.props.actions.searchData} dataResults={this.props.dataResults} wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
         </div>
-    </a>
+    </div>
     );
   }
 }
