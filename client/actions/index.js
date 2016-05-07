@@ -91,3 +91,24 @@ export function searchHN(){
     payload: hnResults
   }
 }
+
+export const SELECT_REPO = 'SELECT_REPO';
+export function selectRepo(selectedRepo = null){
+  return {
+    type: SELECT_REPO,
+    payload: selectedRepo
+  }
+}
+
+export const GET_ISSUES = 'GET_ISSUES';
+export function getIssues(selectedRepo){
+  var issues = Axios.get('/learn/issues', {
+      params: {
+        issuesURL: selectedRepo
+      }
+  });
+  return{
+    type: GET_ISSUES,
+    payload: issues
+  }
+}

@@ -8,6 +8,8 @@ import ReducerCommits from './reducer_commits';
 import ReducerSplash from './reducer_splashTopics';
 import ReducerData from './reducer_dataTopics';
 import ReducerHN from './reducer_hnTopics';
+import ReducerSelectedRepo from './reducer_selected_repo';
+import ReducerIssues from './reducer_issues';
 
 const rootReducer = combineReducers({
   term: ReducerTerm,
@@ -18,6 +20,8 @@ const rootReducer = combineReducers({
   dataResults: ReducerData,
   hnResults: ReducerHN,
   orgs: ReducerOrgVis,
+  selectedRepo: ReducerSelectedRepo,
+  issues: ReducerIssues,
   newRepos: ReducerNewRepos
 });
 
