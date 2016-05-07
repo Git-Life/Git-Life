@@ -12,15 +12,13 @@ module.exports = {
     //console.log('today minus one month: ', lastMonth.toLocaleDateString());
 
     var lastWeek = new Date(today.setUTCHours(today.getUTCHours() - (8 * 24)));
-    console.log('today minus one week: ', lastWeek.toLocaleDateString()); // 3/29/2016
-
-    var lastWeekArr = lastWeek.toLocaleDateString().split('/');
-    var lastWeekString = lastWeekArr[2] + '-' + lastWeekArr[0] + '-' + lastWeekArr[1];
-    console.log('last week: ', lastWeekString);
+    //console.log('today minus one week: ', lastWeek.toLocaleDateString()); // 3/29/2016
+    console.log('today minus one week: ', lastWeek.toISOString().slice(0,10));
+    var lastWeekString = lastWeek.toISOString().slice(0,10);
 
     var newRepos = [];
     var root = 'https://api.github.com/';
-    var gitRequest = 'search/repositories?q=size:>80&created>' + lastWeekString + '&sort=stars&order=desc'; // &per_page=100 // 2016-04-01
+    var gitRequest = 'search/repositories?q=created:>' + lastWeekString + '&sort=stars&order=desc'; // &per_page=100 // 2016-04-01
     var auth = '&client_id=' + secret.id + '&client_secret=' + secret.secret;
 
     var findRepos = function (repos){
@@ -28,7 +26,18 @@ module.exports = {
         newRepos.push({
             name: repos[i].name,
             full_name: repos[i].full_name,
-
+            description: repos[i].description,
+            html_url: repos[i].html_url,
+            homepage: repos[i].homepage,
+            stargazers: repos[i].stargazers_count,
+            watchers: repos[i].watchers_count,
+            open_issues: repos[i].open_issues,
+            language: repos[i].language,
+            forks: repos[i].forks,
+            size: repos[i].size,
+            created_at: repos[i].created_at,
+            updated_at: repos[i].updated_at,
+            id: repos[i].id
         });
       }
     };
@@ -42,7 +51,7 @@ module.exports = {
         if(error){
           console.log('Error: ', error);
         }
-        console.log('hey: ', JSON.parse(body).items);
+        //console.log('hey: ', JSON.parse(body).items);
         //findOrgs(JSON.parse(body).items);
         findRepos(JSON.parse(body).items);
 
