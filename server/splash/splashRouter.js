@@ -3,6 +3,7 @@ var trendOrgsController   = require('./trendOrgsController.js');
 var commitsController     = require('./commitsController.js');
 var topicsController      = require('./topicsController');
 var newReposController    = require('./newReposController');
+var newOrgsController     = require('./newOrgsController');
 
 
 module.exports = function (router) {
@@ -13,5 +14,5 @@ module.exports = function (router) {
   router.get('/rsshn', topicsController.getHNFeed);
   router.get('/orgs', trendOrgsController.getRepresentedOrgs);
   router.get('/newRepos', newReposController.getNewRepos);
-  //router.get('/newOrgs');
+  router.get('/newOrgs', newOrgsController.getNewOrgs);
 };
