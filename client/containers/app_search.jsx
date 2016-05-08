@@ -8,12 +8,47 @@ import * as Actions from '../actions';
 import UserResults from './userResults';
 import OrgSearchResults from '../components/orgsearchresults';
 import SelectedRepo from '../components/repoview';
-import Modal = from('react-modal');
+import Modal from 'react-modal';
 
 class AppSearch extends Component {
+  constructor(props){
+    super(props);
+    this.state = {modalIsOpen: false};
+  }
+  openModal(){
+   this.setState({modalIsOpen: true});
+ }
+
+ afterOpenModal() {
+   // references are now sync'd and can be accessed.
+   this.refs.subtitle.style.color = '#f00';
+ }
+
+ closeModal() {
+   this.setState({modalIsOpen: false});
+ }
+
   render(){
     return (
       <div >
+        <button onClick={this.openModal}>Open Modal</button>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+           >
+
+          <h2 ref="subtitle">Hello</h2>
+          <button onClick={this.closeModal}>close</button>
+          <div>I am a modal</div>
+          <form>
+            <input />
+            <button>tab navigation</button>
+            <button>stays</button>
+            <button>inside</button>
+            <button>the modal</button>
+          </form>
+        </Modal>
 
         <div class='section'>
           <UserResults  results={this.props.results} />
