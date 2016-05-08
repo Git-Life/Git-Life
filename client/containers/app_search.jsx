@@ -8,6 +8,7 @@ import * as Actions from '../actions';
 import UserResults from './userResults';
 import OrgSearchResults from '../components/orgsearchresults';
 import SelectedRepo from '../components/repoview';
+import Modal = from('react-modal');
 
 class AppSearch extends Component {
   render(){
