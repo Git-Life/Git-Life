@@ -22,12 +22,16 @@ class AppSearch extends Component {
           <RepoSearchResults
             results={this.props.results}
             selectRepo={this.props.actions.selectRepo}
+            selectedRepo={this.props.selectedRepo}
+            />
+          <OrgSearchResults results={this.props.results} />
+        </div>
+        <div class='section'>
+          <SelectedRepo
             repo={this.props.selectedRepo}
             issues={this.props.issues}
             getIssues={this.props.actions.getIssues}/>
-          <OrgSearchResults results={this.props.results} />
         </div>
-
     </div>
 
     );
