@@ -12,9 +12,7 @@ export default class RepoSearchResults extends Component {
   }
 
   openModal(){
-    console.log(this);
-    var that = this;
-   that.setState({modalIsOpen: true});
+   this.setState({modalIsOpen: true});
  }
 
  afterOpenModal() {

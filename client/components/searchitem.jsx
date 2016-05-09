@@ -8,9 +8,7 @@ export default class SearchItem extends Component{
   }
 
   selectARepo(){
-    console.log(this.props.openModal);
-
-    //this.props.selectRepo(this.props.thisRepoIs);
+    this.props.selectRepo(this.props.thisRepoIs);
     this.props.openModal();
   }
 
