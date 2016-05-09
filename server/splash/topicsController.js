@@ -113,7 +113,7 @@ module.exports={
     feedparser.on('end', ()=>{
       res.send(results);
     });
-  }
+  },
 
   getGoogleFeed: function(req, res){
     var req = request('https://news.google.com/news?q=' + lemurs + '&output=rss'),
@@ -140,4 +140,5 @@ module.exports={
     feedparser.on('end', ()=>{
       res.send(results);
     });
+  }
 }
