@@ -17,7 +17,6 @@ export default class SelectedRepo extends Component{
   }
 
   populateResults(){
-    var i = 0;
     if(this.props.issues.data){
       var reduceMe = this.props.issues.data.data.slice(0, 10);
       return _.reduce(reduceMe, (accum, item)=>{

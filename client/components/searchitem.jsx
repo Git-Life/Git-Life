@@ -15,18 +15,16 @@ export default class SearchItem extends Component{
   render(){
     return (
       <div>
-      <button onClick={()=>{this.selectARepo()}}>Open Modal</button>
+        <div
+          className='collection-item'
+          class="badge">
+          <div>
+            <a href='javascript:void(0)' onClick={()=>{this.selectARepo()}} >{this.props.description}</a>
+            <span style={{float: 'right'}}>{this.props.openIssues}</span>
+          </div>
 
-      <div
-        className='collection-item'
-        class="badge">
-        <div>
-          <a href={this.props.repoUrl} >{this.props.description}</a>
-          <span style={{float: 'right'}}>{this.props.openIssues}</span>
         </div>
-
       </div>
-    </div>
   );
   }
 }
