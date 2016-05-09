@@ -7,10 +7,14 @@ export default class RepoSearchResults extends Component {
   constructor(props){
     super(props);
     this.state = {modalIsOpen: false};
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   openModal(){
-   this.setState({modalIsOpen: true});
+    console.log(this);
+    var that = this;
+   that.setState({modalIsOpen: true});
  }
 
  afterOpenModal() {
@@ -26,15 +30,18 @@ export default class RepoSearchResults extends Component {
   populateResults(){
     if(this.props.results.data){
       return _.reduce(this.props.results.data.items, (accum, item)=>{
+
         let html =(
             <SearchItem
               description={item.description}
-              issues={"Open Issues: " + item.open_issues}
+              openIssues={"Open Issues: " + item.open_issues}
               issuesUrl={item.issues_url}
               repoUrl={item.clone_url}
               key={item.clone_url}
               thisRepoIs={item}
               selectRepo={this.props.selectRepo}
+              openModal={this.openModal}
+
               />
         );
         accum.push(html);
