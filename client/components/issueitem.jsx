@@ -43,23 +43,24 @@ export default class IssueItem extends Component{
     return (
       <li className='collection-item' >
         <div>
-          {this.props.issue.title}
+          <span>{this.props.issue.title} </span>
+          <span className='chip'>{this.state.predictedDifficulty}</span>
           <button
             onClick={()=>{this.sendTeach('easy')}}
-            class="secondary-content">
+            className="secondary-content">
             Easy
           </button>
           <button
             onClick={()=>{this.sendTeach('medium')}}
-            class="secondary-content">
+            className="secondary-content">
             Medium
           </button>
           <button
             onClick={()=>{this.sendTeach('hard')}}
-            class="secondary-content">
+            className="secondary-content">
             Hard
           </button>
-            {this.state.predictedDifficulty}
+
         </div>
       </li>
     );
