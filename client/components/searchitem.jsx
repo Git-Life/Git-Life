@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import Modal from 'react-modal';
-import SelectedRepo from '../components/repoview';
-
 
 
 export default class SearchItem extends Component{
@@ -41,8 +39,8 @@ openModal(){
         <div>
           <SelectedRepo
             repo={this.props.selectedRepo}
-            issues={this.props.issuesList}
-            getIssues={this.props.getIssues}/>
+            issues={this.props.issues}
+            getIssues={this.props.actions.getIssues}/>
         </div>
 
       </Modal>
