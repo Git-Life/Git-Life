@@ -32,6 +32,7 @@ module.exports = function(body, res){
       if(err){
         return callback(err);
       }
+<<<<<<< d04bb68c37244ed176ff0c304e867379d8699442
 <<<<<<< fc008dbba49b574ea7d9f207119bc751038888ce
 
       contributors = JSON.parse(contributors);
@@ -50,6 +51,7 @@ module.exports = function(body, res){
           }
         }
       });
+
       callback();
     });
   }, function (err) {
