@@ -18,7 +18,7 @@ module.exports = {
 
     var newOrgs = [];
     var root = 'https://api.github.com/';
-    var gitRequest = 'search/user?q=type=org&created:>' + lastWeekString + '&sort=followers&order=desc'; // &per_page=100 // 2016-04-01
+    var gitRequest = 'search/users?q=type=org&created:>' + lastWeekString + '&sort=followers&order=desc'; // &per_page=100 // 2016-04-01
     var auth = '&client_id=' + secret.id + '&client_secret=' + secret.secret;
 
     var findOrgs = function (orgs){
@@ -44,14 +44,14 @@ module.exports = {
 
     var getOrgs = function (req, res) {
       request({
-        uri: root + gitRequest, // + auth
+        uri: root + gitRequest+ auth,
         method: 'GET',
         headers: {'user-agent': 'node.js'}
       }, function (error, response, body) {
         if(error){
           console.log('Error: ', error);
         }
-        //console.log('hey: ', JSON.parse(body).items);
+        console.log('hey: ', JSON.parse(body).items);
         //findOrgs(JSON.parse(body).items);
         findOrgs(JSON.parse(body).items);
 
