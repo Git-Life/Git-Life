@@ -68,7 +68,7 @@ module.exports = {
 	getIssues: function (req, res) {
     var query = req.query.searchTerm;
     request({
-      uri: root + 'search/issues?q=' + query,
+      uri: root + 'search/issues?q=' + query + 'state:open',
       method: 'GET',
       header: {'user-agent': 'node.js'}
     }, function(error, response, body){
