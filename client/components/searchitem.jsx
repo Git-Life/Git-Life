@@ -28,21 +28,23 @@ openModal(){
   render(){
     return (
       <div>
-
+      
       <Modal
         isOpen={this.state.modalIsOpen}
         onAfterOpen={this.afterOpenModal}
-        onRequestClose={this.closeModal}>
+        onRequestClose={this.closeModal}
+         >
 
         <h2 ref="subtitle">Hello</h2>
         <button onClick={()=>{this.closeModal()}}>close</button>
-        <div>
-          <SelectedRepo
-            repo={this.props.selectedRepo}
-            issues={this.props.issues}
-            getIssues={this.props.actions.getIssues}/>
-        </div>
-
+        <div>I am a modal</div>
+        <form>
+          <input />
+          <button>tab navigation</button>
+          <button>stays</button>
+          <button>inside</button>
+          <button>the modal</button>
+        </form>
       </Modal>
       <div
         className='collection-item'
