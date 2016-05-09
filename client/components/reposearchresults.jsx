@@ -14,12 +14,10 @@ export default class RepoSearchResults extends Component {
 
   openModal(){
    this.setState({modalIsOpen: true});
-   console.log(this.props.selectedRepo);
  }
 
  afterOpenModal() {
    // references are now sync'd and can be accessed.
-   this.refs.subtitle.style.color = '#f00';
  }
 
  closeModal() {
@@ -41,6 +39,7 @@ export default class RepoSearchResults extends Component {
               thisRepoIs={item}
               selectRepo={this.props.selectRepo}
               openModal={this.openModal}
+              closeModal={this.closeModal}
 
               />
         );
@@ -56,6 +55,7 @@ export default class RepoSearchResults extends Component {
   render() {
     return (
       <div className='collection' style={{display: 'inline-block',float:'left', width: '40%', height: '25%', margin: '20px 20px 20px 20px'}} >
+
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -63,17 +63,24 @@ export default class RepoSearchResults extends Component {
           repo={this.props.selectedRepo}
           issues={this.props.issues}
           getIssues={this.props.getIssues}
+          closeModal={this.closeModal}
            >
+           <div>
 
-          <h2>Hello</h2>
-          <button onClick={()=>{this.closeModal()}}>close</button>
-          <div>
-            <SelectedRepo
-              repo={this.props.selectedRepo}
-              issues={this.props.issues}
-              getIssues={this.props.getIssues}/>
+
+              <button
+                className='waves-effect waves-light btn'
+                onClick={()=>{this.closeModal()}}>
+                X
+              </button>
+            <div>
+              <SelectedRepo
+                repo={this.props.selectedRepo}
+                issues={this.props.issues}
+                getIssues={this.props.getIssues}
+                closeModal={this.props.closeModal}/>
+            </div>
           </div>
-
         </Modal>
         <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Repositories</p>
         {this.populateResults()}

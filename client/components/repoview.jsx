@@ -8,13 +8,11 @@ export default class SelectedRepo extends Component{
   }
   componentWillMount(){
     if(this.props.repo.data){
-      console.log(this.props.repo);
       this.setState({repo: this.props.repo.data});
     }
   }
 
   getIssues(){
-    console.log(this.state.repo.issues_url);
     this.props.getIssues(this.state.repo.issues_url);
   }
 
@@ -37,9 +35,15 @@ export default class SelectedRepo extends Component{
 
   render(){
     return (
-      <div>
-        <button onClick={()=>{this.getIssues()}}>Get Issues</button>
-        {this.state.repo.name}
+      <div class='modal-content'>
+        <h4>{this.state.repo.name}</h4>
+        <button
+          className='waves-effect waves-light btn'
+          onClick={()=>{this.getIssues()}}>
+          Get Issues
+        </button>
+
+
         <ul className='collection'>
           {this.populateResults()}
         </ul>

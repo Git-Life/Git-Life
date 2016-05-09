@@ -16,7 +16,6 @@ function gitHTTP(method, reqString, cb){
 
 module.exports = function(req, res){
   var issuesURL = req.query.issuesURL;
-  console.log(issuesURL);
   gitHTTP('GET', issuesURL.slice(0, issuesURL.length-9), (err, response, body)=>{
     if(err){
       console.log('err is', err);
