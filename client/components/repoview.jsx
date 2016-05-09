@@ -6,7 +6,7 @@ export default class SelectedRepo extends Component{
     super(props)
     this.state = {repo: {}, issues: []}
   }
-  componentWillReceiveProps(){
+  componentWillMount(){
     if(this.props.repo.data){
       console.log(this.props.repo);
       this.setState({repo: this.props.repo.data});
