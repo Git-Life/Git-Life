@@ -21,5 +21,6 @@ module.exports = {
 
     //console.log('organizations: ', resObj.organizations);
     res.send(resObj);
+    for (var member in resObj) delete resObj[member];
   }
 };
