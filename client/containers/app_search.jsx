@@ -7,7 +7,6 @@ import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 import UserResults from './userResults';
 import OrgSearchResults from '../components/orgsearchresults';
-import SelectedRepo from '../components/repoview';
 
 class AppSearch extends Component {
 
@@ -23,14 +22,13 @@ class AppSearch extends Component {
             results={this.props.results}
             selectRepo={this.props.actions.selectRepo}
             selectedRepo={this.props.selectedRepo}
+            issuesList={this.props.issues}
+            getIssues={this.props.actions.getIssues}
             />
           <OrgSearchResults results={this.props.results} />
         </div>
         <div class='section'>
-          <SelectedRepo
-            repo={this.props.selectedRepo}
-            issues={this.props.issues}
-            getIssues={this.props.actions.getIssues}/>
+
         </div>
     </div>
 
