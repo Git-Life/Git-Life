@@ -12,7 +12,6 @@ export default class IssueItem extends Component{
   }
 
   sendTeach(difficulty){
-    console.log(difficulty);
     Axios.post('/learn/teach',{
       issue: this.props.issue,
       difficulty: difficulty
@@ -47,17 +46,17 @@ export default class IssueItem extends Component{
           <span className='chip'>{this.state.predictedDifficulty}</span>
           <button
             onClick={()=>{this.sendTeach('easy')}}
-            className="secondary-content">
+            className="secondary-content waves-effect waves-light btn">
             Easy
           </button>
           <button
             onClick={()=>{this.sendTeach('medium')}}
-            className="secondary-content">
+            className="secondary-content waves-effect waves-light btn">
             Medium
           </button>
           <button
             onClick={()=>{this.sendTeach('hard')}}
-            className="secondary-content">
+            className="secondary-content waves-effect waves-light btn">
             Hard
           </button>
 
