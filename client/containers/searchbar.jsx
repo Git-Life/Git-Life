@@ -18,8 +18,8 @@ export default class SearchBar extends Component {
     this.setState({searchTerm: value});
   }
   onEnterPress(event){
-    event.preventDefault();
-    event.stopPropagation();
+     event.preventDefault();
+     window.location.href= "/#/search"
   }
   render() {
     return(
