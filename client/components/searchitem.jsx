@@ -1,46 +1,18 @@
 import React, {Component} from 'react';
-import Modal from 'react-modal';
 
 
 export default class SearchItem extends Component{
   constructor(props){
     super(props);
-    this.state = {modalIsOpen: false};
+    
   }
-  openModal(){
-   this.setState({modalIsOpen: true});
- }
 
- afterOpenModal() {
-   // references are now sync'd and can be accessed.
-   this.refs.subtitle.style.color = '#f00';
- }
-
- closeModal() {
-   this.setState({modalIsOpen: false});
- }
 
   render(){
     return (
       <div>
-      <button onClick={()=>{this.openModal()}}>Open Modal</button>
-      <Modal
-        isOpen={this.state.modalIsOpen}
-        onAfterOpen={this.afterOpenModal}
-        onRequestClose={this.closeModal}
-         >
+      <button onClick={()=>{this.props.openModal()}}>Open Modal</button>
 
-        <h2 ref="subtitle">Hello</h2>
-        <button onClick={()=>{this.closeModal()}}>close</button>
-        <div>I am a modal</div>
-        <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
-        </form>
-      </Modal>
       <div
         className='collection-item'
         class="badge"

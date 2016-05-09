@@ -1,7 +1,27 @@
 import React, {Component} from 'react';
 import SearchItem from './searchitem';
+import Modal from 'react-modal';
+
 
 export default class RepoSearchResults extends Component {
+  constructor(props){
+    super(props);
+    this.state = {modalIsOpen: false};
+  }
+
+  openModal(){
+   this.setState({modalIsOpen: true});
+ }
+
+ afterOpenModal() {
+   // references are now sync'd and can be accessed.
+   this.refs.subtitle.style.color = '#f00';
+ }
+
+ closeModal() {
+   this.setState({modalIsOpen: false});
+ }
+
 
   populateResults(){
     if(this.props.results.data){
@@ -29,6 +49,23 @@ export default class RepoSearchResults extends Component {
   render() {
     return (
       <div className='collection' style={{display: 'inline-block',float:'left', width: '40%', height: '25%', margin: '20px 20px 20px 20px'}} >
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+           >
+
+          <h2 ref="subtitle">Hello</h2>
+          <button onClick={()=>{this.closeModal()}}>close</button>
+          <div>I am a modal</div>
+          <form>
+            <input />
+            <button>tab navigation</button>
+            <button>stays</button>
+            <button>inside</button>
+            <button>the modal</button>
+          </form>
+        </Modal>
         <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Repositories</p>
         {this.populateResults()}
       </div>
