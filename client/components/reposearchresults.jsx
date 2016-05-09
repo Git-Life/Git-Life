@@ -27,10 +27,12 @@ export default class RepoSearchResults extends Component {
 
   populateResults(){
     if(this.props.results.data){
-      return _.reduce(this.props.results.data.items, (accum, item)=>{
 
+      return _.reduce(this.props.results.data.items, (accum, item)=>{
+        console.log(item);
         let html =(
             <SearchItem
+              name={item.name}
               description={item.description}
               openIssues={"Open Issues: " + item.open_issues}
               issuesUrl={item.issues_url}
