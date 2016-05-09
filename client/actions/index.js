@@ -95,6 +95,7 @@ export function selectRepo(selectedRepo = null){
 
 export const GET_ISSUES = 'GET_ISSUES';
 export function getIssues(selectedRepo){
+  console.log(selectedRepo);
   var issues = Axios.get('/learn/issues', {
       params: {
         issuesURL: selectedRepo

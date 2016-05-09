@@ -8,11 +8,13 @@ export default class SelectedRepo extends Component{
   }
   componentWillReceiveProps(){
     if(this.props.repo.data){
+      console.log(this.props.repo);
       this.setState({repo: this.props.repo.data});
     }
   }
 
   getIssues(){
+    console.log(this.state.repo.issues_url);
     this.props.getIssues(this.state.repo.issues_url);
   }
 

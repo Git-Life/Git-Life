@@ -14,6 +14,7 @@ export default class RepoSearchResults extends Component {
 
   openModal(){
    this.setState({modalIsOpen: true});
+   console.log(this.props.selectedRepo);
  }
 
  afterOpenModal() {
@@ -59,6 +60,9 @@ export default class RepoSearchResults extends Component {
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
+          repo={this.props.selectedRepo}
+          issues={this.props.issues}
+          getIssues={this.props.getIssues}
            >
 
           <h2>Hello</h2>
