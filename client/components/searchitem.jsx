@@ -7,7 +7,8 @@ export default class SearchItem extends Component{
     super(props);
     this.state = {modalIsOpen: false};
   }
-  openModal(){
+
+openModal(){
    this.setState({modalIsOpen: true});
  }
 
@@ -20,10 +21,14 @@ export default class SearchItem extends Component{
    this.setState({modalIsOpen: false});
  }
 
+ handleOpenModal(){
+   this.openModal();
+ }
+
   render(){
     return (
       <div>
-      <button onClick={()=>{this.openModal()}}>Open Modal</button>
+      
       <Modal
         isOpen={this.state.modalIsOpen}
         onAfterOpen={this.afterOpenModal}
@@ -44,7 +49,14 @@ export default class SearchItem extends Component{
       <div
         className='collection-item'
         class="badge">
-        <div><a href={this.props.repoUrl} >{this.props.description}</a>
+        <div>
+          <a
+            className='modalOpener'
+            href='#'
+            onclick={()=>{this.handleOpenModal(); return false;}} >
+            {this.props.description}
+          </a>
+
         <a
           onClick={()=>{this.props.selectRepo(this.props.thisRepoIs)}}
           style={{float: 'right'}}>{this.props.issues}</a>

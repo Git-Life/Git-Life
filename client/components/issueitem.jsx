@@ -46,17 +46,17 @@ export default class IssueItem extends Component{
           {this.props.issue.title}
           <button
             onClick={()=>{this.sendTeach('easy')}}
-            class="secondary-content">
+            className="secondary-content">
             Easy
           </button>
           <button
             onClick={()=>{this.sendTeach('medium')}}
-            class="secondary-content">
+            className="secondary-content">
             Medium
           </button>
           <button
             onClick={()=>{this.sendTeach('hard')}}
-            class="secondary-content">
+            className="secondary-content">
             Hard
           </button>
             {this.state.predictedDifficulty}
