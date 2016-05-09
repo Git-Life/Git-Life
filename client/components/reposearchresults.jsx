@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import SearchItem from './searchitem';
 import Modal from 'react-modal';
+import SelectedRepo from '../components/repoview';
 
 
 export default class RepoSearchResults extends Component {
@@ -60,16 +61,15 @@ export default class RepoSearchResults extends Component {
           onRequestClose={this.closeModal}
            >
 
-          <h2 ref="subtitle">Hello</h2>
+          <h2>Hello</h2>
           <button onClick={()=>{this.closeModal()}}>close</button>
-          <div>I am a modal</div>
-          <form>
-            <input />
-            <button>tab navigation</button>
-            <button>stays</button>
-            <button>inside</button>
-            <button>the modal</button>
-          </form>
+          <div>
+            <SelectedRepo
+              repo={this.props.selectedRepo}
+              issues={this.props.issues}
+              getIssues={this.props.getIssues}/>
+          </div>
+
         </Modal>
         <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Repositories</p>
         {this.populateResults()}
