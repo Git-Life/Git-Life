@@ -15,6 +15,15 @@ class App extends Component {
       <div>
         <nav>
           <div className="nav-wrapper red accent-1">
+            <div className="row">
+              <div className="col s12">
+                <ul className='tabs'>
+                  <li className='tab col s3'>Test1</li>
+                  <li className='tab col s3'>Test1</li>
+                  <li className='tab col s3'>Test1</li>
+                </ul>
+              </div>
+            </div>
             <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
             <LanguageSelect />
           </div>
