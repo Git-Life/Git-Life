@@ -34,7 +34,7 @@ export default class TrendingNewOrgs extends Component {
   render() {
     return (
       <div className="section">
-        <ul className="row"  style={{display: 'block'; float:'right'}}>
+        <ul className="row"  style={{display: 'block', float:'right'}}>
           <h5 style={{fontWeight:'bold', textAlign: 'center'}}>Top New Organizations</h5>
           <div className="divider"></div>
           {this.populateResults()}
