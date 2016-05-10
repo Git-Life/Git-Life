@@ -18,7 +18,7 @@ export default class TrendingNewRepos extends Component {
     return _.reduce(this.props.newRepos.data, (accum, item) => {
 
       let html = (
-        <a href={item.url} target='_blank'><li className='collection-item' class="badge" key={item.key}>
+        <a href={item.url} target='_blank'><li className='collection-item' class="badge" key={item.id}>
           {item.name}
           <br />
           {item.description}

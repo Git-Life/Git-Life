@@ -18,12 +18,10 @@ export default class TrendingNewOrgs extends Component {
     return _.reduce(this.props.newOrgs.data, (accum, item) => {
 
       let html = (
-        <a href={item.url} target='_blank'><li className='collection-item' class="badge" key={item.key}>
-          {item.name}
+        <a href={item.html_url} target='_blank'><li className='collection-item' class="badge" key={item.id}>
+          <img className='imgOrg' src={item.avatar} alt='org avatar' />
           <br />
-          {item.description}
-          <br />
-          {item.stargazers}
+          {item.login}
         </li></a>
       );
       accum.push(html);
