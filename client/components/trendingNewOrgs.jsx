@@ -1,6 +1,5 @@
 import {reduce, each} from 'lodash';
 import React, {Component} from 'react';
-import SearchItem from './searchitem';
 
 export default class TrendingNewOrgs extends Component {
   constructor(props){
@@ -18,11 +17,14 @@ export default class TrendingNewOrgs extends Component {
     return _.reduce(this.props.newOrgs.data, (accum, item) => {
 
       let html = (
-        <a href={item.html_url} target='_blank'><li className='collection-item' class="badge" key={item.id}>
-          <img className='imgOrg' src={item.avatar} alt='org avatar' />
-          <br />
-          {item.login}
-        </li></a>
+          <div className="col s3 m4" >
+            <div className="card small" style={{ padding: '10px 10px 10px 10px'}}>
+              <img className='imgNewOrg' src={item.avatar} alt='org avatar' />
+              <li key={item.html_url}>
+                <a style={{fontWeight:'bold'}} href={item.html_url}>{item.login}</a>
+              </li>
+            </div>
+          </div>
       );
       accum.push(html);
       return accum;
@@ -31,12 +33,13 @@ export default class TrendingNewOrgs extends Component {
 
   render() {
     return (
-      <div className='divNewRepos'>
-        TRENDING NEW ORGS, wahoo!
-        <ul>
-        {this.populateResults()}
+      <div className="section">
+        <ul className="row"  style={{display: 'block'; float:'right'}}>
+          <h5 style={{fontWeight:'bold', textAlign: 'center'}}>Top New Organizations</h5>
+          <div className="divider"></div>
+          {this.populateResults()}
         </ul>
       </div>
-    )
+    );
   }
 };

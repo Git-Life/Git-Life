@@ -33,3 +33,7 @@
 .divNewRepos {
   display: block;
 }
+
+.imgNewOrg {
+  max-width: 100px;
+}
