@@ -13,7 +13,7 @@ export default class Categories extends Component{
 
   render(){
     return(<div>
-      <div className="Categories-column-1" className="card">
+      <div className="categories-column card" >
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("animal")}} >Animals</div>
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("artificial intelligence")}} >Artificial Intelligence</div>
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("blogs")}} >Blogs</div>
@@ -21,7 +21,7 @@ export default class Categories extends Component{
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("cats")}} >Cats</div>
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("food")}} >Food</div>
       </div>
-      <div className="Categories-column-2">
+      <div className="categories-column card">
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("books")}} >Books</div>
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("developer")}} >Developer</div>
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("education")}} >Education</div>
@@ -29,7 +29,7 @@ export default class Categories extends Component{
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("entertainment")}} >Entertainment</div>
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("finance")}} >Finance</div>
       </div>
-      <div className="Categories-column-3">
+      <div className="categories-column card">
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("data")}} >Data</div>
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("fun")}} >Fun</div>
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("games")}} >Games</div>
@@ -37,7 +37,7 @@ export default class Categories extends Component{
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("internet of things")}} >Internet of Things</div>
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("toy problems")}} >Toy Problems</div>
       </div>
-      <div className="Categories-column-4">
+      <div className="categories-column card col s12 m5">
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("health")}} >Health</div>
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("fitness")}} >Fitness</div>
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("machine learning")}} >Machine Learning</div>
@@ -45,7 +45,7 @@ export default class Categories extends Component{
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("messaging")}} >Messaging</div>
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("movies")}} >Movies</div>
       </div>
-      <div className="Categories-column-5">
+      <div className="categories-column card">
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("music")}} >Music</div>
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("navigation")}} >Navigation</div>
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("news")}} >News</div>
@@ -53,7 +53,7 @@ export default class Categories extends Component{
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("videos")}} >Videos</div>
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("productivity")}} >Productivity</div>
       </div>
-      <div className="Categories-column-6">
+      <div className="categories-column card">
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("shopping")}} >Shopping</div>
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("social")}} >Social</div>
         <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("sports")}} >Sports</div>

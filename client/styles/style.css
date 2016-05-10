@@ -74,3 +74,15 @@
 .hvr-grow:active {
   transform: scale(.8);
 }
+.categories-column{
+  display: inline-block;
+  vertical-align: top;
+  margin: 5px 5px 5px 5px !important;
+  padding: 5px 5px 5px 5px;
+  width:250px;
+  height: 200px;
+  position: relative;
+  border-radius: 20px !important;
+
+
+}
