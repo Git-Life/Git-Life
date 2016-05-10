@@ -67,7 +67,7 @@ export default class RepoSearchResults extends Component {
       case 'popularity':
         var newArray = this.props.results.data.items.slice();
         return this.constructHTML(newArray.sort((a, b)=>{
-          return a.stargazers_count - b.stargazers_count;
+          return b.stargazers_count - a.stargazers_count;
         }));
         break;
       default:
