@@ -4,7 +4,6 @@ import OrgItem from './orgitem';
 export default class OrgSearchResults extends Component {
   constructor(props){
     super(props);
-
     this.state = {sort: ''};
   }
 

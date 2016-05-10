@@ -13,11 +13,11 @@ function gitHTTP(method, reqString, cb){
   }, cb);
 }
 
-var userObj = {};
 
 module.exports = function(body, res){
   var items =   JSON.parse(body).items;
   var itemGroup = items.slice(0, 10);
+  var userObj = {};
 
   async.forEachOf(itemGroup, function (value, key, callback) {
     gitHTTP('GET', itemGroup[key].contributors_url + '?', function(err, response, contributors){
