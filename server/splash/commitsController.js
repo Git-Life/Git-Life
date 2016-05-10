@@ -1,7 +1,14 @@
 var request = require('request');
 var fs = require('fs');
+var SECRET = {};
+if(process.env.NODE_ENV === 'development'){
+   SECRET = require('./tempsecret.js');
+}
+else if(process.env.NODE_ENV === 'production'){
+   SECRET.id= process.env.gitid;
+   SECRET.secret= process.env.gitkey;
+}
 
-const SECRET = require('./tempsecret.js');
 const GITHUB_ROOT = 'https://api.github.com/';
 
 const SECRET_URL  = '&client_id=' + SECRET.id + '&client_secret=' + SECRET.secret;
