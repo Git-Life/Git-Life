@@ -13,47 +13,54 @@ export default class Categories extends Component{
 
   render(){
     return(<div>
-      <button onClick={()=>{this.handleSearch("animal")}} >Animals</button>
-      <button onClick={()=>{this.handleSearch("artificial intelligence")}} >Artificial Intelligence</button>
-      <button onClick={()=>{this.handleSearch("blogs")}} >Blogs</button>
-      <button onClick={()=>{this.handleSearch("business")}} >Business</button>
-      <button onClick={()=>{this.handleSearch("cats")}} >Cats</button>
-      <button onClick={()=>{this.handleSearch("food")}} >Food</button>
-
-      <button onClick={()=>{this.handleSearch("books")}} >Books</button>
-      <button onClick={()=>{this.handleSearch("developer")}} >Developer</button>
-      <button onClick={()=>{this.handleSearch("education")}} >Education</button>
-      <button onClick={()=>{this.handleSearch("email")}} >Email</button>
-      <button onClick={()=>{this.handleSearch("entertainment")}} >Entertainment</button>
-      <button onClick={()=>{this.handleSearch("finance")}} >Finance</button>
-
-      <button onClick={()=>{this.handleSearch("data")}} >Data</button>
-      <button onClick={()=>{this.handleSearch("fun")}} >Fun</button>
-      <button onClick={()=>{this.handleSearch("games")}} >Games</button>
-      <button onClick={()=>{this.handleSearch("robotics")}} >Robotics</button>
-      <button onClick={()=>{this.handleSearch("internet of things")}} >Internet of Things</button>
-      <button onClick={()=>{this.handleSearch("toy problems")}} >Toy Problems</button>
-
-      <button onClick={()=>{this.handleSearch("health")}} >Health</button>
-      <button onClick={()=>{this.handleSearch("fitness")}} >Fitness</button>
-      <button onClick={()=>{this.handleSearch("machine learning")}} >Machine Learning</button>
-      <button onClick={()=>{this.handleSearch("medical")}} >Medical</button>
-      <button onClick={()=>{this.handleSearch("messaging")}} >Messaging</button>
-      <button onClick={()=>{this.handleSearch("movies")}} >Movies</button>
-
-      <button onClick={()=>{this.handleSearch("music")}} >Music</button>
-      <button onClick={()=>{this.handleSearch("navigation")}} >Navigation</button>
-      <button onClick={()=>{this.handleSearch("news")}} >News</button>
-      <button onClick={()=>{this.handleSearch("photos")}} >Photos</button>
-      <button onClick={()=>{this.handleSearch("videos")}} >Videos</button>
-      <button onClick={()=>{this.handleSearch("productivity")}} >Productivity</button>
-
-      <button onClick={()=>{this.handleSearch("shopping")}} >Shopping</button>
-      <button onClick={()=>{this.handleSearch("social")}} >Social</button>
-      <button onClick={()=>{this.handleSearch("sports")}} >Sports</button>
-      <button onClick={()=>{this.handleSearch("travel")}} >Travel</button>
-      <button onClick={()=>{this.handleSearch("virtual reality")}} >Virtual Reality</button>
-      <button onClick={()=>{this.handleSearch("webcam")}} >Webcam</button>
+      <div className="Categories-column-1" className="card">
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("animal")}} >Animals</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("artificial intelligence")}} >Artificial Intelligence</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("blogs")}} >Blogs</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("business")}} >Business</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("cats")}} >Cats</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("food")}} >Food</div>
+      </div>
+      <div className="Categories-column-2">
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("books")}} >Books</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("developer")}} >Developer</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("education")}} >Education</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("email")}} >Email</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("entertainment")}} >Entertainment</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("finance")}} >Finance</div>
+      </div>
+      <div className="Categories-column-3">
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("data")}} >Data</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("fun")}} >Fun</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("games")}} >Games</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("robotics")}} >Robotics</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("internet of things")}} >Internet of Things</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("toy problems")}} >Toy Problems</div>
+      </div>
+      <div className="Categories-column-4">
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("health")}} >Health</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("fitness")}} >Fitness</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("machine learning")}} >Machine Learning</div>
+        <div className="chip hvr-grow" onClick={()=>{this.handleSearch("medical")}} >Medical</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("messaging")}} >Messaging</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("movies")}} >Movies</div>
+      </div>
+      <div className="Categories-column-5">
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("music")}} >Music</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("navigation")}} >Navigation</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("news")}} >News</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("photos")}} >Photos</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("videos")}} >Videos</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("productivity")}} >Productivity</div>
+      </div>
+      <div className="Categories-column-6">
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("shopping")}} >Shopping</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("social")}} >Social</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("sports")}} >Sports</div>
+        <div className="chip hvr-grow" onClick={()=>{this.handleSearch("travel")}} >Travel</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("virtual reality")}} >Virtual Reality</div>
+        <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("webcam")}} >Webcam</div>
+      </div>
     </div>)
   }
 
