@@ -21,21 +21,17 @@ class App extends Component {
               <div className="col s12">
                 <ul className='tabs blue lighten-4'>
                   <li className='tab col s3'>
-                    <a className="active" href="#search">Search</a>
+                    <span className="active">
+                      <Link to='/'>Search</Link>
+                    </span>
                   </li>
                   <li className='tab col s3'>
-
-                      <Link to='/trends'>Trends</Link>
-
+                    <span><Link to='/trends'>Trends</Link></span>
                   </li>
                 </ul>
               </div>
             </div>
-            <SearchBar
-              searchTerm={this.props.term}
-              onRequest={this.props.actions.searchGitHub}
-              onSearchTermChange={this.props.actions.updateSearchTerm}/>
-            <LanguageSelect />
+
           </div>
 
         {this.props.children}
