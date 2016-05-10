@@ -17,7 +17,7 @@ module.exports = {
     //var lastWeekString = lastWeek.toISOString().slice(0,10);
 
     var newOrgs = [];
-    var root = 'https://api.github.com/'; //NOT SHOWING ORGS, but regular USERS
+    var root = 'https://api.github.com/';
     var gitRequest = 'search/users?q=type:org+created:>' + lastMonthString + '&sort=repositories&order=desc'; // &per_page=100 // 2016-04-01
     var auth = '&client_id=' + secret.id + '&client_secret=' + secret.secret;
 
@@ -43,7 +43,7 @@ module.exports = {
         }
         //console.log('hey: ', JSON.parse(body).items);
         findOrgs(JSON.parse(body).items);
-        console.log('newOrgs: ', newOrgs);
+        //console.log('newOrgs: ', newOrgs);
         res.send(newOrgs);
       });
     };
