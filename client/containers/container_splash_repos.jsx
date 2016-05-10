@@ -40,7 +40,7 @@ export default class SplashRepos extends Component {
       <div className="section">
         <ul className="row"  style={{display: 'block',float:'right'}}>
           <h5 style={{fontWeight:'bold', textAlign: 'center'}}>Top Repositories</h5>
-          <div className="divider"></div>
+          <div ></div>
           {this.populateResults()}
         </ul>
     </div>
