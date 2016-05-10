@@ -1,7 +1,14 @@
 var request = require('request');
-var secret = require('../splash/tempsecret.js');
-
 var root = 'https://api.github.com/';
+
+var secret = {};
+if(process.env.NODE_ENV === 'development'){
+  secret = require('../splash/tempsecret.js');
+}
+else if(process.env.NODE_ENV === 'production'){
+   secret.id= process.env.gitid;
+   secret.secret= process.env.gitkey;
+}
 
 var secretURL = '?client_id=' + secret.id + '&client_secret=' + secret.secret;
 
