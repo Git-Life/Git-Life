@@ -29,7 +29,6 @@ export default class RepoSearchResults extends Component {
     if(this.props.results.data){
 
       return _.reduce(this.props.results.data.items, (accum, item)=>{
-        console.log(item);
         let html =(
             <SearchItem
               name={item.name}
