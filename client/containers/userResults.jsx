@@ -16,7 +16,7 @@ export default class UserResults extends Component {
       let html =(
         <UserResult
           name={item.name}
-          url={item.url}
+          url={item.html_url}
           key={item.id}
           contributions={item.contributions}
           count={item.count}

@@ -32,6 +32,7 @@ module.exports = function(body, res){
       if(err){
         return callback(err);
       }
+<<<<<<< 0471253c32d8ef3d5d4f3074009bf54b8121adfc
 <<<<<<< 133ee12080d90cdbeee67fcb4e07b454813fd16d
 <<<<<<< 8d08fcc7165d945bdaf91451ce808dc70f46e327
 <<<<<<< d04bb68c37244ed176ff0c304e867379d8699442
@@ -53,7 +54,6 @@ module.exports = function(body, res){
           }
         }
       });
-
       callback();
     });
   }, function (err) {
