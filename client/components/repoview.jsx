@@ -44,11 +44,8 @@ export default class SelectedRepo extends Component{
             Get Issues
         </button>
 
-        <ul className='collection'>
-
-        <button onClick={()=>{this.getIssues()}}>Get Issues</button>
         {this.state.repo.name}
-        <ul >
+        
         <ul className="collection">
 
           {this.populateResults()}
