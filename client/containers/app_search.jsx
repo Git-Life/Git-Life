@@ -10,22 +10,25 @@ import OrgSearchResults from '../components/orgsearchresults';
 import SelectedRepo from '../components/repoview';
 
 class AppSearch extends Component {
+
+
   render(){
     return (
       <div >
+
 
         <div class='section'>
           <UserResults  results={this.props.results} />
           <RepoSearchResults
             results={this.props.results}
-            selectRepo={this.props.actions.selectRepo}/>
+            selectRepo={this.props.actions.selectRepo}
+            selectedRepo={this.props.selectedRepo}
+            issues={this.props.issues}
+            getIssues={this.props.actions.getIssues}/>
           <OrgSearchResults results={this.props.results} />
         </div>
         <div class='section'>
-          <SelectedRepo
-            repo={this.props.selectedRepo}
-            issues={this.props.issues}
-            getIssues={this.props.actions.getIssues}/>
+
         </div>
     </div>
 
