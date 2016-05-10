@@ -14,21 +14,20 @@ class App extends Component {
   render(){
     return (
       <div>
-        <nav>
-          <div className="nav-wrapper red accent-1">
+        
+          <div>
             <div className="row">
               <div className="col s12">
                 <ul className='tabs'>
-                  <li className='tab col s3'><a href="#test1">Test 1-</a></li>
-                  <li className='tab col s3'><a class="active" href="#test2">Test 2</a></li>
-                  <li className='tab col s3'><a href="#test4">Test 4</a></li>
+                  <li className='tab col s3'><a href="#search">Search</a></li>
+                  <li className='tab col s3'><a class="active" href="#trends">Trends</a></li>
                 </ul>
               </div>
             </div>
             <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
             <LanguageSelect />
           </div>
-        </nav>
+
         {this.props.children}
       </div>
     );
