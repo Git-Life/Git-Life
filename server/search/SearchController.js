@@ -1,7 +1,14 @@
 var path = require('path');
 var request = require('request');
-var secret = require('../splash/tempsecret.js');
 var userParse = require('./userController.js');
+var secret = {};
+if(process.env.NODE_ENV === 'development'){
+  secret = require('../splash/tempsecret.js');
+}
+else if(process.env.NODE_ENV === 'production'){
+   secret.id= process.env.gitid;
+   secret.secret= process.env.gitkey;
+}
 
 
 var root = 'https://api.github.com/';
