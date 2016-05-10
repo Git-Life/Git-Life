@@ -43,7 +43,6 @@
     "firebase": "^2.4.2",
     "gcloud": "^0.32.0",
     "html-webpack-plugin": "^2.16.0",
-    "jquery": "^2.2.3",
     "lodash": "^4.11.1",
     "materialize-css": "^0.97.6",
     "oauth": "^0.9.14",
