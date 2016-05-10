@@ -22,15 +22,20 @@ export default class SearchBar extends Component {
   }
   render() {
     return(
-
-      <div className="input-field ">
-        <form className="searchForm" onSubmit={this.onEnterPress}>
-          <input style={{margin:'auto', width:'50%', height:'100%'}}
+      <div >
+      	<div className="row">
+      <div className="col-sm-6 col-sm-offset-3">
+        <form id="imaginary_container" onSubmit={this.onEnterPress}>
+          <div className="input-group stylish-input-group">
+          <input className="form-control" style={{margin:'auto', width:'50%', height:'100%'}}
             onChange={(event) => {this.handleChange(event.target.value)}}
             placeholder="Search GitHub" />
-          <button className="btn waves-effect waves-light" type='submit' onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}><Link to="search">Search</Link></button>
-        </form>
+          <button  type='submit' onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}><Link to="search">Search</Link></button>
+          </div>
+      </form>
       </div>
+    </div>
+  </div>
 
     );
   }

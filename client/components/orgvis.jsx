@@ -78,7 +78,7 @@ export default class OrgVis extends Component {
       <div className="section" >
         <ul  className="row" style={{display: 'block', float:'left', margin: "20px 20px 20px 20px"}}>
           <h5 style={{fontWeight:'bold', textAlign: 'center'}}>Trending Organizations</h5>
-          <div className="divider"></div>
+          <div ></div>
           <a style={{float:'left', paddingTop:'50px'}}>{this.drawChart()}</a>
           {this.populateResults()}
         </ul>

@@ -37,7 +37,7 @@ export default class SelectedRepo extends Component{
       <div>
         <button onClick={()=>{this.getIssues()}}>Get Issues</button>
         {this.state.repo.name}
-        <ul className='collection'>
+        <ul >
           {this.populateResults()}
         </ul>
       </div>
