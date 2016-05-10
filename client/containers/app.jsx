@@ -14,13 +14,13 @@ class App extends Component {
   render(){
     return (
       <div>
-        
+
           <div>
             <div className="row">
               <div className="col s12">
-                <ul className='tabs'>
+                <ul className='tabs blue lighten-4'>
                   <li className='tab col s3'><a href="#search">Search</a></li>
-                  <li className='tab col s3'><a class="active" href="#trends">Trends</a></li>
+                  <li className='tab col s3'><a className="active" href="#trends">Trends</a></li>
                 </ul>
               </div>
             </div>
