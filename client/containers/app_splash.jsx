@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import SplashRepos from './container_splash_repos';
 import RepoSearchResults from '../components/reposearchresults';
 import OrgVis from '../components/orgvis';
+import TrendingNewRepos from '../components/trendingnewrepos';
+import TrendingNewOrgs from '../components/trendingneworgs';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
@@ -22,6 +24,8 @@ class AppSplash extends Component {
       <div className="section">
           <SplashRepos getSplashRepos={this.props.actions.getSplashRepos} repos={this.props.repos}/>
           <WiredResults hnresults={this.props.hnResults} searchHN={this.props.actions.searchHN} searchData={this.props.actions.searchData} dataResults={this.props.dataResults} wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
+          <TrendingNewRepos getNewRepos={this.props.actions.getNewRepos} newRepos={this.props.newRepos} />
+          <TrendingNewOrgs getNewOrgs={this.props.actions.getNewOrgs} newOrgs={this.props.newOrgs} />
         </div>
     </div>
     );
@@ -37,7 +41,9 @@ function mapStateToProps(state){
     wiredResults: state.wiredResults,
     dataResults: state.dataResults,
     hnResults: state.hnResults,
-    orgs: state.orgs
+    orgs: state.orgs,
+    newRepos: state.newRepos,
+    newOrgs: state.newOrgs
   };
 }
 

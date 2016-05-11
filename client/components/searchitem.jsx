@@ -23,10 +23,8 @@ export default class SearchItem extends Component{
             <span>{this.props.description}</span>
             <span style={{float: 'right'}}>{this.props.openIssues}</span>
           </div>
-
-        </div>
-
       </div>
+    </div>
   );
   }
 }
