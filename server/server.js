@@ -7,7 +7,7 @@ var webpackHot = require('webpack-hot-middleware');
 var compiler = webpack(webpackConfig);
 
 var app = express();
-
+//don't use in prod
 app.use(webpackMiddleware(compiler, {
   quiet: true,
   noInfo: true,

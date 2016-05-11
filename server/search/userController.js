@@ -10,6 +10,7 @@ else if(process.env.NODE_ENV === 'production'){
   secret.secret= process.env.GIT_KEY;
 }
 
+
 var secretURL = '&client_id=' + secret.id + '&client_secret=' + secret.secret;
 
 function gitHTTP(method, reqString, cb){
@@ -31,6 +32,7 @@ module.exports = function(body, res){
       if(err){
         return callback(err);
       }
+
       contributors = JSON.parse(contributors);
       contributors.forEach(function(element, index){
         if (userObj[element.login]){
