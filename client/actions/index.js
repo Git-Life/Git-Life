@@ -21,11 +21,26 @@ export function searchGitHub(searchTerm){
 }
 export const ORGVIS_REQUEST = 'ORGVIS_REQUEST';
 export function getTrendingOrgs(){
-  var orgs = Axios.get('/splash/orgs', {
-  });
+  var orgs = Axios.get('/splash/orgs', {});
   return {
     type: ORGVIS_REQUEST,
     payload: orgs
+  }
+}
+export const NEWREPOS_REQUEST = 'NEWREPOS_REQUEST';
+export function getNewRepos(){
+  var newRepos = Axios.get('/splash/newRepos', {});
+  return {
+    type: NEWREPOS_REQUEST,
+    payload: newRepos
+  }
+}
+export const NEWORGS_REQUEST = 'NEWORGS_REQUEST';
+export function getNewOrgs(){
+  var newOrgs = Axios.get('/splash/newOrgs', {});
+  return {
+    type: NEWORGS_REQUEST,
+    payload: newOrgs
   }
 }
 export const GET_SPLASH_REPOS = 'GET_SPLASH_REPOS';
@@ -84,7 +99,6 @@ export function searchHN(){
     payload: hnResults
   }
 }
-
 export const SELECT_REPO = 'SELECT_REPO';
 export function selectRepo(selectedRepo = null){
   return {
@@ -92,7 +106,6 @@ export function selectRepo(selectedRepo = null){
     payload: selectedRepo
   }
 }
-
 export const GET_ISSUES = 'GET_ISSUES';
 export function getIssues(selectedRepo){
   var issues = Axios.get('/learn/issues', {
