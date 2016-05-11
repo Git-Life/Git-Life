@@ -77,12 +77,10 @@
 .categories-column{
   display: inline-block;
   vertical-align: top;
-  margin: 5px 5px 5px 5px !important;
+  margin: 10px 10px 10px 10px !important;
   padding: 5px 5px 5px 5px;
-  width:250px;
+  width:280px;
   height: 200px;
   position: relative;
-  border-radius: 20px !important;
-
-
+  border-radius: 10px !important;
 }
