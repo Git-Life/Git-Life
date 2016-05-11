@@ -30,8 +30,6 @@
   padding-left: 10px;
 }
 
-
-
 .divNewRepos {
   display: block;
 }
@@ -64,7 +62,7 @@
     -moz-osx-font-smoothing: grayscale;
     transition-duration: 0.3s;
     transition-property: transform;
-    margin: 5px 5px 5px 5px;
+    margin: 2px 2px 2px 2px;
 }
 
 .hvr-grow:hover,
@@ -91,3 +89,4 @@
   margin-top: 50px;
 
 }
+/*Slider */

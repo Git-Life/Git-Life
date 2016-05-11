@@ -16,6 +16,12 @@ export default class OrgVis extends Component {
     this.props.getTrendingOrgs();
   }
 
+  componentDidMount(){
+    $('.carousel').slick({
+      
+    });
+  }
+
   drawChart() {
     var pieOptions = {
       animatable: true,
@@ -75,7 +81,7 @@ export default class OrgVis extends Component {
 
   render() {
     return (
-      <div className="section" >
+      <div className="carousel" >
         <ul  className="row" style={{display: 'block', float:'left', margin: "20px 20px 20px 20px"}}>
           <h5 style={{fontWeight:'bold', textAlign: 'center'}}>Trending Organizations</h5>
           <div ></div>
