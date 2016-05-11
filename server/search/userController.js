@@ -1,7 +1,15 @@
-var secret = require('../splash/tempsecret.js');
 var request = require('request');
 var async = require('async');
 var orgParse = require('./orgController.js');
+var secret = {};
+if(process.env.NODE_ENV === 'development'){
+  secret = require('../splash/tempsecret.js');
+}
+else if(process.env.NODE_ENV === 'production'){
+  secret.id= process.env.GIT_ID;
+  secret.secret= process.env.GIT_KEY;
+}
+
 
 var secretURL = '&client_id=' + secret.id + '&client_secret=' + secret.secret;
 
@@ -24,6 +32,7 @@ module.exports = function(body, res){
       if(err){
         return callback(err);
       }
+
       contributors = JSON.parse(contributors);
       contributors.forEach(function(element, index){
         if (userObj[element.login]){

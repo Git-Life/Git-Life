@@ -1,5 +1,13 @@
-var request = require('request');
-var secret = require('./tempsecret.js');
+var searchController = require('../search/SearchController.js');
+var secret = {};
+if(process.env.NODE_ENV === 'development'){
+  secret = require('./tempsecret.js');
+}
+else if(process.env.NODE_ENV === 'production'){
+  secret.id= process.env.GIT_ID;
+  secret.secret= process.env.GIT_KEY;
+}
+
 
 module.exports = {
 
