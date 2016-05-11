@@ -14,9 +14,19 @@ class App extends Component {
   render(){
     return (
       <div>
+        <nav>
+          <div className="nav-wrapper">
+            <a href="#" className="brand-logo right">Gitlyfe</a>
+            <ul id="nav-mobile" className="left hide-on-med-and-down">
+              <li>
                 <Link to='/' activeClassName="active">Search</Link>
-
-                  <Link to='/trends'>Trends</Link>
+              </li>
+              <li>
+                <Link to='/trends'>Trends</Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
 
 
         {this.props.children}
