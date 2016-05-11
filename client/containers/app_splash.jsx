@@ -4,7 +4,7 @@ import SplashRepos from './container_splash_repos';
 import RepoSearchResults from '../components/reposearchresults';
 import OrgVis from '../components/orgvis';
 import TrendingNewRepos from '../components/trendingnewrepos';
-import TrendingNewOrgs from '../components/trendingneworgs';
+import TrendingNewOrgs from '../components/trendingNewOrgs';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
