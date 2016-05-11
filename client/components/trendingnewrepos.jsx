@@ -13,7 +13,6 @@ export default class TrendingNewRepos extends Component {
   }
 
   populateResults() {
-    console.log('newRepos, populateResults: ', this.props.newRepos.data);
     return _.reduce(this.props.newRepos.data, (accum, item) => {
 
       let html = (

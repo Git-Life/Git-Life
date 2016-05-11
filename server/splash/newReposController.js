@@ -6,14 +6,7 @@ module.exports = {
   getNewRepos: function (req, res) {
 
     var today = new Date();
-    //console.log('today: ', today.toLocaleDateString());
-
-    //var lastMonth = new Date(today.setUTCMonth(today.getUTCMonth() - 1));
-    //console.log('today minus one month: ', lastMonth.toLocaleDateString());
-
     var lastWeek = new Date(today.setUTCHours(today.getUTCHours() - (8 * 24)));
-    //console.log('today minus one week: ', lastWeek.toLocaleDateString()); // 3/29/2016
-    //console.log('today minus one week: ', lastWeek.toISOString().slice(0,10));
     var lastWeekString = lastWeek.toISOString().slice(0,10);
 
     var newRepos = [];
@@ -51,8 +44,7 @@ module.exports = {
         if(error){
           console.log('Error: ', error);
         }
-        //console.log('hey: ', JSON.parse(body).items);
-        //findOrgs(JSON.parse(body).items);
+
         findRepos(JSON.parse(body).items);
 
         res.send(newRepos);

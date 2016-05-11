@@ -13,7 +13,6 @@ export default class TrendingNewOrgs extends Component {
   }
 
   populateResults() {
-    console.log('newOrgs, populateResults: ', this.props.newOrgs.data);
     return _.reduce(this.props.newOrgs.data, (accum, item) => {
 
       let html = (
