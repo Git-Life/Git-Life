@@ -6,8 +6,8 @@ if(process.env.NODE_ENV === 'development'){
   secret = require('../splash/tempsecret.js');
 }
 else if(process.env.NODE_ENV === 'production'){
-   secret.id= process.env.gitid;
-   secret.secret= process.env.gitkey;
+  secret.id= process.env.GIT_ID;
+  secret.secret= process.env.GIT_KEY;
 }
 
 var secretURL = '&client_id=' + secret.id + '&client_secret=' + secret.secret;

@@ -5,8 +5,8 @@ if(process.env.NODE_ENV === 'development'){
    SECRET = require('./tempsecret.js');
 }
 else if(process.env.NODE_ENV === 'production'){
-   SECRET.id= process.env.gitid;
-   SECRET.secret= process.env.gitkey;
+   SECRET.id= process.env.GIT_ID;
+   SECRET.secret= process.env.GIT_KEY;
 }
 
 const GITHUB_ROOT = 'https://api.github.com/';
