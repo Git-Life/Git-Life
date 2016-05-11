@@ -41,12 +41,8 @@ const webpackConfig = {
     new HtmlWebpackPlugin({
       template: 'index.html'
     }),
-    new webpack.ProvidePlugin({
-      'window.jQuery': 'jquery',
-      'window.$': 'jquery',
-      'window.$.velocity': 'velocity-animate/velocity.js'
-    }),
   ],
+  externals: {jquery: "jQuery"}
 
 };
 

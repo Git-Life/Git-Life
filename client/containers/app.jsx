@@ -7,6 +7,7 @@ import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 import test from '../styles/style.css';
 import {IndexLink, Link} from 'react-router';
+import $ from 'jquery';
 
 
   // <CommitItems commitData = {this.props.commitData} getCommitData={this.props.actions.getCommitData}/>
