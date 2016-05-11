@@ -49,7 +49,6 @@ export default class SearchBar extends Component {
           onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>
           Search
         </button>
-        <LanguageSelect />
       </div>
 
     );

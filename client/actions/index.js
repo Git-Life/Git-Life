@@ -7,6 +7,13 @@ export function updateSearchTerm(searchTerm = null){
     searchTerm
   }
 }
+export const UPDATE_LANGUAGE = 'UPDATE_LANGUAGE';
+export function updateLanguage(languageChoice = null){
+  return {
+    type: UPDATE_LANGUAGE,
+    languageChoice
+  }
+}
 export const REQUEST_GIT = 'REQUEST_GIT';
 export function searchGitHub(searchTerm){
   var results = Axios.get('/search/repos', {

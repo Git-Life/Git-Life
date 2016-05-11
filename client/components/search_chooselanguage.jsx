@@ -1,31 +1,31 @@
 import React, {Component} from 'react';
-// import SelectField from 'material-ui/SelectField';
-// import MenuItem from 'material-ui/MenuItem';
-
-//require('../styles/materialize.min.css');
-//var PieChart = require('../../node_modules/react-chartjs/lib/pie');
-//import "~/../../node_modules/materialize-css/dist/css/materialize.min.css";
 
 export default class ChooseLanguage extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: 1};
+    this.state = {value: "All"};
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  // handleChange = (event, index, value) => this.setState({value});
+  handleChange(event) {
+    //this.setState({value: event.currentTarget.value});
+    console.log(event.currentTarget.value);
+    this.props.onLanguageChange(event.currentTarget.value);
+  }
 
   render(){
     return (
       <div>
-        <select className='selectLang' value={this.state.value} onChange={(event, index, value) => this.setState({value})}>
-          <option value={1}>All Languages</option>
-          <option value={2}>JavaScript</option>
-          <option value={3}>Java</option>
-          <option value={4}>Python</option>
-          <option value={5}>C++</option>
-          <option value={6}>C#</option>
-          <option value={7}>Ruby</option>        
+        <select className='selectLang' value={this.state.value} onChange={this.handleChange}>
+          <option value={"All"}>All Languages</option>
+          <option value={"JavaScript"}>JavaScript</option>
+          <option value={"Java"}>Java</option>
+          <option value={"Python"}>Python</option>
+          <option value={"C++"}>C++</option>
+          <option value={"C#"}>C#</option>
+          <option value={"Ruby"}>Ruby</option>        
         </select>
+        {this.state.value}
       </div>
     );
   }

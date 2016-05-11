@@ -8,6 +8,7 @@ import * as Actions from '../actions';
 import UserResults from './userResults';
 import OrgSearchResults from '../components/orgsearchresults';
 import SelectedRepo from '../components/repoview';
+import LanguageSelect from '../components/search_chooselanguage';
 
 class AppSearch extends Component {
 
@@ -20,7 +21,9 @@ class AppSearch extends Component {
             searchTerm={this.props.term}
             onRequest={this.props.actions.searchGitHub}
             onSearchTermChange={this.props.actions.updateSearchTerm}/>
-
+          <LanguageSelect 
+            onLanguageChange={this.props.actions.updateLanguage}
+            languageChoice={this.props.languageChoice}/>
         </div>
 
         <div class='section'>
@@ -47,7 +50,8 @@ function mapStateToProps(state){
     results: state.results,
     term: state.searchTerm,
     selectedRepo: state.selectedRepo,
-    issues: state.issues
+    issues: state.issues,
+    languageChoice: state.languageChoice
   };
 }
 
@@ -58,3 +62,5 @@ function mapDispatchToProps(dispatch){
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppSearch);
+
+//onLanguageChange={this.props.actions.updateLanguage}
