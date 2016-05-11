@@ -29,6 +29,7 @@ node_modules/
 bower_components/
 
 # secrets
+server/splash/tempsecret.js
 server/storage/
 gitalytics-5f17b3312e53.json
 
@@ -39,3 +40,4 @@ gitalytics-5f17b3312e53.json
 .flooignore
 
 # Git API Auth
+server/splash/tempsecret.js

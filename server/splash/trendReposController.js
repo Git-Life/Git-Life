@@ -1,7 +1,14 @@
 var request = require('request');
 var root = 'https://api.github.com/';
-var secret = require('./tempsecret.js');
 var fs = require('fs');
+var secret = {};
+if(process.env.NODE_ENV === 'development'){
+  secret = require('./tempsecret.js');
+}
+else if(process.env.NODE_ENV === 'production'){
+  secret.id= process.env.GIT_ID;
+  secret.secret= process.env.GIT_KEY;
+}
 
 var secretURL = '&client_id=' + secret.id + '&client_secret=' + secret.secret;
 var gitRequest = 'search/repositories?q=size:>1000&pushed=>2016-4-25&sort=stars&order=desc'
