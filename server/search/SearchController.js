@@ -28,7 +28,7 @@ function filterByLanguage(body, lang) {
   var filteredRepos = [];
   for(var i = 0; i < body.items.length; i++){
     //console.log(body.items[i].language);
-    if(body.items[i].language === 'Java'){
+    if(body.items[i].language === lang){
       filteredRepos.push(body.items[i]);
     }
   }
@@ -44,7 +44,7 @@ module.exports = {
 			if(error){
         console.log('Error: ', error);
       }
-      var newBody = filterByLanguage(JSON.parse(body));
+      var newBody = filterByLanguage(JSON.parse(body), req.query.language);
       //console.log(newBody);
       userParse(newBody, res);
 		});
