@@ -15,7 +15,7 @@ class AppSearch extends Component {
   render(){
     return (
       <div >
-        <div class='section'>
+        <div className='section'>
           <SearchBar
             searchTerm={this.props.term}
             onRequest={this.props.actions.searchGitHub}
@@ -23,7 +23,7 @@ class AppSearch extends Component {
 
         </div>
 
-        <div class='section'>
+        <div className='section'>
           <UserResults  results={this.props.results} />
           <RepoSearchResults
             results={this.props.results}
@@ -33,8 +33,14 @@ class AppSearch extends Component {
             getIssues={this.props.actions.getIssues}/>
           <OrgSearchResults results={this.props.results} />
         </div>
-        <div class='section'>
-
+        <div className='section'>
+          <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!</a>
+          <ul id='dropdown1' className='dropdown-content'>
+            <li><a href="#!">one</a></li>
+            <li><a href="#!">two</a></li>
+            <li className="divider"></li>
+            <li><a href="#!">three</a></li>
+          </ul>
         </div>
     </div>
 
