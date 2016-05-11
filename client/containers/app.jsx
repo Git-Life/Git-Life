@@ -24,11 +24,11 @@ class App extends Component {
                 <ul className='tabs blue lighten-4'>
                   <li className='tab col s3'>
                     <span className="active">
-                      <Link to='/'>Search</Link>
+                      <Link to=''>Search</Link>
                     </span>
                   </li>
                   <li className='tab col s3'>
-                    <span><Link to='/trends'>Trends</Link></span>
+                    <span><Link to='trends'>Trends</Link></span>
                   </li>
                 </ul>
               </div>
