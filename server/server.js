@@ -1,6 +1,8 @@
 var express = require('express');
+var history = require('connect-history-api-fallback');
 
 var app = express();
+app.use(history());
 //don't use in prod
 if(process.env.NODE_ENV !== 'production'){
   var webpack = require('webpack');

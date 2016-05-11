@@ -14,9 +14,7 @@ module.exports = function(app, express) {
   app.use('/search', searchRouter);
   app.use('/splash', splashRouter);
   app.use('/learn', learnRouter);
-  app.get('/trends', function(req, res){
-    res.send(path.join(__dirname, 'bundle.js'));
-  });
+
 
   require('./search/SearchRouter.js')(searchRouter);
   require('./splash/splashRouter.js')(splashRouter);

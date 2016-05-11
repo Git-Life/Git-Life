@@ -13,27 +13,11 @@ import {IndexLink, Link} from 'react-router';
 class App extends Component {
   render(){
     return (
-      <div className='container'>
-        <div class="row">
-      <div class="col s1"></div>
-      </div>
-          <div>
-            <div className="row">
-              <div className="col s12">
-                <ul className='tabs blue lighten-4'>
-                  <li className='tab col s3'>
-                    <span>
-                      <Link to='/' activeClassName="active">Search</Link>
-                    </span>
-                  </li>
-                  <li className='tab col s3'>
-                    <span><Link to='/trends'>Trends</Link></span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+      <div>
+                <Link to='/' activeClassName="active">Search</Link>
 
-          </div>
+                  <Link to='/trends'>Trends</Link>
+
 
         {this.props.children}
       </div>
