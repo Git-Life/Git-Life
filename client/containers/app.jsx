@@ -6,7 +6,6 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 import test from '../styles/style.css';
-import $ from 'jquery';
 import {Link} from 'react-router';
 
 
@@ -15,7 +14,10 @@ import {Link} from 'react-router';
 class App extends Component {
   render(){
     return (
-      <div>
+      <div className='container'>
+        <div class="row">
+      <div class="col s1">1</div>
+      </div>
           <div>
             <div className="row">
               <div className="col s12">

@@ -18,6 +18,14 @@ const webpackConfig = {
       {
         test: /\.css$/,
         loader: 'style-loader!css-loader'
+      },
+      {
+        test: /\.(woff2?|svg)$/,
+        loader: 'url?limit=10000'
+      },
+      {
+        test: /\.(ttf|eot)$/,
+        loader: 'file'
       }
     ]
   },
@@ -32,9 +40,14 @@ const webpackConfig = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new HtmlWebpackPlugin({
       template: 'index.html'
-    })
+    }),
+    new webpack.ProvidePlugin({
+      'window.jQuery': 'jquery',
+      'window.$': 'jquery',
+      'window.$.velocity': 'velocity-animate/velocity.js'
+    }),
   ],
-  externals: {jquery: "jQuery"}
+
 };
 
 if (process.env.NODE_ENV === 'development'){
