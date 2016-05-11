@@ -9,6 +9,12 @@ export function updateSearchTerm(searchTerm = null){
 }
 export const UPDATE_LANGUAGE = 'UPDATE_LANGUAGE';
 export function updateLanguage(languageChoice = null){
+  // var results = Axios.get('/search/repos', {
+  //     params: {
+  //       searchTerm: searchTerm,
+  //       languageChoice: languageChoice
+  //     }
+  // });
   return {
     type: UPDATE_LANGUAGE,
     languageChoice
@@ -19,6 +25,7 @@ export function searchGitHub(searchTerm){
   var results = Axios.get('/search/repos', {
       params: {
         searchTerm: searchTerm
+        //languageChoice: languageChoice
       }
   });
   return {

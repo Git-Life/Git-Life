@@ -24,15 +24,29 @@ function gitHTTP(method, reqString, cb){
   }, cb);
 }
 
+function filterByLanguage(body, lang) {
+  var filteredRepos = [];
+  for(var i = 0; i < body.items.length; i++){
+    //console.log(body.items[i].language);
+    if(body.items[i].language === 'Java'){
+      filteredRepos.push(body.items[i]);
+    }
+  }
+  return filteredRepos;
+}
+
 module.exports = {
 	getRepos: function (req, res) {
+    console.log('getRepos req: ', req.query);
 		var query = req.query.searchTerm;
     gitHTTP('GET', root + 'search/repositories?q=' + query + 'in:description&sort=stars&order=desc',
      function (error, response, body) {
 			if(error){
         console.log('Error: ', error);
       }
-      userParse(body, res);
+      var newBody = filterByLanguage(JSON.parse(body));
+      //console.log(newBody);
+      userParse(newBody, res);
 		});
 	},
 	getUsers: function (req, res) {
