@@ -2,6 +2,7 @@ import {reduce} from 'lodash';
 import {debounce} from 'lodash';
 import React, {Component} from 'react';
 import {Link} from 'react-router';
+import LanguageSelect from '../components/search_chooselanguage';
 
 export default class SearchBar extends Component {
   constructor(props){
@@ -43,7 +44,12 @@ export default class SearchBar extends Component {
         <input   style={{margin:'auto', width:'50%', height:'100%'}}
           onChange={(event) => {this.handleChange(event.target.value)}}
           placeholder="Search GitHub" />
-        <button className="btn waves-effect waves-light"  onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}><Link to="search">Search</Link></button>
+        <button
+          className="btn waves-effect waves-light"
+          onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>
+          Search
+        </button>
+        <LanguageSelect />
       </div>
 
     );

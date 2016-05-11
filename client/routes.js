@@ -8,7 +8,8 @@ import AppSplash from './containers/app_splash';
 export default(
   <Route>
     <Route path="/" component={App} >
-      <IndexRoute component={AppSplash}/>
+      <IndexRoute component={AppSearch} />
+      <Route path="trends" component={AppSplash}/>
       <Route path="search" component={AppSearch}/>
     </Route>
 
