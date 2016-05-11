@@ -1,6 +1,5 @@
 var request = require('request');
 var secret = require('./tempsecret.js');
-var searchController = require('../search/SearchController.js');
 
 module.exports = {
 
