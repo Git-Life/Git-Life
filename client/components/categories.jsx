@@ -4,7 +4,7 @@ export default class Categories extends Component{
   //MVP-this component should display a link
   //When clicked, that link should update searchTerm state and call the getGit action, actually,
 //  the easiest way to do this is to cll it in searchbar
-
+  
   handleSearch(value){
 
     this.props.onRequest(value);
@@ -14,7 +14,7 @@ export default class Categories extends Component{
   render(){
     return(<div>
       <div className="categories-column card " >
-        <div className="activator">Hot Tech</div>
+        <div className="activator category-title">Hot Tech</div>
         <div className="card-reveal" >
           <span className="card-title"><i className="material-icons right">X</i></span>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("animal")}} >Animals</div>
@@ -33,7 +33,7 @@ export default class Categories extends Component{
         </div>
     </div>
       <div className="categories-column card">
-        <div className="activator">Lifestyle</div>
+        <div className="activator category-title">Lifestyle</div>
         <div className="card-reveal" >
           <span className="card-title"><i className="material-icons right">X</i></span>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("data")}} >Data</div>
@@ -45,7 +45,7 @@ export default class Categories extends Component{
         </div>
       </div>
       <div className="categories-column card col s12 m5">
-        <div className="activator">Entertainment</div>
+        <div className="activator category-title">Entertainment</div>
         <div className="card-reveal" >
           <span className="card-title"><i className="material-icons right">X</i></span>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("health")}} >Health</div>
@@ -57,7 +57,7 @@ export default class Categories extends Component{
         </div>
       </div>
       <div className="categories-column card">
-        <div className="activator">Social</div>
+        <div className="activator category-title">Social</div>
         <div className="card-reveal" >
           <span className="card-title"><i className="material-icons right">X</i></span>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("music")}} >Music</div>

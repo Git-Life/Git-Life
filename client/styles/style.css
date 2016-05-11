@@ -80,7 +80,14 @@
   margin: 10px 10px 10px 10px !important;
   padding: 5px 5px 5px 5px;
   width:280px;
-  height: 200px;
+  height: 140px;
   position: relative;
   border-radius: 10px !important;
+}
+.category-title{
+  width:280px;
+  height: 140px;
+  text-align: center;
+  margin-top: 50px;
+
 }
