@@ -33,7 +33,8 @@ const webpackConfig = {
     new HtmlWebpackPlugin({
       template: 'index.html'
     })
-  ]
+  ],
+  externals: {jquery: "jQuery"}
 };
 
 if (process.env.NODE_ENV === 'development'){
