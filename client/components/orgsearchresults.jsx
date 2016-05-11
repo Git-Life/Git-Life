@@ -53,7 +53,7 @@ export default class OrgSearchResults extends Component {
       <div className='collection'  style={{display: 'inline-block',float:'left', width: '20%', height: '25%', margin: '20px 20px 20px 20px'}}>
         <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Organizations</p>
         <button onClick={() => { this.handleClick('name') }}>Name</button>
-        <button onClick={() => { this.handleClick('repoOrder') }}>Repo Order</button>
+        <button onClick={() => { this.handleClick('repoOrder') }}>Popularity</button>
         {this.populateResults(this.state.sort)}
       </div>
     );
