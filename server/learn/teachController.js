@@ -1,7 +1,15 @@
-var config = {
-  keyFilename: __dirname + '/../../gitalytics-5f17b3312e53.json',
-  projectId: 'gitalytics-1288'
+if(process.env.NODE_ENV==='production'){
+  var config = {
+    projectId: 'gitalytics-1288'
+  }
 }
+else if(process.env.NODE_ENV==='development'){
+  var config = {
+    keyFilename: __dirname + '/../../gitalytics-5f17b3312e53.json',
+    projectId: 'gitalytics-1288'
+  }
+}
+
 var gcloud = require('gcloud')(config);
 var prediction = gcloud.prediction();
 //this model has been created via below, not sure if we need
