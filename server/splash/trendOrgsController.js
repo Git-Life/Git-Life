@@ -1,3 +1,4 @@
+var request = require('request');
 var searchController = require('../search/SearchController.js');
 var secret = {};
 if(process.env.NODE_ENV === 'development'){
