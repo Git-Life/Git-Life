@@ -31,9 +31,11 @@ class App extends Component {
                 </ul>
               </div>
             </div>
-
           </div>
-
+          <div className="nav-wrapper red accent-1">
+            <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
+            <LanguageSelect />
+          </div>
         {this.props.children}
       </div>
     );

@@ -10,12 +10,12 @@ export default class UserResults extends Component {
   }
 
   constructHTML(dataObj){
-
-    return _.reduce(dataObj, (accum, item)=>{
+    var dataObject = dataObj.slice(0, 30);
+    return _.reduce(dataObject, (accum, item)=>{
       let html =(
         <UserResult
           name={item.name}
-          url={item.url}
+          url={item.html_url}
           key={item.id}
           contributions={item.contributions}
           count={item.count}
