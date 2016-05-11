@@ -8,9 +8,14 @@ export default class ChooseLanguage extends Component {
   }
 
   handleChange(event) {
-    //this.setState({value: event.currentTarget.value});
-    console.log(event.currentTarget.value);
-    this.props.onLanguageChange(event.currentTarget.value);
+    //console.log(this.props);
+    this.props.handleLanguageSelect(event);
+    // //this.setState({value: event.currentTarget.value});
+    // console.log(event.currentTarget.value);
+    // //this.props.onLanguageChange(event.currentTarget.value);
+    // console.log('before: ', this.props.language);
+    // this.props.language = event.currentTarget.value;
+    // console.log('before: ', this.props.language);
   }
 
   render(){
@@ -25,7 +30,6 @@ export default class ChooseLanguage extends Component {
           <option value={"C#"}>C#</option>
           <option value={"Ruby"}>Ruby</option>        
         </select>
-        {this.state.value}
       </div>
     );
   }

@@ -21,9 +21,6 @@ class AppSearch extends Component {
             searchTerm={this.props.term}
             onRequest={this.props.actions.searchGitHub}
             onSearchTermChange={this.props.actions.updateSearchTerm}/>
-          <LanguageSelect 
-            onLanguageChange={this.props.actions.updateLanguage}
-            languageChoice={this.props.languageChoice}/>
         </div>
 
         <div class='section'>
@@ -62,5 +59,3 @@ function mapDispatchToProps(dispatch){
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppSearch);
-
-//onLanguageChange={this.props.actions.updateLanguage}
