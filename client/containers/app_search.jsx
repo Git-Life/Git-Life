@@ -33,9 +33,7 @@ class AppSearch extends Component {
             getIssues={this.props.actions.getIssues}/>
           <OrgSearchResults results={this.props.results} />
         </div>
-        <div class='section'>
-
-        </div>
+      
     </div>
 
     );
