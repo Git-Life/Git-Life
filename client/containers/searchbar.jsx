@@ -46,10 +46,14 @@ export default class SearchBar extends Component {
                   placeholder="Search GitHub" />
                 <button
                   className="btn waves-effect waves-light"
-                  type='submit' onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}><Link to="search">Search</Link></button>
-              </div>
+                  type='submit'
+                  onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>
+                  <Link to="search">Search</Link>
+                </button>
+                <LanguageSelect handleLanguageSelect={this.handleChildSelect} />
+            </div>
             </form>
-            <LanguageSelect handleLanguageSelect={this.handleChildSelect} />
+
           </div>
         </div>
       </div>

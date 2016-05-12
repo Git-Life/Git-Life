@@ -15,7 +15,7 @@ export default class ChooseLanguage extends Component {
 
   render(){
     return (
-      <div>
+      <span>
         <a className='dropdown-button btn' href='#' data-activates='languageDropdown'>
           {this.state.selectedLang}
         </a>
@@ -44,7 +44,7 @@ export default class ChooseLanguage extends Component {
 
 
 
-      </div>
+      </span>
     );
   }
 };
