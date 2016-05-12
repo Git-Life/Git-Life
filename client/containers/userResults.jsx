@@ -71,13 +71,15 @@ export default class UserResults extends Component {
     return (
       <div className='col s12'>
         <div className='row'>
-          <div className='col s11 yellow'>Top Users</div>
+          <div className='col s12 yellow center-align'>Top Users</div>
         </div>
-        <div className='row'>
+        <div className='row '>
           <div className='col s12 green'>
-            <button onClick={() => {this.handleSort('count')}}>Count</button>
-            <button onClick={() => {this.handleSort('contributions')}}>Contributions</button>
-            <button onClick={() => {this.handleSort('name')}}>Name</button>
+            <div className=' col s12 offset 6'>
+              <button className='waves-effect waves-light btn' onClick={() => {this.handleSort('count')}}>Count</button>
+              <button className='waves-effect waves-light btn' onClick={() => {this.handleSort('contributions')}}>Commits</button>
+              <button className='waves-effect waves-light btn' onClick={() => {this.handleSort('name')}}>Name</button>
+            </div>
           </div>
         </div>
         <div className='row'>
