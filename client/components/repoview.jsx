@@ -38,15 +38,16 @@ export default class SelectedRepo extends Component{
         <h4>{this.state.repo.name}</h4>
         <h5>{this.state.repo.description}</h5>
         <div>Forks: {this.state.repo.forks} | Issues: {this.state.repo.open_issues} | Watched By: {this.state.repo.watchers} | Stars: {this.state.repo.stargazers_count}</div>
-
-      <button
-          className='waves-effect waves-light btn'
-          onClick={()=>{this.getIssues()}}>
-          Get Issues
+        <button
+            className='waves-effect waves-light btn'
+            onClick={()=>{this.getIssues()}}>
+            Get Issues
         </button>
 
+        {this.state.repo.name}
+        
+        <ul className="collection">
 
-        <ul className='collection'>
           {this.populateResults()}
         </ul>
       </div>

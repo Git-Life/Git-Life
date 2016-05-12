@@ -9,48 +9,37 @@ export default class SearchBar extends Component {
     super(props)
     this.state = {searchTerm: ''};
   }
-
-  componentDidMount() {
-      $(document.body).on('keydown', this.handleKeyDown);
-  }
-
-  componentWillUnmount() {
-      $(document.body).off('keydown', this.handleKeyDown);
-  }
-
   handleSearch(value){
     this.props.onSearchTermChange(value);
     this.setState({searchTerm: value});
     this.props.onRequest(value);
   }
-
   handleChange(value){
     this.setState({searchTerm: value});
   }
-
-  handleKeyDown(e) {
-
-    //let searchTerm = this.state.searchTerm
-    let ENTER = 13;
-    if( e.keyCode == ENTER ) {
-    }
+  onEnterPress(event){
+     event.preventDefault();
+     window.location.href= "/#/search"
   }
-
-
   render() {
     return(
+      <div >
+      	<div className="row">
+      <div className="col-sm-6 col-sm-offset-3">
+        <form id="imaginary_container" onSubmit={this.onEnterPress}>
+          <div className="input-group stylish-input-group">
+          <input className="form-control" style={{margin:'auto', width:'50%', height:'100%'}}
+            onChange={(event) => {this.handleChange(event.target.value)}}
+            placeholder="Search GitHub" />
+          <button
+            className="btn waves-effect waves-light" 
+            type='submit' onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}><Link to="search">Search</Link></button>
+          </div>
+      </form>
 
-      <div className="input-field ">
-        <input   style={{margin:'auto', width:'50%', height:'100%'}}
-          onChange={(event) => {this.handleChange(event.target.value)}}
-          placeholder="Search GitHub" />
-        <button
-          className="btn waves-effect waves-light"
-          onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>
-          Search
-        </button>
-        <LanguageSelect />
       </div>
+    </div>
+  </div>
 
     );
   }
