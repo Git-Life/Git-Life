@@ -16,12 +16,12 @@ export default class SplashRepos extends Component {
     if(this.props.repos.data){
       return _.reduce(this.props.repos.data, (prev, curr)=>{
         let html = (
-          <div className=" card-panel col s3 m4" >
-          <div  style={{ padding: '10px 10px 10px 10px'}}>
-            <li   key={curr.html_url} > <a style={{fontWeight:'bold'}} href={curr.html_url}>{curr.name}</a></li>
-            <p>{curr.stargazers}</p>
-            <p>{curr.language}</p>
-          </div>
+          <div className=" card-panel col s3 m4" key={curr.html_url}>
+            <div  style={{ padding: '10px 10px 10px 10px'}}>
+              <li   key={curr.html_url} > <a style={{fontWeight:'bold'}} href={curr.html_url}>{curr.name}</a></li>
+              <p>{curr.stargazers}</p>
+              <p>{curr.language}</p>
+            </div>
           </div>
         );
         prev.push(html);
