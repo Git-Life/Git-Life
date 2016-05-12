@@ -8,7 +8,6 @@ import * as Actions from '../actions';
 import UserResults from './userResults';
 import OrgSearchResults from '../components/orgsearchresults';
 import SelectedRepo from '../components/repoview';
-import LanguageSelect from '../components/search_chooselanguage';
 
 class AppSearch extends Component {
 
@@ -45,8 +44,7 @@ function mapStateToProps(state){
     results: state.results,
     term: state.searchTerm,
     selectedRepo: state.selectedRepo,
-    issues: state.issues,
-    languageChoice: state.languageChoice
+    issues: state.issues
   };
 }
 

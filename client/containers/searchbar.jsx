@@ -29,7 +29,7 @@ export default class SearchBar extends Component {
     this.props.onSearchTermChange(value);
     this.setState({searchTerm: value});
     this.props.onRequest(reqObj);
-    console.log('reqObj: ', reqObj);
+    //console.log('reqObj: ', reqObj);
   }
 
   handleChange(value){
@@ -45,7 +45,6 @@ export default class SearchBar extends Component {
   }
 
   handleChildSelect(event) {
-    //console.log(event.currentTarget.value);
     this.setState({language: event.currentTarget.value});
   }
 
@@ -62,7 +61,7 @@ export default class SearchBar extends Component {
           onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>
           Search
         </button>
-        <LanguageSelect handleLanguageSelect={this.handleChildSelect} language={this.state.language} />
+        <LanguageSelect handleLanguageSelect={this.handleChildSelect} />
       </div>
 
     );
