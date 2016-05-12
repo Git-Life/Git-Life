@@ -9,30 +9,38 @@ export default class ChooseLanguage extends Component {
 
   handleChange(event) {
     this.props.handleLanguageSelect(event);
-    this.setState({value: event.target.value});
+    this.setState({value: event});
   }
 
   render(){
     return (
       <div>
-        <select className='selectLang' value={this.state.value} onChange={this.handleChange}>
-          <option value={"All"}>All Languages</option>
-          <option value={"JavaScript"}>JavaScript</option>
-          <option value={"Java"}>Java</option>
-          <option value={"Python"}>Python</option>
-          <option value={"C"}>C</option>
-          <option value={"C++"}>C++</option>
-          <option value={"C#"}>C#</option>
-          <option value={"Ruby"}>Ruby</option>
-          <option value={"HTML"}>HTML</option>
-          <option value={"CSS"}>CSS</option>
-        </select>
         <a className='dropdown-button btn' href='#' data-activates='languageDropdown'>Language</a>
         <ul id='languageDropdown' className='dropdown-content'>
-          <li><a href="#!">one</a></li>
-          <li><a href="#!">two</a></li>
-          <li><a href="#!">three</a></li>
+          <li><a href="javascript:void(0)"
+            onClick={() => this.handleChange('All')}>All Languages</a></li>
+          <li><a href="javascript:void(0)"
+            onClick={() => this.handleChange('JavaScript')}>JavaScript</a></li>
+          <li><a href="javascript:void(0)"
+            onClick={() => this.handleChange('Java')}>Java</a></li>
+          <li><a href="javascript:void(0)"
+            onClick={() => this.handleChange('Python')}>Python</a></li>
+          <li><a href="javascript:void(0)"
+            onClick={() => this.handleChange('C')}>C</a></li>
+          <li><a href="javascript:void(0)"
+            onClick={() => this.handleChange('C++')}>C++</a></li>
+          <li><a href="javascript:void(0)"
+            onClick={() => this.handleChange('C#')}>C#</a></li>
+          <li><a href="javascript:void(0)"
+            onClick={() => this.handleChange('Ruby')}>Ruby</a></li>
+          <li><a href="javascript:void(0)"
+            onClick={() => this.handleChange('HTML')}>HTML</a></li>
+          <li><a href="javascript:void(0)"
+            onClick={() => this.handleChange('CSS')}>CSS</a></li>
         </ul>
+
+
+
       </div>
     );
   }
