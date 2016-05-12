@@ -11,7 +11,16 @@ import SelectedRepo from '../components/repoview';
 import Categories from '../components/categories';
 
 class AppSearch extends Component {
+  constructor(props){
+    super(props);
+    this.state = {showResults: false};
+  }
 
+  componentWillReceiveProps(props){
+    if(props.results){
+      this.setState({showResults: true});
+    }
+  }
 
   render(){
     return (
@@ -22,20 +31,20 @@ class AppSearch extends Component {
             onRequest={this.props.actions.searchGitHub}
             onSearchTermChange={this.props.actions.updateSearchTerm}/>
         </div>
-        <Categories
+         <Categories
             results={this.props.results}
             searchTerm={this.props.term}
             onRequest={this.props.actions.searchGitHub}
             onSearchTermChange={this.props.actions.updateSearchTerm}/>
         <div class='section'>
-          <UserResults  results={this.props.results} />
-          <RepoSearchResults
+        {this.state.showResults ?  <UserResults  results={this.props.results} />  : null}
+        {this.state.showResults ? <RepoSearchResults
             results={this.props.results}
             selectRepo={this.props.actions.selectRepo}
             selectedRepo={this.props.selectedRepo}
             issues={this.props.issues}
-            getIssues={this.props.actions.getIssues}/>
-          <OrgSearchResults results={this.props.results} />
+            getIssues={this.props.actions.getIssues}/> : null}
+        {this.state.showResults ? <OrgSearchResults results={this.props.results} /> : null}
         </div>
 
     </div>
