@@ -110,15 +110,15 @@ export default class RepoSearchResults extends Component {
 
         <div className='col s12'>
           <div className='row'>
-            <div className='col s12 yellow center-align'>Top Repositories</div>
+            <div className='col s12  center-align'>Top Repositories</div>
               <div className='row '>
-                <div className='col s12 green '>
+                <div className='col s12  '>
                   <button className='col s6 waves-effect waves-light btn' onClick={()=>{this.handleClick('name')}}>Name</button>
                   <button className='col s6 waves-effect waves-light btn' onClick={()=>{this.handleClick('popularity')}}>Stars</button>
                 </div>
               </div>
             <div className='row'>
-              <div className='col s12 lime z-depth-3'>
+              <div className='col s12  z-depth-3'>
                   {this.populateResults(this.state.sort)}
               </div>
             </div>

@@ -29,8 +29,7 @@ class App extends Component {
             </ul>
           </div>
         </nav>
-
-        {this.props.children}
+          {this.props.children}
       </div>
     );
   }

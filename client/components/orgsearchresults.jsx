@@ -56,18 +56,18 @@ export default class OrgSearchResults extends Component {
     return (
       <div className='col s12'>
         <div className='row'>
-          <div className='col s12 yellow center-align'>
+          <div className='col s12  center-align'>
             Top Organizations
           </div>
         </div>
         <div className='row '>
-          <div className='col s12 green '>
+          <div className='col s12  '>
             <button className='col s6 waves-effect waves-light btn' onClick={() => { this.handleClick('name') }}>Name</button>
             <button className='col s6 waves-effect waves-light btn' onClick={() => { this.handleClick('repoOrder') }}>Popularity</button>
           </div>
         </div>
         <div className='row'>
-          <div className='col s12 lime z-depth-3'>
+          <div className='col s12  z-depth-3'>
             <ul className='collection'>
               {this.populateResults(this.state.sort)}
             </ul>
