@@ -6,8 +6,6 @@ import {Router, browserHistory} from 'react-router';
 import routes from './routes'
 import 'materialize-css/bin/materialize.css';
 import 'materialize-css/bin/materialize.js';
-import 'slick-carousel/slick/slick.min.js';
-import 'slick-carousel/slick/slick.css';
 const store = configureStore();
 
 

@@ -31,7 +31,9 @@ export default class SearchBar extends Component {
           <input className="form-control" style={{margin:'auto', width:'50%', height:'100%'}}
             onChange={(event) => {this.handleChange(event.target.value)}}
             placeholder="Search GitHub" />
-          <button  type='submit' onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}><Link to="search">Search</Link></button>
+          <button
+            className="btn waves-effect waves-light" 
+            type='submit' onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}><Link to="search">Search</Link></button>
           </div>
       </form>
 

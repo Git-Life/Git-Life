@@ -8,6 +8,7 @@ if(process.env.NODE_ENV === 'development'){
 else if(process.env.NODE_ENV === 'production'){
   secret.id= process.env.GIT_ID;
   secret.secret= process.env.GIT_KEY;
+  console.log(secret.id, secret.secret);
 }
 
 
@@ -28,7 +29,7 @@ module.exports = function(body, res){
   var userObj = {};
 
   async.forEachOf(itemGroup, function (value, key, callback) {
-    gitHTTP('GET', itemGroup[key].contributors_url + '?', function(err, response, contributor){
+    gitHTTP('GET', itemGroup[key].contributors_url + '?', function(err, response, contributors){
       if(err){
         return callback(err);
       }
