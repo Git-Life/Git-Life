@@ -24,7 +24,6 @@ export default class OrgSearchResults extends Component {
   }
 
   populateResults(sortBy) {
-    console.log(this.props.results.data);
     if(this.props.results.data){
       switch (sortBy) {
         case 'name':

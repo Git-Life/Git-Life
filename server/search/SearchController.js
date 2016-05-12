@@ -26,11 +26,13 @@ function gitHTTP(method, reqString, cb){
 
 function filterByLanguage(body, lang) {
   var filteredRepos = [];
-  for(var i = 0; i < body.items.length; i++){
-    //console.log(body.items[i].language);
-    if(body.items[i].language && 
-      (lang && (body.items[i].language.toLowerCase() === lang.toLowerCase() || lang === 'All'))){
-      filteredRepos.push(body.items[i]);
+  if(body.items){
+    for(var i = 0; i < body.items.length; i++){
+      //console.log(body.items[i].language);
+      if(body.items[i].language && 
+        (lang && (body.items[i].language.toLowerCase() === lang.toLowerCase() || lang === 'All'))){
+        filteredRepos.push(body.items[i]);
+      }
     }
   }
   return filteredRepos;
