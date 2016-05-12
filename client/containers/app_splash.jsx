@@ -18,15 +18,25 @@ class AppSplash extends Component {
   render(){
     return (
       <div>
-      <div >
+      <div className='row light-blue lighten-5'>
+        <div className='col s12'>
           <OrgVis orgs={this.props.orgs} getTrendingOrgs={this.props.actions.getTrendingOrgs}/>
+        </div>
       </div>
       <div className="section">
+        <div className='row'><div className='col s11'>
           <SplashRepos getSplashRepos={this.props.actions.getSplashRepos} repos={this.props.repos}/>
+        </div></div>
+        <div className='row'><div className='col s11'>
           <WiredResults hnresults={this.props.hnResults} searchHN={this.props.actions.searchHN} searchData={this.props.actions.searchData} dataResults={this.props.dataResults} wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
+        </div></div>
+        <div className='row'><div className='col s11'>
           <TrendingNewRepos getNewRepos={this.props.actions.getNewRepos} newRepos={this.props.newRepos} />
+        </div></div>
+        <div className='row'><div className='col s11'>
           <TrendingNewOrgs getNewOrgs={this.props.actions.getNewOrgs} newOrgs={this.props.newOrgs} />
-        </div>
+        </div></div>
+      </div>
     </div>
     );
   }
