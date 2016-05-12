@@ -3,19 +3,22 @@ import React, {Component} from 'react';
 export default class ChooseLanguage extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: "All"};
+    this.state = {value: "All", selectedLang: 'Language'};
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
     this.props.handleLanguageSelect(event);
     this.setState({value: event});
+    this.setState({selectedLang: event});
   }
 
   render(){
     return (
       <div>
-        <a className='dropdown-button btn' href='#' data-activates='languageDropdown'>Language</a>
+        <a className='dropdown-button btn' href='#' data-activates='languageDropdown'>
+          {this.state.selectedLang}
+        </a>
         <ul id='languageDropdown' className='dropdown-content'>
           <li><a href="javascript:void(0)"
             onClick={() => this.handleChange('All')}>All Languages</a></li>
