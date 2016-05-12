@@ -18,7 +18,7 @@ class AppSplash extends Component {
   render(){
     return (
       <div>
-      <div className='row light-blue lighten-5'>
+      <div className='row'>
         <div className='col s12'>
           <OrgVis orgs={this.props.orgs} getTrendingOrgs={this.props.actions.getTrendingOrgs}/>
         </div>
