@@ -7,7 +7,12 @@ import LanguageSelect from '../components/search_chooselanguage';
 export default class SearchBar extends Component {
   constructor(props){
     super(props)
-    this.state = {searchTerm: ''};
+    this.state = {
+      searchTerm: '',
+      language: 'All'
+    };
+
+    this.handleChildSelect = this.handleChildSelect.bind(this);
   }
 
   componentDidMount() {
@@ -19,9 +24,12 @@ export default class SearchBar extends Component {
   }
 
   handleSearch(value){
+    var reqObj = {searchTerm: value, language: this.state.language};
+
     this.props.onSearchTermChange(value);
     this.setState({searchTerm: value});
-    this.props.onRequest(value);
+    this.props.onRequest(reqObj);
+    console.log('reqObj: ', reqObj);
   }
 
   handleChange(value){
@@ -34,6 +42,11 @@ export default class SearchBar extends Component {
     let ENTER = 13;
     if( e.keyCode == ENTER ) {
     }
+  }
+
+  handleChildSelect(event) {
+    //console.log(event.currentTarget.value);
+    this.setState({language: event.currentTarget.value});
   }
 
 
@@ -49,7 +62,7 @@ export default class SearchBar extends Component {
           onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>
           Search
         </button>
-        <LanguageSelect />
+        <LanguageSelect handleLanguageSelect={this.handleChildSelect} language={this.state.language} />
       </div>
 
     );

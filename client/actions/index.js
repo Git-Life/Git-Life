@@ -11,7 +11,8 @@ export const REQUEST_GIT = 'REQUEST_GIT';
 export function searchGitHub(searchTerm){
   var results = Axios.get('/search/repos', {
       params: {
-        searchTerm: searchTerm
+        searchTerm: searchTerm.searchTerm,
+        language: searchTerm.language
       }
   });
   return {
