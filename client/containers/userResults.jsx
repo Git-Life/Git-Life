@@ -83,7 +83,7 @@ export default class UserResults extends Component {
           </div>
         </div>
         <div className='row'>
-          <div className='col s12 lime'>
+          <div className='col s12 lime z-depth-3'>
             {this.populateResults(this.state.sort)}
           </div>
         </div>
