@@ -56,16 +56,18 @@ export default class OrgVis extends Component {
 
   populateResults() {
     //console.log('populateResults: ', this.props.orgs.data);
-    return _.reduce(this.props.orgs.data, (accum, item) => {
+    return _.reduce(this.props.orgs.data, (accum, item, key) => {
 
       let html = (
         <div className="orgs" >
         <div className="orgs" key={item.key}  style={{margin:'20px 20px 20px 20px'}}>
         <div >
-          <a href={item.url}  target='_blank'><ul>
-            <img className='imgTrendOrg' src={item.avatar} alt='org avatar' />
-            {" " + item.org + " "}
-          </ul></a>
+          <a href={item.url}  target='_blank'>
+            <ul>
+              <img className='imgTrendOrg' src={item.avatar} alt='org avatar' />
+              {" " + item.org + " "}
+            </ul>
+          </a>
         </div>
         </div>
         </div>
@@ -79,7 +81,7 @@ export default class OrgVis extends Component {
     return (
       <div>
         <ul>
-          <h5 style={{fontWeight:'bold'}}>Trending Organizations</h5>
+          <h5>Trending Organizations</h5>
           <a >{this.drawChart()}</a>
           {this.populateResults()}
         </ul>

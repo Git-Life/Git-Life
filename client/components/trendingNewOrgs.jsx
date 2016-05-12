@@ -16,15 +16,15 @@ export default class TrendingNewOrgs extends Component {
     if (this.props.newOrgs.data){
       var newOrgs=this.props.newOrgs.data.slice(0, 20);
     }
-    return _.reduce(newOrgs, (accum, item) => {
+    return _.reduce(newOrgs, (accum, item, key) => {
 
       let html = (
           <div  className="orgs">
-            <div  style={{ padding: '10px 10px 10px 10px'}}>
+            <div>
               <img className='imgOrg' src={item.avatar} alt='org avatar' />
-              <li key={item.html_url}>
+              <ul key={item.html_url}>
                 <a style={{fontWeight:'bold'}} href={item.html_url}>{item.login}</a>
-              </li>
+              </ul>
             </div>
           </div>
       );
@@ -37,7 +37,7 @@ export default class TrendingNewOrgs extends Component {
     return (
       <div>
         <ul   >
-          <h5 style={{fontWeight:'bold'}}>Top New Organizations</h5>
+          <h5 >Top New Organizations</h5>
 
           {this.populateResults()}
         </ul>

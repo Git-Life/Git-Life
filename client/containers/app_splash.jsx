@@ -18,7 +18,8 @@ import TrendsNav from '../components/trendsnav';
 class AppSplash extends Component {
   componentWillMount(){
     //get all data here to make faster
-    this.props.actions.updateNavButton('topRepos')
+    this.props.actions.updateNavButton('topRepos');
+
   }
 
   render(){
@@ -41,7 +42,13 @@ class AppSplash extends Component {
           {this.props.navButton == 'topNewOrgs' ? newOrgs : null}
         </div>
         <div className="col s5">
-          <WiredResults hnresults={this.props.hnResults} searchHN={this.props.actions.searchHN} searchData={this.props.actions.searchData} dataResults={this.props.dataResults} wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
+          <WiredResults
+            hnresults={this.props.hnResults}
+            searchHN={this.props.actions.searchHN}
+            searchData={this.props.actions.searchData}
+            dataResults={this.props.dataResults}
+            wired={this.props.actions.searchWired}
+            wiredResults={this.props.wiredResults}/>
         </div>
       </div>
     );

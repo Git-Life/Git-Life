@@ -92,7 +92,7 @@
 
 .repoName {
   text-align: center;
-  font-size: 12px;
+  font-size: 18px;
   display: inline;
 
 }
@@ -101,17 +101,18 @@
   text-overflow: ellipsis;
   word-wrap: break-word;
   display: inline;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 body{
   background: #f5f5f5;
-  font-family: Lato;
+  font-family: Roboto;
 }
 
 .lang{
-  font-weight: bold;
+  font-style: italic;
   font-size: 10px;
   display: inline;
+  margin-left: 20px;
 }
 
 .topRepoSection{
@@ -137,26 +138,22 @@ body{
 .stars{
   display: inline;
   font-size: 10px;
-  margin-right: 10px;
+  height: 12px;
 }
-
 .orgs{
   width: 400px !important;
   display: inline;
 }
 .news{
   min-width: 7rem;
-  margin-top: 40px;
-}
-.repolist{
-  line-height: 0px;
+  margin-top: 65px;
 }
 
 .trendsNav{
-  margin-top: 40px;
+  margin-top: 60px;
 }
 .splash{
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .newsArticle{
   line-height: 30px;
