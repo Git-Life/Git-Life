@@ -16,7 +16,7 @@ export default class SplashRepos extends Component {
     if(this.props.repos.data){
       return _.reduce(this.props.repos.data, (prev, curr)=>{
         let html = (
-          <div className="col s3 m4" >
+          <div className="col s3 m4" key={curr.html_url}>
           <div className="card small" style={{ padding: '10px 10px 10px 10px'}}>
             <li   key={curr.html_url} > <a style={{fontWeight:'bold'}} href={curr.html_url}>{curr.name}</a></li>
             <p>{curr.description}</p>

@@ -16,7 +16,7 @@ export default class TrendingNewOrgs extends Component {
     return _.reduce(this.props.newOrgs.data, (accum, item) => {
 
       let html = (
-          <div className="col s3 m4" >
+          <div className="col s3 m4" key={item.id}>
             <div className="card small" style={{ padding: '10px 10px 10px 10px'}}>
               <img className='imgNewOrg' src={item.avatar} alt='org avatar' />
               <li key={item.html_url}>

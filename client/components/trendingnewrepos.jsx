@@ -16,7 +16,7 @@ export default class TrendingNewRepos extends Component {
     return _.reduce(this.props.newRepos.data, (accum, item) => {
 
       let html = (
-          <div className="col s3 m4" >
+          <div className="col s3 m4" key={item.id}>
             <div className="card small" style={{ padding: '10px 10px 10px 10px'}}>
               <li key={item.html_url}>
                 <a style={{fontWeight:'bold'}} href={item.html_url}>{item.name}</a>
