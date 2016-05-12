@@ -29,7 +29,7 @@ function filterByLanguage(body, lang) {
   for(var i = 0; i < body.items.length; i++){
     //console.log(body.items[i].language);
     if(body.items[i].language && 
-      (body.items[i].language.toLowerCase() === lang.toLowerCase() || lang === 'All')){
+      (lang && (body.items[i].language.toLowerCase() === lang.toLowerCase() || lang === 'All'))){
       filteredRepos.push(body.items[i]);
     }
   }

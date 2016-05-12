@@ -12,11 +12,13 @@ else if(process.env.NODE_ENV === 'production'){
 module.exports = {
   getOrgs: function (resObj, res) {
 
+    var uniqueOrgs = {};  // need to check if unique first, then push to array (needed for client sort methods)
     resObj['organizations'] = [];
 
     resObj.items.forEach(function(element, index){
       //console.log(element.owner.login);
-      if(element.owner.type === 'Organization'){
+      if(element.owner.type === 'Organization' && !uniqueOrgs[element.owner.login]){
+        uniqueOrgs[element.owner.login] = element.owner.login; // works?
         resObj['organizations'].push({
           name: element.owner.login,
           avatar_url: element.owner.avatar_url,

@@ -13,9 +13,9 @@ export default class OrgSearchResults extends Component {
 
   constructHTML(data) {
     if(data){
-      return _.reduce(data, (accum, item)=>{
+      return _.reduce(data, (accum, item, index)=>{
         let html =(
-            <OrgItem description={item.name} url={item.url} avatar_url={item.avatar_url} key={item.id}/>
+            <OrgItem description={item.name} url={item.url} avatar_url={item.avatar_url} key={index}/>
         );
         accum.push(html);
         return accum;
@@ -24,6 +24,7 @@ export default class OrgSearchResults extends Component {
   }
 
   populateResults(sortBy) {
+    console.log(this.props.results.data);
     if(this.props.results.data){
       switch (sortBy) {
         case 'name':
