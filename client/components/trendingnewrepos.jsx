@@ -13,18 +13,19 @@ export default class TrendingNewRepos extends Component {
   }
 
   populateResults() {
-    return _.reduce(this.props.newRepos.data, (accum, item) => {
+    if (this.props.newRepos.data){
+      var newData = this.props.newRepos.data.slice(0, 10);
+    }
+    return _.reduce(newData, (accum, item) => {
 
       let html = (
-          <div className="col s3 m4" >
-            <div className="card-panel" style={{ padding: '10px 10px 10px 10px'}}>
+          <div className="col s3 m2" >
+            <div className="card small" style={{ padding: '10px 10px 10px 10px'}}>
               <li key={item.html_url}>
                 <a style={{fontWeight:'bold'}} href={item.html_url}>{item.name}</a>
               </li>
-              <p>{item.description}</p>
               <p>Stargazers: {item.stargazers}</p>
-              <p>Forks: {item.forks}</p>
-              <p>Language: {item.language}</p>
+              <p>{item.language}</p>
             </div>
           </div>
       );

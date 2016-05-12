@@ -10,7 +10,7 @@ export default class UserResults extends Component {
   }
 
   constructHTML(dataObj){
-    var counter = 0;
+
     var dataObject = dataObj.slice(0, 30);
     return _.reduce(dataObject, (accum, item)=>{
       let html =(

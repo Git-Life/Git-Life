@@ -13,12 +13,15 @@ export default class TrendingNewOrgs extends Component {
   }
 
   populateResults() {
-    return _.reduce(this.props.newOrgs.data, (accum, item) => {
+    if (this.props.newOrgs.data){
+      var newOrgs=this.props.newOrgs.data.slice(0, 20);
+    }
+    return _.reduce(newOrgs, (accum, item) => {
 
       let html = (
           <div className="col s3 m4" >
-            <div className="card small" style={{ padding: '10px 10px 10px 10px'}}>
-              <img className='imgNewOrg' src={item.avatar} alt='org avatar' />
+            <div  style={{ padding: '10px 10px 10px 10px'}}>
+              <img className='imgOrg' src={item.avatar} alt='org avatar' />
               <li key={item.html_url}>
                 <a style={{fontWeight:'bold'}} href={item.html_url}>{item.login}</a>
               </li>

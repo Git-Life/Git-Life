@@ -89,4 +89,9 @@
   margin-top: 50px;
 
 }
-/*Slider */
+/*Cards */
+.card{
+  max-height: 150px;
+  max-width: 150px;
+  margin: 1px 1px 1px 1px !important;
+}
