@@ -81,7 +81,7 @@ export default class RepoSearchResults extends Component {
     return (
 
 
-      <div className='collection' style={{display: 'inline-block',float:'left', width: '40%', height: '25%', margin: '20px 20px 20px 20px'}} >
+      <div>
 
         <Modal
           isOpen={this.state.modalIsOpen}
@@ -93,8 +93,6 @@ export default class RepoSearchResults extends Component {
           closeModal={this.closeModal}
            >
            <div>
-
-
               <button
                 className='waves-effect waves-light btn'
                 onClick={()=>{this.closeModal()}}>
@@ -110,10 +108,22 @@ export default class RepoSearchResults extends Component {
           </div>
         </Modal>
 
-        <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Repositories</p>
-        <button onClick={()=>{this.handleClick('name')}}>Alphabetically</button>
-        <button onClick={()=>{this.handleClick('popularity')}}>Stargazer Count</button>
-        {this.populateResults(this.state.sort)}
+        <div className='col s12'>
+          <div className='row'>
+            <div className='col s12 yellow center-align'>Top Repositories</div>
+              <div className='row '>
+                <div className='col s12 green '>
+                  <button className='col s6 waves-effect waves-light btn' onClick={()=>{this.handleClick('name')}}>Name</button>
+                  <button className='col s6 waves-effect waves-light btn' onClick={()=>{this.handleClick('popularity')}}>Stars</button>
+                </div>
+              </div>
+            <div className='row'>
+              <div className='col s12 lime z-depth-3'>
+                  {this.populateResults(this.state.sort)}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
