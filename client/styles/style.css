@@ -1,5 +1,5 @@
 .imgTrendOrg {
-  width: 50px;
+  width: 30px;
   margin: 10px 10px 10px 10px;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .imgOrg {
-  width: 50px;
+  width: 30px;
 }
 
 .aOrg {
@@ -98,42 +98,57 @@
 
 .repoName {
   text-align: center;
-  font-size: x-large;
+  font-size: 12px;
   display: inline;
 
 }
 .repoName a{
-  color: white;
+  color: grey;
   text-overflow: ellipsis;
   word-wrap: break-word;
   display: inline;
 }
 body{
   background: #f5f5f5;
-  font-family: Raleway;
+  font-family: Lato;
 }
 
 .lang{
   font-weight: bold;
-  font-size: 20px;
+  font-size: 10px;
+  display: inline;
 }
 .topRepoSection{
-  max-width: 300px !important;
-    color: white;
+  max-width: 400px !important;
+    color: grey;
+    display: inline;
 
 }
 .newRepoSection{
-  max-width: 300px !important;
-  color: white;
+  max-width: 400px !important;
+  color: grey;
+  display: inline;
 }
 
 .num{
-  display: inline-block;;
+  display: inline-block;
   padding: 10px 10px 10px 10px;
   width: 30px !important;
-  font-size: 20px;
+  font-size: 10px;
 }
 .stars{
-  display: block;
-  font-size: 20px;
+  display: inline;
+  font-size: 10px;
+}
+
+.orgs{
+  width: 400px !important;
+  display: inline;
+}
+.news{
+  display: inline;
+  float: right;
+}
+.repolist{
+  line-height: 0px;
 }

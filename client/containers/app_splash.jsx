@@ -25,9 +25,9 @@ class AppSplash extends Component {
 
       <div className="section">
           <SplashRepos getSplashRepos={this.props.actions.getSplashRepos} repos={this.props.repos}/>
-          <WiredResults hnresults={this.props.hnResults} searchHN={this.props.actions.searchHN} searchData={this.props.actions.searchData} dataResults={this.props.dataResults} wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
           <TrendingNewRepos getNewRepos={this.props.actions.getNewRepos} newRepos={this.props.newRepos} />
           <TrendingNewOrgs getNewOrgs={this.props.actions.getNewOrgs} newOrgs={this.props.newOrgs} />
+          <WiredResults hnresults={this.props.hnResults} searchHN={this.props.actions.searchHN} searchData={this.props.actions.searchData} dataResults={this.props.dataResults} wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
         </div>
     </div>
     );

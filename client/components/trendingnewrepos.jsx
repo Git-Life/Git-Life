@@ -19,12 +19,12 @@ export default class TrendingNewRepos extends Component {
     return _.reduce(newData, (accum, item, key) => {
 
       let html = (
-            <div className="card small col s3 m2 blue-grey lighten-4" >
+            <div className="repolist" >
               <p className="num">{key + 1}</p>
               <li className="repoName" key={item.html_url}>
-                <a  style={{fontWeight:'bold'}} href={item.html_url}>{item.name}</a>
+                <a  style={{fontWeight:'bold'}} href={item.html_url}>{item.name.toUpperCase()  + "\t "  }</a>
               </li>
-              <p> {item.stargazers}</p>
+              <p className="stars"> {item.stargazers}</p>
               <p className="lang">{item.language}</p>
             </div>
       );
@@ -37,8 +37,8 @@ export default class TrendingNewRepos extends Component {
     return (
       <div className="newRepoSection">
         <ul className="row"  style={{display: 'block'}}>
-          <h5 style={{fontWeight:'bold', textAlign: 'center'}}>Top New Repositories</h5>
-          <div className="divider"></div>
+          <h5 style={{fontWeight:'bold'}}>Top New Repositories</h5>
+
           {this.populateResults()}
         </ul>
       </div>
