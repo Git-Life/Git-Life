@@ -36,15 +36,18 @@ class AppSearch extends Component {
             searchTerm={this.props.term}
             onRequest={this.props.actions.searchGitHub}
             onSearchTermChange={this.props.actions.updateSearchTerm}/>
-        <div class='section'>
-        {this.state.showResults ?  <UserResults  results={this.props.results} />  : null}
-        {this.state.showResults ? <RepoSearchResults
+        <div class='section row'>
+        {this.state.showResults ?
+          <div class='col s4'><UserResults  results={this.props.results} /> </div>  : null}
+        {this.state.showResults ?
+          <div class='col s4'> <RepoSearchResults
             results={this.props.results}
             selectRepo={this.props.actions.selectRepo}
             selectedRepo={this.props.selectedRepo}
             issues={this.props.issues}
-            getIssues={this.props.actions.getIssues}/> : null}
-        {this.state.showResults ? <OrgSearchResults results={this.props.results} /> : null}
+            getIssues={this.props.actions.getIssues}/> </div> : null}
+        {this.state.showResults ?
+          <div class='col s4'> <OrgSearchResults results={this.props.results} /></div> : null}
         </div>
 
     </div>
