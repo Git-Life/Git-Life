@@ -15,7 +15,11 @@ export default class OrgSearchResults extends Component {
     if(data){
       return _.reduce(data, (accum, item, index)=>{
         let html =(
-            <OrgItem description={item.name} url={item.url} avatar_url={item.avatar_url} key={index}/>
+              <OrgItem
+                description={item.name}
+                url={item.url}
+                avatar_url={item.avatar_url}
+                key={index}/>
         );
         accum.push(html);
         return accum;
@@ -64,7 +68,9 @@ export default class OrgSearchResults extends Component {
         </div>
         <div className='row'>
           <div className='col s12 lime z-depth-3'>
-            {this.populateResults(this.state.sort)}
+            <ul className='collection'>
+              {this.populateResults(this.state.sort)}
+            </ul>
           </div>
         </div>
       </div>
