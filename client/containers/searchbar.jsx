@@ -36,7 +36,7 @@ export default class SearchBar extends Component {
             type='submit' onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}><Link to="search">Search</Link></button>
           </div>
       </form>
-
+//
       </div>
     </div>
   </div>
