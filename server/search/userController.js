@@ -28,7 +28,7 @@ module.exports = function(body, res){
   var userObj = {};
 
   async.forEachOf(itemGroup, function (value, key, callback) {
-    gitHTTP('GET', itemGroup[key].contributors_url + '?', function(err, response, contributors){
+    gitHTTP('GET', itemGroup[key].contributors_url + '?', function(err, response, contributor){
       if(err){
         return callback(err);
       }
@@ -50,7 +50,6 @@ module.exports = function(body, res){
         }
       });
       callback();
-
     });
   }, function (err) {
       if (err) console.error(err.message);
