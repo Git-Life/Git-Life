@@ -38,6 +38,14 @@
   max-width: 100px;
 }
 
+.btnSearch {
+
+}
+
+.selectLang {
+  display: inline;
+}
+
 .stylish-input-group .input-group-addon{
     background: white !important;
 }
@@ -90,3 +98,4 @@
 
 }
 /*Slider */
+

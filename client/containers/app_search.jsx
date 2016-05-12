@@ -21,7 +21,6 @@ class AppSearch extends Component {
             searchTerm={this.props.term}
             onRequest={this.props.actions.searchGitHub}
             onSearchTermChange={this.props.actions.updateSearchTerm}/>
-
         </div>
         <Categories
             results={this.props.results}

@@ -24,7 +24,7 @@ function gitHTTP(method, reqString, cb){
 
 
 module.exports = function(body, res){
-  var items =   JSON.parse(body).items;
+  var items =   body;
   var itemGroup = items.slice(0, 10);
   var userObj = {};
 

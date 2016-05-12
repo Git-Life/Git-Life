@@ -24,6 +24,18 @@ function gitHTTP(method, reqString, cb){
   }, cb);
 }
 
+function filterByLanguage(body, lang) {
+  var filteredRepos = [];
+  for(var i = 0; i < body.items.length; i++){
+    //console.log(body.items[i].language);
+    if(body.items[i].language && 
+      (body.items[i].language.toLowerCase() === lang.toLowerCase() || lang === 'All')){
+      filteredRepos.push(body.items[i]);
+    }
+  }
+  return filteredRepos;
+}
+
 module.exports = {
 	getRepos: function (req, res) {
 		var query = req.query.searchTerm;
@@ -32,7 +44,8 @@ module.exports = {
 			if(error){
         console.log('Error: ', error);
       }
-      userParse(body, res);
+      var newBody = filterByLanguage(JSON.parse(body), req.query.language);
+      userParse(newBody, res);
 		});
 	},
 	getUsers: function (req, res) {
