@@ -28,7 +28,8 @@ function filterByLanguage(body, lang) {
   var filteredRepos = [];
   for(var i = 0; i < body.items.length; i++){
     //console.log(body.items[i].language);
-    if(body.items[i].language && body.items[i].language.toLowerCase() === lang.toLowerCase()){
+    if(body.items[i].language && 
+      (body.items[i].language.toLowerCase() === lang.toLowerCase() || lang === 'All')){
       filteredRepos.push(body.items[i]);
     }
   }
@@ -37,7 +38,6 @@ function filterByLanguage(body, lang) {
 
 module.exports = {
 	getRepos: function (req, res) {
-    console.log('getRepos req: ', req.query);
 		var query = req.query.searchTerm;
     gitHTTP('GET', root + 'search/repositories?q=' + query + 'in:description&sort=stars&order=desc',
      function (error, response, body) {
@@ -45,7 +45,6 @@ module.exports = {
         console.log('Error: ', error);
       }
       var newBody = filterByLanguage(JSON.parse(body), req.query.language);
-      //console.log(newBody);
       userParse(newBody, res);
 		});
 	},
