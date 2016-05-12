@@ -61,7 +61,7 @@ export default class RepoSearchResults extends Component {
         case 'name':
           var newArray = this.props.results.data.items.slice();
           return this.constructHTML(newArray.sort((a, b) =>{
-            return a.description.localeCompare(b.description);
+            return a.name.localeCompare(b.name);
           }));
         break;
       case 'popularity':

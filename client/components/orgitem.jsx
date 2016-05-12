@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 export default class OrgItem extends Component{
   render(){
     return (
-      <div>
+      <div >
         <img className='imgOrg' src={this.props.avatar_url} alt='org avatar' />
         <div className='aOrg'><a href={this.props.url} target='_blank'>{this.props.description}</a></div>
       </div>

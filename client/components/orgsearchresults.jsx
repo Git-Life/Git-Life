@@ -50,7 +50,7 @@ export default class OrgSearchResults extends Component {
 
   render() {
     return (
-      <div className='collection'  style={{display: 'inline-block',float:'left', width: '20%', height: '25%', margin: '20px 20px 20px 20px'}}>
+      <div  style={{float:'left', width: '20%', height: '25%', margin: '20px 20px 20px 20px'}}>
         <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Organizations</p>
         <button onClick={() => { this.handleClick('name') }}>Name</button>
         <button onClick={() => { this.handleClick('repoOrder') }}>Popularity</button>
