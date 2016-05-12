@@ -27,6 +27,12 @@ export default class ChooseLanguage extends Component {
           <option value={"HTML"}>HTML</option>
           <option value={"CSS"}>CSS</option>
         </select>
+        <a className='dropdown-button btn' href='#' data-activates='languageDropdown'>Language</a>
+        <ul id='languageDropdown' className='dropdown-content'>
+          <li><a href="#!">one</a></li>
+          <li><a href="#!">two</a></li>
+          <li><a href="#!">three</a></li>
+        </ul>
       </div>
     );
   }
