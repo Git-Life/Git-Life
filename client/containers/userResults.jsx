@@ -10,12 +10,13 @@ export default class UserResults extends Component {
   }
 
   constructHTML(dataObj){
-
-    return _.reduce(dataObj, (accum, item)=>{
+    var counter = 0;
+    var dataObject = dataObj.slice(0, 30);
+    return _.reduce(dataObject, (accum, item)=>{
       let html =(
         <UserResult
           name={item.name}
-          url={item.url}
+          url={item.html_url}
           key={item.id}
           contributions={item.contributions}
           count={item.count}
@@ -68,7 +69,7 @@ export default class UserResults extends Component {
 
   render() {
     return (
-      <div className='collection' style={{display: 'inline-block',float:'left', width: '25%', height: '25%', margin:'20px 20px 20px 30px'}}>
+      <div  style={{display: 'inline-block',float:'left', width: '25%', height: '25%', margin:'20px 20px 20px 30px'}}>
         <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Users</p>
         <button onClick={() => {this.handleSort('count')}}>Count</button>
         <button onClick={() => {this.handleSort('contributions')}}>Contributions</button>

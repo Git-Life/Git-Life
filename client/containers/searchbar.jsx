@@ -14,15 +14,6 @@ export default class SearchBar extends Component {
 
     this.handleChildSelect = this.handleChildSelect.bind(this);
   }
-
-  componentDidMount() {
-      $(document.body).on('keydown', this.handleKeyDown);
-  }
-
-  componentWillUnmount() {
-      $(document.body).off('keydown', this.handleKeyDown);
-  }
-
   handleSearch(value){
     var reqObj = {searchTerm: value, language: this.state.language};
 
@@ -31,39 +22,37 @@ export default class SearchBar extends Component {
     this.props.onRequest(reqObj);
     //console.log('reqObj: ', reqObj);
   }
-
   handleChange(value){
     this.setState({searchTerm: value});
   }
-
-  handleKeyDown(e) {
-
-    //let searchTerm = this.state.searchTerm
-    let ENTER = 13;
-    if( e.keyCode == ENTER ) {
-    }
+  onEnterPress(event){
+     event.preventDefault();
+     window.location.href= "/#/search"
   }
 
   handleChildSelect(event) {
     this.setState({language: event.currentTarget.value});
   }
 
-
   render() {
     return(
-
-      <div className="input-field ">
-        <input   style={{margin:'auto', width:'50%', height:'100%'}}
-          onChange={(event) => {this.handleChange(event.target.value)}}
-          placeholder="Search GitHub" />
-        <button
-          className="btn waves-effect waves-light"
-          onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>
-          Search
-        </button>
-        <LanguageSelect handleLanguageSelect={this.handleChildSelect} />
+      <div >
+      	<div className="row">
+          <div className="col-sm-6 col-sm-offset-3">
+            <form id="imaginary_container" onSubmit={this.onEnterPress}>
+              <div className="input-group stylish-input-group">
+                <input className="form-control" style={{margin:'auto', width:'50%', height:'100%'}}
+                  onChange={(event) => {this.handleChange(event.target.value)}}
+                  placeholder="Search GitHub" />
+                <button
+                  className="btn waves-effect waves-light" 
+                  type='submit' onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}><Link to="search">Search</Link></button>
+              </div>
+            </form>
+            <LanguageSelect handleLanguageSelect={this.handleChildSelect} />
+          </div>
+        </div>
       </div>
-
     );
   }
 
