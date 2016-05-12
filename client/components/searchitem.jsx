@@ -14,17 +14,18 @@ export default class SearchItem extends Component{
 
   render(){
     return (
-      <div>
-        <div
-          className='collection-item'
-          class="badge">
-          <div>
-            <a href='javascript:void(0)' onClick={()=>{this.selectARepo()}} >{this.props.name} </a>
-            <span>{this.props.description}</span>
-            <span style={{float: 'right'}}>{this.props.openIssues}</span>
-          </div>
+      <div className='row z-depth-1'>
+        <span className='col s4'>
+          <a href='javascript:void(0)'
+            onClick={()=>{this.selectARepo()}} >
+            {this.props.name}
+          </a>
+        </span>
+
+        <span className='col s6 offset-s2'>
+          Issues: {this.props.openIssues}
+        </span>
       </div>
-    </div>
   );
   }
 }

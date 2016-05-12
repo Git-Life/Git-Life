@@ -24,7 +24,7 @@ export default class RepoSearchResults extends Component {
           <SearchItem
             name={item.name}
             description={item.description}
-            openIssues={"Open Issues: " + item.open_issues}
+            openIssues={item.open_issues}
             issuesUrl={item.issues_url}
             repoUrl={item.clone_url}
             key={item.clone_url}
