@@ -41,14 +41,14 @@ class AppSearch extends Component {
         {this.state.showResults ?
           <div className='col s3 purple lighten-3 z-depth-2'><UserResults  results={this.props.results} /> </div>  : null}
         {this.state.showResults ?
-          <div className='col s3 indigo lighten-3 offset-s1' > <RepoSearchResults
+          <div className='col s3 indigo lighten-3 z-depth-2 offset-s1' > <RepoSearchResults
             results={this.props.results}
             selectRepo={this.props.actions.selectRepo}
             selectedRepo={this.props.selectedRepo}
             issues={this.props.issues}
             getIssues={this.props.actions.getIssues}/> </div> : null}
         {this.state.showResults ?
-          <div className='col s3 blue lighten-3 offset-s1'> <OrgSearchResults results={this.props.results} /></div> : null}
+          <div className='col s3 blue lighten-3 z-depth-2 offset-s1'> <OrgSearchResults results={this.props.results} /></div> : null}
         </div>
 
     </div>
