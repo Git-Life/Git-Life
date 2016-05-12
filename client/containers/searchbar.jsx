@@ -25,7 +25,7 @@ export default class SearchBar extends Component {
     return(
       <div >
       	<div className="row">
-      <div className="col-sm-6 col-sm-offset-3">
+      <div className="col-sm-6 col-sm-offset-3 blue-grey lighten-4">
         <form id="imaginary_container" onSubmit={this.onEnterPress}>
           <div className="input-group stylish-input-group">
           <input className="form-control" style={{margin:'auto', width:'50%', height:'100%'}}

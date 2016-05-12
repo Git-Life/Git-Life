@@ -16,18 +16,17 @@ export default class TrendingNewRepos extends Component {
     if (this.props.newRepos.data){
       var newData = this.props.newRepos.data.slice(0, 10);
     }
-    return _.reduce(newData, (accum, item) => {
+    return _.reduce(newData, (accum, item, key) => {
 
       let html = (
-          <div className="col s3 m2" >
-            <div className="card small" style={{ padding: '10px 10px 10px 10px'}}>
-              <li key={item.html_url}>
-                <a style={{fontWeight:'bold'}} href={item.html_url}>{item.name}</a>
+            <div className="card small col s3 m2 blue-grey lighten-4" >
+              <p>{key + 1}</p>
+              <li className="repoName" key={item.html_url}>
+                <a  style={{fontWeight:'bold'}} href={item.html_url}>{item.name}</a>
               </li>
-              <p>Stargazers: {item.stargazers}</p>
-              <p>{item.language}</p>
+              <p> {item.stargazers}</p>
+              <p className="lang">{item.language}</p>
             </div>
-          </div>
       );
       accum.push(html);
       return accum;
@@ -36,8 +35,8 @@ export default class TrendingNewRepos extends Component {
 
   render() {
     return (
-      <div className="section">
-        <ul className="row"  style={{display: 'block',float:'right'}}>
+      <div className="newRepoSection">
+        <ul className="row"  style={{display: 'block'}}>
           <h5 style={{fontWeight:'bold', textAlign: 'center'}}>Top New Repositories</h5>
           <div className="divider"></div>
           {this.populateResults()}

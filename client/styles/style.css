@@ -95,3 +95,30 @@
   max-width: 150px;
   margin: 1px 1px 1px 1px !important;
 }
+
+.repoName {
+  text-align: center;
+  font-size: large;
+
+}
+.repoName a{
+  color: white;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+body{
+  background: #f5f5f5;
+}
+
+.lang{
+  font-weight: bold;
+}
+.topRepoSection{
+  max-width: 800px !important;
+    color: white;
+
+}
+.newRepoSection{
+  max-width: 800px !important;
+  color: white;
+}

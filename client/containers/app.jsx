@@ -17,7 +17,7 @@ class App extends Component {
       <div>
 
         <nav>
-          <div className="nav-wrapper">
+          <div className="nav-wrapper blue-grey lighten-4">
             <a href="#" className="brand-logo right">Gitlyfe</a>
             <ul id="nav-mobile" className="left hide-on-med-and-down">
               <li>
@@ -29,11 +29,6 @@ class App extends Component {
             </ul>
           </div>
         </nav>
-          <div >
-            <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
-            <LanguageSelect />
-          </div>
-
         {this.props.children}
       </div>
     );
