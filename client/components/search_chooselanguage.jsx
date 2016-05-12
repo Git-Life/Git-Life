@@ -20,9 +20,12 @@ export default class ChooseLanguage extends Component {
           <option value={"JavaScript"}>JavaScript</option>
           <option value={"Java"}>Java</option>
           <option value={"Python"}>Python</option>
+          <option value={"C"}>C</option>
           <option value={"C++"}>C++</option>
           <option value={"C#"}>C#</option>
-          <option value={"Ruby"}>Ruby</option>        
+          <option value={"Ruby"}>Ruby</option>
+          <option value={"HTML"}>HTML</option>
+          <option value={"CSS"}>CSS</option>
         </select>
       </div>
     );
