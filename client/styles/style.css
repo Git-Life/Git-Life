@@ -91,34 +91,49 @@
 }
 /*Cards */
 .card{
-  max-height: 150px;
-  max-width: 150px;
+  max-height: 200px;
+  width: 300px !important;
   margin: 1px 1px 1px 1px !important;
 }
 
 .repoName {
   text-align: center;
-  font-size: large;
+  font-size: x-large;
+  display: inline;
 
 }
 .repoName a{
   color: white;
   text-overflow: ellipsis;
   word-wrap: break-word;
+  display: inline;
 }
 body{
   background: #f5f5f5;
+  font-family: Raleway;
 }
 
 .lang{
   font-weight: bold;
+  font-size: 20px;
 }
 .topRepoSection{
-  max-width: 800px !important;
+  max-width: 300px !important;
     color: white;
 
 }
 .newRepoSection{
-  max-width: 800px !important;
+  max-width: 300px !important;
   color: white;
+}
+
+.num{
+  display: inline-block;;
+  padding: 10px 10px 10px 10px;
+  width: 30px !important;
+  font-size: 20px;
+}
+.stars{
+  display: block;
+  font-size: 20px;
 }

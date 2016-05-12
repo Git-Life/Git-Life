@@ -20,7 +20,7 @@ export default class TrendingNewRepos extends Component {
 
       let html = (
             <div className="card small col s3 m2 blue-grey lighten-4" >
-              <p>{key + 1}</p>
+              <p className="num">{key + 1}</p>
               <li className="repoName" key={item.html_url}>
                 <a  style={{fontWeight:'bold'}} href={item.html_url}>{item.name}</a>
               </li>

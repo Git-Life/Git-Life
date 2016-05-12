@@ -18,9 +18,9 @@ export default class SplashRepos extends Component {
         let html = (
           <div className="card small col s3 m2 blue-grey lighten-4" >
           <div >
-            <p>{key + 1}</p>
+            <p className="num" >{key + 1}</p>
             <li className="repoName"  key={curr.html_url} > <a style={{fontWeight:'bold'}} href={curr.html_url}>{curr.name}</a></li>
-            <p>{curr.stargazers}</p>
+            <p className="stars">{curr.stargazers}</p>
             <p className="lang">{curr.language}</p>
           </div>
           </div>
