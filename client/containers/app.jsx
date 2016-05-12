@@ -15,7 +15,7 @@ class App extends Component {
   render(){
     return (
       <div>
-<<<<<<< 1f0a7af2e0f60e00337985ad1df44fea9dbca03e
+
         <nav>
           <div className="nav-wrapper">
             <a href="#" className="brand-logo right">Gitlyfe</a>
@@ -29,13 +29,11 @@ class App extends Component {
             </ul>
           </div>
         </nav>
-
-=======
           <div >
             <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
             <LanguageSelect />
           </div>
->>>>>>> Style: Added minor styling
+
         {this.props.children}
       </div>
     );
