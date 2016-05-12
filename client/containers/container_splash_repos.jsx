@@ -18,7 +18,7 @@ export default class SplashRepos extends Component {
       return _.reduce(this.props.repos.data, (prev, curr, key)=>{
         let html = (
           <div className="repolist" >
-          <div >
+          <div className="topRepoSection">
             <p className="num" >{key + 1}</p>
             <li className="repoName"  key={curr.html_url} > <a style={{fontWeight:'bold'}} href={curr.html_url}>{curr.name.toUpperCase() + "\t " }</a></li>
             <p className="stars"> {curr.stargazers}</p>
@@ -37,7 +37,7 @@ export default class SplashRepos extends Component {
   render() {
     return(
       <div className="topRepoSection">
-        <ul className="row"  style={{display: 'block',float:'right'}}>
+        <ul className="topRepoSection" >
           <h5 style={{fontWeight:'bold'}}>Top Repositories</h5>
           <div ></div>
           {this.populateResults()}

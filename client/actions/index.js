@@ -19,6 +19,13 @@ export function searchGitHub(searchTerm){
     payload: results
   }
 }
+export const UPDATE_NAV_BUTTON = 'UPDATE_NAV_BUTTON';
+export function updateNavButton(navButton = null){
+  return {
+    type: UPDATE_NAV_BUTTON,
+    navButton
+  }
+}
 export const ORGVIS_REQUEST = 'ORGVIS_REQUEST';
 export function getTrendingOrgs(){
   var orgs = Axios.get('/splash/orgs', {});

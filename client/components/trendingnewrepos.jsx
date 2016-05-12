@@ -36,7 +36,7 @@ export default class TrendingNewRepos extends Component {
   render() {
     return (
       <div className="newRepoSection">
-        <ul className="row"  style={{display: 'block'}}>
+        <ul>
           <h5 style={{fontWeight:'bold'}}>Top New Repositories</h5>
 
           {this.populateResults()}

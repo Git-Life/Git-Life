@@ -19,7 +19,7 @@ export default class TrendingNewOrgs extends Component {
     return _.reduce(newOrgs, (accum, item) => {
 
       let html = (
-          <div  >
+          <div  className="orgs">
             <div  style={{ padding: '10px 10px 10px 10px'}}>
               <img className='imgOrg' src={item.avatar} alt='org avatar' />
               <li key={item.html_url}>
@@ -35,8 +35,8 @@ export default class TrendingNewOrgs extends Component {
 
   render() {
     return (
-      <div className="orgs">
-        <ul className="row"  >
+      <div>
+        <ul   >
           <h5 style={{fontWeight:'bold'}}>Top New Organizations</h5>
 
           {this.populateResults()}
