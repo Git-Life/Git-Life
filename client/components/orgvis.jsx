@@ -90,6 +90,7 @@ export default class OrgVis extends Component {
             </div>
           </div>
         </div>
+
       </div>
     )
   }
