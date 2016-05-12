@@ -15,6 +15,7 @@ module.exports = function(app, express) {
   app.use('/splash', splashRouter);
   app.use('/learn', learnRouter);
 
+
   require('./search/SearchRouter.js')(searchRouter);
   require('./splash/splashRouter.js')(splashRouter);
   require('./learn/learnRouter.js')(learnRouter);
