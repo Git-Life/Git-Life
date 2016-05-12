@@ -29,10 +29,6 @@ class App extends Component {
             </ul>
           </div>
         </nav>
-          <div >
-            <SearchBar searchTerm={this.props.term} onRequest={this.props.actions.searchGitHub} onSearchTermChange={this.props.actions.updateSearchTerm}/>
-            <LanguageSelect />
-          </div>
 
         {this.props.children}
       </div>
