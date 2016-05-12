@@ -69,12 +69,22 @@ export default class UserResults extends Component {
 
   render() {
     return (
-      <div  style={{display: 'inline-block',float:'left', width: '25%', height: '25%', margin:'20px 20px 20px 30px'}}>
-        <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Users</p>
-        <button onClick={() => {this.handleSort('count')}}>Count</button>
-        <button onClick={() => {this.handleSort('contributions')}}>Contributions</button>
-        <button onClick={() => {this.handleSort('name')}}>Name</button>
-      {this.populateResults(this.state.sort)}
+      <div className='col s12'>
+        <div className='row'>
+          <div className='col s11 yellow'>Top Users</div>
+        </div>
+        <div className='row'>
+          <div className='col s12 green'>
+            <button onClick={() => {this.handleSort('count')}}>Count</button>
+            <button onClick={() => {this.handleSort('contributions')}}>Contributions</button>
+            <button onClick={() => {this.handleSort('name')}}>Name</button>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col s12 lime'>
+            {this.populateResults(this.state.sort)}
+          </div>
+        </div>
       </div>
     );
   }
