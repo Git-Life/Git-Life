@@ -40,6 +40,7 @@ export default class SearchBar extends Component {
         <div className='row'>
           <div className='col s8 searchbar'>
             <input
+              style={{height: "30px"}}
               type='text'
               className=""
               onChange={(event) => {this.handleChange(event.target.value)}}
