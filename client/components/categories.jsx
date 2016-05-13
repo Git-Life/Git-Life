@@ -12,11 +12,9 @@ export default class Categories extends Component{
 
 
   render(){
-    return(<div>
-      <div className="categories-column card blue-grey lighten-4" >
-        <div className="activator category-title">Hot Tech</div>
-        <div className="card-reveal" >
-          <span className="card-title"><i className="material-icons right">X</i></span>
+    return(
+      <div className="chips blue-grey lighten-2">
+        <p className="categoryTitle">Suggested Searches</p>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("animal")}} >Animals</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("artificial intelligence")}} >Artificial Intelligence</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("blogs")}} >Blogs</div>
@@ -29,37 +27,18 @@ export default class Categories extends Component{
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("email")}} >Email</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("entertainment")}} >Entertainment</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("finance")}} >Finance</div>
-
-        </div>
-    </div>
-      <div className="categories-column card blue-grey lighten-4">
-        <div className="activator category-title">Lifestyle</div>
-        <div className="card-reveal" >
-          <span className="card-title"><i className="material-icons right">X</i></span>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("data")}} >Data</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("fun")}} >Fun</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("games")}} >Games</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("robotics")}} >Robotics</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("internet of things")}} >Internet of Things</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("toy problems")}} >Toy Problems</div>
-        </div>
-      </div>
-      <div className="categories-column card col s12 m5 blue-grey lighten-4">
-        <div className="activator category-title">Entertainment</div>
-        <div className="card-reveal" >
-          <span className="card-title"><i className="material-icons right">X</i></span>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("health")}} >Health</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("fitness")}} >Fitness</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("machine learning")}} >Machine Learning</div>
           <div className="chip hvr-grow" onClick={()=>{this.handleSearch("medical")}} >Medical</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("messaging")}} >Messaging</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("movies")}} >Movies</div>
-        </div>
-      </div>
-      <div className="categories-column card blue-grey lighten-4">
-        <div className="activator category-title">Social</div>
-        <div className="card-reveal" >
-          <span className="card-title"><i className="material-icons right">X</i></span>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("music")}} >Music</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("navigation")}} >Navigation</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("news")}} >News</div>
@@ -72,8 +51,6 @@ export default class Categories extends Component{
           <div className="chip hvr-grow" onClick={()=>{this.handleSearch("travel")}} >Travel</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("virtual reality")}} >Virtual Reality</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("webcam")}} >Webcam</div>
-        </div>
-      </div>
     </div>)
   }
 

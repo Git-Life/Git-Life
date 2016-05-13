@@ -60,7 +60,7 @@
     -moz-osx-font-smoothing: grayscale;
     transition-duration: 0.3s;
     transition-property: transform;
-    margin: 2px 2px 2px 2px;
+    margin: 4px 4px 4px 4px;
 }
 
 .hvr-grow:hover,
@@ -161,4 +161,10 @@ body{
 }
 .headingTitle{
   float: center;
+}
+.chips{
+  padding: 20px 20px 20px 20px;
+}
+.categoryTitle{
+  color: white;
 }
