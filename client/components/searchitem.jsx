@@ -14,18 +14,20 @@ export default class SearchItem extends Component{
 
   render(){
     return (
-      <div className='row z-depth-1'>
-        <span className='col s4'>
+      <li className='collection-item blue-grey lighten-4'>
+        <span className='title'>
           <a href='javascript:void(0)'
             onClick={()=>{this.selectARepo()}} >
             {this.props.name}
           </a>
         </span>
-
-        <span className='col s6 offset-s2'>
+        <span className='secondary-content'>
           Issues: {this.props.openIssues}
         </span>
-      </div>
+        <p>{this.props.description}</p>
+
+
+      </li>
   );
   }
 }
