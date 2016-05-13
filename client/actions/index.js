@@ -20,6 +20,13 @@ export function searchGitHub(searchParams){
     payload: results
   }
 }
+export const UPDATE_NAV_BUTTON = 'UPDATE_NAV_BUTTON';
+export function updateNavButton(navButton = null){
+  return {
+    type: UPDATE_NAV_BUTTON,
+    navButton
+  }
+}
 export const ORGVIS_REQUEST = 'ORGVIS_REQUEST';
 export function getTrendingOrgs(){
   var orgs = Axios.get('/splash/orgs', {});
@@ -90,11 +97,7 @@ export function searchData(){
 }
 export const REQUEST_HN = 'REQUEST_HN';
 export function searchHN(){
-  var hnResults = Axios.get('/splash/rsshn', {
-      params: {
-
-      }
-  });
+  var hnResults = Axios.get('/splash/rsshn');
   return {
     type: REQUEST_HN,
     payload: hnResults

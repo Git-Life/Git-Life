@@ -46,7 +46,6 @@ class AppSearch extends Component {
             getIssues={this.props.actions.getIssues}/> : null}
         {this.state.showResults ? <OrgSearchResults results={this.props.results} /> : null}
         </div>
-
     </div>
 
     );

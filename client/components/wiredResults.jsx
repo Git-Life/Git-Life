@@ -13,12 +13,8 @@ export default class WiredResults extends Component {
   }
   componentWillMount() {
      this.props.searchData()
-      .then(() => {
-        this.props.wired()
-          .then(() => {
-            this.props.searchHN();
-          });
-      });
+     this.props.wired()
+     this.props.searchHN();
   }
 
   populateResults(){
@@ -52,9 +48,9 @@ export default class WiredResults extends Component {
 
   render() {
     return (
-      <div className="container" style={{display: 'inline-block',float:'left', width:'40%', height:'25%'}}>
+      <div className="news" >
         <ul  className="collapsible popout" data-collapsible="accordion">
-          <li>
+          <li >
             <div className="collapsible-header active"><i className="material-icons" ></i>Wired Top Tech News</div>
             <ul className="collapsible-body">{this.populateResults()}</ul>
           </li>

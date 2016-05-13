@@ -31,7 +31,7 @@ export default class SearchBar extends Component {
   }
 
   handleChildSelect(event) {
-    this.setState({language: event.currentTarget.value});
+    this.setState({language: event});
   }
 
   render() {
@@ -45,11 +45,14 @@ export default class SearchBar extends Component {
                   onChange={(event) => {this.handleChange(event.target.value)}}
                   placeholder="Search GitHub" />
                 <button
-                  className="btn waves-effect waves-light" 
-                  type='submit' onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}><Link to="search">Search</Link></button>
-              </div>
+                  className="btn waves-effect waves-light"
+                  type='submit'
+                  onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>
+                  <Link to="search">Search</Link>
+                </button>
+                <LanguageSelect handleLanguageSelect={this.handleChildSelect} />
+            </div>
             </form>
-            <LanguageSelect handleLanguageSelect={this.handleChildSelect} />
           </div>
         </div>
       </div>

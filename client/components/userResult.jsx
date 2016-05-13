@@ -5,7 +5,7 @@ export default class UserResult extends Component{
     return (
       <div className='collection-item' >
 
-        <span><a href={this.props.html_url}>{this.props.name}</a>: {this.props.contributions} contributions in {this.props.count} repos. </span>
+        <span><a target="_" href={this.props.url}>{this.props.name}</a>: {this.props.contributions} contributions in {this.props.count} repos. </span>
       </div>
     );
   }
