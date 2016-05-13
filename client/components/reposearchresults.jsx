@@ -122,7 +122,7 @@ export default class RepoSearchResults extends Component {
           </div>
           <div className='row'>
             <div className='col s12  z-depth-3 blue-grey lighten-5'>
-              <ul className='collection'>
+              <ul className='collection z-depth-1'>
                 {this.populateResults(this.state.sort)}
               </ul>
             </div>
