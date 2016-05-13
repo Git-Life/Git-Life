@@ -36,6 +36,13 @@
   max-width: 100px;
 }
 
+.searchbar {
+  height: 40px;
+  background-color: white;
+  border-radius: 40px;
+  border: 1px solid silver;
+}
+
 .btnSearch {
 
 }

@@ -25,7 +25,7 @@ class AppSearch extends Component {
   render(){
     return (
       <div >
-        <div class='section'>
+        <div className='section'>
           <SearchBar
             searchTerm={this.props.term}
             onRequest={this.props.actions.searchGitHub}

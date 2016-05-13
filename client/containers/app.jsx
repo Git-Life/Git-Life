@@ -11,19 +11,36 @@ import $ from 'jquery';
 
 
 class App extends Component {
+    constructor(props){
+    super(props);
+
+    this.state = {search: 'active', trends: ''};
+  }
+
+  changeTabs(event) {
+    //console.log(event);
+    console.log(event.currentTarget.id);
+    if(event.currentTarget.id === 'searchTab'){
+      this.setState({search: 'active', trends: ''});
+    }
+    if(event.currentTarget.id === 'trendsTab'){
+      this.setState({search: '', trends: 'active'});
+    }
+  }
+
   render(){
     return (
       <div>
 
         <nav>
           <div className="nav-wrapper blue-grey lighten-4">
-            <a href="#" className="brand-logo right">Gitlyfe</a>
+            <a href="#" className="brand-logo right" style={{color: "black"}}>Gitlyfe</a>
             <ul id="nav-mobile" className="left hide-on-med-and-down">
-              <li>
-                <Link to='/' activeClassName="active">Search</Link>
+              <li id='searchTab' className={this.state.search} onClick={(event) => this.changeTabs(event)}>
+                <Link to='/' activeClassName="active" style={{color: "black"}}>Search</Link>
               </li>
-              <li>
-                <Link to='/trends'>Trends</Link>
+              <li id='trendsTab' className={this.state.trends} onClick={(event) => this.changeTabs(event)}>
+                <Link to='/trends' style={{color: "black"}}>Trends</Link>
               </li>
             </ul>
           </div>
