@@ -10,14 +10,13 @@ import {IndexLink, Link} from 'react-router';
 import $ from 'jquery';
 
 
-  // <CommitItems commitData = {this.props.commitData} getCommitData={this.props.actions.getCommitData}/>
 class App extends Component {
   render(){
     return (
       <div>
 
         <nav>
-          <div className="nav-wrapper">
+          <div className="nav-wrapper blue-grey lighten-4">
             <a href="#" className="brand-logo right">Gitlyfe</a>
             <ul id="nav-mobile" className="left hide-on-med-and-down">
               <li>
@@ -29,7 +28,6 @@ class App extends Component {
             </ul>
           </div>
         </nav>
-
         {this.props.children}
       </div>
     );

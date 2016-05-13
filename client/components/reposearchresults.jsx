@@ -24,7 +24,7 @@ export default class RepoSearchResults extends Component {
           <SearchItem
             name={item.name}
             description={item.description}
-            openIssues={"Open Issues: " + item.open_issues}
+            openIssues={item.open_issues}
             issuesUrl={item.issues_url}
             repoUrl={item.clone_url}
             key={item.clone_url}
@@ -81,7 +81,7 @@ export default class RepoSearchResults extends Component {
     return (
 
 
-      <div className='collection' style={{display: 'inline-block',float:'left', width: '40%', height: '25%', margin: '20px 20px 20px 20px'}} >
+      <div>
 
         <Modal
           isOpen={this.state.modalIsOpen}
@@ -93,8 +93,6 @@ export default class RepoSearchResults extends Component {
           closeModal={this.closeModal}
            >
            <div>
-
-
               <button
                 className='waves-effect waves-light btn'
                 onClick={()=>{this.closeModal()}}>
@@ -110,10 +108,26 @@ export default class RepoSearchResults extends Component {
           </div>
         </Modal>
 
-        <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Repositories</p>
-        <button onClick={()=>{this.handleClick('name')}}>Alphabetically</button>
-        <button onClick={()=>{this.handleClick('popularity')}}>Stargazer Count</button>
-        {this.populateResults(this.state.sort)}
+        <div className='col s12'>
+          <div className='row'>
+            <div className='col s12  center-align'>
+              Top Repositories
+            </div>
+          </div>
+          <div className='row '>
+              <div className='col s12  '>
+                <button className='col s6 waves-effect waves-light btn' onClick={()=>{this.handleClick('name')}}>Name</button>
+                <button className='col s6 waves-effect waves-light btn' onClick={()=>{this.handleClick('popularity')}}>Stars</button>
+              </div>
+          </div>
+          <div className='row'>
+            <div className='col s12  z-depth-3 blue-grey lighten-5'>
+              <ul className='collection z-depth-1'>
+                {this.populateResults(this.state.sort)}
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

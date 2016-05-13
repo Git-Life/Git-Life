@@ -15,7 +15,11 @@ export default class OrgSearchResults extends Component {
     if(data){
       return _.reduce(data, (accum, item, index)=>{
         let html =(
-            <OrgItem description={item.name} url={item.url} avatar_url={item.avatar_url} key={index}/>
+              <OrgItem
+                description={item.name}
+                url={item.url}
+                avatar_url={item.avatar_url}
+                key={index}/>
         );
         accum.push(html);
         return accum;
@@ -50,11 +54,25 @@ export default class OrgSearchResults extends Component {
 
   render() {
     return (
-      <div  style={{float:'left', width: '20%', height: '25%', margin: '20px 20px 20px 20px'}}>
-        <p style={{fontWeight:'bold', textAlign: 'center'}}>Top Organizations</p>
-        <button onClick={() => { this.handleClick('name') }}>Name</button>
-        <button onClick={() => { this.handleClick('repoOrder') }}>Popularity</button>
-        {this.populateResults(this.state.sort)}
+      <div className='col s12'>
+        <div className='row'>
+          <div className='col s12  center-align'>
+            Top Organizations
+          </div>
+        </div>
+        <div className='row '>
+          <div className='col s12  '>
+            <button className='col s6 waves-effect waves-light btn' onClick={() => { this.handleClick('name') }}>Name</button>
+            <button className='col s6 waves-effect waves-light btn' onClick={() => { this.handleClick('repoOrder') }}>Popularity</button>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col s12  z-depth-3 blue-grey lighten-5'>
+            <ul className='collection z-depth-1'>
+              {this.populateResults(this.state.sort)}
+            </ul>
+          </div>
+        </div>
       </div>
     );
   }

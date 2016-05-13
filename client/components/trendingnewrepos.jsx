@@ -13,20 +13,22 @@ export default class TrendingNewRepos extends Component {
   }
 
   populateResults() {
-    return _.reduce(this.props.newRepos.data, (accum, item) => {
+    if (this.props.newRepos.data){
+      var newData = this.props.newRepos.data.slice(0, 10);
+    }
+    return _.reduce(newData, (accum, item, key) => {
 
       let html = (
-          <div className="col s3 m4" key={item.id}>
-            <div className="card small" style={{ padding: '10px 10px 10px 10px'}}>
-              <li key={item.html_url}>
-                <a style={{fontWeight:'bold'}} href={item.html_url}>{item.name}</a>
+            <div className="repolist card-panel" >
+              <p className="num">{key + 1 + "."}</p>
+              <li className="repoName" key={item.html_url}>
+                <a  style={{fontWeight:'bold'}} href={item.html_url}>{item.name.toUpperCase()  + "\t "  }</a>
               </li>
+              <p className="stars"> {item.stargazers}</p>
+              <img className="stars" src="./star (1).png"></img>
+              <p className="lang">{item.language}</p>
               <p>{item.description}</p>
-              <p>Stargazers: {item.stargazers}</p>
-              <p>Forks: {item.forks}</p>
-              <p>Language: {item.language}</p>
             </div>
-          </div>
       );
       accum.push(html);
       return accum;
@@ -35,10 +37,10 @@ export default class TrendingNewRepos extends Component {
 
   render() {
     return (
-      <div className="section">
-        <ul className="row"  style={{display: 'block',float:'right'}}>
-          <h5 style={{fontWeight:'bold', textAlign: 'center'}}>Top New Repositories</h5>
-          <div className="divider"></div>
+      <div className="newRepoSection">
+        <ul>
+          <h5 className="headingTitle">Top New Repositories</h5>
+
           {this.populateResults()}
         </ul>
       </div>

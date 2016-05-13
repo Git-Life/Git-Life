@@ -1,6 +1,7 @@
 import {reduce} from 'lodash';
 import React, {Component} from 'react';
 
+
 export default class SplashRepos extends Component {
 
   componentWillMount(){
@@ -14,14 +15,17 @@ export default class SplashRepos extends Component {
   populateResults(){
     //pull props repos data into state, then modify the array as needed and update state
     if(this.props.repos.data){
-      return _.reduce(this.props.repos.data, (prev, curr)=>{
+      return _.reduce(this.props.repos.data, (prev, curr, key)=>{
         let html = (
-          <div className=" card-panel col s3 m4" key={curr.html_url}>
-            <div  style={{ padding: '10px 10px 10px 10px'}}>
-              <li   key={curr.html_url} > <a style={{fontWeight:'bold'}} href={curr.html_url}>{curr.name}</a></li>
-              <p>{curr.stargazers}</p>
-              <p>{curr.language}</p>
-            </div>
+          <div className="repolist card-panel" >
+          <div className="topRepoSection">
+            <p className="num" >{key + 1 + "."}</p>
+            <li className="repoName"  key={curr.html_url} > <a style={{fontWeight:'bold'}} href={curr.html_url}>{curr.name.toUpperCase() + "\t " }</a></li>
+            <p className="stars"> {curr.stargazers}</p>
+            <img className="stars" src="./star (1).png"></img>
+            <p className="lang">{curr.language}</p>
+            <p>{curr.description}</p>
+          </div>
           </div>
         );
         prev.push(html);
@@ -34,10 +38,10 @@ export default class SplashRepos extends Component {
 
   render() {
     return(
-      <div className="section">
-        <ul className="row"  style={{display: 'block',float:'right'}}>
-          <h5 style={{fontWeight:'bold', textAlign: 'center'}}>Top Repositories</h5>
-          <div ></div>
+      <div className="topRepoSection">
+        <ul className="topRepoSection" >
+          <h5 className="headingTitle">Top Repositories</h5>
+          <div></div>
           {this.populateResults()}
         </ul>
     </div>

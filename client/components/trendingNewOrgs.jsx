@@ -13,15 +13,18 @@ export default class TrendingNewOrgs extends Component {
   }
 
   populateResults() {
-    return _.reduce(this.props.newOrgs.data, (accum, item) => {
+    if (this.props.newOrgs.data){
+      var newOrgs=this.props.newOrgs.data.slice(0, 20);
+    }
+    return _.reduce(newOrgs, (accum, item, key) => {
 
       let html = (
-          <div className="col s3 m4" key={item.id}>
-            <div className="card small" style={{ padding: '10px 10px 10px 10px'}}>
-              <img className='imgNewOrg' src={item.avatar} alt='org avatar' />
-              <li key={item.html_url}>
+          <div  className="orgs">
+            <div>
+              <img className='imgOrg' src={item.avatar} alt='org avatar' />
+              <ul key={item.html_url}>
                 <a style={{fontWeight:'bold'}} href={item.html_url}>{item.login}</a>
-              </li>
+              </ul>
             </div>
           </div>
       );
@@ -32,10 +35,10 @@ export default class TrendingNewOrgs extends Component {
 
   render() {
     return (
-      <div className="section">
-        <ul className="row"  style={{display: 'block', float:'right'}}>
-          <h5 style={{fontWeight:'bold', textAlign: 'center'}}>Top New Organizations</h5>
-          <div className="divider"></div>
+      <div>
+        <ul   >
+          <h5 >Top New Organizations</h5>
+
           {this.populateResults()}
         </ul>
       </div>

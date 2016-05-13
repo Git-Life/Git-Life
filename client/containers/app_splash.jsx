@@ -11,34 +11,46 @@ import * as Actions from '../actions';
 import CommitItems from '../components/commititems';
 import WiredResults from '../components/wiredResults';
 import test from '../styles/style.css';
+import TrendsNav from '../components/trendsnav';
 
 
   // <CommitItems commitData = {this.props.commitData} getCommitData={this.props.actions.getCommitData}/>
 class AppSplash extends Component {
+  componentWillMount(){
+    //get all data here to make faster
+    this.props.actions.updateNavButton('topRepos');
+
+  }
+
   render(){
+    let repos = <SplashRepos getSplashRepos={this.props.actions.getSplashRepos} repos={this.props.repos}/>;
+    let newRepos = <TrendingNewRepos getNewRepos={this.props.actions.getNewRepos} newRepos={this.props.newRepos} />;
+    let newOrgs = <TrendingNewOrgs getNewOrgs={this.props.actions.getNewOrgs} newOrgs={this.props.newOrgs} />;
+    let orgs = <OrgVis orgs={this.props.orgs} getTrendingOrgs={this.props.actions.getTrendingOrgs}/>;
     return (
-      <div>
-      <div className='row'>
-        <div className='col s12'>
-          <OrgVis orgs={this.props.orgs} getTrendingOrgs={this.props.actions.getTrendingOrgs}/>
+      <div className="row">
+        <div className="trendsNav col s3">
+          <TrendsNav
+            updateNavButton={this.props.actions.updateNavButton}
+            navButton={this.props.navButton}
+            />
+        </div>
+        <div className="splash col s4">
+          {this.props.navButton == 'topRepos' ? repos : null}
+          {this.props.navButton == 'topNewRepos' ? newRepos : null}
+          {this.props.navButton == 'topOrgs' ? orgs : null}
+          {this.props.navButton == 'topNewOrgs' ? newOrgs : null}
+        </div>
+        <div className="col s5">
+          <WiredResults
+            hnresults={this.props.hnResults}
+            searchHN={this.props.actions.searchHN}
+            searchData={this.props.actions.searchData}
+            dataResults={this.props.dataResults}
+            wired={this.props.actions.searchWired}
+            wiredResults={this.props.wiredResults}/>
         </div>
       </div>
-
-      <div className="section">
-        <div className='row'><div className='col s11'>
-          <SplashRepos getSplashRepos={this.props.actions.getSplashRepos} repos={this.props.repos}/>
-        </div></div>
-        <div className='row'><div className='col s11'>
-          <WiredResults hnresults={this.props.hnResults} searchHN={this.props.actions.searchHN} searchData={this.props.actions.searchData} dataResults={this.props.dataResults} wired={this.props.actions.searchWired} wiredResults={this.props.wiredResults}/>
-        </div></div>
-        <div className='row'><div className='col s11'>
-          <TrendingNewRepos getNewRepos={this.props.actions.getNewRepos} newRepos={this.props.newRepos} />
-        </div></div>
-        <div className='row'><div className='col s11'>
-          <TrendingNewOrgs getNewOrgs={this.props.actions.getNewOrgs} newOrgs={this.props.newOrgs} />
-        </div></div>
-      </div>
-    </div>
     );
   }
 }
@@ -54,7 +66,8 @@ function mapStateToProps(state){
     hnResults: state.hnResults,
     orgs: state.orgs,
     newRepos: state.newRepos,
-    newOrgs: state.newOrgs
+    newOrgs: state.newOrgs,
+    navButton: state.navButton
   };
 }
 

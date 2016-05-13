@@ -44,7 +44,7 @@ module.exports = function(body, res){
           userObj[element.login] = {
             name : element.login,
             id: element.id,
-            url: element.url,
+            html_url: element.html_url,
             count: 1,
             contributions: element.contributions
           }
