@@ -21,7 +21,7 @@ export default class TrendingNewOrgs extends Component {
       let html = (
           <div  className="orgs">
             <div>
-              <img className='imgOrg' src={item.avatar} alt='org avatar' />
+              <i className='tiny material-icons yellow-text accent-3'>grade</i>
               <ul key={item.html_url}>
                 <a style={{fontWeight:'bold'}} href={item.html_url}>{item.login}</a>
               </ul>

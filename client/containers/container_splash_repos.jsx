@@ -22,7 +22,7 @@ export default class SplashRepos extends Component {
               <p className="num" >{key + 1 + "."}</p>
               <li className="repoName"  key={curr.html_url} > <a style={{fontWeight:'bold'}} href={curr.html_url}>{curr.name.toUpperCase() + "\t " }</a></li>
               <p className="stars"> {curr.stargazers}</p>
-              <img className="stars" src="./star (1).png"></img>
+                <i className='tiny material-icons yellow-text accent-2'>grade</i>
               <p className="lang">{curr.language}</p>
               <p>{curr.description}</p>
             </div>

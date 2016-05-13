@@ -25,7 +25,7 @@ export default class TrendingNewRepos extends Component {
                 <a  style={{fontWeight:'bold'}} href={item.html_url}>{item.name.toUpperCase()  + "\t "  }</a>
               </li>
               <p className="stars"> {item.stargazers}</p>
-              <img className="stars" src="./star (1).png"></img>
+                <i className='tiny material-icons yellow-text accent-3'>grade</i>
               <p className="lang">{item.language}</p>
               <p>{item.description}</p>
             </div>
