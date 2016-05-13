@@ -17,13 +17,13 @@ class App extends Component {
 
         <nav>
           <div className="nav-wrapper blue-grey lighten-4">
-            <a href="#" className="brand-logo right">Gitlyfe</a>
+            <a href="#" className="brand-logo right" style={{color: "black"}}>Gitlyfe</a>
             <ul id="nav-mobile" className="left hide-on-med-and-down">
               <li>
-                <Link to='/' activeClassName="active">Search</Link>
+                <Link to='/' activeClassName="active" style={{color: "black"}}>Search</Link>
               </li>
               <li>
-                <Link to='/trends'>Trends</Link>
+                <Link to='/trends' style={{color: "black"}}>Trends</Link>
               </li>
             </ul>
           </div>
