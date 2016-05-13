@@ -8,6 +8,7 @@ if(process.env.NODE_ENV === 'development'){
 else if(process.env.NODE_ENV === 'production'){
   secret.id= process.env.GIT_ID;
   secret.secret= process.env.GIT_KEY;
+  console.log(secret.id, secret.secret);
 }
 
 
@@ -23,7 +24,7 @@ function gitHTTP(method, reqString, cb){
 
 
 module.exports = function(body, res){
-  var items =   JSON.parse(body).items;
+  var items =   body;
   var itemGroup = items.slice(0, 10);
   var userObj = {};
 
