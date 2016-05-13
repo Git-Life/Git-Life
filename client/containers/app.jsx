@@ -10,7 +10,6 @@ import {IndexLink, Link} from 'react-router';
 import $ from 'jquery';
 
 
-  // <CommitItems commitData = {this.props.commitData} getCommitData={this.props.actions.getCommitData}/>
 class App extends Component {
   render(){
     return (
