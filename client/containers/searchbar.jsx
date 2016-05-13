@@ -36,23 +36,24 @@ export default class SearchBar extends Component {
 
   render() {
     return(
-      <div >
-      	<div className="row">
-          <div className="col-sm-6 col-sm-offset-3">
-            <form id="imaginary_container" onSubmit={this.onEnterPress}>
-              <div className="input-group stylish-input-group">
-                <input className="form-control" style={{margin:'auto', width:'50%', height:'100%'}}
-                  onChange={(event) => {this.handleChange(event.target.value)}}
-                  placeholder="Search GitHub" />
-                <button
-                  className="btn waves-effect waves-light"
-                  type='submit'
-                  onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>
-                  <Link to="search">Search</Link>
-                </button>
-                <LanguageSelect handleLanguageSelect={this.handleChildSelect} />
-            </div>
-            </form>
+      <div className='container section'>
+        <div className='row'>
+          <div className='col s8'>
+            <input
+              type='text'
+              className=""
+              onChange={(event) => {this.handleChange(event.target.value)}}
+              placeholder="Search GitHub" />
+          </div>
+          <div className='col s4'>
+            <button
+              className="btn waves-effect waves-light text-red"
+              type="submit"
+              name="action"
+              onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>
+              Search
+            </button>
+            <LanguageSelect handleLanguageSelect={this.handleChildSelect} />
           </div>
         </div>
       </div>
