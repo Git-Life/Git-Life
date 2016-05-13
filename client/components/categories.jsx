@@ -6,10 +6,8 @@ export default class Categories extends Component{
 //  the easiest way to do this is to cll it in searchbar
 
   handleSearch(value){
-
-    this.props.onRequest(value);
+    this.props.onRequest({searchTerm: value, language: "All"});
   }
-
 
   render(){
     return(
@@ -36,7 +34,7 @@ export default class Categories extends Component{
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("health")}} >Health</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("fitness")}} >Fitness</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("machine learning")}} >Machine Learning</div>
-          <div className="chip hvr-grow" onClick={()=>{this.handleSearch("medical")}} >Medical</div>
+          <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("medical")}} >Medical</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("messaging")}} >Messaging</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("movies")}} >Movies</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("music")}} >Music</div>

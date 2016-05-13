@@ -31,7 +31,7 @@ export default class SearchBar extends Component {
   }
 
   handleChildSelect(event) {
-    this.setState({language: event.currentTarget.value});
+    this.setState({language: event});
   }
 
   render() {

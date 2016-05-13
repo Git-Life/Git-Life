@@ -28,7 +28,6 @@ class AppSplash extends Component {
     let newOrgs = <TrendingNewOrgs getNewOrgs={this.props.actions.getNewOrgs} newOrgs={this.props.newOrgs} />;
     let orgs = <OrgVis orgs={this.props.orgs} getTrendingOrgs={this.props.actions.getTrendingOrgs}/>;
     return (
-<<<<<<< HEAD
       <div className="row">
         <div className="trendsNav col s3">
           <TrendsNav
