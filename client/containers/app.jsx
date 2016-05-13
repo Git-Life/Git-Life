@@ -35,7 +35,7 @@ class App extends Component {
         <nav>
           <div className="nav-wrapper blue-grey lighten-4">
             <a href="#" className="brand-logo right" style={{color: "black"}}>Gitlyfe</a>
-            <ul id="nav-mobile" className="left hide-on-med-and-down">
+            <ul id="nav-mobile" className="left">
               <li id='searchTab' className={this.state.search} onClick={(event) => this.changeTabs(event)}>
                 <Link to='/' activeClassName="active" style={{color: "black"}}>Search</Link>
               </li>

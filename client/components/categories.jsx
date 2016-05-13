@@ -11,7 +11,7 @@ export default class Categories extends Component{
 
   render(){
     return(
-      <div className="chips blue-grey lighten-2" style={{paddingTop: "5px"}}>
+      <div className="chips blue-grey lighten-2 section" >
         <p className="categoryTitle">Suggested Searches</p>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("animal")}} >Animals</div>
           <div className="chip hvr-grow"  onClick={()=>{this.handleSearch("artificial intelligence")}} >Artificial Intelligence</div>
