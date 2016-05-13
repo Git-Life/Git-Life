@@ -39,20 +39,16 @@ class AppSearch extends Component {
 
         <div className='section row'>
         {this.state.showResults ?
-          <div style={{padding: "5px"}}><div className='col s4 blue-grey lighten-4 z-depth-2'>
-            <UserResults  results={this.props.results} /> </div>
-          </div> : null}
+          <div className='col s4 blue-grey lighten-5'><UserResults  results={this.props.results} /> </div>  : null}
         {this.state.showResults ?
-          <div style={{padding: "5px"}}><div className='col s4  blue-grey lighten-4 z-depth-2' > <RepoSearchResults
+          <div className='col s4  blue-grey lighten-5' > <RepoSearchResults
             results={this.props.results}
             selectRepo={this.props.actions.selectRepo}
             selectedRepo={this.props.selectedRepo}
             issues={this.props.issues}
-            getIssues={this.props.actions.getIssues}/> </div></div> : null}
+            getIssues={this.props.actions.getIssues}/> </div> : null}
         {this.state.showResults ?
-          <div style={{padding: "5px"}}><div className='col s4  blue-grey lighten-4 z-depth-2'>
-            <OrgSearchResults results={this.props.results} />
-          </div> </div> : null}
+          <div className='col s4  blue-grey lighten-5'> <OrgSearchResults results={this.props.results} /></div> : null}
         </div>
 
     </div>
