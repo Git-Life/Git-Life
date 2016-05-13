@@ -5,7 +5,6 @@ export default class TrendsNav extends Component{
 
 
   render(){
-    console.log(this.props.navButton)
     const states = ['topRepos', 'topNewRepos', 'topOrgs', 'topNewOrgs'].map(item =>{
       let isActive = ''
       let nameFunction = function(item){
