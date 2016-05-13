@@ -15,7 +15,11 @@ class AppSearch extends Component {
     super(props);
     this.state = {showResults: false};
   }
-
+  componentWillMount(){
+    $(document).ready(function(){
+      $('.scrollspy').scrollSpy();
+    });
+  }
   componentWillReceiveProps(props){
     if(props.results){
       this.setState({showResults: true});
@@ -23,6 +27,7 @@ class AppSearch extends Component {
   }
 
   render(){
+
     return (
       <div >
         <div className='section'>
@@ -39,7 +44,7 @@ class AppSearch extends Component {
 
         <div className='section row'>
         {this.state.showResults ?
-          <div className='col s4 blue-grey lighten-4'><UserResults  results={this.props.results} /> </div>  : null}
+          <div className='col s4 blue-grey lighten-4'><UserResults  results={this.props.results} /> </div>  : <div id='searchbox' className="section scrollspy" style={{height: '500px'}}></div>}
         {this.state.showResults ?
           <div className='col s4  blue-grey lighten-4' > <RepoSearchResults
             results={this.props.results}
