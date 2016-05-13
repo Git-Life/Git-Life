@@ -67,7 +67,7 @@ export default class OrgSearchResults extends Component {
           </div>
         </div>
         <div className='row'>
-          <div className='col s12  z-depth-3'>
+          <div className='col s12  z-depth-3 '>
             <ul className='collection'>
               {this.populateResults(this.state.sort)}
             </ul>
