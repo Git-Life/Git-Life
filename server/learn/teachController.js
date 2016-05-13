@@ -1,6 +1,8 @@
 if(process.env.NODE_ENV==='production'){
+  var keyContents = process.env.GCLOUD_JSON;
   var config = {
-    projectId: 'gitalytics-1288'
+    projectId: 'gitalytics-1288',
+    credentials: JSON.parse(keyContents)
   }
 }
 else if(process.env.NODE_ENV==='development'){
