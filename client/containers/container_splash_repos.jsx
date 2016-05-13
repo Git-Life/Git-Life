@@ -17,15 +17,15 @@ export default class SplashRepos extends Component {
     if(this.props.repos.data){
       return _.reduce(this.props.repos.data, (prev, curr, key)=>{
         let html = (
-          <div className="repolist card-panel" >
-          <div className="topRepoSection">
-            <p className="num" >{key + 1 + "."}</p>
-            <li className="repoName"  key={curr.html_url} > <a style={{fontWeight:'bold'}} href={curr.html_url}>{curr.name.toUpperCase() + "\t " }</a></li>
-            <p className="stars"> {curr.stargazers}</p>
-            <img className="stars" src="./star (1).png"></img>
-            <p className="lang">{curr.language}</p>
-            <p>{curr.description}</p>
-          </div>
+          <div className="repolist card-panel" key={curr.html_url}>
+            <div className="topRepoSection">
+              <p className="num" >{key + 1 + "."}</p>
+              <li className="repoName"  key={curr.html_url} > <a style={{fontWeight:'bold'}} href={curr.html_url}>{curr.name.toUpperCase() + "\t " }</a></li>
+              <p className="stars"> {curr.stargazers}</p>
+              <img className="stars" src="./star (1).png"></img>
+              <p className="lang">{curr.language}</p>
+              <p>{curr.description}</p>
+            </div>
           </div>
         );
         prev.push(html);
