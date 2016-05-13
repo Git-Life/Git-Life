@@ -9,9 +9,8 @@
     "clean": "rm -rf dist",
     "webpack-prod": "NODE_ENV=production webpack --progress -p",
     "webpack-dev": "NODE_ENV=development webpack --progress",
-    "server-prod": "NODE_ENV=production webpack --progress -p node ./index.js",
+    "server-prod": "NODE_ENV=production node ./index.js",
     "server-dev": "NODE_ENV=development nodemon ./index.js",
-    "prestart": "npm run webpack-prod",
     "start": "npm run server-prod",
     "dev": "npm run webpack-dev && npm run server-dev"
   },
