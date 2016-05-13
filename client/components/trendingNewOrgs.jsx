@@ -19,11 +19,11 @@ export default class TrendingNewOrgs extends Component {
     return _.reduce(newOrgs, (accum, item, key) => {
 
       let html = (
-          <div className="orgs card small">
+          <div className="orgs card-panel">
             <div>
-              <img className='imgOrg' src={item.avatar} alt='org avatar' />
+              <img className='imgTrendOrg' src={item.avatar} alt='org avatar' />
               <ul key={item.html_url}>
-                <a style={{fontWeight:'bold'}} href={item.html_url}>{item.login}</a>
+                <a className='truncate imageDescription' href={item.html_url}>{item.login}</a>
               </ul>
             </div>
           </div>

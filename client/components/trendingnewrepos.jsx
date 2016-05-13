@@ -39,8 +39,6 @@ export default class TrendingNewRepos extends Component {
     return (
       <div className="newRepoSection">
         <ul>
-          <h5 className="headingTitle">Top New Repositories</h5>
-
           {this.populateResults()}
         </ul>
       </div>
