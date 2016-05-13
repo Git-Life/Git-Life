@@ -78,7 +78,6 @@ export function searchWired(){
       params: {
       }
   });
-  console.log('pigeon')
   return {
     type: REQUEST_WIRED,
     payload: wiredResults
