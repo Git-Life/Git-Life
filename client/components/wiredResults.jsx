@@ -13,12 +13,8 @@ export default class WiredResults extends Component {
   }
   componentWillMount() {
      this.props.searchData()
-      .then(() => {
-        this.props.wired()
-          .then(() => {
-            this.props.searchHN();
-          });
-      });
+     this.props.wired()
+     this.props.searchHN();
   }
 
   populateResults(){

@@ -96,11 +96,7 @@ export function searchData(){
 }
 export const REQUEST_HN = 'REQUEST_HN';
 export function searchHN(){
-  var hnResults = Axios.get('/splash/rsshn', {
-      params: {
-
-      }
-  });
+  var hnResults = Axios.get('/splash/rsshn');
   return {
     type: REQUEST_HN,
     payload: hnResults

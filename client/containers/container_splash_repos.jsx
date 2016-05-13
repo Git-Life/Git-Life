@@ -22,7 +22,7 @@ export default class SplashRepos extends Component {
             <p className="num" >{key + 1 + "."}</p>
             <li className="repoName"  key={curr.html_url} > <a style={{fontWeight:'bold'}} href={curr.html_url}>{curr.name.toUpperCase() + "\t " }</a></li>
             <p className="stars"> {curr.stargazers}</p>
-            <img className="stars" src="./rate-star-button.png"></img>
+            <img className="stars" src="./star (1).png"></img>
             <p className="lang">{curr.language}</p>
             <p>{curr.description}</p>
           </div>
@@ -40,8 +40,8 @@ export default class SplashRepos extends Component {
     return(
       <div className="topRepoSection">
         <ul className="topRepoSection" >
-          <h5 >Top Repositories</h5>
-          <div ></div>
+          <h5 className="headingTitle">Top Repositories</h5>
+          <div></div>
           {this.populateResults()}
         </ul>
     </div>

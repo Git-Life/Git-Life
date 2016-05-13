@@ -37,6 +37,7 @@ class AppSearch extends Component {
             issues={this.props.issues}
             getIssues={this.props.actions.getIssues}/>
           <OrgSearchResults results={this.props.results} />
+          <div className="headBanner"></div>
         </div>
 
     </div>

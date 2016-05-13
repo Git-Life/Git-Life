@@ -25,7 +25,7 @@ export default class TrendingNewRepos extends Component {
                 <a  style={{fontWeight:'bold'}} href={item.html_url}>{item.name.toUpperCase()  + "\t "  }</a>
               </li>
               <p className="stars"> {item.stargazers}</p>
-              <img className="stars" src="./rate-star-button.png"></img>
+              <img className="stars" src="./star (1).png"></img>
               <p className="lang">{item.language}</p>
               <p>{item.description}</p>
             </div>
@@ -39,7 +39,7 @@ export default class TrendingNewRepos extends Component {
     return (
       <div className="newRepoSection">
         <ul>
-          <h5>Top New Repositories</h5>
+          <h5 className="headingTitle">Top New Repositories</h5>
 
           {this.populateResults()}
         </ul>
