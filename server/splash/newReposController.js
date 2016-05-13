@@ -1,6 +1,12 @@
 var request = require('request');
-var secret = require('./tempsecret.js');
-
+var SECRET = {};
+if(process.env.NODE_ENV === 'development'){
+   SECRET = require('./tempsecret.js');
+}
+else if(process.env.NODE_ENV === 'production'){
+   SECRET.id= process.env.GIT_ID;
+   SECRET.secret= process.env.GIT_KEY;
+}
 module.exports = {
 
   getNewRepos: function (req, res) {
