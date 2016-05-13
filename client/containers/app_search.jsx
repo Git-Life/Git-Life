@@ -26,8 +26,25 @@ class AppSearch extends Component {
     }
   }
 
-  render(){
+  get spinner() {
+    return (
+      <div className="preloader-wrapper small active">
+          <div className="spinner-layer spinner-green-only">
+            <div className="circle-clipper left">
+              <div className="circle"></div>
+            </div><div className="gap-patch">
+              <div className="circle"></div>
+            </div><div className="circle-clipper right">
+              <div className="circle"></div>
+            </div>
+          </div>
+        </div>
+    )
+  }
 
+  render(){
+    console.log(this.props.results === [], '');
+    console.log(this.props.searchTerm, 'hello')
     return (
       <div >
         <div className='section'>
@@ -41,7 +58,6 @@ class AppSearch extends Component {
             searchTerm={this.props.term}
             onRequest={this.props.actions.searchGitHub}
             onSearchTermChange={this.props.actions.updateSearchTerm}/>
-
         <div className='section row'>
         {this.state.showResults ?
           <div className='col s4 blue-grey lighten-4'><UserResults  results={this.props.results} /> </div>  : <div id='searchbox' className="section scrollspy" style={{height: '500px'}}></div>}
