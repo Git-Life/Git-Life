@@ -31,7 +31,6 @@ class App extends Component {
   render(){
     return (
       <div>
-
         <nav>
           <div className="nav-wrapper blue-grey lighten-4">
             <a href="#" className="brand-logo right" style={{color: "black"}}>Gitlyfe</a>

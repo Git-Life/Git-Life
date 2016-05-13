@@ -24,7 +24,7 @@ export default class SplashRepos extends Component {
               <p className="stars"> {curr.stargazers}</p>
                 <i className='tiny material-icons yellow-text accent-2'>grade</i>
               <p className="lang">{curr.language}</p>
-              <p>{curr.description}</p>
+              <p className="description">{curr.description}</p>
             </div>
           </div>
         );
@@ -40,7 +40,6 @@ export default class SplashRepos extends Component {
     return(
       <div className="topRepoSection">
         <ul className="topRepoSection" >
-          <h5 className="headingTitle">Top Repositories</h5>
           <div></div>
           {this.populateResults()}
         </ul>
