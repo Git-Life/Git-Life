@@ -38,7 +38,7 @@ export default class SearchBar extends Component {
     return(
       <div className='container section'>
         <div className='row'>
-          <div className='col s8'>
+          <div className='col s8 searchbar'>
             <input
               type='text'
               className=""
@@ -47,9 +47,7 @@ export default class SearchBar extends Component {
           </div>
           <div className='col s4'>
             <button
-              className="btn waves-effect waves-light text-red"
-              type="submit"
-              name="action"
+              className="btn waves-effect waves-light"
               onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>
               Search
             </button>
