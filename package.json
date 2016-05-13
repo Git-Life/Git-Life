@@ -2,7 +2,7 @@
   "name": "git-life",
   "version": "1.0.0",
   "description": "An effective way to find and contribute to repos you're interested in",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "karma start",
     "watch": "watch 'npm run test' client/",
