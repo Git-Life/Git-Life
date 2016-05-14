@@ -21,7 +21,7 @@ class AppSearch extends Component {
   render(){
     return (
       <div >
-        <div className='section'>
+        <div className='section search'>
           <SearchBar
             searchTerm={this.props.term}
             onRequest={this.props.actions.searchGitHub}
@@ -40,16 +40,16 @@ class AppSearch extends Component {
           null}
         <div className='section row'>
         {this.props.results.length !== 0 ?
-          <div className='col s4 blue-grey lighten-4'><UserResults  results={this.props.results} /> </div>  : <div id='searchbox' className="section scrollspy" style={{height: '500px'}}></div>}
+          <div className='col s4 grey lighten-5'><UserResults  results={this.props.results} /> </div>  : <div id='searchbox' className="section scrollspy" style={{height: '500px'}}></div>}
         {this.props.results.length !== 0  ?
-          <div className='col s4  blue-grey lighten-4' > <RepoSearchResults
+          <div className='col s4  grey lighten-5' > <RepoSearchResults
             results={this.props.results}
             selectRepo={this.props.actions.selectRepo}
             selectedRepo={this.props.selectedRepo}
             issues={this.props.issues}
             getIssues={this.props.actions.getIssues}/> </div> : null}
         {this.props.results.length !== 0  ?
-          <div className='col s4  blue-grey lighten-4'> <OrgSearchResults results={this.props.results} /></div> : null}
+          <div className='col s4  grey lighten-5'> <OrgSearchResults results={this.props.results} /></div> : null}
         </div>
     </div>
 

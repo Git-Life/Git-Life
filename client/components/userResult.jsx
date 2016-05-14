@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 export default class UserResult extends Component{
   render(){
     return (
-      <li className='collection-item  blue-grey lighten-5'>
+      <li className='collection-item  grey lighten-5'>
         <div>
           <a
             target="_"
