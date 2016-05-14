@@ -15,14 +15,17 @@ else if(process.env.NODE_ENV==='development'){
 
 var gcloud = require('gcloud')(config);
 var prediction = gcloud.prediction();
-//this model has been created via below, not sure if we need
-//to do it again ever. /
-// prediction.createModel('gitTest', function(err, model, apiResponse){
-//   if(err){
-//     console.log("error in prediction", err);
-//   }
-// });
-var model = prediction.model('gitTest');
+// var gcs = gcloud.storage();
+// var bucket = gcs.bucket('gitalytics_secure');
+// var modelDataCsv = bucket.file('train.csv');
+// prediction.createModel('gitFinal', {
+//     data: modelDataCsv
+//   }, function(err, model, apiResponse){
+//     if(err){
+//       console.log("error in prediction", err);
+//     }
+//   });
+var model = prediction.model('gitFinal');
 model.exists(function(err, exists){
   if(err){
     console.log('exists err', err);
