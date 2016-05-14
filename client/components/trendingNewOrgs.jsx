@@ -19,11 +19,11 @@ export default class TrendingNewOrgs extends Component {
     return _.reduce(newOrgs, (accum, item, key) => {
 
       let html = (
-          <div  className="orgs">
+          <div className="orgs card-panel">
             <div>
-              <i className='tiny material-icons yellow-text accent-3'>grade</i>
+              <img className='imgTrendOrg' src={item.avatar} alt='org avatar' />
               <ul key={item.html_url}>
-                <a style={{fontWeight:'bold'}} href={item.html_url}>{item.login}</a>
+                <a className='truncate imageDescription' href={item.html_url}>{item.login}</a>
               </ul>
             </div>
           </div>
@@ -36,9 +36,8 @@ export default class TrendingNewOrgs extends Component {
   render() {
     return (
       <div>
-        <ul   >
+        <ul>
           <h5 >Top New Organizations</h5>
-
           {this.populateResults()}
         </ul>
       </div>

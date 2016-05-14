@@ -1,7 +1,15 @@
 .imgTrendOrg {
   width: 30px;
-  margin: 10px 10px 10px 10px;
+  display: block;
+  margin: 0 auto;
+
 }
+
+.imageDescription{
+  text-align: center;
+  text-emphasis: bold;
+}
+
 
 .inputSearch {
   margin: auto;
@@ -14,9 +22,6 @@
   background-color: #F6F6F6;
 }
 
-.imgOrg {
-  width: 30px;
-}
 
 .aOrg {
   padding-left: 10px;
@@ -156,22 +161,26 @@ body{
   height: 12px;
 }
 .orgs{
-  width: 400px !important;
-  display: inline;
+  max-width: 200px;
+  max-height: 200px;
 }
 .news{
   min-width: 7rem;
-  margin-top: 65px;
+  /*margin-top: 120px;*/
+  padding-top: 40px;
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.trendsNav{
-  margin-top: 60px;
+/*.trendsNav{
+  margin-top: 150px;
 }
 .splash{
-  margin-top: 20px;
-}
+  margin-top: 110px;
+}*/
 .newsArticle{
-  line-height: 30px;
+  line-height: 25px;
   margin: 10px 10px 10px 10px;
 }
 .headingTitle{
@@ -182,4 +191,34 @@ body{
 }
 .categoryTitle{
   color: white;
+}
+.navBar{
+  background-color: black;
+}
+.description{
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
+li {
+  list-style-type: none;
+}
+.icon{
+  margin: 0px 5px 0px 5px;
+  vertical-align: bottom;
+}
+.parallaxHeader{
+  margin-top: 190px;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+}
+.parallaxHeader2{
+  margin-top: 100px;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.parallax-container {
+  height: 300px; 
 }

@@ -59,12 +59,12 @@ export default class OrgVis extends Component {
     return _.reduce(this.props.orgs.data, (accum, item, key) => {
 
       let html = (
-        <div className="orgs" key={item.key}  style={{margin:'20px 20px 20px 20px'}}>
+        <div className="orgs card-panel" key={item.key}  style={{margin:'20px 20px 20px 20px'}}>
         <div >
           <a href={item.url}  target='_blank'>
             <ul>
               <img className='imgTrendOrg' src={item.avatar} alt='org avatar' />
-              <div className='truncate'>{" " + item.org + " "}</div>
+              <div className='truncate imageDescription'>{" " + item.org + " "}</div>
             </ul>
           </a>
         </div>
