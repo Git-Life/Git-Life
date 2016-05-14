@@ -6,6 +6,7 @@ export default class Categories extends Component{
 //  the easiest way to do this is to cll it in searchbar
 
   handleSearch(value){
+    this.props.onSearchTermChange(value);
     this.props.onRequest({searchTerm: value, language: "All"});
   }
 
