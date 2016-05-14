@@ -1,11 +1,11 @@
 var request = require('request');
-var SECRET = {};
+var secret = {};
 if(process.env.NODE_ENV === 'development'){
-   SECRET = require('./tempsecret.js');
+   secret = require('./tempsecret.js');
 }
 else if(process.env.NODE_ENV === 'production'){
-   SECRET.id= process.env.GIT_ID;
-   SECRET.secret= process.env.GIT_KEY;
+   secret.id= process.env.GIT_ID;
+   secret.secret= process.env.GIT_KEY;
 }
 module.exports = {
 
