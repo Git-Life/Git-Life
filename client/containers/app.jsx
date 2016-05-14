@@ -46,7 +46,7 @@ class App extends Component {
           </div>
         </nav>
         {this.props.children}
-        <footer className='page-footer'>
+        <footer className='page-footer footer'>
           <Link to='/about'>About Us</Link>
         </footer>
       </div>
