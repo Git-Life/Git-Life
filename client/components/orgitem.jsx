@@ -6,7 +6,7 @@ export default class OrgItem extends Component{
       <li className='collection-item avatar valign-wrapper grey lighten-5 ' >
         <img src={this.props.avatar_url} alt='org avatar' className='circle valign'/>
         <span
-          className='title valign right-align'>
+          className='title valign right-align orgName'>
           <a
             className='title valign right-align'
             href={this.props.url}

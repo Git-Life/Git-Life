@@ -16,7 +16,7 @@ export default class ChooseLanguage extends Component {
   render(){
     return (
       <span>
-        <a className='dropdown-button btn' href='#' data-activates='languageDropdown'>
+        <a className='dropdown-button btn black' href='#' data-activates='languageDropdown'>
           {this.state.selectedLang}
         </a>
         <ul id='languageDropdown' className='dropdown-content'>

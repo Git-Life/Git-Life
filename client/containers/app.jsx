@@ -36,7 +36,7 @@ class App extends Component {
     return (
       <div>
         <nav>
-          <div className="nav-wrapper black ">
+          <div className="nav-wrapper black">
             <ul id="nav-mobile" className="left">
               <li id='searchTab' className={this.state.search} onClick={(event) => this.changeTabs(event)}>
                 <Link to='/' activeClassName="active" className="white-text">Search</Link>
@@ -48,7 +48,7 @@ class App extends Component {
           </div>
         </nav>
         <div className="parallax-container">
-          <div className="parallax"><img src="./github 2.jpg"></img></div>
+          <div className="parallax"><img src="github.jpg"></img></div>
           <h1 className="parallaxHeader gitTitle" >GitLife</h1>
           <h2 className="parallaxHeader2">A better way to search GitHub</h2>
         </div>

@@ -62,8 +62,8 @@ export default class OrgSearchResults extends Component {
         </div>
         <div className='row '>
           <div className='col s12  '>
-            <button className='col s6 waves-effect waves-light btn' onClick={() => { this.handleClick('name') }}>Name</button>
-            <button className='col s6 waves-effect waves-light btn' onClick={() => { this.handleClick('repoOrder') }}>Popularity</button>
+            <button className='col s6 waves-effect waves-light btn black' onClick={() => { this.handleClick('name') }}>Name</button>
+            <button className='col s6 waves-effect waves-light btn black' onClick={() => { this.handleClick('repoOrder') }}>Popularity</button>
           </div>
         </div>
         <div className='row'>

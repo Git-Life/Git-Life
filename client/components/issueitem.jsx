@@ -46,17 +46,17 @@ export default class IssueItem extends Component{
           <span className='chip'>{this.state.predictedDifficulty}</span>
           <button
             onClick={()=>{this.sendTeach('easy')}}
-            className="secondary-content waves-effect waves-light btn">
+            className="secondary-content waves-effect waves-light btn black">
             Easy
           </button>
           <button
             onClick={()=>{this.sendTeach('medium')}}
-            className="secondary-content waves-effect waves-light btn">
+            className="secondary-content waves-effect waves-light btn black">
             Medium
           </button>
           <button
             onClick={()=>{this.sendTeach('hard')}}
-            className="secondary-content waves-effect waves-light btn">
+            className="secondary-content waves-effect waves-light btn black">
             Hard
           </button>
 
