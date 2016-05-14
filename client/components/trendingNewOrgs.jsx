@@ -19,7 +19,7 @@ export default class TrendingNewOrgs extends Component {
     return _.reduce(newOrgs, (accum, item, key) => {
 
       let html = (
-          <div  className="orgs">
+          <div  className="orgs" key={item.id}>
             <div>
               <i className='tiny material-icons yellow-text accent-3'>grade</i>
               <ul key={item.html_url}>

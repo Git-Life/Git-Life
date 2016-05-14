@@ -19,7 +19,7 @@ export default class TrendingNewRepos extends Component {
     return _.reduce(newData, (accum, item, key) => {
 
       let html = (
-            <div className="repolist card-panel" >
+            <div className="repolist card-panel" key={item.id}>
               <p className="num">{key + 1 + "."}</p>
               <li className="repoName" key={item.html_url}>
                 <a  style={{fontWeight:'bold'}} href={item.html_url}>{item.name.toUpperCase()  + "\t "  }</a>
