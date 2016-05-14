@@ -14,8 +14,17 @@ class App extends Component {
     constructor(props){
     super(props);
 
-    this.state = {search: 'active', trends: ''};
+    console.log(this.props.location.pathname);
+
+    if(this.props.location.pathname === '/'){
+      this.state = {search: 'active', trends: '', about: ''};
+    } else if(this.props.location.pathname === '/trends'){
+      this.state = {search: '', trends: 'active', about: ''};
+    } else {
+      this.state = {search: '', trends: '', about: 'active'};
+    }
   }
+
   componentWillMount(){
     $(document).ready(function(){
        $('.parallax').parallax();
@@ -24,10 +33,13 @@ class App extends Component {
 
   changeTabs(event) {
     if(event.currentTarget.id === 'searchTab'){
-      this.setState({search: 'active', trends: ''});
+      this.setState({search: 'active', trends: '', about: ''});
     }
     if(event.currentTarget.id === 'trendsTab'){
-      this.setState({search: '', trends: 'active'});
+      this.setState({search: '', trends: 'active', about: ''});
+    }
+    if(event.currentTarget.id === 'aboutTab'){
+      this.setState({search: '', trends: '', about: 'active'});
     }
   }
 
@@ -43,7 +55,10 @@ class App extends Component {
                 <Link to='/' activeClassName="active" style={{color: "black"}}>Search</Link>
               </li>
               <li id='trendsTab' className={this.state.trends} onClick={(event) => this.changeTabs(event)}>
-                <Link to='/trends' style={{color: "black"}}>Trends</Link>
+                <Link to='/trends' activeClassName="active" style={{color: "black"}}>Trends</Link>
+              </li>
+              <li id='aboutTab' className={this.state.about} onClick={(event) => this.changeTabs(event)}>
+                <Link to='/about' activeClassName="active" style={{color: "black"}}>About</Link>
               </li>
             </ul>
           </div>
@@ -54,7 +69,6 @@ class App extends Component {
           <h2 className="parallaxHeader2">A better way to search GitHub</h2>
         </div>
         {this.props.children}
-
       </div>
     );
   }
@@ -80,7 +94,3 @@ function mapDispatchToProps(dispatch){
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
-
-        // <footer className='page-footer footer'>
-        //   <Link to='/about'>About Us</Link>
-        // </footer>
