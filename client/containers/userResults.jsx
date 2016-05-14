@@ -69,7 +69,7 @@ export default class UserResults extends Component {
 
   render() {
     return (
-      <div className='col s12'>
+      <div className='col s12' id="searchbox">
         <div className='row'>
           <div className='col s12  center-align'>Top Users</div>
         </div>

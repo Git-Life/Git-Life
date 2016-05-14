@@ -11,9 +11,12 @@
     "webpack-dev": "NODE_ENV=development webpack --progress",
     "server-prod": "NODE_ENV=production node ./index.js",
     "server-dev": "NODE_ENV=development nodemon ./index.js",
-    "prestart": "npm run webpack-prod",
     "start": "npm run server-prod",
+    "deploy": "num run webpack-prod",
     "dev": "npm run webpack-dev && npm run server-dev"
+  },
+  "engines":{
+    "node": "4.4.2"
   },
   "repository": {
     "type": "git",
@@ -43,12 +46,10 @@
     "feed": "^0.3.0",
     "feedparser": "^1.1.4",
     "file-loader": "^0.8.5",
-    "firebase": "^2.4.2",
     "gcloud": "^0.32.0",
     "hover.css": "^2.0.2",
     "html-webpack-plugin": "^2.16.0",
     "lodash": "^4.11.1",
-    "oauth": "^0.9.14",
     "path": "^0.12.7",
     "react": "^15.0.1",
     "react-chartjs": "^0.7.3",

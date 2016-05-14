@@ -16,10 +16,13 @@ class App extends Component {
 
     this.state = {search: 'active', trends: ''};
   }
+  componentWillMount(){
+    $(document).ready(function(){
+       $('.parallax').parallax();
+     });
+  }
 
   changeTabs(event) {
-    //console.log(event);
-    console.log(event.currentTarget.id);
     if(event.currentTarget.id === 'searchTab'){
       this.setState({search: 'active', trends: ''});
     }
@@ -29,9 +32,9 @@ class App extends Component {
   }
 
   render(){
+
     return (
       <div>
-
         <nav>
           <div className="nav-wrapper blue-grey lighten-4">
             <a href="#" className="brand-logo right" style={{color: "black"}}>Gitlyfe</a>
@@ -45,10 +48,13 @@ class App extends Component {
             </ul>
           </div>
         </nav>
+        <div className="parallax-container">
+          <div className="parallax"><img src="./github.jpg"></img></div>
+          <h1 className="parallaxHeader">Gitlyfe</h1>
+          <h2 className="parallaxHeader2">A better way to search GitHub</h2>
+        </div>
         {this.props.children}
-        <footer className='page-footer footer'>
-          <Link to='/about'>About Us</Link>
-        </footer>
+
       </div>
     );
   }
@@ -74,3 +80,7 @@ function mapDispatchToProps(dispatch){
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+        // <footer className='page-footer footer'>
+        //   <Link to='/about'>About Us</Link>
+        // </footer>

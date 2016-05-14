@@ -17,6 +17,7 @@ export default class WiredResults extends Component {
      this.props.searchHN();
   }
 
+
   populateResults(){
     return this.props.wiredResults.reduce((accum, item, key) => {
       let html =(
@@ -46,24 +47,16 @@ export default class WiredResults extends Component {
     }, []);
   }
 
+
   render() {
     return (
-      <div className="news" >
-        <ul  className="collapsible popout" data-collapsible="accordion">
-          <li >
-            <div className="collapsible-header active"><i className="material-icons" ></i>Wired Top Tech News</div>
-            <ul className="collapsible-body">{this.populateResults()}</ul>
-          </li>
-          <li>
-            <div className="collapsible-header"><i className="material-icons" ></i>DataTau Top News</div>
-            <ul className="collapsible-body">{this.populateDataResults()}</ul>
-          </li>
-          <li>
-            <div className="collapsible-header "><i className="material-icons" ></i>Hacker News</div>
-            <ul className="collapsible-body ">{this.populateHNResults()}</ul>
-          </li>
-        </ul>
-
+      <div>
+        <div className="news card">
+          Trending News
+          {this.populateResults()}
+          {this.populateDataResults()}
+          {this.populateHNResults()}
+        </div>
       </div>
     );
   }

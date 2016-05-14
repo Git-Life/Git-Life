@@ -16,7 +16,6 @@ module.exports = {
     resObj['organizations'] = [];
 
     resObj.items.forEach(function(element, index){
-      //console.log(element.owner.login);
       // need to check if unique first, then push to array (needed for client sort methods)
       if(element.owner.type === 'Organization' && !uniqueOrgs[element.owner.login]){
         uniqueOrgs[element.owner.login] = element.owner.login;
@@ -29,7 +28,6 @@ module.exports = {
       }
     });
 
-    //console.log('organizations: ', resObj.organizations);
     res.send(resObj);
     for (var member in resObj) delete resObj[member];
   }
