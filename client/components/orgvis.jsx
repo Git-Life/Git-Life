@@ -55,7 +55,6 @@ export default class OrgVis extends Component {
   }
 
   populateResults() {
-    //console.log('populateResults: ', this.props.orgs.data);
     return _.reduce(this.props.orgs.data, (accum, item, key) => {
 
       let html = (
