@@ -19,7 +19,7 @@ export default class TrendingNewOrgs extends Component {
     return _.reduce(newOrgs, (accum, item, key) => {
 
       let html = (
-          <div className="orgs card-panel">
+          <div className="orgs card-panel" key={item.id}>
             <div>
               <img className='imgTrendOrg' src={item.avatar} alt='org avatar' />
               <ul key={item.html_url}>

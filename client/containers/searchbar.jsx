@@ -46,13 +46,14 @@ export default class SearchBar extends Component {
               onChange={(event) => {this.handleChange(event.target.value)}}
               placeholder="Search GitHub" />
           </div>
-          <div className='col s4'>
-            <a href="#searchbox"><button
-              onClick={()=>{document.getElementById('searchbox').scrollIntoView();}}
+          <div className='col s2'>
+            <button
               className="btn waves-effect waves-light"
               onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>
               Search
-            </button></a>
+            </button>
+          </div>
+          <div className='col s2'>
             <LanguageSelect handleLanguageSelect={this.handleChildSelect} />
           </div>
         </div>

@@ -54,6 +54,7 @@ class App extends Component {
           <h2 className="parallaxHeader2">A better way to search GitHub</h2>
         </div>
         {this.props.children}
+
       </div>
     );
   }
@@ -79,3 +80,7 @@ function mapDispatchToProps(dispatch){
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+        // <footer className='page-footer footer'>
+        //   <Link to='/about'>About Us</Link>
+        // </footer>
