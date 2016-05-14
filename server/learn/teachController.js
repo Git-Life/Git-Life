@@ -1,6 +1,6 @@
 if(process.env.NODE_ENV==='production'){
   var keyContents = process.env.GCLOUD_JSON;
-  console.log('we are of type' typeof keyContents);
+  console.log('we are of type', typeof keyContents);
 
   var config = {
     projectId: 'gitalytics-1288',
