@@ -13,7 +13,6 @@ export default class WiredResults extends Component {
   }
   componentWillMount() {
      this.props.searchData()
-     console.log('cat')
      this.props.wired()
      this.props.searchHN();
   }
@@ -30,7 +29,6 @@ export default class WiredResults extends Component {
   }
 
   populateDataResults(){
-    console.log(this.props.dataResults)
     return reduce(this.props.dataResults, (accum, item, key) => {
       let html =(
         <DataItem key={key} title={item.title} link={item.link}/>

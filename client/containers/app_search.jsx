@@ -43,8 +43,6 @@ class AppSearch extends Component {
   }
 
   render(){
-    console.log(this.props.results === [], '');
-    console.log(this.props.searchTerm, 'hello')
     return (
       <div >
         <div className='section'>

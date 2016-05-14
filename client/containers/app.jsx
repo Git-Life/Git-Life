@@ -23,8 +23,6 @@ class App extends Component {
   }
 
   changeTabs(event) {
-    //console.log(event);
-    console.log(event.currentTarget.id);
     if(event.currentTarget.id === 'searchTab'){
       this.setState({search: 'active', trends: ''});
     }
