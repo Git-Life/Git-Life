@@ -37,7 +37,6 @@ export default class TrendingNewOrgs extends Component {
     return (
       <div>
         <ul>
-          <h5 >Top New Organizations</h5>
           {this.populateResults()}
         </ul>
       </div>

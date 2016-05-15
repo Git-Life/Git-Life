@@ -78,7 +78,6 @@ export default class OrgVis extends Component {
     return (
       <div>
         <ul>
-          <h5>Trending Organizations</h5>
           <a >{this.drawChart()}</a>
           {this.populateResults()}
         </ul>

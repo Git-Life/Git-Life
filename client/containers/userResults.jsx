@@ -76,14 +76,14 @@ export default class UserResults extends Component {
         <div className='row '>
           <div className='col s12  '>
 
-              <button className='col s4 waves-effect waves-light btn' onClick={() => {this.handleSort('count')}}>Count</button>
-              <button className='col s4 waves-effect waves-light btn' onClick={() => {this.handleSort('contributions')}}>Commits</button>
-              <button className='col s4 waves-effect waves-light btn' onClick={() => {this.handleSort('name')}}>Name</button>
+              <button className='col s4 waves-effect waves-light btn black' onClick={() => {this.handleSort('count')}}>Count</button>
+              <button className='col s4 waves-effect waves-light btn black' onClick={() => {this.handleSort('contributions')}}>Commits</button>
+              <button className='col s4 waves-effect waves-light btn black' onClick={() => {this.handleSort('name')}}>Name</button>
 
           </div>
         </div>
         <div className='row'>
-          <div className='col s12 z-depth-3 blue-grey lighten-5'>
+          <div className='col s12 z-depth-3 grey lighten-5'>
             <ul className='collection z-depth-1'>
               {this.populateResults(this.state.sort)}
             </ul>

@@ -14,7 +14,7 @@ export default class SearchItem extends Component{
 
   render(){
     return (
-      <li className='collection-item blue-grey lighten-5 '>
+      <li className='collection-item grey lighten-5 '>
         <span className='title'>
           <a href='javascript:void(0)'
             onClick={()=>{this.selectARepo()}} >

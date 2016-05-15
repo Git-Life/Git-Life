@@ -33,7 +33,7 @@ const webpackConfig = {
     extensions: ['', '.js', '.jsx']
   },
   output: {
-      path: path.resolve(ROOT_PATH, 'dist'),
+      path: path.resolve(ROOT_PATH, 'public/dist'),
       filename: 'bundle.js'
   },
   plugins: [
