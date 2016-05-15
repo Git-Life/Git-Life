@@ -5,7 +5,7 @@ export default class UserResult extends Component{
     return (
       <li className='collection-item  grey lighten-5' >
         <div>
-          <a 
+          <a
             target="_"
             href={this.props.url}>
             {this.props.name}

@@ -46,7 +46,7 @@ export default class SearchBar extends Component {
               onChange={(event) => {this.handleChange(event.target.value)}}
               placeholder="Search GitHub" />
           </div>
-          <div className='col s4'>
+          <div className='col s2'>
             <a href="#searchbox"><button
               onClick={()=>{document.getElementById('searchbox').scrollIntoView();}}
               className="btn waves-effect waves-light  black"

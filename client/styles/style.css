@@ -284,3 +284,6 @@ div.orgs.card-panel{
 nav ul li:hover {
    background-color: white;
 }
+.row .col.s2{
+  width: 120px !important;
+}
