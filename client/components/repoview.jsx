@@ -44,7 +44,6 @@ export default class SelectedRepo extends Component{
             Get Issues
         </button>
 
-        {this.state.repo.name}
 
         <ul className="collection">
 
