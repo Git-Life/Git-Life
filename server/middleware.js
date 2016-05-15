@@ -10,7 +10,7 @@ module.exports = function(app, express) {
 	app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
 
-  app.use(express.static(path.join(__dirname, '../public')));
+  app.use(express.static(path.join(__dirname, '../public/dist')));
   app.use('/search', searchRouter);
   app.use('/splash', splashRouter);
   app.use('/learn', learnRouter);

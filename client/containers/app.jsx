@@ -30,7 +30,6 @@ class App extends Component {
       this.setState({search: '', trends: 'active'});
     }
   }
-  // <a href="#" className="brand-logo right white-text" style={{color: "black"}}>GitLife</a>
   render(){
 
     return (
