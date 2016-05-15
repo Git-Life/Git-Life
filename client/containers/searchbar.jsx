@@ -52,7 +52,7 @@ export default class SearchBar extends Component {
               className="btn waves-effect waves-light  black"
               onClick={(event)=>{ this.handleSearch(this.state.searchTerm)}}>
               Search
-            </button>
+            </button></a>
           </div>
           <div className='col s2'>
             <LanguageSelect handleLanguageSelect={this.handleChildSelect} />
