@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "fc67b1d01d88d35d3585"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "8da1a845401868ef5d14"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -22169,7 +22169,7 @@
 
 
 	// module
-	exports.push([module.id, ".imgTrendOrg {\n  width: 30px;\n  display: block;\n  margin: 0 auto;\n\n}\n\n.imageDescription{\n  text-align: center;\n  text-emphasis: bold;\n}\n\n\n.inputSearch {\n  margin: auto;\n  width: 50%;\n}\n\n\n\n.orgvis {\n  background-color: #F6F6F6;\n}\n\n\n.aOrg {\n  padding-left: 10px;\n  font-size: 1.7em;\n  display: inline;\n}\n\n.sort {\n  padding-left: 10px;\n}\n\n.divNewRepos {\n  display: block;\n}\n\n.imgNewOrg {\n  max-width: 100px;\n}\n\n.searchbar {\n  height: 40px;\n  background-color: white;\n  border-radius: 40px;\n  border: 1px solid silver;\n}\n\n.btnSearch {\n\n}\n\n.selectLang {\n  display: inline;\n}\n\n.stylish-input-group .input-group-addon{\n    background: white !important;\n}\n.stylish-input-group .form-control{\n\tborder-right:0;\n\tbox-shadow:0 0 0;\n\tborder-color:#ccc;\n}\n.stylish-input-group button{\n    border:0;\n    background:transparent;\n}\n\n/*Search Categories Styles Below */\n/* Grow */\n.hvr-grow {\n    display: inline-block;\n    vertical-align: middle;\n    transform: translateZ(0);\n    box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n    backface-visibility: hidden;\n    -moz-osx-font-smoothing: grayscale;\n    transition-duration: 0.3s;\n    transition-property: transform;\n    margin: 4px 4px 4px 4px;\n}\n\n.hvr-grow:hover,\n.hvr-grow:focus{\n    transform: scale(1.3);\n}\n.hvr-grow:active {\n  transform: scale(.8);\n}\n.categories-column{\n  display: inline-block;\n  vertical-align: top;\n  margin: 10px 10px 10px 10px !important;\n  padding: 5px 5px 5px 5px;\n  width:280px;\n  height: 140px;\n  position: relative;\n  border-radius: 10px !important;\n}\n.category-title{\n  width:280px;\n  height: 140px;\n  text-align: center;\n  margin-top: 50px;\n\n}\n/*Cards */\n\n\n.repoName {\n  text-align: center;\n  font-size: 18px;\n  display: inline;\n\n}\n.repoName a{\n  color: grey;\n  text-overflow: ellipsis;\n  word-wrap: break-word;\n  display: inline;\n  margin-right: 20px;\n}\nbody{\n  background: #f5f5f5;\n  font-family: Roboto;\n}\n\n.lang{\n  font-style: italic;\n  font-size: 10px;\n  display: inline;\n  margin-left: 20px;\n}\n\n.topRepoSection{\n  max-width: 400px !important;\n    color: grey;\n    display: inline;\n\n\n}\n.newRepoSection{\n  max-width: 400px !important;\n  color: grey;\n  display: inline;\n\n}\n\n.num{\n  display: inline-block;\n  padding: 10px 10px 10px 10px;\n  width: 30px !important;\n  font-size: 15px;\n}\n.stars{\n  display: inline;\n  font-size: 10px;\n  height: 12px;\n}\n.orgs{\n  max-width: 200px;\n  max-height: 200px;\n}\n.news{\n  min-width: 7rem;\n  /*margin-top: 120px;*/\n  padding-top: 40px;\n  background-color: white;\n  padding-left: 10px;\n  padding-right: 10px;\n}\n\n/*.trendsNav{\n  margin-top: 150px;\n}\n.splash{\n  margin-top: 110px;\n}*/\n.newsArticle{\n  line-height: 25px;\n  margin: 10px 10px 10px 10px;\n}\n.headingTitle{\n  float: center;\n}\n.chips{\n  padding: 20px 20px 20px 20px;\n}\n.categoryTitle{\n  color: white;\n}\n.navBar{\n  background-color: black;\n}\n.description{\n  padding: 0px 0px 0px 0px;\n  margin: 0px 0px 0px 0px;\n}\nli {\n  list-style-type: none;\n}\n.icon{\n  margin: 0px 5px 0px 5px;\n  vertical-align: bottom;\n}\n.parallaxHeader{\n  margin-top: 190px;\n  color: white;\n  text-align: center;\n  vertical-align: middle;\n}\n.parallaxHeader2{\n  margin-top: 100px;\n  color: white;\n  text-align: center;\n  vertical-align: middle;\n}\n\n.parallax-container {\n  height: 300px; \n}\n", ""]);
+	exports.push([module.id, ".footer {\r\n  font-size: 1.1em;\r\n  text-align: center;\r\n  border-top: 1px solid gray;\r\n  width:100%;\r\n  height:60px;\r\n  position:absolute;\r\n  bottom:0;\r\n  left:0;\r\n  background-color: #efefef !important;\r\n}\r\n\r\n.imgTrendOrg {\r\n  width: 30px;\r\n  display: block;\r\n  margin: 0 auto;\r\n\r\n}\r\n\r\n.imageDescription{\r\n  text-align: center;\r\n  text-emphasis: bold;\r\n}\r\n\r\n\r\n.inputSearch {\r\n  margin: auto;\r\n  width: 50%;\r\n}\r\n\r\n.orgvis {\r\n  background-color: #F6F6F6;\r\n}\r\n\r\n\r\n.aOrg {\r\n  padding-left: 10px;\r\n  font-size: 1.7em;\r\n  display: inline;\r\n}\r\n\r\n.sort {\r\n  padding-left: 10px;\r\n}\r\n\r\n.divNewRepos {\r\n  display: block;\r\n}\r\n\r\n.imgNewOrg {\r\n  max-width: 100px;\r\n}\r\n\r\n.searchbar {\r\n  height: 40px;\r\n  background-color: white;\r\n  border-radius: 40px;\r\n  border: 1px solid silver;\r\n}\r\n\r\n.btnSearch {\r\n\r\n}\r\n\r\n.selectLang {\r\n  display: inline;\r\n}\r\n\r\n.stylish-input-group .input-group-addon{\r\n    background: white !important;\r\n}\r\n.stylish-input-group .form-control{\r\n\tborder-right:0;\r\n\tbox-shadow:0 0 0;\r\n\tborder-color:#ccc;\r\n}\r\n.stylish-input-group button{\r\n    border:0;\r\n    background:transparent;\r\n}\r\n\r\n/*Search Categories Styles Below */\r\n/* Grow */\r\n.hvr-grow {\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    transform: translateZ(0);\r\n    box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n    backface-visibility: hidden;\r\n    -moz-osx-font-smoothing: grayscale;\r\n    transition-duration: 0.3s;\r\n    transition-property: transform;\r\n    margin: 4px 4px 4px 4px;\r\n}\r\n\r\n.hvr-grow:hover,\r\n.hvr-grow:focus{\r\n    transform: scale(1.3);\r\n}\r\n.hvr-grow:active {\r\n  transform: scale(.8);\r\n}\r\n.categories-column{\r\n  display: inline-block;\r\n  vertical-align: top;\r\n  margin: 10px 10px 10px 10px !important;\r\n  padding: 5px 5px 5px 5px;\r\n  width:280px;\r\n  height: 140px;\r\n  position: relative;\r\n  border-radius: 10px !important;\r\n}\r\n.category-title{\r\n  width:280px;\r\n  height: 140px;\r\n  text-align: center;\r\n  margin-top: 50px;\r\n\r\n}\r\n/*Cards */\r\n\r\n\r\n.repoName {\r\n  text-align: center;\r\n  font-size: 18px;\r\n  display: inline;\r\n\r\n}\r\n.repoName a{\r\n  color: grey;\r\n  text-overflow: ellipsis;\r\n  word-wrap: break-word;\r\n  display: inline;\r\n  margin-right: 20px;\r\n}\r\nbody{\r\n  background:  #fafafa !important;\r\n  font-family: Montserrat;\r\n  font-size: 12px;\r\n\r\n}\r\n\r\n.lang{\r\n  font-style: italic;\r\n  font-size: 10px;\r\n  display: inline;\r\n  margin-left: 20px;\r\n}\r\n\r\n.topRepoSection{\r\n  max-width: 400px !important;\r\n    color: grey;\r\n    display: inline;\r\n\r\n\r\n}\r\n.newRepoSection{\r\n  max-width: 400px !important;\r\n  color: grey;\r\n  display: inline;\r\n\r\n}\r\n\r\n.num{\r\n  display: inline-block;\r\n  padding: 10px 10px 10px 10px;\r\n  width: 30px !important;\r\n  font-size: 15px;\r\n}\r\n.stars{\r\n  display: inline;\r\n  font-size: 10px;\r\n  height: 12px;\r\n}\r\n.orgs{\r\n  max-width: 200px;\r\n  max-height: 200px;\r\n}\r\n.news{\r\n  min-width: 7rem;\r\n  /*margin-top: 120px;*/\r\n  padding-top: 20px;\r\n  background-color: white;\r\n  padding-left: 10px;\r\n  padding-right: 10px;\r\n}\r\n\r\n/*.trendsNav{\r\n  margin-top: 150px;\r\n}\r\n.splash{\r\n  margin-top: 110px;\r\n}*/\r\n.newsArticle{\r\n  line-height: 25px;\r\n  margin: 10px 10px 10px 10px;\r\n}\r\n.headingTitle{\r\n  float: center;\r\n}\r\n.chips{\r\n  padding: 20px 20px 20px 20px;\r\n}\r\n.categoryTitle{\r\n  color: white;\r\n}\r\n.navBar{\r\n  background-color: black;\r\n}\r\n.description{\r\n  padding: 0px 0px 0px 0px;\r\n  margin: 0px 0px 0px 0px;\r\n}\r\nli {\r\n  list-style-type: none;\r\n}\r\n.icon{\r\n  margin: 0px 5px 0px 5px;\r\n  vertical-align: bottom;\r\n}\r\n.parallaxHeader{\r\n  margin-top: 190px;\r\n  margin-bottom: 0px;\r\n  color: white;\r\n  text-align: center;\r\n  vertical-align: middle;\r\n}\r\n.parallaxHeader2{\r\n  margin-top: 2px;\r\n  color: white;\r\n  text-align: center;\r\n  vertical-align: middle;\r\n  font-size: 13px !important;\r\n}\r\n\r\n.parallax-container {\r\n  height: 500px !important;\r\n  width: 100%;\r\n  margin-top: 0px;\r\n}\r\n.progressBar{\r\n  margin-top: 200px;\r\n}\r\n\r\n.waves-effect {\r\n  z-index: 0 !important;\r\n}\r\n\r\n.userName{\r\n  max-width: 50px;\r\n}\r\n/*Materialize Default*/\r\n.search{\r\n    margin-bottom: 0px !important;\r\n    padding-bottom: 0px !important;\r\n    display: inline;\r\n}\r\n.collection .collection-item.active{\r\n  background-color: black !important;\r\n  color: white !important;\r\n}\r\n.collection a.collection-item{\r\n  color: black !important;\r\n}\r\n\r\n\r\n.secondary-content{\r\n  color: black !important;\r\n}\r\n.trendingNews{\r\n  text-align: center;\r\n  margin-top: 0px;\r\n}\r\nnav{\r\n  height: 65px !important;\r\n}\r\n.collection .collection-item.avatar .title{\r\n  font-size: 12px !important;\r\n}\r\ndiv.orgs.card-panel{\r\n  margin: 80px;\r\n}\r\n\r\nnav ul li:hover {\r\n   background-color: white;\r\n}\r\n.row .col.s2{\r\n  width: 120px !important;\r\n}\r\n", ""]);
 
 	// exports
 
@@ -26224,7 +26224,7 @@
 	            _react2.default.createElement(
 	              'button',
 	              {
-	                className: 'waves-effect waves-light btn',
+	                className: 'waves-effect waves-light btn black',
 	                onClick: function onClick() {
 	                  _this3.closeModal();
 	                } },
@@ -26261,14 +26261,14 @@
 	              { className: 'col s12  ' },
 	              _react2.default.createElement(
 	                'button',
-	                { className: 'col s6 waves-effect waves-light btn', onClick: function onClick() {
+	                { className: 'col s6 waves-effect waves-light btn black', onClick: function onClick() {
 	                    _this3.handleClick('name');
 	                  } },
 	                'Name'
 	              ),
 	              _react2.default.createElement(
 	                'button',
-	                { className: 'col s6 waves-effect waves-light btn', onClick: function onClick() {
+	                { className: 'col s6 waves-effect waves-light btn black', onClick: function onClick() {
 	                    _this3.handleClick('popularity');
 	                  } },
 	                'Stars'
@@ -26280,7 +26280,7 @@
 	            { className: 'row' },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'col s12  z-depth-3 blue-grey lighten-5' },
+	              { className: 'col s12  z-depth-3 grey lighten-5' },
 	              _react2.default.createElement(
 	                'ul',
 	                { className: 'collection z-depth-1' },
@@ -26399,13 +26399,12 @@
 	        _react2.default.createElement(
 	          'button',
 	          {
-	            className: 'waves-effect waves-light btn',
+	            className: 'waves-effect waves-light btn black',
 	            onClick: function onClick() {
 	              _this2.getIssues();
 	            } },
 	          'Get Issues'
 	        ),
-	        this.state.repo.name,
 	        _react2.default.createElement(
 	          'ul',
 	          { className: 'collection' },
@@ -26474,7 +26473,7 @@
 	        null,
 	        _react2.default.createElement(
 	          'a',
-	          { className: 'dropdown-button btn', href: '#', 'data-activates': 'languageDropdown' },
+	          { className: 'dropdown-button btn black', href: '#', 'data-activates': 'languageDropdown' },
 	          this.state.selectedLang
 	        ),
 	        _react2.default.createElement(
@@ -26657,7 +26656,7 @@
 
 	      return _react2.default.createElement(
 	        'li',
-	        { className: 'collection-item blue-grey lighten-5 ' },
+	        { className: 'collection-item grey lighten-5 ' },
 	        _react2.default.createElement(
 	          'span',
 	          { className: 'title' },
@@ -26792,7 +26791,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'col s4' },
+	            { className: 'col s2' },
 	            _react2.default.createElement(
 	              'a',
 	              { href: '#searchbox' },
@@ -26802,13 +26801,17 @@
 	                  onClick: function onClick() {
 	                    document.getElementById('searchbox').scrollIntoView();
 	                  },
-	                  className: 'btn waves-effect waves-light'
+	                  className: 'btn waves-effect waves-light  black'
 	                }, 'onClick', function onClick(event) {
 	                  _this2.handleSearch(_this2.state.searchTerm);
 	                }),
 	                'Search'
 	              )
-	            ),
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'col s2' },
 	            _react2.default.createElement(_search_chooselanguage2.default, { handleLanguageSelect: this.handleChildSelect })
 	          )
 	        )
@@ -37681,6 +37684,7 @@
 	    //  the easiest way to do this is to cll it in searchbar
 
 	    value: function handleSearch(value) {
+	      this.props.onSearchTermChange(value);
 	      this.props.onRequest({ searchTerm: value, language: "All" });
 	    }
 	  }, {
@@ -37690,263 +37694,402 @@
 
 	      return _react2.default.createElement(
 	        "div",
-	        { className: "chips blue-grey lighten-2 section" },
+	        { className: "chips grey lighten-5 section" },
 	        _react2.default.createElement(
-	          "p",
-	          { className: "categoryTitle" },
-	          "Suggested Searches"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("animal");
+	              } },
+	            "Animals"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("animal");
-	            } },
-	          "Animals"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("artificial intelligence");
+	              } },
+	            "Artificial Intelligence"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("artificial intelligence");
-	            } },
-	          "Artificial Intelligence"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("blogs");
+	              } },
+	            "Blogs"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("blogs");
-	            } },
-	          "Blogs"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("business");
+	              } },
+	            "Business"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("business");
-	            } },
-	          "Business"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("cats");
+	              } },
+	            "Cats"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("cats");
-	            } },
-	          "Cats"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("food");
+	              } },
+	            "Food"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("food");
-	            } },
-	          "Food"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("books");
+	              } },
+	            "Books"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("books");
-	            } },
-	          "Books"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("developer");
+	              } },
+	            "Developer"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("developer");
-	            } },
-	          "Developer"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("education");
+	              } },
+	            "Education"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("education");
-	            } },
-	          "Education"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("email");
+	              } },
+	            "Email"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("email");
-	            } },
-	          "Email"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("entertainment");
+	              } },
+	            "Entertainment"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("entertainment");
-	            } },
-	          "Entertainment"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("finance");
+	              } },
+	            "Finance"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("finance");
-	            } },
-	          "Finance"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("data");
+	              } },
+	            "Data"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("data");
-	            } },
-	          "Data"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("fun");
+	              } },
+	            "Fun"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("fun");
-	            } },
-	          "Fun"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("games");
+	              } },
+	            "Games"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("games");
-	            } },
-	          "Games"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("robotics");
+	              } },
+	            "Robotics"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("robotics");
-	            } },
-	          "Robotics"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("internet of things");
+	              } },
+	            "Internet of Things"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("internet of things");
-	            } },
-	          "Internet of Things"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("toy problems");
+	              } },
+	            "Toy Problems"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("toy problems");
-	            } },
-	          "Toy Problems"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("health");
+	              } },
+	            "Health"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("health");
-	            } },
-	          "Health"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("fitness");
+	              } },
+	            "Fitness"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("fitness");
-	            } },
-	          "Fitness"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("machine learning");
+	              } },
+	            "Machine Learning"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("machine learning");
-	            } },
-	          "Machine Learning"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("medical");
+	              } },
+	            "Medical"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("medical");
-	            } },
-	          "Medical"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("messaging");
+	              } },
+	            "Messaging"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("messaging");
-	            } },
-	          "Messaging"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("movies");
+	              } },
+	            "Movies"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("movies");
-	            } },
-	          "Movies"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("music");
+	              } },
+	            "Music"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("music");
-	            } },
-	          "Music"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("navigation");
+	              } },
+	            "Navigation"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("navigation");
-	            } },
-	          "Navigation"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("news");
+	              } },
+	            "News"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("news");
-	            } },
-	          "News"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("photos");
+	              } },
+	            "Photos"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("photos");
-	            } },
-	          "Photos"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("videos");
+	              } },
+	            "Videos"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("videos");
-	            } },
-	          "Videos"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("productivity");
+	              } },
+	            "Productivity"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("productivity");
-	            } },
-	          "Productivity"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("shopping");
+	              } },
+	            "Shopping"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("shopping");
-	            } },
-	          "Shopping"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("social");
+	              } },
+	            "Social"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("social");
-	            } },
-	          "Social"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("sports");
+	              } },
+	            "Sports"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("sports");
-	            } },
-	          "Sports"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("travel");
+	              } },
+	            "Travel"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("travel");
-	            } },
-	          "Travel"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("virtual reality");
+	              } },
+	            "Virtual Reality"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("virtual reality");
-	            } },
-	          "Virtual Reality"
-	        ),
-	        _react2.default.createElement(
-	          "div",
-	          { className: "chip hvr-grow", onClick: function onClick() {
-	              _this2.handleSearch("webcam");
-	            } },
-	          "Webcam"
+	          "a",
+	          { href: "#searchbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "chip hvr-grow", onClick: function onClick() {
+	                _this2.handleSearch("webcam");
+	              } },
+	            "Webcam"
+	          )
 	        )
 	      );
 	    }
@@ -38302,7 +38445,11 @@
 	          _react2.default.createElement(
 	            'span',
 	            null,
-	            this.props.issue.title,
+	            _react2.default.createElement(
+	              'a',
+	              { href: this.props.issue.html_url, target: '_blank' },
+	              this.props.issue.title
+	            ),
 	            ' '
 	          ),
 	          _react2.default.createElement(
@@ -38316,7 +38463,7 @@
 	              onClick: function onClick() {
 	                _this3.sendTeach('easy');
 	              },
-	              className: 'secondary-content waves-effect waves-light btn' },
+	              className: 'secondary-content waves-effect waves-light btn black white-text' },
 	            'Easy'
 	          ),
 	          _react2.default.createElement(
@@ -38325,7 +38472,7 @@
 	              onClick: function onClick() {
 	                _this3.sendTeach('medium');
 	              },
-	              className: 'secondary-content waves-effect waves-light btn' },
+	              className: 'secondary-content waves-effect waves-light btn black white-text' },
 	            'Medium'
 	          ),
 	          _react2.default.createElement(
@@ -38334,7 +38481,7 @@
 	              onClick: function onClick() {
 	                _this3.sendTeach('hard');
 	              },
-	              className: 'secondary-content waves-effect waves-light btn' },
+	              className: 'secondary-content waves-effect waves-light btn black white-text' },
 	            'Hard'
 	          )
 	        )
@@ -38385,12 +38532,12 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'li',
-	        { className: 'collection-item avatar valign-wrapper blue-grey lighten-5 ' },
+	        { className: 'collection-item avatar valign-wrapper grey lighten-5 ' },
 	        _react2.default.createElement('img', { src: this.props.avatar_url, alt: 'org avatar', className: 'circle valign' }),
 	        _react2.default.createElement(
 	          'span',
 	          {
-	            className: 'title valign right-align' },
+	            className: 'title valign right-align orgName' },
 	          _react2.default.createElement(
 	            'a',
 	            {
@@ -38520,14 +38667,14 @@
 	            { className: 'col s12  ' },
 	            _react2.default.createElement(
 	              'button',
-	              { className: 'col s6 waves-effect waves-light btn', onClick: function onClick() {
+	              { className: 'col s6 waves-effect waves-light btn black', onClick: function onClick() {
 	                  _this2.handleClick('name');
 	                } },
 	              'Name'
 	            ),
 	            _react2.default.createElement(
 	              'button',
-	              { className: 'col s6 waves-effect waves-light btn', onClick: function onClick() {
+	              { className: 'col s6 waves-effect waves-light btn black', onClick: function onClick() {
 	                  _this2.handleClick('repoOrder');
 	                } },
 	              'Popularity'
@@ -38539,7 +38686,7 @@
 	          { className: 'row' },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'col s12  z-depth-3 blue-grey lighten-5' },
+	            { className: 'col s12  z-depth-3 grey lighten-5' },
 	            _react2.default.createElement(
 	              'ul',
 	              { className: 'collection z-depth-1' },
@@ -38686,11 +38833,6 @@
 	          'ul',
 	          null,
 	          _react2.default.createElement(
-	            'h5',
-	            null,
-	            'Trending Organizations'
-	          ),
-	          _react2.default.createElement(
 	            'a',
 	            null,
 	            this.drawChart()
@@ -38760,7 +38902,7 @@
 
 	        var html = _react2.default.createElement(
 	          'div',
-	          { className: 'orgs card-panel' },
+	          { className: 'orgs card-panel', key: item.id },
 	          _react2.default.createElement(
 	            'div',
 	            null,
@@ -38789,11 +38931,6 @@
 	        _react2.default.createElement(
 	          'ul',
 	          null,
-	          _react2.default.createElement(
-	            'h5',
-	            null,
-	            'Top New Organizations'
-	          ),
 	          this.populateResults()
 	        )
 	      );
@@ -38859,7 +38996,7 @@
 
 	        var html = _react2.default.createElement(
 	          'div',
-	          { className: 'repolist card-panel' },
+	          { className: 'repolist card-panel', key: item.id },
 	          _react2.default.createElement(
 	            'p',
 	            { className: 'num' },
@@ -39037,7 +39174,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'li',
-	        { className: 'collection-item  blue-grey lighten-5' },
+	        { className: 'collection-item  grey lighten-5' },
 	        _react2.default.createElement(
 	          'div',
 	          null,
@@ -39049,7 +39186,7 @@
 	            this.props.name
 	          ),
 	          _react2.default.createElement(
-	            'span',
+	            'div',
 	            { className: 'secondary-content' },
 	            this.props.contributions,
 	            ' contributions in ',
@@ -39219,7 +39356,11 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'news card' },
-	          'Trending News',
+	          _react2.default.createElement(
+	            'p',
+	            { className: 'trendingNews' },
+	            'Trending News'
+	          ),
 	          this.populateResults(),
 	          this.populateDataResults(),
 	          this.populateHNResults()
@@ -39318,6 +39459,8 @@
 	        this.setState({ search: '', trends: 'active' });
 	      }
 	    }
+	    // <a href="#" className="brand-logo right white-text" style={{color: "black"}}>GitLife</a>
+
 	  }, {
 	    key: 'render',
 	    value: function render() {
@@ -39331,12 +39474,7 @@
 	          null,
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'nav-wrapper blue-grey lighten-4' },
-	            _react2.default.createElement(
-	              'a',
-	              { href: '#', className: 'brand-logo right', style: { color: "black" } },
-	              'Gitlyfe'
-	            ),
+	            { className: 'nav-wrapper black' },
 	            _react2.default.createElement(
 	              'ul',
 	              { id: 'nav-mobile', className: 'left' },
@@ -39347,7 +39485,7 @@
 	                  } },
 	                _react2.default.createElement(
 	                  _reactRouter.Link,
-	                  { to: '/', activeClassName: 'active', style: { color: "black" } },
+	                  { to: '/', activeClassName: 'active', className: 'white-text' },
 	                  'Search'
 	                )
 	              ),
@@ -39358,7 +39496,7 @@
 	                  } },
 	                _react2.default.createElement(
 	                  _reactRouter.Link,
-	                  { to: '/trends', style: { color: "black" } },
+	                  { to: '/trends', className: 'white-text' },
 	                  'Trends'
 	                )
 	              )
@@ -39371,12 +39509,12 @@
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'parallax' },
-	            _react2.default.createElement('img', { src: './github.jpg' })
+	            _react2.default.createElement('img', { src: 'github.jpg' })
 	          ),
 	          _react2.default.createElement(
 	            'h1',
-	            { className: 'parallaxHeader' },
-	            'Gitlyfe'
+	            { className: 'parallaxHeader gitTitle' },
+	            'GitLife'
 	          ),
 	          _react2.default.createElement(
 	            'h2',
@@ -39412,6 +39550,10 @@
 	}
 
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(App);
+
+	// <footer className='page-footer footer'>
+	//   <Link to='/about'>About Us</Link>
+	// </footer>
 
 /***/ },
 /* 178 */
@@ -39478,13 +39620,10 @@
 	var AppSearch = function (_Component) {
 	  _inherits(AppSearch, _Component);
 
-	  function AppSearch(props) {
+	  function AppSearch() {
 	    _classCallCheck(this, AppSearch);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(AppSearch).call(this, props));
-
-	    _this.state = { showResults: false };
-	    return _this;
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(AppSearch).apply(this, arguments));
 	  }
 
 	  _createClass(AppSearch, [{
@@ -39495,13 +39634,6 @@
 	      });
 	    }
 	  }, {
-	    key: 'componentWillReceiveProps',
-	    value: function componentWillReceiveProps(props) {
-	      if (props.results) {
-	        this.setState({ showResults: true });
-	      }
-	    }
-	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -39509,7 +39641,7 @@
 	        null,
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'section' },
+	          { className: 'section search' },
 	          _react2.default.createElement(_searchbar2.default, {
 	            searchTerm: this.props.term,
 	            onRequest: this.props.actions.searchGitHub,
@@ -39520,18 +39652,23 @@
 	          searchTerm: this.props.term,
 	          onRequest: this.props.actions.searchGitHub,
 	          onSearchTermChange: this.props.actions.updateSearchTerm }),
+	        this.props.results.length === 0 && this.props.term.length !== 0 ? _react2.default.createElement(
+	          'div',
+	          { className: 'progress progressBar' },
+	          _react2.default.createElement('div', { className: 'indeterminate progressBar' })
+	        ) : null,
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'section row' },
-	          this.state.showResults ? _react2.default.createElement(
+	          this.props.results.length !== 0 ? _react2.default.createElement(
 	            'div',
-	            { className: 'col s4 blue-grey lighten-4' },
+	            { className: 'col s4 grey lighten-5' },
 	            _react2.default.createElement(_userResults2.default, { results: this.props.results }),
 	            ' '
 	          ) : _react2.default.createElement('div', { id: 'searchbox', className: 'section scrollspy', style: { height: '500px' } }),
-	          this.state.showResults ? _react2.default.createElement(
+	          this.props.results.length !== 0 ? _react2.default.createElement(
 	            'div',
-	            { className: 'col s4  blue-grey lighten-4' },
+	            { className: 'col s4  grey lighten-5' },
 	            ' ',
 	            _react2.default.createElement(_reposearchresults2.default, {
 	              results: this.props.results,
@@ -39541,39 +39678,12 @@
 	              getIssues: this.props.actions.getIssues }),
 	            ' '
 	          ) : null,
-	          this.state.showResults ? _react2.default.createElement(
+	          this.props.results.length !== 0 ? _react2.default.createElement(
 	            'div',
-	            { className: 'col s4  blue-grey lighten-4' },
+	            { className: 'col s4  grey lighten-5' },
 	            ' ',
 	            _react2.default.createElement(_orgsearchresults2.default, { results: this.props.results })
 	          ) : null
-	        )
-	      );
-	    }
-	  }, {
-	    key: 'spinner',
-	    get: function get() {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'preloader-wrapper small active' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'spinner-layer spinner-green-only' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'circle-clipper left' },
-	            _react2.default.createElement('div', { className: 'circle' })
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'gap-patch' },
-	            _react2.default.createElement('div', { className: 'circle' })
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'circle-clipper right' },
-	            _react2.default.createElement('div', { className: 'circle' })
-	          )
 	        )
 	      );
 	    }
@@ -39585,7 +39695,7 @@
 	function mapStateToProps(state) {
 	  return {
 	    results: state.results,
-	    term: state.searchTerm,
+	    term: state.term,
 	    selectedRepo: state.selectedRepo,
 	    issues: state.issues
 	  };
@@ -39994,21 +40104,21 @@
 	            { className: 'col s12  ' },
 	            _react2.default.createElement(
 	              'button',
-	              { className: 'col s4 waves-effect waves-light btn', onClick: function onClick() {
+	              { className: 'col s4 waves-effect waves-light btn black', onClick: function onClick() {
 	                  _this2.handleSort('count');
 	                } },
 	              'Count'
 	            ),
 	            _react2.default.createElement(
 	              'button',
-	              { className: 'col s4 waves-effect waves-light btn', onClick: function onClick() {
+	              { className: 'col s4 waves-effect waves-light btn black', onClick: function onClick() {
 	                  _this2.handleSort('contributions');
 	                } },
 	              'Commits'
 	            ),
 	            _react2.default.createElement(
 	              'button',
-	              { className: 'col s4 waves-effect waves-light btn', onClick: function onClick() {
+	              { className: 'col s4 waves-effect waves-light btn black', onClick: function onClick() {
 	                  _this2.handleSort('name');
 	                } },
 	              'Name'
@@ -40020,7 +40130,7 @@
 	          { className: 'row' },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'col s12  z-depth-3 blue-grey lighten-5' },
+	            { className: 'col s12 z-depth-3 grey lighten-5' },
 	            _react2.default.createElement(
 	              'ul',
 	              { className: 'collection z-depth-1' },
@@ -40517,7 +40627,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	      value: true
+	        value: true
 	});
 
 	var _react = __webpack_require__(2);
@@ -40541,11 +40651,11 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createElement(
-	      _reactRouter.Route,
-	      { path: '/', component: _app2.default },
-	      _react2.default.createElement(_reactRouter.IndexRoute, { component: _app_search2.default }),
-	      _react2.default.createElement(_reactRouter.Route, { path: '/trends', component: _app_splash2.default }),
-	      _react2.default.createElement(_reactRouter.Route, { path: '/search', component: _app_search2.default })
+	        _reactRouter.Route,
+	        { path: '/', component: _app2.default },
+	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _app_search2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/trends', component: _app_splash2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/search', component: _app_search2.default })
 		);
 
 /***/ },
