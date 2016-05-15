@@ -42,21 +42,21 @@ export default class IssueItem extends Component{
     return (
       <li className='collection-item' >
         <div>
-          <span>{this.props.issue.title} </span>
+          <span><a href={this.props.issue.html_url} target='_blank'>{this.props.issue.title}</a> </span>
           <span className='chip'>{this.state.predictedDifficulty}</span>
           <button
             onClick={()=>{this.sendTeach('easy')}}
-            className="secondary-content waves-effect waves-light btn">
+            className="secondary-content waves-effect waves-light btn black white-text">
             Easy
           </button>
           <button
             onClick={()=>{this.sendTeach('medium')}}
-            className="secondary-content waves-effect waves-light btn">
+            className="secondary-content waves-effect waves-light btn black white-text">
             Medium
           </button>
           <button
             onClick={()=>{this.sendTeach('hard')}}
-            className="secondary-content waves-effect waves-light btn">
+            className="secondary-content waves-effect waves-light btn black white-text">
             Hard
           </button>
 
