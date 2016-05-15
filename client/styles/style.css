@@ -236,3 +236,25 @@ li {
 .waves-effect {
   z-index: 0 !important;
 }
+
+.aboutContainer {
+  border-top: 1px solid black;
+  text-align: center;
+}
+
+.aboutContainer p {
+  font-size: 1.2em;
+}
+
+.aboutContainer h4 {
+  padding-top: 20px;
+}
+
+.teamMember {
+  display: inline;
+}
+
+.imgDev {
+  //border-radius: 50%;
+  max-width: 200px !important;
+}
