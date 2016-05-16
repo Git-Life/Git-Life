@@ -12,7 +12,7 @@
     "server-prod": "NODE_ENV=production node ./index.js",
     "server-dev": "NODE_ENV=development nodemon ./index.js",
     "start": "npm run server-prod",
-    "deploy": "num run webpack-prod",
+    "deploy": "npm run webpack-prod",
     "dev": "npm run webpack-dev && npm run server-dev"
   },
   "engines":{
