@@ -20,6 +20,34 @@ export default class AppAbout extends Component {
           <p>
             Tools used to build this app
           </p>
+          <div className='row'>
+            <div className='col s12 m12 l12'>
+              <div className='col s4 m4 l4'>
+                <img src='./images/webpack_logo.png' style={{width: '230px'}} />
+              </div>
+              <div className='col s4 m4 l4'>
+                <img src='./images/nodejs_logo.png' style={{width: '260px', borderRadius: '10px'}} />
+              </div>
+              <div className='col s4 m4 l4'>
+                <img src='./images/expressjs_logo.png' style={{width: '250px'}} />
+              </div>
+            </div>
+          </div>
+          <div className='row'>
+            <div className='col s12 m12 l12'>
+              <div className='col s4 m4 l4'>
+                <img src='./images/reactjs_logo.png' style={{width: '290px', paddingLeft: '40px'}} />
+              </div>
+              <div className='col s4 m4 l4'>
+                <img src='./images/materialize_logo.png' style={{width: '150px', marginTop: '-35px'}} />
+                <br />
+                Materialize CSS
+              </div>
+              <div className='col s4 m4 l4'>
+                <img src='./images/heroku_logo.png' style={{width: '250px', marginTop: '-25px'}} />
+              </div>
+            </div>
+          </div>
           <h4>Dev Team</h4>
           <p>
             Our team is group of 3 passionate software engineers.
