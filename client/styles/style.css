@@ -298,11 +298,11 @@ li {
     padding-bottom: 0px !important;
     display: inline;
 }
-.collection .collection-item .active{
+.collection .collection-item.active{
   background-color: black !important;
   color: white !important;
 }
-.collection a .collection-item{
+.collection a.collection-item{
   color: black !important;
 }
 
@@ -316,16 +316,16 @@ li {
 nav{
   height: 65px !important;
 }
-.collection .collection-item.avatar .title{
+.collection .collection-item.avatar.title{
   font-size: 12px !important;
 }
-div .orgs .card-panel{
+div.orgs.card-panel{
   margin: 80px;
 }
 
 nav ul li:hover {
    background-color: white;
 }
-.row .col .s2{
+.row .col.s2{
   width: 120px !important;
 }
