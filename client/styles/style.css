@@ -268,6 +268,15 @@ li {
   max-width: 200px !important;
 }
 
+.name {
+  font-size: 1.1em;
+  padding-bottom: 10px;
+}
+
+.info {
+  padding-top: 10px;
+}
+
 .userName{
   max-width: 50px;
 }
