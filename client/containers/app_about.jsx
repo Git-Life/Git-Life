@@ -48,8 +48,19 @@ export default class AppAbout extends Component {
               </div>
             </div>
           </div>
+                    <div className='row'>
+            <div className='col s12 m12 l12'>
+              <div className='col s6 m6 l6'>
+                <img src='./images/predictionapi_logo.png' style={{width: '450px', paddingLeft: '80px'}} />
+              </div>
+              <div className='col s6 m6 l6'>
+                <img src='./images/github_logo.png' style={{width: '80px', marginTop: '-10px', marginLeft: '0px'}} />
+                <div style={{paddingLeft: '10px', fontSize: '2em', marginTop: '-40px', color: '#8A2BE2'}}>GitHub Search API</div>
+              </div>
+            </div>
+          </div>
           <h4>Dev Team</h4>
-          <p>
+          <p style={{paddingBottom: '30px'}}>
             Our team is group of 3 passionate software engineers.
           </p>
           <div className='row'>
