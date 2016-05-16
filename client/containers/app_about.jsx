@@ -23,38 +23,38 @@ export default class AppAbout extends Component {
           <div className='row'>
             <div className='col s12 m12 l12'>
               <div className='col s4 m4 l4'>
-                <img src='./images/webpack_logo.png' style={{width: '230px'}} />
+                <img src='webpack_logo.png' style={{width: '230px'}} />
               </div>
               <div className='col s4 m4 l4'>
-                <img src='./images/nodejs_logo.png' style={{width: '260px', borderRadius: '10px'}} />
+                <img src='nodejs_logo.png' style={{width: '260px', borderRadius: '10px'}} />
               </div>
               <div className='col s4 m4 l4'>
-                <img src='./images/expressjs_logo.png' style={{width: '250px'}} />
+                <img src='expressjs_logo.png' style={{width: '250px'}} />
               </div>
             </div>
           </div>
           <div className='row'>
             <div className='col s12 m12 l12'>
               <div className='col s4 m4 l4'>
-                <img src='./images/reactjs_logo.png' style={{width: '290px', paddingLeft: '40px'}} />
+                <img src='reactjs_logo.png' style={{width: '290px', paddingLeft: '40px'}} />
               </div>
               <div className='col s4 m4 l4'>
-                <img src='./images/materialize_logo.png' style={{width: '150px', marginTop: '-35px'}} />
+                <img src='materialize_logo.png' style={{width: '150px', marginTop: '-35px'}} />
                 <br />
                 Materialize CSS
               </div>
               <div className='col s4 m4 l4'>
-                <img src='./images/heroku_logo.png' style={{width: '250px', marginTop: '-25px'}} />
+                <img src='heroku_logo.png' style={{width: '250px', marginTop: '-25px'}} />
               </div>
             </div>
           </div>
           <div className='row'>
             <div className='col s12 m12 l12'>
               <div className='col s6 m6 l6'>
-                <img src='./images/predictionapi_logo.png' style={{width: '450px', paddingLeft: '80px'}} />
+                <img src='predictionapi_logo.png' style={{width: '450px', paddingLeft: '80px'}} />
               </div>
               <div className='col s6 m6 l6'>
-                <img src='./images/github_logo.png' style={{width: '80px', marginTop: '-10px', marginLeft: '0px'}} />
+                <img src='github_logo.png' style={{width: '80px', marginTop: '-10px', marginLeft: '0px'}} />
                 <div style={{paddingLeft: '10px', fontSize: '2em', marginTop: '-40px', color: '#8A2BE2'}}>GitHub Search API</div>
               </div>
             </div>
@@ -67,42 +67,42 @@ export default class AppAbout extends Component {
             <div className='col s12 m12 l12'>
               <div className='teamMember col s4 m4 l4'>
                 <div className='name'>Jenna Gain</div>
-                <img className='responsive-img circle imgDev' src='./images/jenna.jpeg' />
+                <img className='responsive-img circle imgDev' src='jenna.jpeg' />
                 <div className='info'>
                   { ' ' }
                   <br />
                   Software Engineer
                   <br />
                   <a href='https://github.com/gainjenna' target='_blank'>
-                    <img className='iconGit' src='./images/icon_github.jpg' />
+                    <img className='iconGit' src='icon_github.jpg' />
                     { ' ' } <div>GitHub</div>
                   </a>
                 </div>
               </div>
               <div className='teamMember col s4 m4 l4'>
                 <div className='name'>Alex Paczynski</div>
-                <img className='responsive-img circle imgDev' src='./images/alex.jpg' />
+                <img className='responsive-img circle imgDev' src='alex.jpg' />
                 <div className='info'>
                   Product Owner
                   <br />
                   Software Engineer
                   <br />
                   <a href='https://github.com/re1nv3nt' target='_blank'>
-                    <img className='iconGit' src='./images/icon_github.jpg' />
+                    <img className='iconGit' src='icon_github.jpg' />
                     { ' ' } <div>GitHub</div>
                   </a>
                 </div>
               </div>
               <div className='teamMember col s4 m4 l4'>
                 <div className='name'>Caleb Rogers</div>
-                <img className='responsive-img circle imgDev' src='./images/caleb.jpeg' />
+                <img className='responsive-img circle imgDev' src='caleb.jpeg' />
                 <div className='info'>
                   Scrum Master
                   <br />
                   Software Engineer
                   <br />
                   <a href='https://github.com/komali2' target='_blank'>
-                    <img className='iconGit' src='./images/icon_github.jpg' />
+                    <img className='iconGit' src='icon_github.jpg' />
                     { ' ' } <div>GitHub</div>
                   </a>
                 </div>
