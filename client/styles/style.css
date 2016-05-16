@@ -246,23 +246,65 @@ li {
   z-index: 0 !important;
 }
 
+/* About page styles */
+.aboutContainer {
+  border-top: 1px solid black;
+  text-align: center;
+}
+
+.aboutContainer p {
+  font-size: 1.2em;
+}
+
+.aboutContainer h4 {
+  padding-top: 20px;
+}
+
+.teamMember {
+  display: inline;
+}
+
+.imgDev {
+  max-width: 200px !important;
+}
+
+.name {
+  font-size: 1.1em;
+  padding-bottom: 10px;
+  font-weight: 800;
+}
+
+.info {
+  padding-top: 10px;
+}
+
+.iconGit {
+  width: 18px;
+}
+
+.info div {
+  display: inline;
+  font-size: 1.2em;
+  color: #551A8B;
+}
+
 .userName{
   max-width: 50px;
 }
+
 /*Materialize Default*/
 .search{
     margin-bottom: 0px !important;
     padding-bottom: 0px !important;
     display: inline;
 }
-.collection .collection-item.active{
+.collection .collection-item .active{
   background-color: black !important;
   color: white !important;
 }
-.collection a.collection-item{
+.collection a .collection-item{
   color: black !important;
 }
-
 
 .secondary-content{
   color: black !important;
@@ -277,13 +319,13 @@ nav{
 .collection .collection-item.avatar .title{
   font-size: 12px !important;
 }
-div.orgs.card-panel{
+div .orgs .card-panel{
   margin: 80px;
 }
 
 nav ul li:hover {
    background-color: white;
 }
-.row .col.s2{
+.row .col .s2{
   width: 120px !important;
 }

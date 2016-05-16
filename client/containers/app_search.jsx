@@ -20,7 +20,7 @@ class AppSearch extends Component {
 
   render(){
     return (
-      <div >
+      <div style={{borderTop: "1px solid black"}}>
         <div className='section search'>
           <SearchBar
             searchTerm={this.props.term}
