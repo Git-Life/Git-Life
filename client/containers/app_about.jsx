@@ -35,7 +35,8 @@ export default class AppAbout extends Component {
                   Software Engineer
                   <br />
                   <a href='https://github.com/gainjenna' target='_blank'>
-                    GitHub
+                    <img className='iconGit' src='./images/icon_github.jpg' />
+                    { ' ' } <div>GitHub</div>
                   </a>
                 </div>
               </div>
@@ -48,7 +49,8 @@ export default class AppAbout extends Component {
                   Software Engineer
                   <br />
                   <a href='https://github.com/re1nv3nt' target='_blank'>
-                    GitHub
+                    <img className='iconGit' src='./images/icon_github.jpg' />
+                    { ' ' } <div>GitHub</div>
                   </a>
                 </div>
               </div>
@@ -61,7 +63,8 @@ export default class AppAbout extends Component {
                   Software Engineer
                   <br />
                   <a href='https://github.com/komali2' target='_blank'>
-                    GitHub
+                    <img className='iconGit' src='./images/icon_github.jpg' />
+                    { ' ' } <div>GitHub</div>
                   </a>
                 </div>
               </div>

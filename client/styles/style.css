@@ -271,10 +271,21 @@ li {
 .name {
   font-size: 1.1em;
   padding-bottom: 10px;
+  font-weight: 800;
 }
 
 .info {
   padding-top: 10px;
+}
+
+.iconGit {
+  width: 18px;
+}
+
+.info div {
+  display: inline;
+  font-size: 1.2em;
+  color: #551A8B;
 }
 
 .userName{
