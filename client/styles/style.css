@@ -246,6 +246,7 @@ li {
   z-index: 0 !important;
 }
 
+/* About page styles */
 .aboutContainer {
   border-top: 1px solid black;
   text-align: center;
@@ -264,13 +265,13 @@ li {
 }
 
 .imgDev {
-  //border-radius: 50%;
   max-width: 200px !important;
 }
 
 .userName{
   max-width: 50px;
 }
+
 /*Materialize Default*/
 .search{
     margin-bottom: 0px !important;
