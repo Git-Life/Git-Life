@@ -48,7 +48,7 @@ export default class AppAbout extends Component {
               </div>
             </div>
           </div>
-                    <div className='row'>
+          <div className='row'>
             <div className='col s12 m12 l12'>
               <div className='col s6 m6 l6'>
                 <img src='./images/predictionapi_logo.png' style={{width: '450px', paddingLeft: '80px'}} />
