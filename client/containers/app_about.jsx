@@ -61,7 +61,7 @@ export default class AppAbout extends Component {
           </div>
           <h4>Dev Team</h4>
           <p style={{paddingBottom: '30px'}}>
-            Our team is group of 3 passionate software engineers.
+            Our team is a group of 3 passionate software engineers.
           </p>
           <div className='row'>
             <div className='col s12 m12 l12'>
